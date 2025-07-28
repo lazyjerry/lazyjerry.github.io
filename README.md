@@ -1,1 +1,1 @@
-# lazyjerry..github.io
+# lazyjerry.github.io
