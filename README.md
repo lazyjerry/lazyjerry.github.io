@@ -10,7 +10,7 @@
 
 ## 檔案清單
 
-**主要週報檔案**：`weekly-report/index.md`（最新一週週報內容）
+**主要週報檔案**：[weekly-report/index.md]([weekly-report/index.md)（最新一週週報內容）
 
 ### 2025-07-26 歷史週報資料夾檔案結構：
 
