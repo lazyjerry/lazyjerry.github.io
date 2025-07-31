@@ -14,8 +14,8 @@
 
 本週專題聚焦於台灣即將於 8 月 23 日舉行的第二波大罷免行動，針對其優劣勢、影響因素及成功機率進行分析。其中內容包括：優勢、劣勢、成功機率評估
 
-- **最新進度請參閱** [`topics/2025-08-23-removal-analysis.md`](./topics/analysis-of-taiwans-recall-votes-and-nuclear-power-referendum-on-823/)
-- **線上瀏覽 GitHub Page）** ：[https://lazyjerry.github.io/topics/analysis-of-taiwans-recall-votes-and-nuclear-power-referendum-on-823/](https://lazyjerry.github.io/topics/analysis-of-taiwans-recall-votes-and-nuclear-power-referendum-on-823/)
+- **最新進度請參閱** [`Topics/2025-08-23-removal-analysis.md`](./Topics/analysis-of-taiwans-recall-votes-and-nuclear-power-referendum-on-823/)
+- **線上瀏覽 GitHub Page）** ：[https://lazyjerry.github.io/Topics/analysis-of-taiwans-recall-votes-and-nuclear-power-referendum-on-823/](https://lazyjerry.github.io/Topics/analysis-of-taiwans-recall-votes-and-nuclear-power-referendum-on-823/)
 
 ---
 
