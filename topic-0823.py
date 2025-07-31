@@ -3,6 +3,7 @@ import sys
 import shutil
 from datetime import datetime
 import subprocess
+import re
 
 # 取得目前檔案的絕對路徑
 ROOT_DIR = os.path.dirname(os.path.abspath(__file__))

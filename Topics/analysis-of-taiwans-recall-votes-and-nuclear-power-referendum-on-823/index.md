@@ -369,37 +369,37 @@ description: 不定時發布使用 Manus AI 所整理的相關專題，希望一
 
 ### 新聞媒體報導
 1. **台灣「大罷免」慘敗的五個啟示** - BBC News 中文  
-   https://www.bbc.com/zhongwen/articles/c9395g2l5yno/trad
+   [https://www.bbc.com/zhongwen/articles/c9395g2l5yno/trad](https://www.bbc.com/zhongwen/articles/c9395g2l5yno/trad)
 
 2. **8/23核三公投懶人包》投票方式、正反意見、通過門檻一次看** - 商周  
-   https://www.businessweekly.com.tw/focus/blog/3019079
+   [https://www.businessweekly.com.tw/focus/blog/3019079](https://www.businessweekly.com.tw/focus/blog/3019079)
 
 3. **曝綠營823罷免炮火鎖定這2藍委 郭正亮揭戰略：先處理2026市長選戰絆腳石** - Yahoo新聞  
-   https://tw.news.yahoo.com/曝綠營823罷免炮火鎖定這2藍委-郭正亮揭戰略-先處理2026市長選戰絆腳石-021000033.html
+   [https://tw.news.yahoo.com/曝綠營823罷免炮火鎖定這2藍委-郭正亮揭戰略-先處理2026市長選戰絆腳石-021000033.html](https://tw.news.yahoo.com/曝綠營823罷免炮火鎖定這2藍委-郭正亮揭戰略-先處理2026市長選戰絆腳石-021000033.html)
 
 4. **第二波7藍委罷免投票8/23登場綁核三重啟公投** - 中央社  
-   https://www.cna.com.tw/news/aipl/202507260201.aspx
+   [https://www.cna.com.tw/news/aipl/202507260201.aspx](https://www.cna.com.tw/news/aipl/202507260201.aspx)
 
 5. **第二波罷免案8/23投票哪7位立委面臨罷免？為何與公投同一天？** - 公視新聞  
-   https://news.pts.org.tw/article/762008
+   [https://news.pts.org.tw/article/762008](https://news.pts.org.tw/article/762008)
 
 6. **8/23重啟核三公投案》議題內容、投票方式、注意事項一次** - 天下雜誌  
-   https://www.cw.com.tw/article/5136587
+   [https://www.cw.com.tw/article/5136587](https://www.cw.com.tw/article/5136587)
 
 7. **核三重啟公投8/7起辦5場發表會8/15童子賢對決莊瑞雄** - 中央社  
-   https://www.cna.com.tw/news/aipl/202507310246.aspx
+   [https://www.cna.com.tw/news/aipl/202507310246.aspx](https://www.cna.com.tw/news/aipl/202507310246.aspx)
 
 8. **【Data Reporter】25張圖表，看「第一波大罷免」各村里投票結果** - 報導者  
-   https://www.twreporter.org/a/data-reporter-2025-726-recall-results
+   [https://www.twreporter.org/a/data-reporter-2025-726-recall-results](https://www.twreporter.org/a/data-reporter-2025-726-recall-results)
 
 9. **7/26罷免結果數據分析：24+1案全部否決、7席立委同意票超過門檻** - Yahoo新聞
 
 10. **賴怡忠專欄｜七二六大罷免結果與效應分析** - 思想坦克  
-    https://voicettank.org/20270729-1/
+    [https://voicettank.org/20270729-1/](https://voicettank.org/20270729-1/)
 
 ### 官方資料
 11. **中央選舉委員會** - 罷免案成案公告及投票相關規定  
-    https://web.cec.gov.tw/
+    [https://web.cec.gov.tw/](https://web.cec.gov.tw/)
 
 12. **立法院** - 核三公投案三讀通過相關資料
 
