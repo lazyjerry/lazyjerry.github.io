@@ -10,6 +10,13 @@
 - **線上瀏覽（GitHub Page）**：[https://lazyjerry.github.io/weekly-report/](https://lazyjerry.github.io/weekly-report/)
 - 歷史紀錄存檔與相關原始檔案，皆依日期歸檔於同名資料夾（如 `2025-07-28/`）。
 
+## 專題報告：台灣 8 月 23 日第二波大罷免分析
+
+本週專題聚焦於台灣即將於 8 月 23 日舉行的第二波大罷免行動，針對其優劣勢、影響因素及成功機率進行分析。其中內容包括：優勢、劣勢、成功機率評估
+
+- **最新進度請參閱** [`topics/2025-08-23-removal-analysis.md`](./topics/analysis-of-taiwans-recall-votes-and-nuclear-power-referendum-on-823/)
+- **線上瀏覽 GitHub Page）** ：[https://lazyjerry.github.io/topics/analysis-of-taiwans-recall-votes-and-nuclear-power-referendum-on-823/](https://lazyjerry.github.io/topics/analysis-of-taiwans-recall-votes-and-nuclear-power-referendum-on-823/)
+
 ---
 
 ## 檔案清單
@@ -31,5 +38,7 @@
 - [tech_news_collection.md](Tech/2025-07-28/tech_news_collection.md) － 當週原始新聞收集
 - [todo.md](Tech/2025-07-28/todo.md) － 任務追蹤與進度紀錄
 - [其他檔案](https://github.com/lazyjerry/lazyjerry.github.io/tree/master/Tech/2025-07-28) － 其他輔助或原始資料檔案
+
+...... 還有其他檔案。
 
 其他檔案存檔請至[ GitHub 儲存庫](https://github.com/lazyjerry/lazyjerry.github.io/)中查詢。
