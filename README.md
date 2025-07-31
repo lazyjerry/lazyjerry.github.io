@@ -1,10 +1,18 @@
 # 科技服務資訊週記
 
-因為不小心買了一個一年份的 Manus AI ，寫信給客服還沒回。等到退款以前，保持著不浪費的精神就來弄一下新聞整理的服務，看看他能夠撐多久這樣 🤣
+因為不小心買了一個一年份的 Manus AI ，寫信給客服還沒回，目前大概是無法退款惹。
+所以保持著不浪費的精神就來弄一下新聞整理的服務，看看他能夠撐多久這樣 🤣
+目前有實作[科技服務資訊週記](https://lazyjerry.github.io/weekly-report/](https://lazyjerry.github.io/weekly-report/)與不定期對自己感興趣的議題的專題報告。
+
+最近一次的專題報告是關於[台灣 823 大罷免與核三公投議題的分析](https://lazyjerry.github.io/Topics/analysis-of-taiwans-recall-votes-and-nuclear-power-referendum-on-823/)
 
 ![專案代表圖（og image）](assets/og-image.png)
 
 本專案為依照 AI 所實作的「科技服務資訊週記」報告內容，旨在自動化整理與彙整各大科技服務（如 OpenAI、Microsoft、GitHub 等）之官方資訊、新聞與趨勢，並以週報形式呈現。
+
+除了「科技服務資訊週記」之外，本專案也會不定期新增各類專題報告，針對特定議題進行深入分析與整理。專題內容涵蓋科技、社會、政策等面向，並以獨立檔案形式呈現，方便查閱與追蹤。
+
+## 科技服務資訊週記
 
 - **最新進度**請至 [`weekly-report/`](./weekly-report/) 觀看。
 - **線上瀏覽（GitHub Page）**：[https://lazyjerry.github.io/weekly-report/](https://lazyjerry.github.io/weekly-report/)
