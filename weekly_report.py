@@ -3,6 +3,7 @@ import sys
 import shutil
 from datetime import datetime
 import subprocess
+import re
 
 # 取得目前檔案所在的根目錄
 ROOT_DIR = os.path.dirname(os.path.abspath(__file__))
@@ -36,6 +37,31 @@ def main():
     with open(file_path, 'r', encoding='utf-8') as f:
         original_content = f.read()
 
+    # 將 original_content 內容中網址只有純文字的部分改成 markdown 格式的連結。
+    def url_to_markdown(match):
+        url = match.group(0)
+        # 檢查是否已經是 markdown 連結或在 <...> 內
+        if re.search(r'\[.*?\]\(.*?\)', url) or re.search(r'<.*?>', url):
+            return url
+        return f'[{url}]({url})'
+
+    # 只處理 http(s) 開頭且不是 markdown 連結的網址
+    original_content = re.sub(r'https?://[^\s\)\]\<]+', url_to_markdown, original_content)
+
+    # 將 original_content 內容中有粗體標記且後面有帶中括弧的文字內容加上 Google 索引關鍵字連結
+    # e.g. 「**開源工具建設**[24]」 轉換為 「[**開源工具建設**](https://www.google.com/search?q=開源工具建設) [24]」
+    def bold_with_bracket_to_google(match):
+        bold_text = match.group(1)
+        bracket = match.group(2)
+        # 去除粗體標記取得關鍵字
+        keyword = bold_text.replace('**', '')
+        google_link = f"[{bold_text}](https://www.google.com/search?q={keyword}) {bracket}"
+        return google_link
+
+    # 匹配 **xxx**[數字] 或 **xxx**[文字]
+    original_content = re.sub(r'(\*\*[^*]+\*\*)(\[[^\]]+\])', bold_with_bracket_to_google, original_content)
+
+  
     # 要插入的 YAML 前言
     yaml_header = (
         "---\n"
