@@ -4,7 +4,9 @@
 所以保持著不浪費的精神就來弄一下新聞整理的服務，看看他能夠撐多久這樣 🤣
 目前有實作[科技服務資訊週記](https://lazyjerry.github.io/weekly-report/](https://lazyjerry.github.io/weekly-report/)與不定期對自己感興趣的議題的專題報告。
 
-最近一次的專題報告是關於[台灣 823 大罷免與核三公投議題的分析](https://lazyjerry.github.io/Topics/analysis-of-taiwans-recall-votes-and-nuclear-power-referendum-on-823/)
+最近一次的專題報告是關於[台灣 823 大罷免與核三公投議題的分析](https://lazyjerry.github.io/Topics/analysis-of-taiwans-recall-votes-and-nuclear-power-referendum-on-823/) 未來有更新其他專題議題，將會同步更新該頁面資訊。
+
+如果喜歡請到[GitHub 儲存庫](https://github.com/lazyjerry/lazyjerry.github.io/)幫我點星星。如果喜歡的話啦。
 
 ![專案代表圖（og image）](assets/og-image.png)
 
@@ -49,4 +51,4 @@
 
 ...... 還有其他檔案。
 
-其他檔案存檔請至[ GitHub 儲存庫](https://github.com/lazyjerry/lazyjerry.github.io/)中查詢。
+其他檔案存檔請至[GitHub 儲存庫](https://github.com/lazyjerry/lazyjerry.github.io/)中查詢。
