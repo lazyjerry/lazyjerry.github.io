@@ -2,33 +2,87 @@
 <html lang="zh-Hant">
 	<head>
 		<meta charset="utf-8" />
-		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
-		<meta name="viewport" content="width=device-width, initial-scale=1" />
+		<meta
+			http-equiv="X-UA-Compatible"
+			content="IE=edge"
+		/>
+		<meta
+			name="viewport"
+			content="width=device-width, initial-scale=1"
+		/>
 		<title>科技服務資訊週記</title>
-		<meta name="description" content="{{ page.description | default: site.description }}" />
-		<meta name="author" content="{{ site.author | default: 'Lazy Jerry' }}" />
+		<meta
+			name="description"
+			content="{{ page.description | default: site.description }}"
+		/>
+		<meta
+			name="author"
+			content="{{ site.author | default: 'Lazy Jerry' }}"
+		/>
 
 		<!-- Open Graph 基本標籤 -->
-		<meta property="og:title" content="科技服務資訊週記" />
-		<meta property="og:description" content="{{ page.description | default: site.description }}" />
-		<meta property="og:type" content="website" />
-		<meta property="og:url" content="{{ page.url | absolute_url }}" />
+		<meta
+			property="og:title"
+			content="科技服務資訊週記"
+		/>
+		<meta
+			property="og:description"
+			content="{{ page.description | default: site.description }}"
+		/>
+		<meta
+			property="og:type"
+			content="website"
+		/>
+		<meta
+			property="og:url"
+			content="{{ page.url | absolute_url }}"
+		/>
 		<meta
 			property="og:image"
 			content="{{ page.og_image | default: site.og_image | default: '/assets/og-image.png' }}"
 		/>
-		<meta property="og:site_name" content="科技服務資訊週記" />
-		<meta property="og:locale" content="zh_TW" />
-		<meta property="og:image:width" content="1200" />
-		<meta property="og:image:height" content="630" />
-		<meta property="og:image:alt" content="科技服務資訊週記分享圖" />
-		<meta property="og:updated_time" content="{{ page.last_modified_at | date_to_xmlschema }}" />
-		<meta property="og:author" content="{{ site.author | default: 'Lazy Jerry' }}" />
+		<meta
+			property="og:site_name"
+			content="科技服務資訊週記"
+		/>
+		<meta
+			property="og:locale"
+			content="zh_TW"
+		/>
+		<meta
+			property="og:image:width"
+			content="1200"
+		/>
+		<meta
+			property="og:image:height"
+			content="630"
+		/>
+		<meta
+			property="og:image:alt"
+			content="科技服務資訊週記分享圖"
+		/>
+		<meta
+			property="og:updated_time"
+			content="{{ page.last_modified_at | date_to_xmlschema }}"
+		/>
+		<meta
+			property="og:author"
+			content="{{ site.author | default: 'Lazy Jerry' }}"
+		/>
 
 		<!-- Twitter Card -->
-		<meta name="twitter:card" content="summary_large_image" />
-		<meta name="twitter:title" content="科技服務資訊週記" />
-		<meta name="twitter:description" content="{{ page.description | default: site.description }}" />
+		<meta
+			name="twitter:card"
+			content="summary_large_image"
+		/>
+		<meta
+			name="twitter:title"
+			content="科技服務資訊週記"
+		/>
+		<meta
+			name="twitter:description"
+			content="{{ page.description | default: site.description }}"
+		/>
 		<meta
 			name="twitter:image"
 			content="{{ page.og_image | default: site.og_image | default: '/assets/og-image.png' }}"
@@ -38,7 +92,10 @@
 
 		{%- if site.google_analytics -%}
 		<!-- Google Analytics -->
-		<script async src="https://www.googletagmanager.com/gtag/js?id={{ site.google_analytics }}"></script>
+		<script
+			async
+			src="https://www.googletagmanager.com/gtag/js?id={{ site.google_analytics }}"
+		></script>
 		<script>
 			window.dataLayer = window.dataLayer || [];
 			function gtag() {
@@ -48,14 +105,22 @@
 			gtag("config", "{{ site.google_analytics }}");
 		</script>
 		{%- endif -%}
-		<link rel="stylesheet" href="{{ '/assets/css/style.css' | relative_url }}" />
+		<link
+			rel="stylesheet"
+			href="{{ '/assets/css/style.css' | relative_url }}"
+		/>
 	</head>
 	<body>
 		<section class="page-header">
-			<h1 class="project-name">{{ site.title }}</h1>
-			<h2 class="project-tagline">{{ site.description }}</h2>
+			<h1 class="project-name">{{ page.title | default: site.title }}</h1>
+			<h2 class="project-tagline">{{ page.description | default: site.description }}</h2>
 			{%- if site.github.is_project_page -%}
-			<a href="{{ site.github.repository_url }}" class="btn">View on GitHub</a>
+			<a
+				href="{{ site.github.repository_url }}"
+				class="btn"
+			>
+				View on GitHub
+			</a>
 			{%- endif -%}
 		</section>
 		<section class="main-content">
