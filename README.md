@@ -2,9 +2,11 @@
 
 因為不小心買了一個一年份的 Manus AI ，寫信給客服還沒回，目前大概是無法退款惹。
 所以保持著不浪費的精神就來弄一下新聞整理的服務，看看他能夠撐多久這樣 🤣
-目前有實作[科技服務資訊週記](https://lazyjerry.github.io/weekly-report/](https://lazyjerry.github.io/weekly-report/)與不定期對自己感興趣的議題的專題報告。
+目前有實作[科技服務資訊週記](https://lazyjerry.github.io/weekly-report/) 與不定期對自己感興趣的議題的專題報告。
 
-最近一次的專題報告是關於[台灣 823 大罷免與核三公投議題的分析](https://lazyjerry.github.io/Topics/analysis-of-taiwans-recall-votes-and-nuclear-power-referendum-on-823/) 未來有更新其他專題議題，將會同步更新該頁面資訊。
+最近一次的專題報告是關於[台灣 823 大罷免與核三公投議題的分析](https://lazyjerry.github.io/Topics/analysis-of-taiwans-recall-votes-and-nuclear-power-referendum-on-823/) 這個報告我要記得在 8/12 號以後就不要再發了。
+
+未來有更新其他專題議題，將會同步更新該頁面資訊。
 
 如果喜歡請到[GitHub 儲存庫](https://github.com/lazyjerry/lazyjerry.github.io/)幫我點星星。如果喜歡的話啦。
 
