@@ -32,9 +32,26 @@ def main():
         print(f'找不到檔案：{file_path}，請確認該週報檔案存在。')
         return
 
-    # 複製週報內容，覆蓋 weekly-report/index.md
-    shutil.copyfile(file_path, WEEKLY_REPORT_PATH)
-    print(f'已將 {file_path} 複製並覆蓋 {WEEKLY_REPORT_PATH}。')
+    # 讀取原週報內容
+    with open(file_path, 'r', encoding='utf-8') as f:
+        original_content = f.read()
+
+    # 要插入的 YAML 前言
+    yaml_header = (
+        "---\n"
+        "title: 科技服務資訊週記\n"
+        "description: AI 自動彙整的科技服務官方資訊週報，使用 Manus Plus ，希望每週一更新。\n"
+        "---\n\n"
+    )
+
+    # 合併 YAML 前言與原內容
+    new_content = yaml_header + original_content
+
+    # 覆蓋 weekly-report/index.md
+    with open(WEEKLY_REPORT_PATH, 'w', encoding='utf-8') as f:
+        f.write(new_content)
+
+    print(f'已將 {file_path} 複製並覆蓋 {WEEKLY_REPORT_PATH}，並插入 YAML 前言。')
     print("請記得確認於 README.md 補上本週檔案的目錄結構！")
 
     # 自動執行 git 操作：add、commit、push
