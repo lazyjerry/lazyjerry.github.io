@@ -1,8 +1,13 @@
+---
+title: Lazy Jerry 的 AI 科技與各專題報告
+description: AI 技術與應用報告，彙整最新資訊、趨勢，並不定時推出各種領域的專題報告。
+---
+
 # 科技服務資訊週記
 
-因為不小心買了一個一年份的 Manus AI ，寫信給客服還沒回，目前大概是無法退款惹。
-所以保持著不浪費的精神就來弄一下新聞整理的服務，看看他能夠撐多久這樣 🤣
-目前有實作[科技服務資訊週記](https://lazyjerry.github.io/weekly-report/) 與不定期對自己感興趣的議題的專題報告。
+因為不小心買了一個一年份的 Manus AI ，寫信給客服還沒回，目前大概是無法退款惹。所以保持著不浪費的精神就來弄一下新聞整理的服務，看看這個網站能夠撐多久這樣。
+
+目前有實作[科技服務資訊週記](https://lazyjerry.github.io/weekly-report/)與不定期對自己感興趣的議題的專題報告。
 
 最近一次的專題報告是關於[台灣 823 大罷免與核三公投議題的分析](https://lazyjerry.github.io/Topics/analysis-of-taiwans-recall-votes-and-nuclear-power-referendum-on-823/) 這個報告我要記得在 8/12 號以後就不要再發了。
 
