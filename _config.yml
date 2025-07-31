@@ -1,7 +1,5 @@
-title: 科技服務資訊週記
-description: AI 自動彙整的科技服務官方資訊週報，使用 Manus Plus 每週一更新（希望啦）。
+title: Lazy Jerry 的 AI 科技與各專題報告
+description: AI 技術與應用報告，彙整最新資訊、趨勢，並不定時推出各種領域的專題報告。
 theme: jekyll-theme-cayman
 og_image: https://lazyjerry.github.io/assets/og-image.png
 google_analytics: G-ZS4ZJMKGME
-# url: "https://lazyjerry.github.io/weekly-report/"
-# author: Lazy Jerry
