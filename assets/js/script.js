@@ -13,16 +13,28 @@ document.addEventListener('DOMContentLoaded', function () {
   });
 });
 
-// 尋找所有 <td><a href="#ref-{數字}">{數字}</a></td>，將 <a> 的 href 改為 id
-document.addEventListener('DOMContentLoaded', function () {
-  document.querySelectorAll('td > a[href^="#ref-"]').forEach(function (a) {
-    // 檢查 href 是否為 #ref-{數字}，且 a 內文也是相同數字
-    const href = a.getAttribute('href');
-    const match = href.match(/^#ref-(\d+)$/);
-    if (match && a.textContent.trim() === match[1]) {
-      a.removeAttribute('href');
-      a.setAttribute('id', `ref-${match[1]}`);
+// 尋找所有 <td><a href="#ref-{數字}">{數字}</a></td>，將 <a> 的 href 改為 id 
+// 將所有 <td><a href="#ref-{數字}">{數字}</a></td> 的 <a> 轉為 <a id="ref-{數字}">{數字}</a>
+(function () {
+  // 取得所有 <td> 內含 <a href="#ref-{數字}">{數字}</a> 的 <a>
+  const refLinks = Array.from(document.querySelectorAll('td > a[href^="#ref-"]'));
+  // 過濾出 href="#ref-{數字}" 且 a 內容也是相同數字的 <a>
+  const matchedLinks = refLinks.filter(a => {
+    const hrefMatch = a.getAttribute('href').match(/^#ref-(\d+)$/);
+    return hrefMatch && a.textContent.trim() === hrefMatch[1];
+  });
+  // 對每一個符合條件的 <a> 進行處理
+  matchedLinks.forEach(link => {
+    const num = link.textContent.trim();
+    const td = link.closest('td');
+    if (td) {
+      // 建立新的 <a>
+      const newA = document.createElement('a');
+      newA.setAttribute('id', `ref-${num}`);
+      newA.textContent = num;
+      // 清空 <td> 並插入新 <a>
+      td.innerHTML = '';
+      td.appendChild(newA);
     }
   });
-});
-
+})();
