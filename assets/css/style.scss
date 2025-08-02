@@ -5,3 +5,8 @@ table {
 	overflow-x: auto;
 	-webkit-overflow-scrolling: touch;
 }
+
+strong > a,
+a > strong {
+	color: #aa381e; // 中國紅 ww
+}
