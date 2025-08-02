@@ -58,8 +58,8 @@ def main():
         google_link = f"[{bold_text}](https://www.google.com/search?q={keyword}) {bracket}"
         return google_link
 
-    # 匹配 **xxx**[數字] 或 **xxx**[文字]
-    original_content = re.sub(r'(\*\*[^*]+\*\*)(\[[^\]]+\])', bold_with_bracket_to_google, original_content)
+    # 支援 **xxx**[數字]、**xxx**[文字]、**xxx**[[文字]]、**xxx**[[數字]] 的匹配
+    original_content = re.sub(r'(\*\*[^*]+\*\*)(\[\[?[^\]]+\]?\])', bold_with_bracket_to_google, original_content)
 
   
     # 要插入的 YAML 前言
