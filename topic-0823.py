@@ -8,8 +8,8 @@ import re
 # 取得目前檔案的絕對路徑
 ROOT_DIR = os.path.dirname(os.path.abspath(__file__))
 
+# 專題報告根目錄資料夾名稱
 TOPICS_FOLDER_NAME = 'Topics'
-
 # 專題報告的資料夾名稱
 TOPIC_FOLDER_NAME = 'analysis-of-taiwans-recall-votes-and-nuclear-power-referendum-on-823'
 # 報告檔案名稱
@@ -73,14 +73,14 @@ def main():
   print("請記得確認於 README.md 補上本週檔案的目錄結構！")
 
   # 自動執行 git 操作：add、commit、push
-  try:
-    subprocess.run(["git", "add", "."], cwd=ROOT_DIR, check=True)  # 加入所有變更
-    commit_msg = f"更新檔案 {date}"  # commit 訊息
-    subprocess.run(["git", "commit", "-m", commit_msg], cwd=ROOT_DIR, check=True)  # 提交
-    subprocess.run(["git", "push"], cwd=ROOT_DIR, check=True)  # 推送到遠端
-    print("已自動執行 git add/commit/push。")
-  except subprocess.CalledProcessError as e:
-    print(f"git 操作失敗：{e}")
+  # try:
+  #   subprocess.run(["git", "add", "."], cwd=ROOT_DIR, check=True)  # 加入所有變更
+  #   commit_msg = f"更新檔案 {date}"  # commit 訊息
+  #   subprocess.run(["git", "commit", "-m", commit_msg], cwd=ROOT_DIR, check=True)  # 提交
+  #   subprocess.run(["git", "push"], cwd=ROOT_DIR, check=True)  # 推送到遠端
+  #   print("已自動執行 git add/commit/push。")
+  # except subprocess.CalledProcessError as e:
+  #   print(f"git 操作失敗：{e}")
 
 # 程式進入點
 if __name__ == "__main__":
