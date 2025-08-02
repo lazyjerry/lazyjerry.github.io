@@ -31,7 +31,7 @@ document.addEventListener('DOMContentLoaded', function () {
     if (td) {
       // 建立新的 <a>
       const newA = document.createElement('a');
-      newA.setAttribute('id', 'ref-1');
+      newA.setAttribute('id', `ref-${num}`);
       newA.textContent = num;
       // 清空 <td> 並插入新 <a>
       td.innerHTML = '';
