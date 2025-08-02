@@ -22,29 +22,48 @@
     }
   });
 
-  // 將後面帶有 <a> 標籤的 <strong> 包覆的文字，改為 <a href="https://www.google.com/search?q={文字}">{文字}</a>
-  // 例如：<strong>測試</strong><a ...>...</a> 變成 <a href="https://www.google.com/search?q=測試">測試</a><a ...>...</a>
   document.querySelectorAll('strong').forEach(function(strong) {
+
+    // 將後面帶有 <a> 標籤的 <strong> 包覆的文字，改為 <a href="https://www.google.com/search?q={文字}">{文字}</a>
+    // 如果 <strong> 後面有 <a> 標籤，則將 <strong> 包覆的文字，改為 <a href="https://www.google.com/search?q={文字}">{文字}</a>
     // 檢查 strong 的下一個兄弟節點是否為 <a>
-    let next = strong.nextSibling;
-    // 跳過空白文字節點
-    while (next && next.nodeType === Node.TEXT_NODE && next.textContent.trim() === '') {
-      next = next.nextSibling;
+    // let next = strong.nextSibling;
+    // // 跳過空白文字節點
+    // while (next && next.nodeType === Node.TEXT_NODE && next.textContent.trim() === '') {
+    //   next = next.nextSibling;
+    // }
+    // if (next && next.nodeType === Node.ELEMENT_NODE && next.tagName.toLowerCase() === 'a') {
+    //   const text = strong.textContent.trim();
+    //   if (text) {
+    //     // 建立新的 <a>
+    //     const newA = document.createElement('a');
+    //     newA.href = 'https://www.google.com/search?q=' + encodeURIComponent(text);
+    //     newA.textContent = text;
+    //     // 新的 <a> 取代 <strong> 裡面內容
+    //     strong.parentNode.replaceChild(newA, strong);
+    //   }
+    // }
+
+    // 檢查 <strong> 是否是段落開頭，如果不是，則將 <strong> 包覆的文字，改為 <a href="https://www.google.com/search?q={文字}">{文字}</a>
+    // 判斷 strong 是否為段落開頭：前一個兄弟節點為 null 或僅為空白文字節點，且父元素為 <p>
+    let prev = strong.previousSibling;
+    while (prev && prev.nodeType === Node.TEXT_NODE && prev.textContent.trim() === '') {
+      prev = prev.previousSibling;
     }
-    if (next && next.nodeType === Node.ELEMENT_NODE && next.tagName.toLowerCase() === 'a') {
+    // 如果 strong 不是段落開頭（即有前一個非空白兄弟節點，或父元素不是 <p>），才進行替換
+    if ((prev !== null || strong.parentNode.tagName.toLowerCase() !== 'p')) {
       const text = strong.textContent.trim();
       if (text) {
-        // 建立新的 <a>
         const newA = document.createElement('a');
         newA.href = 'https://www.google.com/search?q=' + encodeURIComponent(text);
         newA.textContent = text;
-        // 用新的 <a> 取代 <strong>
         strong.parentNode.replaceChild(newA, strong);
       }
     }
+    
   });
 
-
+// ---------------------------------
   // 如果不是相同網域則另開新頁面
   document.querySelectorAll('a[href]').forEach(function (link) {
     try {
