@@ -23,6 +23,7 @@ document.addEventListener('DOMContentLoaded', function () {
     return hrefMatch && a.textContent.trim() === hrefMatch[1];
   });
   if (matchedLinks.length > 0) {
+    // 支援數字為兩位數以上
     const lastLink = matchedLinks[matchedLinks.length - 1];
     // 取得數字
     const num = lastLink.textContent.trim();
