@@ -3,158 +3,123 @@ title: 科技服務資訊週記
 description: AI 自動彙整的科技服務官方資訊週報，使用 Manus Plus ，希望每週一更新。
 ---
 
-# 2025-07-28 科技服務資訊週記
+# 2025-08-02 科技服務資訊週記
 
-**作者：Manus AI　報告日期：2025-07-28**
+**作者：Manus AI 　報告日期：2025-08-02**
 
 ---
 
 ## 總結
 
-本週科技界呈現出 **AI 代理化** 的明顯趨勢，各大科技巨頭紛紛推出具備自主執行能力的 AI 工具。OpenAI 發布了 [**ChatGPT agent**](https://www.google.com/search?q=ChatGPT agent) [6]，GitHub 推出了 [**Copilot 編碼代理**](https://www.google.com/search?q=Copilot 編碼代理) [18]，而 Anthropic 則發布了革命性的 [**Claude 4**](https://www.google.com/search?q=Claude 4) [10] 並完成了 [**615 億美元的 E 輪融資**](https://www.google.com/search?q=615 億美元的 E 輪融資) [11]。在基礎設施方面，Microsoft Azure 持續強化其 [**AI Foundry 平台**](https://www.google.com/search?q=AI Foundry 平台) [16]，整合超過 1,000 個生成式 AI 模型，而 Google Cloud 則專注於 [**Vertex AI 的模型生態系統**](https://www.google.com/search?q=Vertex AI 的模型生態系統) [17]建設。值得注意的是，Hugging Face 推出了全新的 [**CLI 工具**](https://www.google.com/search?q=CLI 工具) [1]，大幅提升開發者體驗，同時在多模態 AI 領域也有重要突破，特別是在 [**影片理解模型的時間範圍能力**](https://www.google.com/search?q=影片理解模型的時間範圍能力) [2]方面。這些發展顯示，AI 技術正從單純的對話工具演進為能夠自主執行複雜任務的智慧代理，為程式設計師帶來前所未有的開發效率提升。
+本週科技界呈現出多元化的創新發展態勢，**AI 技術**持續在各個垂直領域深化應用，**軟體工程工具**朝向更智慧化的方向演進，**硬體與軟體整合**展現出新的可能性。在 AI 科技領域，**Manus** 推出的 **Wide Research** 功能 [[4]](#ref-4) 展示了多代理系統的強大潛力，能夠同時部署多達 100 個 AI 代理進行大規模研究任務，這標誌著 AI 從單一助手向協作團隊的重要轉變。**Hugging Face** 持續強化其生態系統，推出 **HF Jobs** [[1]](#ref-1) 和 **Trackio** [[2]](#ref-2) 等工具，為機器學習工程師提供更完整的開發和實驗管理解決方案。
 
+軟體工程領域最值得關注的是 **GitHub Copilot** 功能的重大擴展 [[8]](#ref-8)，從單純的程式碼生成延伸到完整的儲存庫管理，包括檔案操作、分支管理和 Pull Request 處理，這代表 AI 輔助開發正朝向全流程自動化邁進。同時，**Microsoft Azure** 的強勁成長 [[11]](#ref-11) 和 **AWS** 在 AI 教育培訓方面的投入 [[13]](#ref-13)，顯示雲端服務商正積極布局 AI 時代的基礎設施和人才培養。硬體整合方面，**Tesla** 將 **Grok AI** 整合到車載系統 [[16]](#ref-16) 和 **Meta** 的 AI 眼鏡持續更新 [[15]](#ref-15)，展現了 AI 在物聯網和可穿戴設備中的廣泛應用前景。
 
 ## 亮點
 
 ### AI 科技
 
-**AI 代理時代正式來臨，各大平台競相推出自主執行工具**
+**多代理系統開啟大規模協作新紀元**。**Manus** 推出的 **Wide Research** 功能 [[4]](#ref-4) 代表了 AI 應用的重要突破，該系統能夠同時部署多達 100 個 AI 代理進行協同工作，執行大規模研究任務。這就像是將一個研究團隊的工作模式數位化，每個 AI 代理都能專注於特定的子任務，然後將結果整合成完整的研究報告。對程式設計師而言，這種多代理架構為處理複雜的資料分析、市場調研或技術評估提供了全新的解決方案，特別是在需要同時處理大量資訊源的場景下，能夠大幅提升工作效率和分析深度。
 
-OpenAI 的 [**ChatGPT agent**](https://www.google.com/search?q=ChatGPT agent) [6] 標誌著對話式 AI 向自主代理的重大轉變，這不僅是聊天機器人的升級，更是能夠理解複雜指令並自主完成多步驟任務的智慧助手。就像從計算機進化到智慧型手機一樣，這種轉變將徹底改變程式設計師與 AI 工具的互動方式。Anthropic 的 [**Claude 4**](https://www.google.com/search?q=Claude 4) [10] 發布更是業界的重磅消息，配合其 [**615 億美元的巨額融資**](https://www.google.com/search?q=615 億美元的巨額融資) [11]，顯示投資者對 AI 代理技術的強烈信心。特別值得關注的是 Anthropic 推出的 [**經濟指數**](https://www.google.com/search?q=經濟指數) [12]，這為衡量 AI 對經濟影響提供了量化工具，對於企業評估 AI 投資回報具有重要參考價值。
+**機器學習工程工具鏈日趨完善**。**Hugging Face** 在本週推出了兩項重要工具：**HF Jobs** [[1]](#ref-1) 提供雲端計算資源，讓開發者能夠直接在 Hugging Face 基礎設施上運行從簡單腳本到複雜機器學習工作流程的各種任務；**Trackio** [[2]](#ref-2) 則是一個輕量級的實驗追蹤庫，提供本地儀表板和與 Hugging Face 的無縫整合。這兩個工具的結合，就像是為 ML 工程師提供了一個完整的「開發 → 訓練 → 追蹤 → 部署」的閉環工具鏈，大大降低了機器學習專案的技術門檻和管理複雜度。
 
-**多模態 AI 技術突破，影片理解能力大幅提升**
-
-Hugging Face 發布的 [**TimeScope 研究**](https://www.google.com/search?q=TimeScope 研究) [2] 探討了影片大型多模態模型的時間範圍能力，這對於需要處理長時間影片內容的應用場景具有重大意義。想像一下，AI 現在能夠理解一部完整電影的劇情發展，而不僅僅是單個畫面，這為影片分析、內容創作和自動化剪輯開啟了新的可能性。同時，[**Fast LoRA inference for Flux**](https://www.google.com/search?q=Fast LoRA inference for Flux) [3] 技術的推出，讓開發者能夠更高效地進行模型微調，就像為汽車引擎安裝渦輪增壓器一樣，大幅提升了 AI 模型的訓練和推理效率。
+**企業級 AI 應用快速成長**。**OpenAI** 的最新財務數據 [[5]](#ref-5) 顯示其 ChatGPT 商業用戶已達 500 萬，同時獲得 83 億美元新融資，這個數字反映出企業對 AI 工具的接受度正在快速提升。對於程式設計師來說，這意味著 AI 輔助開發不再是實驗性功能，而是成為企業級開發流程中的標準配置。**Perplexity** 推出的股票篩選器和研究報告功能 [[6]](#ref-6) 也展示了 AI 在垂直領域應用的成熟度，這種專業化的 AI 工具為金融科技開發者提供了新的產品靈感。
 
 ### 軟體工程
 
-**程式碼生成工具進入代理化時代，開發效率將迎來質的飛躍**
+**AI 輔助開發進入全流程時代**。**GitHub Copilot Chat** 的最新更新 [[8]](#ref-8) 標誌著 AI 輔助開發的重大進展，從單純的程式碼生成擴展到完整的儲存庫管理功能，包括創建和更新檔案、建立分支、合併 Pull Request 等操作。這就像是擁有了一個能夠理解專案脈絡的 AI 同事，不僅能寫程式碼，還能處理版本控制的各種繁瑣操作。對於開發團隊而言，這種整合性的 AI 助手能夠顯著減少上下文切換的成本，讓開發者能夠在自然語言對話中完成從概念到實現的整個開發週期。
 
-GitHub 推出的 [**Copilot 編碼代理**](https://www.google.com/search?q=Copilot 編碼代理) [18] 不再只是簡單的程式碼補全工具，而是能夠理解專案架構、自主規劃開發任務並執行複雜編程邏輯的智慧夥伴。這就像從手動工具升級到自動化生產線，開發者可以專注於架構設計和業務邏輯，而讓 AI 代理處理重複性的編碼工作。Hugging Face 的 [**新 CLI 工具**](https://www.google.com/search?q=新 CLI 工具) [1] 也體現了同樣的理念，提供更快速、更友善的命令列體驗，讓開發者能夠更直觀地與 AI 模型互動。
+**雲端基礎設施持續強化 AI 能力**。**Microsoft Azure** 在本季度的收入突破 750 億美元 [[11]](#ref-11)，年增長 34%，這個驚人的成長數字背後反映出企業對雲端 AI 服務的強烈需求。同時，**AWS** 推出的生成式 AI 開發者專業證書 [[13]](#ref-13) 顯示出雲端服務商正在積極培養 AI 開發人才。這種趨勢對程式設計師意味著，掌握雲端 AI 服務的整合和應用能力將成為職業發展的重要競爭優勢，特別是在企業數位轉型加速的背景下。
 
-**開發工具生態系統持續完善，降低技術門檻**
+**開發者工具持續精進**。**GitHub Actions** 推出的新 REST API [[9]](#ref-9) 為 CI/CD 管道提供了更強的可程式化管理能力，這就像是為 DevOps 工程師提供了更精細的控制工具，能夠通過程式化方式管理複雜的自動化流程。**Azure SDK** 的月度更新 [[12]](#ref-12) 也體現了雲端服務商對開發者體驗的持續關注，這些看似細微的改進累積起來能夠顯著提升開發效率。
 
-Apple 發布的 [**SF Symbols 7**](https://www.google.com/search?q=SF Symbols 7) [26] 包含超過 6,900 個符號，為 iOS 開發者提供了更豐富的視覺元素庫，這就像為建築師提供了更多樣化的建材選擇。Hugging Face 的 [**Gradio MCP Servers 五大改進**](https://www.google.com/search?q=Gradio MCP Servers 五大改進) [23] 和 [**MCP Server 建設指南**](https://www.google.com/search?q=MCP Server 建設指南) [24] 則為機器學習模型的部署和服務化提供了更完善的解決方案，讓非專業開發者也能輕鬆部署 AI 應用。
+### 硬體或軟硬整合
+
+**AI 在車載系統中的深度整合**。**Tesla** 將 **Grok AI** 整合到車載系統 [[16]](#ref-16) 的舉措展現了 AI 助手在物聯網設備中的應用潛力，特別是支援駕駛時的語音互動功能。這種整合就像是將智慧手機的 AI 助手搬到了汽車中，但針對駕駛場景進行了專門最佳化。對於從事車載軟體開發的程式設計師來說，這代表了一個全新的應用領域，需要考慮語音辨識、自然語言處理、以及車載系統的安全性和穩定性要求。
+
+**可穿戴 AI 設備持續演進**。**Meta** 的 **Ray-Ban Meta** 和 **Oakley Meta** 眼鏡 v17 更新 [[15]](#ref-15) 顯示出可穿戴 AI 設備正在穩步發展。這些智慧眼鏡就像是將 AR 技術與日常穿戴結合的先鋒產品，為開發者提供了探索新型人機互動模式的平台。隨著硬體性能的提升和 AI 模型的最佳化，可穿戴設備將成為下一個重要的計算平台。
+
+**移動作業系統 AI 功能深化**。**Apple** 的 **iOS 26 beta 4** [[17]](#ref-17) 引入了 **Liquid Glass** 介面調整和 AI 新聞摘要功能，這些更新展示了 AI 如何在作業系統層面提供更智慧的使用者體驗。對於 iOS 開發者而言，這些系統級的 AI 功能為應用開發提供了新的可能性，能夠創造更加個人化和智慧化的應用體驗。
 
 ### 網路/伺服器等基礎
 
-**雲端基礎設施朝向 AI 原生架構演進，支援大規模 AI 工作負載**
-
-Microsoft Azure 在 [**Build 2025 大會**](https://www.google.com/search?q=Build 2025 大會) [15] 展示的 [**Cosmos DB in Fabric**](https://www.google.com/search?q=Cosmos DB in Fabric) [15] 功能，讓資料庫管理變得像點擊幾個按鈕一樣簡單，這對於需要快速建立 AI 應用原型的開發者來說是重大利好。Google Cloud 的 [**Model Garden 平台**](https://www.google.com/search?q=Model Garden 平台) [17] 則提供了一站式的 AI 模型探索、測試和部署環境，就像為開發者建立了一個 AI 模型的超級市場，大幅降低了 AI 技術的使用門檻。
-
-**資料主權和合規性成為雲端服務重點**
-
-GitHub 推出的 [**美國資料駐留功能**](https://www.google.com/search?q=美國資料駐留功能) [28] 回應了企業對資料主權的關切，特別是對於處理敏感程式碼和智慧財產權的企業而言，這項功能提供了更高的安全保障。這就像為企業資料建立了專屬的保險箱，確保關鍵資訊不會跨境流動。
-
-### 企業與政策
-
-**AI 治理框架逐步建立，行業標準化進程加速**
-
-Anthropic 簽署 [**歐盟實務守則**](https://www.google.com/search?q=歐盟實務守則) [37] 和發表 [**美國 AI 行動計畫看法**](https://www.google.com/search?q=美國 AI 行動計畫看法) [34] 顯示，AI 公司正積極參與全球 AI 治理框架的建設。這就像網際網路早期的標準化過程，將為 AI 技術的健康發展奠定重要基礎。同時，Anthropic 與 [**芝加哥大學的合作**](https://www.google.com/search?q=芝加哥大學的合作) [35] 也展現了學術界與產業界在 AI 經濟研究方面的深度結合。
-
+**網路安全透明度持續提升**。**Cloudflare** 即將披露的 **SSL for SaaS v1** 漏洞 [[19]](#ref-19) 體現了網路基礎設施提供商對安全透明度的重視。這種主動披露的做法就像是為整個網路生態系統提供了安全預警機制，讓開發者能夠及時了解潛在的安全風險並採取相應的防護措施。對於負責網路安全的工程師來說，這種透明的安全資訊分享有助於建立更強健的防護體系。
 
 ## 趨勢分析
 
-### AI 科技
+### AI 科技領域
 
-**從工具到夥伴：AI 代理將重新定義人機協作模式**
+**多代理協作將重新定義 AI 應用架構**。從 **Manus** 的 **Wide Research** 功能 [[4]](#ref-4) 可以看出，未來的 AI 系統將不再是單一模型的獨角戲，而是多個專業化代理的協同合作。這種趨勢預示著我們將看到更多類似「AI 工作室」的概念，其中不同的 AI 代理負責不同的專業領域，如資料收集代理、分析代理、報告生成代理等。對程式設計師而言，這意味著需要掌握分散式 AI 系統的設計模式，學會如何協調多個 AI 服務的工作流程，以及如何處理代理間的通訊和資料同步問題。未來的企業級 AI 應用很可能會採用這種「AI 團隊」的架構，每個代理都有明確的職責分工，就像現實中的專業團隊一樣。
 
-基於 OpenAI 的 [**ChatGPT agent**](https://www.google.com/search?q=ChatGPT agent) [6] 和 GitHub 的 [**Copilot 編碼代理**](https://www.google.com/search?q=Copilot 編碼代理) [18] 發展，我們可以預見 AI 將從被動的工具轉變為主動的工作夥伴。未來的程式設計師可能會像管理團隊一樣管理多個 AI 代理，每個代理專精不同領域：前端開發代理、後端架構代理、測試代理等。這種變化將催生新的職業角色，如「AI 代理協調師」或「人機協作架構師」，專門負責設計和優化人與 AI 代理的協作流程。
+**機器學習工程將朝向平台化發展**。**Hugging Face** 推出的 **HF Jobs** [[1]](#ref-1) 和 **Trackio** [[2]](#ref-2) 顯示出 ML 工具鏈正在走向統一平台化。未來我們可能會看到更多類似的「一站式 ML 平台」，整合從資料預處理、模型訓練、實驗管理到部署監控的完整流程。這種平台化趨勢將大大降低機器學習專案的技術門檻，讓更多非 ML 專家的開發者也能夠輕鬆構建和部署 AI 應用。同時，這也預示著 ML 工程師的角色將從「全能型專家」轉向「平台整合專家」，更多地關注如何有效利用各種 ML 服務和工具。
 
-**多模態融合將成為 AI 應用的標準配置**
+**垂直領域 AI 應用將快速成熟**。**Perplexity** 的金融分析功能 [[6]](#ref-6) 和 **OpenAI** 商業用戶的快速增長 [[5]](#ref-5) 表明，AI 正在從通用工具向專業化解決方案演進。未來我們將看到更多針對特定行業或職能的 AI 產品，如法律 AI、醫療 AI、教育 AI 等。這些垂直化的 AI 工具將具備深度的領域知識和專業化的功能，能夠更好地滿足特定行業的需求。對開發者來說，這意味著需要深入了解目標行業的業務邏輯和專業需求，才能開發出真正有價值的垂直 AI 應用。
 
-Hugging Face 在 [**影片理解模型時間範圍**](https://www.google.com/search?q=影片理解模型時間範圍) [2] 和 [**多模態檢索技術**](https://www.google.com/search?q=多模態檢索技術) [社群文章] 方面的突破，預示著未來的 AI 應用將不再局限於單一模態。我們可以期待看到能夠同時理解文字、圖像、音訊和影片的統一 AI 系統，就像人類的感官系統一樣協同工作。這將為開發者帶來全新的應用場景，例如能夠理解程式碼、設計圖和需求文件的綜合開發助手。
+### 軟體工程領域
 
-### 軟體工程
+**AI 輔助開發將實現全流程自動化**。**GitHub Copilot** 從程式碼生成擴展到儲存庫管理 [[8]](#ref-8) 的演進路徑清楚地指向一個趨勢：AI 將逐步接管軟體開發的各個環節。未來我們可能會看到 AI 不僅能寫程式碼，還能進行需求分析、架構設計、測試規劃、部署策略制定等工作。這種全流程的 AI 輔助將重新定義「程式設計師」這個職業，開發者的角色將更多地轉向「AI 協調者」和「業務翻譯者」，負責將業務需求轉化為 AI 可以理解的指令，並監督 AI 的工作品質。
 
-**低程式碼/無程式碼開發將迎來 AI 驅動的新時代**
+**雲端原生開發將成為標準模式**。**Microsoft Azure** 的強勁增長 [[11]](#ref-11) 和 **AWS** 在 AI 培訓方面的投入 [[13]](#ref-13) 顯示出雲端服務正在成為現代軟體開發的基礎設施。未來的應用程式將預設為雲端原生架構，開發者需要熟練掌握容器化、微服務、服務網格等雲端原生技術。同時，雲端 AI 服務的普及將使得 AI 能力的整合變得像呼叫 API 一樣簡單，這將大大降低 AI 應用開發的門檻。
 
-隨著 [**Hugging Face CLI 工具**](https://www.google.com/search?q=Hugging Face CLI 工具) [1] 和 [**Gradio MCP Servers 改進**](https://www.google.com/search?q=Gradio MCP Servers 改進) [23] 的推出，我們看到開發工具正朝向更加直觀和自動化的方向發展。未來的軟體開發可能會演變為「對話式開發」，開發者只需要用自然語言描述需求，AI 代理就能自動生成完整的應用程式。這不僅會降低程式設計的門檻，也會讓現有的程式設計師能夠專注於更高層次的系統設計和創新思考。
+**DevOps 工具將更加智慧化**。**GitHub Actions** 新 API [[9]](#ref-9) 的推出反映出 CI/CD 工具正在朝向更加可程式化和智慧化的方向發展。未來的 DevOps 工具將整合更多 AI 功能，如智慧化的測試策略選擇、自動化的效能最佳化、預測性的故障檢測等。這將使得 DevOps 從「自動化」進化為「智慧化」，能夠根據專案特性和歷史資料自動調整最佳的開發和部署策略。
 
-**開源生態系統將成為 AI 創新的主要驅動力**
+### 硬體或軟硬整合領域
 
-Hugging Face 持續在 [**模型協作**](https://www.google.com/search?q=模型協作) [4] 和 [**開源工具建設**](https://www.google.com/search?q=開源工具建設) [24] 方面的投入，顯示開源社群在 AI 發展中的重要地位。我們可以預期，未來的 AI 創新將更多來自開源社群的集體智慧，而不是單一公司的封閉研發。這種趨勢將促進 AI 技術的民主化，讓更多開發者能夠參與到 AI 創新中來。
+**邊緣 AI 計算將迎來爆發式增長**。**Tesla** 在車載系統中整合 **Grok AI** [[16]](#ref-16) 和 **Meta** 智慧眼鏡的持續更新 [[15]](#ref-15) 預示著 AI 計算正在從雲端向邊緣設備遷移。未來我們將看到更多具備本地 AI 處理能力的設備，從智慧手機、智慧手錶到家用電器、工業設備等。這種趨勢將推動邊緣 AI 晶片的快速發展，同時也要求開發者掌握模型壓縮、量化、剪枝等技術，以便在資源受限的邊緣設備上部署 AI 模型。
 
-### 網路/伺服器等基礎
+**人機互動模式將更加自然化**。**Tesla** 支援駕駛時語音互動的 AI 助手展示了未來人機互動的發展方向：更加情境化、更加自然、更加智慧。未來的 AI 設備將能夠理解使用者的情境和意圖，提供更加個人化的服務。這要求開發者不僅要掌握 AI 技術，還要深入理解使用者體驗設計和人機互動原理。
 
-**AI 原生雲端架構將成為新標準**
+**跨平台 AI 體驗將成為常態**。**Apple** 在 **iOS 26** 中整合的 AI 功能 [[17]](#ref-17) 顯示出作業系統層面的 AI 整合正在成為趨勢。未來使用者將期望在不同設備和平台上獲得一致的 AI 體驗，這要求開發者設計跨平台的 AI 服務架構，確保 AI 功能能夠在手機、電腦、車載系統、智慧家居等各種設備上無縫銜接。
 
-Microsoft Azure 的 [**AI Foundry 平台**](https://www.google.com/search?q=AI Foundry 平台) [16] 整合超過 1,000 個 AI 模型，以及 Google Cloud 的 [**Model Garden**](https://www.google.com/search?q=Model Garden) [17] 發展，預示著雲端服務提供商正在建立 AI 原生的基礎設施。未來的雲端平台將不再是簡單的運算和儲存資源提供者，而是 AI 能力的聚合器和分發者。開發者將能夠像使用 API 一樣輕鬆調用各種 AI 能力，這將大幅降低 AI 應用的開發門檻。
+### 網路/伺服器等基礎領域
 
-**邊緣運算與 AI 推理的深度融合**
+**網路安全將更加透明化和協作化**。**Cloudflare** 主動披露安全漏洞 [[19]](#ref-19) 的做法反映出網路安全正在朝向更加開放和協作的方向發展。未來我們將看到更多的安全資訊分享機制、威脅情報協作平台，以及基於 AI 的安全威脅預測系統。這種趨勢將推動整個網路生態系統的安全水準提升，同時也要求安全工程師具備更強的協作能力和資訊分析能力。
 
-隨著 [**LoRA 推理最佳化**](https://www.google.com/search?q=LoRA 推理最佳化) [3] 和 [**自訂核心開發**](https://www.google.com/search?q=自訂核心開發) [45] 技術的進步，我們可以預見 AI 推理將更多地在邊緣設備上執行。這將為物聯網、自動駕駛和擴增實境等應用帶來更低的延遲和更好的隱私保護。程式設計師需要開始考慮分散式 AI 架構的設計，以及如何在雲端和邊緣之間有效分配 AI 工作負載。
-
-### 企業與政策
-
-**AI 治理將從自律走向法規化**
-
-Anthropic 簽署 [**歐盟實務守則**](https://www.google.com/search?q=歐盟實務守則) [37] 和參與 [**美國 AI 政策討論**](https://www.google.com/search?q=美國 AI 政策討論) [34] 表明，AI 治理正從企業自律階段進入政府法規階段。未來的 AI 開發將需要遵循更嚴格的合規要求，這將催生新的技術領域，如「可解釋 AI」、「AI 稽核」和「演算法透明度」等。程式設計師需要在開發過程中更多地考慮倫理和合規問題。
-
-**AI 經濟學將成為新的研究熱點**
-
-Anthropic 推出的 [**經濟指數**](https://www.google.com/search?q=經濟指數) [12] 和與 [**芝加哥大學的合作**](https://www.google.com/search?q=芝加哥大學的合作) [35] 顯示，量化 AI 對經濟影響的需求日益迫切。未來我們可能會看到更多的 AI 經濟學研究，包括 AI 對就業市場的影響、AI 驅動的生產力提升測量，以及 AI 投資回報的評估模型。這些研究將為企業的 AI 策略制定提供重要依據。
-
+**基礎設施即程式碼將深度融合 AI**。隨著雲端服務的不斷發展，基礎設施管理將更多地依賴 AI 來進行自動化最佳化。未來的基礎設施將能夠根據應用負載自動調整資源配置、預測故障並提前處理、最佳化成本和效能等。這要求基礎設施工程師不僅要掌握傳統的運維技能，還要理解 AI 在基礎設施管理中的應用。
 
 ## 參考資料
 
 ### AI 科技
 
-| 編號 | 文章標題 | 網址 | 一句話結論或亮點 | 發布日期 | 來源 |
-|------|----------|------|------------------|----------|------|
-| 1 | Say hello to `hf`: a faster, friendlier Hugging Face CLI ✨ | [https://huggingface.co/blog](https://huggingface.co/blog) | 推出新的 CLI 工具，提供更快速友善的 Hugging Face 命令列介面 | July 25, 2025 | [Hugging Face Blog]([https://huggingface.co/blog](https://huggingface.co/blog)) |
-| 2 | TimeScope: How Long Can Your Video Large Multimodal Model Go? | [https://huggingface.co/blog](https://huggingface.co/blog) | 探討影片大型多模態模型的時間範圍能力突破 | July 23, 2025 | [Hugging Face Blog]([https://huggingface.co/blog](https://huggingface.co/blog)) |
-| 3 | Fast LoRA inference for Flux with Diffusers and PEFT | [https://huggingface.co/blog](https://huggingface.co/blog) | 使用 Diffusers 和 PEFT 進行快速 LoRA 推理最佳化 | July 23, 2025 | [Hugging Face Blog]([https://huggingface.co/blog](https://huggingface.co/blog)) |
-| 4 | Consilium: When Multiple LLMs Collaborate | [https://huggingface.co/blog](https://huggingface.co/blog) | 多個大型語言模型協作的創新研究 | July 17, 2025 | [Hugging Face Blog]([https://huggingface.co/blog](https://huggingface.co/blog)) |
-| 5 | Back to The Future: Evaluating AI Agents on Predicting Future Events | [https://huggingface.co/blog](https://huggingface.co/blog) | 評估 AI 代理預測未來事件的能力研究 | July 17, 2025 | [Hugging Face Blog]([https://huggingface.co/blog](https://huggingface.co/blog)) |
-| 6 | Introducing ChatGPT agent | [https://openai.com/news/](https://openai.com/news/) | OpenAI 推出具備自主執行能力的 ChatGPT 代理功能 | July 17, 2025 | [OpenAI News]([https://openai.com/news/](https://openai.com/news/)) |
-| 7 | ChatGPT agent System Card | [https://openai.com/news/](https://openai.com/news/) | ChatGPT 代理系統的技術文件和安全評估 | July 17, 2025 | [OpenAI News]([https://openai.com/news/](https://openai.com/news/)) |
-| 8 | AI as the greatest source of empowerment for all | [https://openai.com/news/](https://openai.com/news/) | OpenAI 對 AI 作為全人類賦能工具的願景闡述 | July 21, 2025 | [OpenAI News]([https://openai.com/news/](https://openai.com/news/)) |
-| 9 | A $50 million fund to build with communities | [https://openai.com/news/](https://openai.com/news/) | OpenAI 設立 5000 萬美元基金支持社群建設 | July 18, 2025 | [OpenAI News]([https://openai.com/news/](https://openai.com/news/)) |
-| 10 | Introducing Claude 4 | [https://www.anthropic.com/news](https://www.anthropic.com/news) | Anthropic 發布革命性的 Claude 4 新版本 | 最新發布 | [Anthropic News]([https://www.anthropic.com/news](https://www.anthropic.com/news)) |
-| 11 | Anthropic raises Series E at $61.5B post-money valuation | [https://www.anthropic.com/news](https://www.anthropic.com/news) | Anthropic 完成 E 輪融資，估值達 615 億美元 | 最新發布 | [Anthropic News]([https://www.anthropic.com/news](https://www.anthropic.com/news)) |
-| 12 | Introducing the Anthropic Economic Index | [https://www.anthropic.com/news](https://www.anthropic.com/news) | 推出量化 AI 經濟影響的 Anthropic 經濟指數 | 最新發布 | [Anthropic News]([https://www.anthropic.com/news](https://www.anthropic.com/news)) |
-| 13 | How Anthropic teams use Claude Code | [https://www.anthropic.com/news](https://www.anthropic.com/news) | Anthropic 內部團隊使用 Claude Code 的實務案例 | July 24, 2025 | [Anthropic News]([https://www.anthropic.com/news](https://www.anthropic.com/news)) |
-| 14 | Claude for Financial Services | [https://www.anthropic.com/news](https://www.anthropic.com/news) | 專為金融服務業設計的 Claude 版本發布 | July 15, 2025 | [Anthropic News]([https://www.anthropic.com/news](https://www.anthropic.com/news)) |
-| 15 | Build 2025 大會 Azure AI 與 Agents 創新功能 | Facebook Microsoft Azure Taiwan | Microsoft Azure 推出 Cosmos DB in Fabric 等 AI 創新功能 | 3 days ago | [Microsoft Azure Taiwan]([https://www.facebook.com/100064311864487/](https://www.facebook.com/100064311864487/)) |
-| 16 | FSI 與亞洲合作夥伴所打造的代理型 AI 時代 | [https://partner.microsoft.com/zh-tw/blog/](https://partner.microsoft.com/zh-tw/blog/) | Azure AI Foundry 整合 1,000+ 生成式 AI 模型的生態系統 | 2 days ago | [Microsoft Partner Blog]([https://partner.microsoft.com/zh-tw/blog/](https://partner.microsoft.com/zh-tw/blog/)) |
-| 17 | Google 模型 \| Generative AI on Vertex AI | [https://cloud.google.com/vertex-ai/generative-ai/docs/models](https://cloud.google.com/vertex-ai/generative-ai/docs/models) | Model Garden 平台協助探索、測試、自訂及部署 AI 模型 | 4 days ago | [Google Cloud]([https://cloud.google.com/](https://cloud.google.com/)) |
+| 編號        | 文章標題                                                                                                                                                                                                                                                                                                       | 亮點                                                                    | 發布日期   | 來源                                                                                                                                                                                                                                                                    |
+| ----------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ----------------------------------------------------------------------- | ---------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| [1](#ref-1) | [Introducing HF Jobs: Run scalable compute jobs on Hugging Face](<[https://www.google.com/search?q=Introducing+HF+Jobs+Run+scalable+compute+jobs+on+Hugging+Face](https://www.google.com/search?q=Introducing+HF+Jobs+Run+scalable+compute+jobs+on+Hugging+Face)>)                                             | Hugging Face 推出雲端計算服務，讓用戶直接在其基礎設施上運行 ML 工作流程 | 2025-07-30 | [Hugging Face Changelog](<[https://huggingface.co/changelog](https://huggingface.co/changelog)>)                                                                                                                                                                        |
+| [2](#ref-2) | [Introducing Trackio: A Lightweight Experiment Tracking Library](<[https://www.google.com/search?q=Introducing+Trackio+A+Lightweight+Experiment+Tracking+Library](https://www.google.com/search?q=Introducing+Trackio+A+Lightweight+Experiment+Tracking+Library)>)                                             | 開源免費的實驗追蹤 Python 庫，提供本地儀表板和 Hugging Face 整合        | 2025-07-29 | [Hugging Face Blog](<[https://huggingface.co/blog/trackio](https://huggingface.co/blog/trackio)>)                                                                                                                                                                       |
+| [3](#ref-3) | [Introducing Command A Vision: Multimodal AI built for Business](<[https://www.google.com/search?q=Introducing+Command+A+Vision+Multimodal+AI+built+for+Business](https://www.google.com/search?q=Introducing+Command+A+Vision+Multimodal+AI+built+for+Business)>)                                             | Cohere 推出開放權重視覺語言模型，專為商業應用設計                       | 2025-07-31 | [Hugging Face Blog](<[https://huggingface.co/blog/CohereLabs/introducing-command-a-vision-07-2025](https://huggingface.co/blog/CohereLabs/introducing-command-a-vision-07-2025)>)                                                                                       |
+| [4](#ref-4) | [OpenAI-Challenger Manus Preps Big Upgrade to Main Agent Platform](<[https://www.google.com/search?q=OpenAI-Challenger+Manus+Preps+Big+Upgrade+to+Main+Agent+Platform](https://www.google.com/search?q=OpenAI-Challenger+Manus+Preps+Big+Upgrade+to+Main+Agent+Platform)>)                                     | Manus 推出 Wide Research 功能，可部署多達 100 個 AI 代理協同工作        | 2025-07-31 | [Bloomberg](<[https://www.bloomberg.com/news/articles/2025-07-31/openai-challenger-manus-preps-big-upgrade-to-main-agent-platform](https://www.bloomberg.com/news/articles/2025-07-31/openai-challenger-manus-preps-big-upgrade-to-main-agent-platform)>)               |
+| [5](#ref-5) | [OpenAI raises $8.3 billion as paid ChatGPT biz users reach 5 million](<[https://www.google.com/search?q=OpenAI+raises+8.3+billion+as+paid+ChatGPT+biz+users+reach+5+million](https://www.google.com/search?q=OpenAI+raises+8.3+billion+as+paid+ChatGPT+biz+users+reach+5+million)>)                           | OpenAI 獲得 83 億美元融資，ChatGPT 商業用戶達 500 萬                    | 2025-08-01 | [CNBC](<[https://www.cnbc.com/2025/08/01/openai-raise-chatgpt-users.html](https://www.cnbc.com/2025/08/01/openai-raise-chatgpt-users.html)>)                                                                                                                            |
+| [6](#ref-6) | [Perplexity Changelog - July 25th Updates](<[https://www.google.com/search?q=Perplexity+Changelog+July+25th+Updates](https://www.google.com/search?q=Perplexity+Changelog+July+25th+Updates)>)                                                                                                                 | 推出自然語言股票篩選器、獨立研究報告、公司財報文件分析功能              | 2025-07-25 | [Perplexity](<[https://www.perplexity.ai/changelog/](https://www.perplexity.ai/changelog/)>)                                                                                                                                                                            |
+| [7](#ref-7) | [Perplexity in talks with phone makers to pre-install Comet AI mobile browser](<[https://www.google.com/search?q=Perplexity+in+talks+with+phone+makers+to+pre-install+Comet+AI+mobile+browser](https://www.google.com/search?q=Perplexity+in+talks+with+phone+makers+to+pre-install+Comet+AI+mobile+browser)>) | Perplexity 與手機製造商談判預裝 Comet AI 瀏覽器                         | 2025-07-18 | [Reuters](<[https://www.reuters.com/business/perplexity-talks-with-phone-makers-pre-install-comet-ai-mobile-browser-devices-2025-07-18/](https://www.reuters.com/business/perplexity-talks-with-phone-makers-pre-install-comet-ai-mobile-browser-devices-2025-07-18/)>) |
 
 ### 軟體工程
 
-| 編號 | 文章標題 | 網址 | 一句話結論或亮點 | 發布日期 | 來源 |
-|------|----------|------|------------------|----------|------|
-| 18 | GitHub Introduces Coding Agent For GitHub Copilot | [https://github.com/newsroom](https://github.com/newsroom) | GitHub 為 Copilot 推出具備自主編碼能力的代理功能 | May 19, 2025 | [GitHub Newsroom]([https://github.com/newsroom](https://github.com/newsroom)) |
-| 19 | GitHub Copilot Introduces Agent Mode and Next Edit Suggestions | [https://github.com/newsroom](https://github.com/newsroom) | GitHub Copilot 推出代理模式和智慧編輯建議功能 | February 6, 2025 | [GitHub Newsroom]([https://github.com/newsroom](https://github.com/newsroom)) |
-| 20 | Parquet Content-Defined Chunking | [https://huggingface.co/blog](https://huggingface.co/blog) | Parquet 檔案的內容定義分塊技術創新 | July 25, 2025 | [Hugging Face Blog]([https://huggingface.co/blog](https://huggingface.co/blog)) |
-| 21 | Seq vs Seq: the Ettin Suite of Paired Encoders and Decoders | [https://huggingface.co/blog](https://huggingface.co/blog) | 配對編碼器和解碼器套件的技術突破 | July 16, 2025 | [Hugging Face Blog]([https://huggingface.co/blog](https://huggingface.co/blog)) |
-| 22 | Migrating the Hub from Git LFS to Xet | [https://huggingface.co/blog](https://huggingface.co/blog) | Hugging Face Hub 從 Git LFS 遷移到 Xet 的技術升級 | July 15, 2025 | [Hugging Face Blog]([https://huggingface.co/blog](https://huggingface.co/blog)) |
-| 23 | Five Big Improvements to Gradio MCP Servers | [https://huggingface.co/blog](https://huggingface.co/blog) | Gradio MCP 伺服器的五大重要改進 | July 17, 2025 | [Hugging Face Blog]([https://huggingface.co/blog](https://huggingface.co/blog)) |
-| 24 | Building the Hugging Face MCP Server | [https://huggingface.co/blog](https://huggingface.co/blog) | Hugging Face MCP 伺服器的建設指南和最佳實務 | July 10, 2025 | [Hugging Face Blog]([https://huggingface.co/blog](https://huggingface.co/blog)) |
-| 25 | Introducing Codex | [https://openai.com/news/](https://openai.com/news/) | OpenAI 推出專業的程式碼生成工具 Codex | May 16, 2025 | [OpenAI News]([https://openai.com/news/](https://openai.com/news/)) |
-| 26 | SF Symbols 7 | [https://developer.apple.com/cn/sf-symbols/](https://developer.apple.com/cn/sf-symbols/) | Apple 發布包含 6,900+ 個符號的圖標資料庫 | 5 days ago | [Apple Developer]([https://developer.apple.com/](https://developer.apple.com/)) |
-| 27 | 為你的 App 和遊戲設計安全且適齡的體驗 | [https://developer.apple.com/cn/kids/](https://developer.apple.com/cn/kids/) | Apple 為開發者提供兒童安全應用設計指南 | 4 days ago | [Apple Developer]([https://developer.apple.com/](https://developer.apple.com/)) |
+| 編號          | 文章標題                                                                                                                                                                                                                                                       | 亮點                                                           | 發布日期   | 來源                                                                                                                                                                                                                                         |
+| ------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------- | ---------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| [8](#ref-8)   | [Copilot Chat unlocks new repository management skills](<[https://www.google.com/search?q=Copilot+Chat+unlocks+new+repository+management+skills](https://www.google.com/search?q=Copilot+Chat+unlocks+new+repository+management+skills)>)                      | Copilot Chat 新增檔案操作、分支管理、Pull Request 處理功能     | 2025-07-31 | [GitHub Changelog](<[https://github.blog/changelog/2025-07-31-copilot-chat-unlocks-new-repository-management-skills/](https://github.blog/changelog/2025-07-31-copilot-chat-unlocks-new-repository-management-skills/)>)                     |
+| [9](#ref-9)   | [GitHub Actions: New APIs and windows-latest migration notice](<[https://www.google.com/search?q=GitHub+Actions+New+APIs+and+windows-latest+migration+notice](https://www.google.com/search?q=GitHub+Actions+New+APIs+and+windows-latest+migration+notice)>)   | 推出新的 REST API 來管理 Actions 設定，提升 CI/CD 可程式化能力 | 2025-07-31 | [GitHub Changelog](<[https://github.blog/changelog/month/07-2025/](https://github.blog/changelog/month/07-2025/)>)                                                                                                                           |
+| [10](#ref-10) | [Copilot coding agent: Custom setup steps are more reliable](<[https://www.google.com/search?q=Copilot+coding+agent+Custom+setup+steps+are+more+reliable](https://www.google.com/search?q=Copilot+coding+agent+Custom+setup+steps+are+more+reliable)>)         | 改進 Copilot 編程代理的自定義設置步驟可靠性和除錯能力          | 2025-07-31 | [GitHub Changelog](<[https://github.blog/changelog/month/07-2025/](https://github.blog/changelog/month/07-2025/)>)                                                                                                                           |
+| [11](#ref-11) | [Microsoft Cloud and AI strength fuels fourth quarter results](<[https://www.google.com/search?q=Microsoft+Cloud+and+AI+strength+fuels+fourth+quarter+results](https://www.google.com/search?q=Microsoft+Cloud+and+AI+strength+fuels+fourth+quarter+results)>) | Azure 收入突破 750 億美元，年增長 34%，雲端和 AI 服務推動業績  | 2025-07-30 | [Microsoft News](<[https://news.microsoft.com/source/2025/07/30/microsoft-cloud-and-ai-strength-fuels-fourth-quarter-results/](https://news.microsoft.com/source/2025/07/30/microsoft-cloud-and-ai-strength-fuels-fourth-quarter-results/)>) |
+| [12](#ref-12) | [Azure SDK Release July 2025](<[https://www.google.com/search?q=Azure+SDK+Release+July+2025](https://www.google.com/search?q=Azure+SDK+Release+July+2025)>)                                                                                                    | Azure SDK 月度發布，持續改進開發者工具和 API 體驗              | 2025-07-30 | [Microsoft Developer Blogs](<[https://devblogs.microsoft.com/azure-sdk/azure-sdk-release-july-2025/](https://devblogs.microsoft.com/azure-sdk/azure-sdk-release-july-2025/)>)                                                                |
+| [13](#ref-13) | [New courses and certification updates from AWS Training](<[https://www.google.com/search?q=New+courses+and+certification+updates+from+AWS+Training](https://www.google.com/search?q=New+courses+and+certification+updates+from+AWS+Training)>)                | AWS 生成式 AI 開發者專業證書在 Coursera 上推出                 | 2025-07-22 | [AWS Blog](<[https://aws.amazon.com/blogs/training-and-certification/july-2025-new-offerings/](https://aws.amazon.com/blogs/training-and-certification/july-2025-new-offerings/)>)                                                           |
+
+### 硬體或軟硬整合
+
+| 編號          | 文章標題                                                                                                                                                                                                                                                                               | 亮點                                                | 發布日期   | 來源                                                                                                                                                                                                                                                                    |
+| ------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | --------------------------------------------------- | ---------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| [14](#ref-14) | [Meta shares jump as AI fuels ad sales](<[https://www.google.com/search?q=Meta+shares+jump+as+AI+fuels+ad+sales](https://www.google.com/search?q=Meta+shares+jump+as+AI+fuels+ad+sales)>)                                                                                              | AI 技術推動廣告銷售成長，抵消大量基礎設施投資成本   | 2025-07-31 | [Reuters](<[https://www.reuters.com/business/media-telecom/meta-shares-jump-ai-fuels-ad-sales-outweighing-big-capital-costs-2025-07-30/](https://www.reuters.com/business/media-telecom/meta-shares-jump-ai-fuels-ad-sales-outweighing-big-capital-costs-2025-07-30/)>) |
+| [15](#ref-15) | [Ray-Ban Meta and Oakley Meta glasses v17 release notes](<[https://www.google.com/search?q=Ray-Ban+Meta+and+Oakley+Meta+glasses+v17+release+notes](https://www.google.com/search?q=Ray-Ban+Meta+and+Oakley+Meta+glasses+v17+release+notes)>)                                           | AI 智慧眼鏡推出新功能和改進，可穿戴 AI 設備持續演進 | 2025-07-23 | [Meta Store](<[https://www.meta.com/help/ai-glasses/1809764829519902/](https://www.meta.com/help/ai-glasses/1809764829519902/)>)                                                                                                                                        |
+| [16](#ref-16) | [Tesla update 2025.26.4 goes wide release, Grok bug fixed](<[https://www.google.com/search?q=Tesla+update+2025.26.4+goes+wide+release+Grok+bug+fixed](https://www.google.com/search?q=Tesla+update+2025.26.4+goes+wide+release+Grok+bug+fixed)>)                                       | Tesla 車輛集成 Grok AI 助手，支援駕駛時語音互動功能 | 2025-07-29 | [Tesla Oracle](<[https://www.teslaoracle.com/2025/07/29/tesla-update-2025-26-4-goes-wide-release-grok-bug-fixed-release-notes/](https://www.teslaoracle.com/2025/07/29/tesla-update-2025-26-4-goes-wide-release-grok-bug-fixed-release-notes/)>)                        |
+| [17](#ref-17) | [iOS 26 beta 4 arrives with Liquid Glass tweaks and AI news summaries](<[https://www.google.com/search?q=iOS+26+beta+4+arrives+with+Liquid+Glass+tweaks+and+AI+news+summaries](https://www.google.com/search?q=iOS+26+beta+4+arrives+with+Liquid+Glass+tweaks+and+AI+news+summaries)>) | 包含 Liquid Glass 介面調整和 AI 新聞摘要功能        | 2025-07-22 | [TechCrunch](<[https://techcrunch.com/2025/07/22/ios-26-beta-4-arrives-with-liquid-glass-tweaks-and-ai-news-summaries/](https://techcrunch.com/2025/07/22/ios-26-beta-4-arrives-with-liquid-glass-tweaks-and-ai-news-summaries/)>)                                      |
+| [18](#ref-18) | [iOS and iPadOS 26 design kits are here](<[https://www.google.com/search?q=iOS+and+iPadOS+26+design+kits+are+here](https://www.google.com/search?q=iOS+and+iPadOS+26+design+kits+are+here)>)                                                                                           | 為開發者提供新的設計資源和開發工具                  | 2025-07-18 | [Apple Developer](<[https://developer.apple.com/news/](https://developer.apple.com/news/)>)                                                                                                                                                                             |
 
 ### 網路/伺服器等基礎
 
-| 編號 | 文章標題 | 網址 | 一句話結論或亮點 | 發布日期 | 來源 |
-|------|----------|------|------------------|----------|------|
-| 28 | GitHub Brings Data Residency to the United States with GitHub Enterprise Cloud | [https://github.com/newsroom](https://github.com/newsroom) | GitHub 企業雲端版本在美國提供資料駐留功能 | May 12, 2025 | [GitHub Newsroom]([https://github.com/newsroom](https://github.com/newsroom)) |
-| 29 | Azure 本地版中的新增功能 | [https://learn.microsoft.com/zh-cn/azure/azure-local/whats-new](https://learn.microsoft.com/zh-cn/azure/azure-local/whats-new) | Azure Stack HCI 版本更新和支援終止通知 | 5 days ago | [Microsoft Learn]([https://learn.microsoft.com/](https://learn.microsoft.com/)) |
-| 30 | Google Cloud 最新產品更新與功能強化 | Facebook GDG Taipei | BigQuery 向量索引分割、Datastream 對 BigLake Iceberg 表格的支援 | 2 days ago | [GDG Taipei]([https://www.facebook.com/GDG.Taipei/](https://www.facebook.com/GDG.Taipei/)) |
-| 31 | 免費雲端功能和試用優惠 | [https://cloud.google.com/free/docs/free-cloud-features](https://cloud.google.com/free/docs/free-cloud-features) | Google Cloud 新用戶可獲得 $300 贈金，免費試用 90 天 | 4 days ago | [Google Cloud]([https://cloud.google.com/](https://cloud.google.com/)) |
-| 32 | Stargate advances with 4.5 GW partnership with Oracle | [https://openai.com/news/](https://openai.com/news/) | OpenAI Stargate 計畫與 Oracle 的大規模基礎設施合作 | July 22, 2025 | [OpenAI News]([https://openai.com/news/](https://openai.com/news/)) |
-| 33 | Announcing OpenAI DevDay 2025 | [https://openai.com/news/](https://openai.com/news/) | OpenAI 宣布 2025 年開發者大會的舉辦 | July 23, 2025 | [OpenAI News]([https://openai.com/news/](https://openai.com/news/)) |
+| 編號          | 文章標題                                                                                                                                                                                                                                                          | 亮點                                                  | 發布日期   | 來源                                                                                                                                      |
+| ------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ----------------------------------------------------- | ---------- | ----------------------------------------------------------------------------------------------------------------------------------------- |
+| [19](#ref-19) | [Vulnerability disclosure on SSL for SaaS v1 (Managed CNAME)](<[https://www.google.com/search?q=Vulnerability+disclosure+on+SSL+for+SaaS+v1+Managed+CNAME](https://www.google.com/search?q=Vulnerability+disclosure+on+SSL+for+SaaS+v1+Managed+CNAME)>)           | 即將披露 SSL for SaaS v1 漏洞詳情，展現網路安全透明度 | 2025-08-01 | [Cloudflare Blog](<[https://blog.cloudflare.com](https://blog.cloudflare.com)>)                                                           |
+| [20](#ref-20) | [The White House AI Action Plan: a new chapter in U.S. AI policy](<[https://www.google.com/search?q=The+White+House+AI+Action+Plan+a+new+chapter+in+US+AI+policy](https://www.google.com/search?q=The+White+House+AI+Action+Plan+a+new+chapter+in+US+AI+policy)>) | 分析美國政府 AI 政策的關鍵文件和對技術發展的影響      | 2025-07-25 | [Cloudflare Blog](<[https://blog.cloudflare.com](https://blog.cloudflare.com)>)                                                           |
+| [21](#ref-21) | [Find out the latest Gemini updates with Gemini Drops](<[https://www.google.com/search?q=Find+out+the+latest+Gemini+updates+with+Gemini+Drops](https://www.google.com/search?q=Find+out+the+latest+Gemini+updates+with+Gemini+Drops)>)                            | Google Gemini 每月更新展示新功能和改進                | 2025-07-18 | [Google Blog](<[https://blog.google/products/gemini/gemini-drop-july-2025/](https://blog.google/products/gemini/gemini-drop-july-2025/)>) |
 
-### 企業與政策
+---
 
-| 編號 | 文章標題 | 網址 | 一句話結論或亮點 | 發布日期 | 來源 |
-|------|----------|------|------------------|----------|------|
-| 34 | Thoughts on America's AI Action Plan | [https://www.anthropic.com/news](https://www.anthropic.com/news) | Anthropic 對美國 AI 行動計畫的政策建議和看法 | July 23, 2025 | [Anthropic News]([https://www.anthropic.com/news](https://www.anthropic.com/news)) |
-| 35 | Anthropic partners with the University of Chicago's Becker Friedman Institute | [https://www.anthropic.com/news](https://www.anthropic.com/news) | Anthropic 與芝加哥大學合作進行 AI 經濟研究 | July 23, 2025 | [Anthropic News]([https://www.anthropic.com/news](https://www.anthropic.com/news)) |
-| 36 | Build AI in America | [https://www.anthropic.com/news](https://www.anthropic.com/news) | Anthropic 對在美國建設 AI 產業的政策立場 | July 21, 2025 | [Anthropic News]([https://www.anthropic.com/news](https://www.anthropic.com/news)) |
-| 37 | Anthropic to sign the EU Code of Practice | [https://www.anthropic.com/news](https://www.anthropic.com/news) | Anthropic 承諾簽署歐盟 AI 實務守則 | July 21, 2025 | [Anthropic News]([https://www.anthropic.com/news](https://www.anthropic.com/news)) |
-| 38 | Paul Smith to join Anthropic as Chief Commercial Officer | [https://www.anthropic.com/news](https://www.anthropic.com/news) | Paul Smith 加入 Anthropic 擔任首席商務官 | July 15, 2025 | [Anthropic News]([https://www.anthropic.com/news](https://www.anthropic.com/news)) |
-| 39 | Investing in energy to secure America's AI future | [https://www.anthropic.com/news](https://www.anthropic.com/news) | Anthropic 投資能源基礎設施以支援 AI 發展 | 最新發布 | [Anthropic News]([https://www.anthropic.com/news](https://www.anthropic.com/news)) |
-| 40 | A letter from Sam & Jony | [https://openai.com/news/](https://openai.com/news/) | OpenAI CEO Sam Altman 和設計師 Jony Ive 的聯名信 | July 9, 2025 | [OpenAI News]([https://openai.com/news/](https://openai.com/news/)) |
-
+_本報告基於公開資訊整理，所有來源均已標註。如需更詳細的技術資訊，建議直接查閱原始來源文件。_
