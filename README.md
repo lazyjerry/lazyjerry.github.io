@@ -11,6 +11,7 @@
 如果喜歡請到[GitHub 儲存庫](https://github.com/lazyjerry/lazyjerry.github.io/)幫我點星星。如果喜歡的話啦。
 
 ![專案代表圖（og image）](assets/og-image.png)
+![專案代表圖2（og image）](assets/og-image2.png)
 
 本專案為依照 AI 所實作的「科技服務資訊週記」報告內容，旨在自動化整理與彙整各大科技服務（如 OpenAI、Microsoft、GitHub 等）之官方資訊、新聞與趨勢，並以週報形式呈現。
 
