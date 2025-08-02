@@ -8,10 +8,14 @@ import re
 # 取得目前檔案的絕對路徑
 ROOT_DIR = os.path.dirname(os.path.abspath(__file__))
 
+TOPICS_FOLDER_NAME = 'Topics'
+
 # 專題報告的資料夾名稱
 TOPIC_FOLDER_NAME = 'analysis-of-taiwans-recall-votes-and-nuclear-power-referendum-on-823'
+# 報告檔案名稱
+FILE_NAME = f"8月23日台灣第二波罷免投票與核三公投綜合預測報告.md"
 # 專題報告的 index.md 路徑
-TOPIC_REPORT_PATH = os.path.join(ROOT_DIR,'Topics', TOPIC_FOLDER_NAME, 'index.md')
+TOPIC_REPORT_PATH = os.path.join(ROOT_DIR,TOPICS_FOLDER_NAME, TOPIC_FOLDER_NAME, 'index.md')
 
 def main():
   # 取得今天日期字串
@@ -21,16 +25,15 @@ def main():
   if not date:
     date = today_str
   # 依據日期組合出該週報告的資料夾路徑
-  folder_path = os.path.join(ROOT_DIR, 'Topics', TOPIC_FOLDER_NAME,  date)
+  folder_path = os.path.join(ROOT_DIR, TOPICS_FOLDER_NAME, TOPIC_FOLDER_NAME,  date)
   # 檢查資料夾是否存在
   if not os.path.isdir(folder_path):
     print(f'找不到資料夾：{folder_path}，請確認日期輸入正確。')
     return
 
-  # 報告檔案名稱
-  filename = f"8月23日台灣第二波罷免投票與核三公投綜合預測報告.md"
+
   # 報告檔案完整路徑
-  file_path = os.path.join(folder_path, filename)
+  file_path = os.path.join(folder_path, FILE_NAME)
   # 檢查檔案是否存在
   if not os.path.isfile(file_path):
     print(f'找不到檔案：{file_path}，請確認該週報檔案存在。')
