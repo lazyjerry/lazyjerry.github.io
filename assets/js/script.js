@@ -57,7 +57,9 @@
         const newA = document.createElement('a');
         newA.href = 'https://www.google.com/search?q=' + encodeURIComponent(text);
         newA.textContent = text;
-        strong.parentNode.replaceChild(newA, strong);
+        // 將 <a> 插入到 <strong> 內部，並保留 <strong> 標籤
+        strong.innerHTML = '';
+        strong.appendChild(newA);
       }
     }
     
