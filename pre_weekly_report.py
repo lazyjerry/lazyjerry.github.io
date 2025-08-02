@@ -37,16 +37,6 @@ def main():
     with open(file_path, 'r', encoding='utf-8') as f:
         original_content = f.read()
 
-    # 將 original_content 內容中網址只有純文字的部分改成 markdown 格式的連結。
-    def url_to_markdown(match):
-        url = match.group(0)
-        # 檢查是否已經是 markdown 連結或在 <...> 內
-        if re.search(r'\[.*?\]\(.*?\)', url) or re.search(r'<.*?>', url):
-            return url
-        return f'[{url}]({url})'
-
-    # 只處理 http(s) 開頭且不是 markdown 連結的網址
-    original_content = re.sub(r'https?://[^\s\)\]\<]+', url_to_markdown, original_content)
   
     # 要插入的 YAML 前言
     yaml_header = (
@@ -67,14 +57,14 @@ def main():
     print("請記得確認於 README.md 補上本週檔案的目錄結構！")
 
     # 自動執行 git 操作：add、commit、push
-    try:
-        subprocess.run(["git", "add", "."], cwd=ROOT_DIR, check=True)  # 加入所有變更
-        commit_msg = f"更新檔案 {date}"  # commit 訊息
-        subprocess.run(["git", "commit", "-m", commit_msg], cwd=ROOT_DIR, check=True)  # 提交
-        subprocess.run(["git", "push"], cwd=ROOT_DIR, check=True)  # 推送到遠端
-        print("已自動執行 git add/commit/push。")
-    except subprocess.CalledProcessError as e:
-        print(f"git 操作失敗：{e}")
+    # try:
+    #     subprocess.run(["git", "add", "."], cwd=ROOT_DIR, check=True)  # 加入所有變更
+    #     commit_msg = f"更新檔案 {date}"  # commit 訊息
+    #     subprocess.run(["git", "commit", "-m", commit_msg], cwd=ROOT_DIR, check=True)  # 提交
+    #     subprocess.run(["git", "push"], cwd=ROOT_DIR, check=True)  # 推送到遠端
+    #     print("已自動執行 git add/commit/push。")
+    # except subprocess.CalledProcessError as e:
+    #     print(f"git 操作失敗：{e}")
 
 
 if __name__ == "__main__":
