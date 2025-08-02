@@ -19,16 +19,16 @@ og_image: https://lazyjerry.github.io/assets/og-image2.png
 
 本報告所引用的資訊來源包括：
 
-- [公視新聞網](<[https://news.pts.org.tw/](https://news.pts.org.tw/)>)
-- [中央社](<[https://www.cna.com.tw/](https://www.cna.com.tw/)>)
-- [商業周刊](<[https://www.businessweekly.com.tw/](https://www.businessweekly.com.tw/)>)
-- [天下雜誌](<[https://www.cw.com.tw/](https://www.cw.com.tw/)>)
-- [壹蘋新聞網](<[https://tw.nextapple.com/](https://tw.nextapple.com/)>)
-- [風傳媒](<[https://www.storm.mg/](https://www.storm.mg/)>)
-- [BBC 中文網](<[https://www.bbc.com/zhongwen](https://www.bbc.com/zhongwen)>)
-- [美麗島電子報](<[https://www.my-formosa.com/](https://www.my-formosa.com/)>)
-- [Yahoo 新聞](<[https://tw.news.yahoo.com/](https://tw.news.yahoo.com/)>)
-- [聯合新聞網](<[https://udn.com/](https://udn.com/)>)
+- [公視新聞網](https://news.pts.org.tw/)
+- [中央社](https://www.cna.com.tw/)
+- [商業周刊](https://www.businessweekly.com.tw/)
+- [天下雜誌](https://www.cw.com.tw/)
+- [壹蘋新聞網](https://tw.nextapple.com/)
+- [風傳媒](https://www.storm.mg/)
+- [BBC 中文網](https://www.bbc.com/zhongwen)
+- [美麗島電子報](https://www.my-formosa.com/)
+- [Yahoo 新聞](https://tw.news.yahoo.com/)
+- [聯合新聞網](https://udn.com/)
 
 ---
 
