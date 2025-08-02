@@ -44,10 +44,8 @@
     }
   });
 
-})();
 
-// 如果不是相同網域則另開新頁面
-document.addEventListener('DOMContentLoaded', function () {
+  // 如果不是相同網域則另開新頁面
   document.querySelectorAll('a[href]').forEach(function (link) {
     try {
       const linkUrl = new URL(link.href, window.location.origin);
@@ -59,4 +57,5 @@ document.addEventListener('DOMContentLoaded', function () {
       // 忽略無效的 URL
     }
   });
-});
+
+})();
