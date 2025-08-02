@@ -51,7 +51,18 @@
       prev = prev.previousSibling;
     }
     // 如果 strong 不是段落開頭（即有前一個非空白兄弟節點，或父元素不是 <p>），才進行替換
-    if ((prev !== null || strong.parentNode.tagName.toLowerCase() !== 'p')) {
+    // strong 不是在列表（ul、ol、li）或表格（table、thead、tbody、tr、th、td）中才進行替換
+    const forbiddenTags = ['ul', 'ol', 'li', 'table', 'thead', 'tbody', 'tr', 'th', 'td'];
+    let inForbidden = false;
+    let node = strong.parentNode;
+    while (node && node.nodeType === Node.ELEMENT_NODE) {
+      if (forbiddenTags.includes(node.tagName.toLowerCase())) {
+        inForbidden = true;
+        break;
+      }
+      node = node.parentNode;
+    }
+    if ((prev !== null || strong.parentNode.tagName.toLowerCase() !== 'p') && !inForbidden) {
       const text = strong.textContent.trim();
       if (text) {
         const newA = document.createElement('a');
