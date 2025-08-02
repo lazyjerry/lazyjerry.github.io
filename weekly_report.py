@@ -36,6 +36,8 @@ def main():
     # 讀取原週報內容
     with open(file_path, 'r', encoding='utf-8') as f:
         original_content = f.read()
+
+    #TODO 如果有需要的話添加一些控制
   
     # 要插入的 YAML 前言
     yaml_header = (
