@@ -1,5 +1,5 @@
-// 將所有 <td><a href="#ref-{數字}">{數字}</a></td> 的 <a> 轉為 <a id="ref-{數字}">{數字}</a>
 (function () {
+  // 將所有 <td><a href="#ref-{數字}">{數字}</a></td> 的 <a> 轉為 <a id="ref-{數字}">{數字}</a>
   // 取得所有 <td> 內含 <a href="#ref-{數字}">{數字}</a> 的 <a>
   const refLinks = Array.from(document.querySelectorAll('td > a[href^="#ref-"]'));
   // 過濾出 href="#ref-{數字}" 且 a 內容也是相同數字的 <a>

@@ -51,8 +51,8 @@ def main():
     # 要插入的 YAML 前言
     yaml_header = (
         "---\n"
-        "title: 科技服務資訊週記\n"
-        "description: AI 自動彙整的科技服務官方資訊週報，使用 Manus Plus ，希望每週一更新。\n"
+        "title: 科技服務資訊週記 預覽版\n"
+        "description: AI 自動彙整的科技服務官方資訊週報，使用 Manus Plus （預覽版）\n"
         "---\n\n"
     )
 
