@@ -5,7 +5,7 @@
   // 過濾出 href="#ref-{數字}" 且 a 內容也是相同數字的 <a>
   const matchedLinks = refLinks.filter(a => {
     const hrefMatch = a.getAttribute('href').match(/^#ref-(\d+)$/);
-    return hrefMatch && a.textContent.trim() === hrefMatch[1];
+    return hrefMatch && (a.textContent.trim() === hrefMatch[1] || a.textContent.trim() === `[${hrefMatch[1]}]`);
   });
   // 對每一個符合條件的 <a> 進行處理
   matchedLinks.forEach(link => {
@@ -51,18 +51,8 @@
       prev = prev.previousSibling;
     }
     // 如果 strong 不是段落開頭（即有前一個非空白兄弟節點，或父元素不是 <p>），才進行替換
-    // strong 不是在列表（ul、ol、li）或表格（table、thead、tbody、tr、th、td）中才進行替換
-    const forbiddenTags = ['ul', 'ol', 'li', 'table', 'thead', 'tbody', 'tr', 'th', 'td'];
-    let inForbidden = false;
-    let node = strong.parentNode;
-    while (node && node.nodeType === Node.ELEMENT_NODE) {
-      if (forbiddenTags.includes(node.tagName.toLowerCase())) {
-        inForbidden = true;
-        break;
-      }
-      node = node.parentNode;
-    }
-    if ((prev !== null || strong.parentNode.tagName.toLowerCase() !== 'p') && !inForbidden) {
+    // TODO 添加條件：strong 不是在列表或表格中
+    if ((prev !== null || strong.parentNode.tagName.toLowerCase() !== 'p')) {
       const text = strong.textContent.trim();
       if (text) {
         const newA = document.createElement('a');
