@@ -44,17 +44,6 @@ def main():
   with open(file_path, 'r', encoding='utf-8') as f:
     original_content = f.read()
 
-  # 請幫我將 original_content 內容中網址只有純文字的部分改成 markdown 格式的連結。
-  def url_to_markdown(match):
-      url = match.group(0)
-      # 檢查是否已經是 markdown 連結或在 <...> 內
-      if re.search(r'\[.*?\]\(.*?\)', url) or re.search(r'<.*?>', url):
-          return url
-      return f'[{url}]({url})'
-
-  # 只處理 http(s) 開頭且不是 markdown 連結的網址
-  original_content = re.sub(r'https?://[^\s\)\]\<]+', url_to_markdown, original_content)
-
   # 要插入的 YAML front matter
   front_matter = (
     "---\n"
