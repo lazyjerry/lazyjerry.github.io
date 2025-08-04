@@ -1,0 +1,62 @@
+# 嚴格時間規範搜尋計劃
+
+## 時間範圍
+**嚴格限制：2025-01-06 至 2025-01-20（近15天內）**
+
+## 搜尋原則
+1. 優先使用官方網址
+2. 必須有明確日期標記
+3. 不確定時間的來源一律忽略
+4. 確定是近期但不確定精確時間的標記為「*未知時間」
+5. 只使用權威新聞或評論網站
+
+## 需要搜尋的科技公司及官方網址
+
+### AI 科技公司
+- [ ] **Hugging Face** - https://huggingface.co/blog
+- [ ] **OpenAI** - https://openai.com/zh-Hant/news/
+- [ ] **Anthropic** - https://www.anthropic.com/news
+- [ ] **YouAI/You.com** - https://you.com
+- [ ] **Perplexity** - 需搜尋權威報導
+
+### 開發工具與平台
+- [ ] **GitHub Copilot** - https://github.com/features/copilot/whats-new
+- [ ] **GitHub** - https://github.com/newsroom
+- [ ] **Manus** - https://manus.im/updates
+
+### 大型科技公司
+- [ ] **Apple** - https://www.apple.com/newsroom/
+- [ ] **Microsoft** - https://news.microsoft.com/source
+- [ ] **Google** - 多個產品部落格
+- [ ] **Meta** - https://about.fb.com/news/
+- [ ] **Grok** - 需搜尋權威報導
+
+### 雲端與基礎設施
+- [ ] **Azure** - https://azure.microsoft.com/en-us/blog/
+- [ ] **AWS** - 需搜尋權威報導
+- [ ] **Cloudflare** - https://blog.cloudflare.com
+- [ ] **DigitalOcean** - https://www.digitalocean.com/press/releases
+- [ ] **Vultr** - https://www.vultr.com/news/
+- [ ] **Kamatera** - https://www.kamatera.com/topics/news/
+
+### 硬體公司
+- [ ] **Nvidia** - https://nvidianews.nvidia.com/
+- [ ] **Tesla** - https://www.tesla.com/blog
+
+## Google 產品部落格網址
+- https://blog.google/products/android-chrome-play/
+- https://blog.google/products/platforms-devices/
+- https://blog.google/products/cloud/
+- https://blog.google/products/explore-get-answers/
+
+## 搜尋狀態
+- 總計：21 家公司
+- 已完成：0 家
+- 待搜尋：21 家
+
+## 時間驗證檢查清單
+- [ ] 確認每篇文章都有明確發布日期
+- [ ] 驗證日期在 2025-01-06 至 2025-01-20 範圍內
+- [ ] 標記不確定時間的文章為「*未知時間」
+- [ ] 忽略無法確定時間的來源
+
