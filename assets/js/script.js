@@ -43,6 +43,15 @@ function isParagraphStart(strong) {
       }
       break;
     }
+    
+    // 如果是 p 標籤的第一個子節點，檢查父元素內容是否包含「。」
+    if (tag === 'p') {
+      const parentText = parent.textContent;
+      if (!parentText.includes('。')) {
+        return false;
+      }
+    }
+    
     return true;
   }
 
