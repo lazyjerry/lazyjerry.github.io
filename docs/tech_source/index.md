@@ -3,9 +3,11 @@ title: 科技服務資訊週記 - 資訊來源
 description: 這是我主動揭露的資訊來源，啊我就怕被罵。
 ---
 
-請將新聞或是最新消息搜集清單列入 TODO List 中。以下列出科技服務的新聞與報導規範：
+## 請將新聞或是最新消息搜集清單列入 TODO List 中。
 
-網路上這些科技服務的權威新聞內容與報導關鍵字如下：： Hugging Face、OpenAI、Anthropic、YouAI、GitHub Coplit、GitHub、Manus、Grok、Apple、Microsoft、Azure、Nvidia、Tesla、Meta、Cloudflare、erplexity、AWS、 Google、Vultr、DigitalOcean、Kamatera、Ollama 。
+### 以下列出科技服務的新聞與報導規範
+
+網路上這些科技服務的權威新聞內容與報導關鍵字如下： Hugging Face、OpenAI、Anthropic、YouAI、GitHub Coplit、GitHub、Manus、Grok、Apple、Microsoft、Azure、Nvidia、Tesla、Meta、Cloudflare、erplexity、AWS、 Google、Vultr、DigitalOcean、Kamatera、Ollama 。
 
 來源請以有標記日期優先使用，並且遵守規範的時間範圍，如果未標記日期，在不確定該來源時間是否符合規範，請不要使用，如果確定是近期可用的時間範圍內資料，但不確定精確發布時間，請確認是在這 15 天內發布，於參考資料的「文章發布日期」欄位中明確寫上「\*未知時間」提醒讀者。如果不確定時間來源請忽略該來源。
 
