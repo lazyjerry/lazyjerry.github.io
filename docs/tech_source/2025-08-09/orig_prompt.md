@@ -1,40 +1,42 @@
----
-title: 科技服務資訊週記 - 資訊來源
-description: 這是我主動揭露的資訊來源，啊我就怕被罵。
----
+請整理從今天開始，近 15 天內內發布關於科技新聞的的文章，撰寫一篇繁體中文技術報告，標題為：「{{年-月-日}} 科技服務資訊週記」，Meta 為：「作者：Manus AI 　報告日期：{{年-月-日}}」。 「{{年-月-日}}」請用今天的日期取代。
 
-## 請將新聞或是最新消息搜集清單列入 TODO List 中。
+閱讀的群眾目標為程式設計師，程式設計師的群體對於科技服務興趣廣泛，除了軟體工程相關的資訊以外，也喜歡科技應用的訊息。請提供提供以該群體角色為出發點的內容與用詞。報告內容請依照不同領域分類，包含但不限於「AI 科技」、「軟體工程」、「硬體或軟硬整合」、「網路/伺服器等基礎」、「其他領域」等分類，如果有無法分類的領域請動態添加與整理。
 
-### 以下列出科技服務的新聞與報導規範
+主要內容分四段落，所有內容請標記「來源的編號」，如使用非來源所蒐集到的資料，請特別提醒。
 
-網路上這些科技服務的權威新聞內容與報導關鍵字如下： Hugging Face、OpenAI、Anthropic、YouAI、GitHub Coplit、GitHub、Manus、Grok、Apple、Microsoft、Azure、Nvidia、Tesla、Meta、Cloudflare、erplexity、AWS、 Google、Vultr、DigitalOcean、Kamatera、Ollama 。
+以下為四個段落內容的描述，請保持四個段落的格式：
+
+一、「總結」
+統整文章內容重點，撰寫 100–300 字摘要。請以實際內容為依據。
+
+二、「亮點」
+從文章內容中，提取出內容亮點並依照分類條列表示，每個條列先有一句話重點作結論，再以約 100–300 字摘要說明。請以實際內容為依據，並且盡可能作一些具體的舉例或譬喻說明。
+
+三、「趨勢分析」
+根據文章內容歸納未來可能出現的趨勢或更深層的想像，請依照分類描述。請依照實際內容為依據，並且盡可能作一些具體的舉例或譬喻說明。
+
+四、「參考資料」
+列出近 15 天內發表的文章，依照時間，請依照分類分別列出：
+
+- 來源的編號（對應標記文章中「來源的編號」數字）
+- 文章標題、快速跳轉搜尋頁網址，添加連結「https://www.google.com/search?q={文章標題}」，使用 markdown 超連結表現。
+- 一句話繁體中文結論或亮點
+- 文章發布日期
+- 來源資料的網址、來源網站的名稱，請使用 markdown 超連結表現
+
+來源資料的部分，請幫我搜尋網路上科技服務的權威新聞內容與報導，並且注意規範時間為今天往前 15 天內。
 
 來源請以有標記日期優先使用，並且遵守規範的時間範圍，如果未標記日期，在不確定該來源時間是否符合規範，請不要使用，如果確定是近期可用的時間範圍內資料，但不確定精確發布時間，請確認是在這 15 天內發布，於參考資料的「文章發布日期」欄位中明確寫上「\*未知時間」提醒讀者。如果不確定時間來源請忽略該來源。
 
-請使用權威新聞或評論的網站，如果來源是以下這些網址或網域，請優先使用：
+整體結構的目錄如下，請依照內容補充細節：
 
-- Hugging Face：https://huggingface.co/blog
-- OpenAI：https://openai.com/zh-Hant/news/
-- Anthropic：https://www.anthropic.com/news
-- Manus：https://manus.im/updates
-- You.com（YouChat/YouAI）：https://you.com
-- GitHub Coplit：https://github.com/features/copilot/whats-new
-- GitHub Newsroom：https://github.com/newsroom
-- GitHub Trending：https://github.com/trending?since=weekly&spoken_language_code=
-- Apple：https://www.apple.com/newsroom/
-- Microsoft：https://news.microsoft.com/source
-- Azure：https://azure.microsoft.com/en-us/blog/
-- Nvidia：https://nvidianews.nvidia.com/
-- Tesla：https://www.tesla.com/blog
-- Meta：https://about.fb.com/news/
-- Cloudflare：https://blog.cloudflare.com
-- Google：https://blog.google/products/android-chrome-play/
-- Google：https://blog.google/products/platforms-devices/
-- Google：https://blog.google/products/cloud/
-- Google：https://blog.google/products/explore-get-answers/
-- Linode：https://www.linode.com/blog/
-- Vultr：https://www.vultr.com/news/
-- DigitalOcean：https://www.digitalocean.com/press/releases
-- Kamatera：https://www.kamatera.com/topics/news/
+- [大綱](#大綱)
+- [總結](#總結)
+- [亮點](#亮點)
+- [趨勢分析](#趨勢分析)
+- [參考資料](#參考資料)
+- [報告說明](#報告說明)
 
-請務必確認蒐集的時間區間，如果沒有著名指定的的日期則以今天為主。例如：指示「15 天內的科技新聞或報告內容」，指「科技新聞或報告發布日期是從今天算起 15 天內的文章內容」。
+---
+
+請執行完後，確認檢查 TODO 文件至少一次，補上 TODO 中尚未完成的內容。
