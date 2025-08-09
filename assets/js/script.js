@@ -32,7 +32,7 @@
     }
     // 如果 strong 不是段落開頭（即有前一個非空白兄弟節點，或父元素不是 <p>），才進行替換
     // 添加條件：strong 不是在列表或表格中，且前面不是<br>
-    if ((prev !== null && strong.parentNode.tagName.toLowerCase() !== 'p')) {
+    if ((prev !== null || strong.parentNode.tagName.toLowerCase() !== 'p' || strong.parentNode.tagName.toLowerCase() !== 'td' || strong.previousSibling.tagName.toLowerCase() !== 'br')) {
       const text = strong.textContent.trim();
       if (text) {
         const newA = document.createElement('a');
