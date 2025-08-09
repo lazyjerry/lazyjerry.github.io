@@ -24,21 +24,28 @@
 
   document.querySelectorAll('strong').forEach(function(strong) {
 
-    // 檢查 <strong> 是否是段落開頭，如果不是，則將 <strong> 包覆的文字，改為 <a href="https://www.google.com/search?q={文字}">{文字}</a>
-    // 判斷 strong 是否為段落開頭：前一個兄弟節點為 null 或僅為空白文字節點，且父元素為 <p>
-    let prev = strong.previousSibling;
-    while (prev && prev.nodeType === Node.TEXT_NODE && prev.textContent.trim() === '') {
-      prev = prev.previousSibling;
+    // 優化判斷 <strong> 是否為段落開頭
+    // 條件：1. 父元素為 <p> 或 <td>；2. <strong> 為父元素的第一個非空白子節點
+    function isParagraphStart(strong) {
+      const parent = strong.parentNode;
+      if (!parent) return false;
+      const tag = parent.tagName ? parent.tagName.toLowerCase() : '';
+      if (tag !== 'p' && tag !== 'td') return false;
+      // 找到第一個非空白子節點
+      for (let node of parent.childNodes) {
+        if (node.nodeType === Node.TEXT_NODE && node.textContent.trim() === '') continue;
+        // 第一個非空白節點就是 strong
+        return node === strong;
+      }
+      return false;
     }
-    // 如果 strong 不是段落開頭（即有前一個非空白兄弟節點，或父元素不是 <p>），才進行替換
-    // 添加條件：strong 不是在列表或表格中，且前面不是<br>
-    if ((prev !== null || strong.parentNode.tagName.toLowerCase() !== 'p' || strong.parentNode.tagName.toLowerCase() !== 'td' || strong.previousSibling.tagName.toLowerCase() !== 'br')) {
+
+    if (!isParagraphStart(strong)) {
       const text = strong.textContent.trim();
       if (text) {
         const newA = document.createElement('a');
         newA.href = 'https://www.google.com/search?q=' + encodeURIComponent(text);
         newA.textContent = text;
-        // 將 <a> 插入到 <strong> 內部，並保留 <strong> 標籤
         strong.innerHTML = '';
         strong.appendChild(newA);
       }
