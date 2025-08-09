@@ -24,26 +24,6 @@
 
   document.querySelectorAll('strong').forEach(function(strong) {
 
-    // 將後面帶有 <a> 標籤的 <strong> 包覆的文字，改為 <a href="https://www.google.com/search?q={文字}">{文字}</a>
-    // 如果 <strong> 後面有 <a> 標籤，則將 <strong> 包覆的文字，改為 <a href="https://www.google.com/search?q={文字}">{文字}</a>
-    // 檢查 strong 的下一個兄弟節點是否為 <a>
-    // let next = strong.nextSibling;
-    // // 跳過空白文字節點
-    // while (next && next.nodeType === Node.TEXT_NODE && next.textContent.trim() === '') {
-    //   next = next.nextSibling;
-    // }
-    // if (next && next.nodeType === Node.ELEMENT_NODE && next.tagName.toLowerCase() === 'a') {
-    //   const text = strong.textContent.trim();
-    //   if (text) {
-    //     // 建立新的 <a>
-    //     const newA = document.createElement('a');
-    //     newA.href = 'https://www.google.com/search?q=' + encodeURIComponent(text);
-    //     newA.textContent = text;
-    //     // 新的 <a> 取代 <strong> 裡面內容
-    //     strong.parentNode.replaceChild(newA, strong);
-    //   }
-    // }
-
     // 檢查 <strong> 是否是段落開頭，如果不是，則將 <strong> 包覆的文字，改為 <a href="https://www.google.com/search?q={文字}">{文字}</a>
     // 判斷 strong 是否為段落開頭：前一個兄弟節點為 null 或僅為空白文字節點，且父元素為 <p>
     let prev = strong.previousSibling;
@@ -51,8 +31,8 @@
       prev = prev.previousSibling;
     }
     // 如果 strong 不是段落開頭（即有前一個非空白兄弟節點，或父元素不是 <p>），才進行替換
-    // TODO 添加條件：strong 不是在列表或表格中
-    if ((prev !== null || strong.parentNode.tagName.toLowerCase() !== 'p')) {
+    // 添加條件：strong 不是在列表或表格中，且前面不是<br>
+    if ((prev !== null && strong.parentNode.tagName.toLowerCase() !== 'p' && strong.parentNode.tagName.toLowerCase() !== 'td' && strong.previousSibling.tagName.toLowerCase() !== 'br')) {
       const text = strong.textContent.trim();
       if (text) {
         const newA = document.createElement('a');
