@@ -1,0 +1,25 @@
+ID,優先級,公司名稱,目標網址,主要關鍵字,領域分類,爬取重點
+1,A,Hugging Face,https://huggingface.co/blog,"Hugging Face,機器學習,模型發布,開源 AI",AI/ML,新模型發布、技術更新、社群動態
+2,A,OpenAI,https://openai.com/zh-Hant/news/,"OpenAI,GPT,ChatGPT,API 更新",AI/ML,產品發布、API 變更、政策更新
+3,A,Anthropic,https://www.anthropic.com/news,"Anthropic,Claude,AI 安全,研究報告",AI/ML,Claude 更新、研究成果、安全相關
+4,A,Manus,https://manus.im/updates,"Manus,AI 代理,自動化工具",AI/ML,平台功能更新、新特性發布
+5,B,GitHub Copilot,https://github.com/features/copilot/whats-new,"GitHub Copilot,程式碼輔助,開發工具",開發工具,新功能發布、整合更新
+6,B,GitHub,https://github.com/newsroom,"GitHub,開發者工具,平台更新",開發工具,平台政策、新功能、社群動態
+7,B,GitHub Trending,https://github.com/trending?since=weekly&spoken_language_code=,"開源專案,程式語言趨勢,熱門儲存庫",開發工具,週度熱門專案、新興技術
+8,B,You.com,https://you.com,"YouAI,YouChat,搜尋引擎,AI 助手",開發工具,產品更新、新功能發布
+9,C,Apple,https://www.apple.com/newsroom/,"Apple,iOS,macOS,硬體發布",科技巨頭,產品發布、軟體更新、企業動態
+10,C,Microsoft,https://news.microsoft.com/source,"Microsoft,Windows,Office,企業解決方案",科技巨頭,產品更新、企業服務、技術創新
+11,C,Azure,https://azure.microsoft.com/en-us/blog/,"Azure,雲端運算,企業服務,DevOps",科技巨頭,服務更新、新功能、案例研究
+12,C,Google,https://blog.google/products/android-chrome-play/,"Google,Android,Chrome,Play Store",科技巨頭,行動平台更新、瀏覽器功能、應用商店政策
+13,C,Google,https://blog.google/products/platforms-devices/,"Google,Pixel,Nest,硬體產品",科技巨頭,硬體發布、平台整合、設備更新
+14,C,Google Cloud,https://blog.google/products/cloud/,"Google Cloud,GCP,雲端運算,企業服務",科技巨頭,雲端服務更新、新功能、客戶案例
+15,C,Google Search,https://blog.google/products/explore-get-answers/,"Google Search,Bard,AI 整合,搜尋功能",科技巨頭,搜尋演算法更新、AI 功能、使用者體驗
+16,C,Meta,https://about.fb.com/news/,"Meta,Facebook,Instagram,VR/AR,元宇宙",科技巨頭,平台更新、VR/AR 技術、企業策略
+17,D,Nvidia,https://nvidianews.nvidia.com/,"Nvidia,GPU,AI 晶片,遊戲技術",硬體,硬體發布、AI 技術、遊戲創新
+18,D,Tesla,https://www.tesla.com/blog,"Tesla,電動車,自動駕駛,能源技術",硬體,車輛更新、技術突破、能源解決方案
+19,D,Cloudflare,https://blog.cloudflare.com,"Cloudflare,CDN,網路安全,邊緣運算",基礎設施,服務更新、安全技術、網路優化
+20,E,Linode,https://www.linode.com/blog/,"Linode,VPS,雲端主機,開發者工具",雲端服務,服務更新、技術教學、產品發布
+21,E,Vultr,https://www.vultr.com/news/,"Vultr,雲端運算,VPS,全球部署",雲端服務,服務擴展、新功能、價格更新
+22,E,DigitalOcean,https://www.digitalocean.com/press/releases,"DigitalOcean,雲端平台,開發者服務",雲端服務,企業動態、產品發布、合作夥伴
+23,E,Kamatera,https://www.kamatera.com/topics/news/,"Kamatera,雲端基礎設施,企業解決方案",雲端服務,服務更新、技術創新、市場擴展
+
