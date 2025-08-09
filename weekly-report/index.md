@@ -175,10 +175,10 @@ description: AI 自動彙整的科技服務官方資訊週報，使用 Manus Plu
 | 編號                    | 文章標題                                                                                                                                                                                                    | 一句話結論                                                  | 發布日期   | 來源                                                           |
 | ----------------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ----------------------------------------------------------- | ---------- | -------------------------------------------------------------- |
 | <a id="ref-4"></a>[4]   | [GitHub Copilot GPT-5 Integration](https://www.google.com/search?q=GitHub+Copilot+GPT-5+Integration)                                                                                                        | GitHub Copilot 成為首個整合 GPT-5 的開發工具                | 2025-08-07 | [GitHub 官方部落格](https://github.blog/)                      |
-| <a id="ref-5"></a>[5]   | [Microsoft incorporates OpenAI's GPT-5 into consumer, developer and enterprise offerings](https://www.google.com/search?q=Microsoft+incorporates+OpenAI+GPT-5+into+consumer+developer+enterprise+offerings) | Microsoft 全面將 GPT-5 整合到消費者、開發者和企業產品中     | \*未知時間 | [Microsoft 官方新聞](https://news.microsoft.com/source)        |
-| <a id="ref-6"></a>[6]   | [OpenAI's open‑source model: gpt‑oss on Azure AI](https://www.google.com/search?q=OpenAI+open+source+model+gpt+oss+on+Azure+AI)                                                                             | Microsoft 將 OpenAI 的開源模型 gpt-oss 引入 Azure AI 平台   | \*未知時間 | [Microsoft 官方新聞](https://news.microsoft.com/source)        |
-| <a id="ref-11"></a>[11] | [Bing Image Creator adds GPT-4o alongside DALL-E3 for even more free ways to create](https://www.google.com/search?q=Bing+Image+Creator+adds+GPT-4o+alongside+DALL-E3)                                      | Microsoft Bing 圖像創建器添加 GPT-4o 和 DALL-E3 功能        | \*未知時間 | [Microsoft 官方新聞](https://news.microsoft.com/source)        |
-| <a id="ref-13"></a>[13] | [Meet your new AI coding teammate: Gemini CLI GitHub Actions](https://www.google.com/search?q=Meet+your+new+AI+coding+teammate+Gemini+CLI+GitHub+Actions)                                                   | Google Cloud 推出新的 AI 編碼夥伴 Gemini CLI GitHub Actions | \*未知時間 | [Google Cloud 官方部落格](https://blog.google/products/cloud/) |
+| <a id="ref-5"></a>[5]   | [Microsoft incorporates OpenAI's GPT-5 into consumer, developer and enterprise offerings](https://www.google.com/search?q=Microsoft+incorporates+OpenAI+GPT-5+into+consumer+developer+enterprise+offerings) | Microsoft 全面將 GPT-5 整合到消費者、開發者和企業產品中     | 未知時間   | [Microsoft 官方新聞](https://news.microsoft.com/source)        |
+| <a id="ref-6"></a>[6]   | [OpenAI's open‑source model: gpt‑oss on Azure AI](https://www.google.com/search?q=OpenAI+open+source+model+gpt+oss+on+Azure+AI)                                                                             | Microsoft 將 OpenAI 的開源模型 gpt-oss 引入 Azure AI 平台   | 未知時間   | [Microsoft 官方新聞](https://news.microsoft.com/source)        |
+| <a id="ref-11"></a>[11] | [Bing Image Creator adds GPT-4o alongside DALL-E3 for even more free ways to create](https://www.google.com/search?q=Bing+Image+Creator+adds+GPT-4o+alongside+DALL-E3)                                      | Microsoft Bing 圖像創建器添加 GPT-4o 和 DALL-E3 功能        | 未知時間   | [Microsoft 官方新聞](https://news.microsoft.com/source)        |
+| <a id="ref-13"></a>[13] | [Meet your new AI coding teammate: Gemini CLI GitHub Actions](https://www.google.com/search?q=Meet+your+new+AI+coding+teammate+Gemini+CLI+GitHub+Actions)                                                   | Google Cloud 推出新的 AI 編碼夥伴 Gemini CLI GitHub Actions | 未知時間   | [Google Cloud 官方部落格](https://blog.google/products/cloud/) |
 
 ### 網路/伺服器等基礎領域
 
@@ -190,10 +190,10 @@ description: AI 自動彙整的科技服務官方資訊週報，使用 Manus Plu
 
 ### 雲端服務與基礎設施領域
 
-| 編號                    | 文章標題                                                                                                                                                                   | 一句話結論                                                  | 發布日期   | 來源                                                           |
-| ----------------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ----------------------------------------------------------- | ---------- | -------------------------------------------------------------- |
-| <a id="ref-14"></a>[14] | [Can AI save nurses millions of hours of paperwork?](https://www.google.com/search?q=Can+AI+save+nurses+millions+of+hours+of+paperwork)                                    | Google Cloud 探索 AI 為護士節省數百萬小時文書工作的解決方案 | \*未知時間 | [Google Cloud 官方部落格](https://blog.google/products/cloud/) |
-| <a id="ref-15"></a>[15] | [AI from Google Cloud steps up to the plate at the MLB All-Star Game](https://www.google.com/search?q=AI+from+Google+Cloud+steps+up+to+the+plate+at+the+MLB+All-Star+Game) | Google Cloud 的 AI 技術在 MLB 全明星賽中展示應用            | \*未知時間 | [Google Cloud 官方部落格](https://blog.google/products/cloud/) |
+| 編號                    | 文章標題                                                                                                                                                                   | 一句話結論                                                  | 發布日期 | 來源                                                           |
+| ----------------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ----------------------------------------------------------- | -------- | -------------------------------------------------------------- |
+| <a id="ref-14"></a>[14] | [Can AI save nurses millions of hours of paperwork?](https://www.google.com/search?q=Can+AI+save+nurses+millions+of+hours+of+paperwork)                                    | Google Cloud 探索 AI 為護士節省數百萬小時文書工作的解決方案 | 未知時間 | [Google Cloud 官方部落格](https://blog.google/products/cloud/) |
+| <a id="ref-15"></a>[15] | [AI from Google Cloud steps up to the plate at the MLB All-Star Game](https://www.google.com/search?q=AI+from+Google+Cloud+steps+up+to+the+plate+at+the+MLB+All-Star+Game) | Google Cloud 的 AI 技術在 MLB 全明星賽中展示應用            | 未知時間 | [Google Cloud 官方部落格](https://blog.google/products/cloud/) |
 
 ---
 
@@ -205,7 +205,7 @@ description: AI 自動彙整的科技服務官方資訊週報，使用 Manus Plu
 
 **資料來源說明：**
 
-- 標記「\*未知時間」的項目表示該新聞確定在近期發布，但無法確定精確發布時間
+- 標記「未知時間」的項目表示該新聞確定在近期發布，但無法確定精確發布時間
 - 所有引用編號均可點擊跳轉至對應的參考資料
 - 快速搜尋連結可協助讀者進一步查證資訊
 
