@@ -1,0 +1,291 @@
+{
+	"metadata": {
+		"source": "https://lazyjerry.github.io/docs/tech_source/",
+		"version": "final_corrected",
+		"date_range": {
+			"dynamic": true,
+			"start": "{START_DATE}",
+			"end": "{END_DATE}",
+			"days": "{DAYS_RANGE}",
+			"base_date": "{TODAY}"
+		},
+		"task_types": {
+			"official_websites": 23,
+			"keyword_searches": 22,
+			"total_tasks": 45
+		},
+		"last_updated": "{TODAY}",
+		"key_improvements": ["動態時間計算系統", "移除關鍵字限制，全面爬取", "增加台灣權威媒體來源", "驗證資料來源權威性"]
+	},
+	"dynamic_time_system": {
+		"variables": {
+			"TODAY": "執行當天日期 (YYYY-MM-DD)",
+			"DAYS_RANGE": "15 (可調整)",
+			"START_DATE": "{TODAY} - {DAYS_RANGE} 天",
+			"END_DATE": "{TODAY}",
+			"CURRENT_YEAR": "執行當年",
+			"CURRENT_MONTH": "執行當月",
+			"LAST_MONTH": "上個月"
+		},
+		"expressions": {
+			"chinese": ["最近{DAYS_RANGE}天", "{CURRENT_YEAR}年{CURRENT_MONTH}月", "本週", "本月", "近期", "最新"],
+			"english": [
+				"last {DAYS_RANGE} days",
+				"{CURRENT_YEAR}-{CURRENT_MONTH}",
+				"this week",
+				"this month",
+				"recent",
+				"latest"
+			]
+		},
+		"search_templates": {
+			"basic": "\"{KEYWORD}\" 新聞 最近{DAYS_RANGE}天",
+			"monthly": "\"{KEYWORD}\" 新聞 {CURRENT_YEAR}年{CURRENT_MONTH}月",
+			"advanced": "\"{KEYWORD}\" after:{START_DATE} before:{END_DATE}",
+			"site_specific": "site:techcrunch.com OR site:theverge.com \"{KEYWORD}\""
+		}
+	},
+	"crawl_rules": {
+		"official_websites": {
+			"strategy": "全面爬取，不限制關鍵字",
+			"focus": "所有相關內容，避免資料過度狹隘",
+			"time_filter": "使用動態時間範圍",
+			"content_types": ["所有新聞", "產品發布", "技術更新", "企業動態", "研究報告"]
+		},
+		"keyword_searches": {
+			"strategy": "動態關鍵字搜尋",
+			"query_templates": "使用多種搜尋模板",
+			"target_sites": "權威媒體網站",
+			"language_priority": ["繁體中文", "英文"]
+		},
+		"time_handling": {
+			"priority_1": "有明確日期 - 優先使用",
+			"priority_2": "無日期但確定近期 - 標記*未知時間",
+			"ignore": "無法確定時間 - 忽略"
+		}
+	},
+	"target_keywords": [
+		"Hugging Face",
+		"OpenAI",
+		"Anthropic",
+		"YouAI",
+		"GitHub Copilot",
+		"GitHub",
+		"Manus",
+		"Grok",
+		"Apple",
+		"Microsoft",
+		"Azure",
+		"Nvidia",
+		"Tesla",
+		"Meta",
+		"Cloudflare",
+		"Perplexity",
+		"AWS",
+		"Google",
+		"Vultr",
+		"DigitalOcean",
+		"Kamatera",
+		"Ollama"
+	],
+	"official_website_tasks": [
+		{
+			"id": "A1",
+			"priority": "A",
+			"company": "Hugging Face",
+			"url": "https://huggingface.co/blog",
+			"strategy": "全面爬取所有文章",
+			"content_focus": "所有技術更新、產品發布、社群動態",
+			"category": "AI/ML",
+			"keyword_restriction": "none"
+		},
+		{
+			"id": "A2",
+			"priority": "A",
+			"company": "OpenAI",
+			"url": "https://openai.com/news/",
+			"strategy": "全面爬取所有新聞",
+			"content_focus": "所有產品發布、研究成果、企業動態",
+			"category": "AI/ML",
+			"keyword_restriction": "none",
+			"note": "使用英文版，中文版有 Cloudflare 保護"
+		},
+		{
+			"id": "A3",
+			"priority": "A",
+			"company": "Anthropic",
+			"url": "https://www.anthropic.com/news",
+			"strategy": "全面爬取所有新聞",
+			"content_focus": "所有研究發布、產品更新、安全相關內容",
+			"category": "AI/ML",
+			"keyword_restriction": "none"
+		},
+		{
+			"id": "A4",
+			"priority": "A",
+			"company": "Manus",
+			"url": "https://manus.im/updates",
+			"strategy": "全面爬取所有更新",
+			"content_focus": "所有平台功能、產品發布、技術創新",
+			"category": "AI/ML",
+			"keyword_restriction": "none"
+		}
+	],
+	"keyword_search_tasks": [
+		{
+			"id": "S1",
+			"keyword": "Hugging Face",
+			"dynamic_query": "\"Hugging Face\" 新聞 最近{DAYS_RANGE}天",
+			"alternative_queries": [
+				"\"Hugging Face\" 新聞 {CURRENT_YEAR}年{CURRENT_MONTH}月",
+				"\"Hugging Face\" after:{START_DATE} before:{END_DATE}"
+			],
+			"target_sites": ["國際科技媒體", "台灣科技媒體"],
+			"content_focus": "所有相關新聞報導",
+			"keyword_restriction": "none"
+		},
+		{
+			"id": "S2",
+			"keyword": "OpenAI",
+			"dynamic_query": "\"OpenAI\" 新聞 最近{DAYS_RANGE}天",
+			"alternative_queries": [
+				"\"OpenAI\" 新聞 {CURRENT_YEAR}年{CURRENT_MONTH}月",
+				"\"OpenAI\" after:{START_DATE} before:{END_DATE}"
+			],
+			"target_sites": ["國際科技媒體", "台灣科技媒體"],
+			"content_focus": "所有相關新聞報導",
+			"keyword_restriction": "none"
+		}
+	],
+	"verified_media_sources": {
+		"international_tech": {
+			"verified": true,
+			"sources": [
+				{
+					"name": "TechCrunch",
+					"url": "https://techcrunch.com/",
+					"authority": "high",
+					"date_availability": "yes"
+				},
+				{
+					"name": "The Verge",
+					"url": "https://www.theverge.com/",
+					"authority": "high",
+					"date_availability": "yes"
+				},
+				{
+					"name": "Ars Technica",
+					"url": "https://arstechnica.com/",
+					"authority": "high",
+					"date_availability": "yes"
+				},
+				{
+					"name": "Wired",
+					"url": "https://www.wired.com/",
+					"authority": "high",
+					"date_availability": "yes"
+				},
+				{
+					"name": "VentureBeat",
+					"url": "https://venturebeat.com/",
+					"authority": "high",
+					"date_availability": "yes"
+				}
+			]
+		},
+		"taiwan_tech": {
+			"verified": true,
+			"sources": [
+				{
+					"name": "iThome",
+					"url": "https://www.ithome.com.tw/",
+					"authority": "high",
+					"date_availability": "yes"
+				},
+				{
+					"name": "科技新報",
+					"url": "https://technews.tw/",
+					"authority": "high",
+					"date_availability": "yes"
+				},
+				{
+					"name": "INSIDE",
+					"url": "https://www.inside.com.tw/",
+					"authority": "high",
+					"date_availability": "yes"
+				},
+				{
+					"name": "數位時代",
+					"url": "https://www.bnext.com.tw/",
+					"authority": "high",
+					"date_availability": "yes"
+				}
+			]
+		},
+		"taiwan_mainstream": {
+			"verified": true,
+			"sources": [
+				{
+					"name": "聯合新聞網",
+					"url": "https://udn.com",
+					"authority": "high",
+					"date_availability": "yes"
+				},
+				{
+					"name": "中時新聞網",
+					"url": "https://www.chinatimes.com",
+					"authority": "high",
+					"date_availability": "yes"
+				},
+				{
+					"name": "自由電子報",
+					"url": "https://news.ltn.com.tw",
+					"authority": "high",
+					"date_availability": "yes"
+				},
+				{
+					"name": "風傳媒",
+					"url": "https://www.storm.mg",
+					"authority": "high",
+					"date_availability": "yes"
+				}
+			]
+		}
+	},
+	"execution_config": {
+		"time_flexibility": {
+			"adjustable_range": true,
+			"default_days": 15,
+			"alternative_ranges": [7, 30, 90],
+			"timezone": "Asia/Taipei"
+		},
+		"content_strategy": {
+			"official_sites": "comprehensive_crawl",
+			"news_search": "keyword_based_with_dynamic_time",
+			"filtering": "time_and_authority_based",
+			"deduplication": "intelligent_content_based"
+		},
+		"quality_assurance": {
+			"source_verification": "required",
+			"date_validation": "required",
+			"content_completeness": "no_keyword_restrictions",
+			"authority_check": "verified_sources_only"
+		}
+	},
+	"output_format": {
+		"required_fields": [
+			"title",
+			"publish_date",
+			"source_url",
+			"content_summary",
+			"importance_rating",
+			"task_type",
+			"task_id",
+			"source_authority"
+		],
+		"date_format": "YYYY-MM-DD 或 *未知時間",
+		"importance_scale": "1-5星",
+		"task_types": ["official_website", "keyword_search"],
+		"content_restrictions": "none - 全面收集"
+	}
+}

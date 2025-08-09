@@ -1,7 +1,6 @@
 # AI 爬蟲完整執行指令（最終修正版）
 
 ## 動態時間系統設定
-
 ```
 時間基準: {TODAY} = 執行當天
 時間範圍: {DAYS_RANGE} = 15 (可調整)
@@ -12,7 +11,6 @@
 ```
 
 ## 重要修正說明
-
 ```
 ✅ 時間動態化: 使用變數而非固定日期
 ✅ 移除關鍵字限制: 官方網站全面爬取
@@ -27,7 +25,6 @@
 > **策略變更**: 全面爬取，不限制關鍵字，避免資料過度狹隘
 
 ### 優先級 A (AI/ML 領域) - 立即執行
-
 ```
 CRAWL_ALL https://huggingface.co/blog TIMERANGE "{START_DATE} to {END_DATE}" STRATEGY "comprehensive" FOCUS "所有技術更新、產品發布、社群動態" TYPE "official_website" ID "A1"
 
@@ -39,7 +36,6 @@ CRAWL_ALL https://manus.im/updates TIMERANGE "{START_DATE} to {END_DATE}" STRATE
 ```
 
 ### 優先級 B (開發工具) - 次要執行
-
 ```
 CRAWL_ALL https://github.com/features/copilot/whats-new TIMERANGE "{START_DATE} to {END_DATE}" STRATEGY "comprehensive" FOCUS "所有功能發布、整合更新、開發者工具" TYPE "official_website" ID "B1"
 
@@ -51,7 +47,6 @@ SEARCH_RELATED https://you.com TIMERANGE "{START_DATE} to {END_DATE}" STRATEGY "
 ```
 
 ### 優先級 C-E (其他官方網站) - 標準執行
-
 ```
 CRAWL_ALL https://www.apple.com/newsroom/ TIMERANGE "{START_DATE} to {END_DATE}" STRATEGY "comprehensive" FOCUS "所有產品發布、軟體更新、企業動態" TYPE "official_website" ID "C1"
 
@@ -69,13 +64,11 @@ CRAWL_ALL https://azure.microsoft.com/en-us/blog/ TIMERANGE "{START_DATE} to {EN
 ### 動態搜尋模板系統
 
 #### 基本搜尋模板
-
 ```
 SEARCH_DYNAMIC "{KEYWORD}" 新聞 最近{DAYS_RANGE}天 SITES "{TARGET_SITES}" FOCUS "所有相關新聞報導" TYPE "keyword_search" ID "{TASK_ID}"
 ```
 
 #### 進階搜尋模板
-
 ```
 SEARCH_TIMERANGE "{KEYWORD}" after:{START_DATE} before:{END_DATE} SITES "{TARGET_SITES}" FOCUS "所有相關新聞報導" TYPE "keyword_search" ID "{TASK_ID}"
 
@@ -85,7 +78,6 @@ SEARCH_SITE_SPECIFIC site:techcrunch.com OR site:theverge.com OR site:ithome.com
 ```
 
 ### 高優先級關鍵字搜尋 (AI/ML 相關)
-
 ```
 SEARCH_DYNAMIC "Hugging Face" 新聞 最近{DAYS_RANGE}天 SITES "TechCrunch,The Verge,iThome,科技新報,聯合新聞網" FOCUS "所有相關新聞報導" TYPE "keyword_search" ID "S1"
 
@@ -103,7 +95,6 @@ SEARCH_DYNAMIC "Grok AI" OR "xAI Grok" 新聞 最近{DAYS_RANGE}天 SITES "TechC
 ```
 
 ### 科技巨頭關鍵字搜尋
-
 ```
 SEARCH_DYNAMIC "Apple" 新聞 最近{DAYS_RANGE}天 SITES "TechCrunch,The Verge,Engadget,數位時代,聯合新聞網" FOCUS "所有相關新聞報導" TYPE "keyword_search" ID "S8"
 
@@ -121,7 +112,6 @@ SEARCH_DYNAMIC "Google" 新聞 最近{DAYS_RANGE}天 SITES "TechCrunch,The Verge
 ```
 
 ### 其他服務關鍵字搜尋
-
 ```
 SEARCH_DYNAMIC "Cloudflare" 新聞 最近{DAYS_RANGE}天 SITES "TechCrunch,ZDNet,InfoWorld,iThome" FOCUS "所有相關新聞報導" TYPE "keyword_search" ID "S14"
 
@@ -139,7 +129,6 @@ SEARCH_DYNAMIC "Ollama AI" 新聞 最近{DAYS_RANGE}天 SITES "TechCrunch,GitHub
 ```
 
 ### 綜合搜尋
-
 ```
 SEARCH_DYNAMIC "AI 人工智慧" OR "雲端運算" OR "科技新聞" 新聞 最近{DAYS_RANGE}天 SITES "綜合新聞媒體,科技媒體,台灣主流媒體" FOCUS "所有相關新聞報導" TYPE "keyword_search" ID "S22"
 ```
@@ -149,7 +138,6 @@ SEARCH_DYNAMIC "AI 人工智慧" OR "雲端運算" OR "科技新聞" 新聞 最�
 ## 權威媒體網站清單（已驗證）
 
 ### 國際科技媒體 ✅
-
 ```
 VERIFIED_INTERNATIONAL_SITES [
   "https://techcrunch.com/",      # 權威、有日期
@@ -163,7 +151,6 @@ VERIFIED_INTERNATIONAL_SITES [
 ```
 
 ### 台灣科技媒體 ✅
-
 ```
 VERIFIED_TAIWAN_TECH_SITES [
   "https://www.ithome.com.tw/",   # 權威、有日期
@@ -175,7 +162,6 @@ VERIFIED_TAIWAN_TECH_SITES [
 ```
 
 ### 台灣主流新聞媒體 ✅
-
 ```
 VERIFIED_TAIWAN_MAINSTREAM_SITES [
   "https://udn.com",              # 聯合新聞網 - 權威、有日期
@@ -188,7 +174,6 @@ VERIFIED_TAIWAN_MAINSTREAM_SITES [
 ```
 
 ### 企業與財經媒體 ✅
-
 ```
 VERIFIED_BUSINESS_SITES [
   "https://www.infoworld.com/",           # 權威、有日期
@@ -204,7 +189,6 @@ VERIFIED_BUSINESS_SITES [
 ---
 
 ## 動態輸出格式指令
-
 ```
 OUTPUT_DYNAMIC_FORMAT {
   "title": "新聞標題",
@@ -224,7 +208,6 @@ OUTPUT_DYNAMIC_FORMAT {
 ---
 
 ## 動態過濾與整合規則
-
 ```
 DYNAMIC_FILTER_RULES {
   "date_range": "{START_DATE} to {END_DATE}",
@@ -255,7 +238,6 @@ DYNAMIC_FILTER_RULES {
 ---
 
 ## 執行順序與品質保證
-
 ```
 EXECUTION_ORDER [
   "1. 設定動態時間變數 ({TODAY}, {START_DATE}, {END_DATE})",
@@ -284,3 +266,4 @@ ERROR_HANDLING {
   "內容過濾失敗": "保留原始內容，後續人工檢查"
 }
 ```
+
