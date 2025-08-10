@@ -46,10 +46,15 @@ function isParagraphStart(strong) {
     
     // 如果是 p 標籤的第一個子節點，檢查 strong 內容是否包含「。」
     if (tag === 'p') {
+      // 檢查 p 是否只有這個 strong 標籤，如果是則視為段落開頭
+      if (parent.childNodes.length === 1) {
+        return true;
+      }
       const strongText = strong.textContent.trim();
       if (!strongText.includes('。')) {
         return false;
       }
+      
     }
     
     return true;
