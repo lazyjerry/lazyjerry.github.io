@@ -21,7 +21,7 @@ function isParagraphStart(strong) {
   const parent = strong.parentNode;
   if (!parent) return false;
   const tag = parent.tagName?.toLowerCase();
-  if (tag !== 'p' && tag !== 'td') return false;
+  if (tag !== 'p' && tag !== 'td' && tag !== 'li') return false;
 
   // 檢查 strong 是否為父元素第一個非空白子節點
   let firstNonEmpty = null;
