@@ -51,6 +51,9 @@ function isParagraphStart(strong) {
         return true;
       }
       const strongText = strong.textContent.trim();
+      if (strongText.includes('：')) {
+        return true;
+      }
       if (!strongText.includes('。')) {
         return false;
       }
