@@ -40,6 +40,10 @@ function isParagraphStart(strong) {
       }
       if (prev.nodeType === Node.ELEMENT_NODE && prev.tagName.toLowerCase() === 'br') {
         return true;
+      }else if (prev.nodeType === Node.ELEMENT_NODE && prev.tagName.toLowerCase() === 'li') {
+        return true;
+      }else if (prev.nodeType === Node.ELEMENT_NODE && prev.tagName.toLowerCase() === 'p') {
+        return true;
       }
       break;
     }
