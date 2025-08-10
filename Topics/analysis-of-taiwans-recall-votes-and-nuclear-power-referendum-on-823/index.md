@@ -1,6 +1,6 @@
 ---
 title: 專題報告週記
-description: 不定時發布使用 Manus AI 所整理的相關專題，希望一週更新一次。
+description: 這是「8 月 23 日台灣第二波罷免投票與核三公投綜合預測報告」最後一期嘍！
 og_image: https://lazyjerry.github.io/assets/og-image2.png
 ---
 
