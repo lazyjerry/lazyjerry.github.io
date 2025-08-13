@@ -59,6 +59,7 @@ a16z.com/
 reddit.com/r/programming/
 lobste.rs/
 www.docker.com/blog
+gs.statcounter.com/press
 
 範圍：
 
