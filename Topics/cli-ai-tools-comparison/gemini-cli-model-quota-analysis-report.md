@@ -8,6 +8,8 @@ og_image: https://lazyjerry.github.io/assets/og-image2.png
 
 **作者：Manus AI 　報告日期：2025-08-18**
 
+**請注意這份文件校稿時數較少，請謹慎判斷真偽。**
+
 ## 總結
 
 **Gemini CLI** 確實對不同模型有明確的額度限制，且限制標準因模型類型和使用方式而異。根據官方文檔和社群驗證，**Gemini 2.5 Pro** 在免費層級下每日限制為 **100 請求**，而 **Gemini 2.5 Flash** 系列則提供更寬鬆的額度，最高可達 **1,000 請求/天** [[1]](#ref-1)[[2]](#ref-2)[[3]](#ref-3)。當使用 **Google Cloud Gemini Code Assist** 整合的 Gemini CLI 時，配額會更加慷慨，Standard 版本提供 **1,500 請求/天**，Enterprise 版本提供 **2,000 請求/天** [[1]](#ref-1)。這種分層配額設計讓不同需求的用戶都能找到適合的使用方案。
