@@ -1,7 +1,7 @@
 蒐集科技服務關鍵字：
-Hugging Face, OpenAI, Anthropic, YouAI, GitHub Copilot, GitHub, Manus, Grok,
-Apple, Microsoft, Azure, Nvidia, Tesla, Meta, Cloudflare, Perplexity, AWS,
-Google, Vultr, DigitalOcean, Kamatera, Ollama, Docker
+HuggingFace,OpenAI,Anthropic,YouAI,GitHubCopilot,GitHub,Manus,Grok,
+Apple,Microsoft,Azure,Nvidia,Tesla,Meta,Cloudflare,Perplexity,AWS,
+Google,Vultr,DigitalOcean,Kamatera,Ollama,Docker,Gemma,VertexAI,LMStudio,Kaggle
 
 時間規範：
 時間基準: {TODAY} = 執行當天
@@ -59,7 +59,8 @@ a16z.com/
 reddit.com/r/programming/
 lobste.rs/
 www.docker.com/blog
-gs.statcounter.com/press
+developers.googleblog.com
+blog.google
 
 範圍：
 
