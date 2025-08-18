@@ -11,9 +11,9 @@ ROOT_DIR = os.path.dirname(os.path.abspath(__file__))
 # 專題報告根目錄資料夾名稱
 TOPICS_FOLDER_NAME = 'Topics'
 # 專題報告的資料夾名稱
-TOPIC_FOLDER_NAME = 'analysis-of-taiwans-recall-votes-and-nuclear-power-referendum-on-823'
+TOPIC_FOLDER_NAME = 'ai_cli_tools'
 # 報告檔案名稱
-FILE_NAME = f"8月23日台灣第二波罷免投票與核三公投綜合預測報告.md"
+FILE_NAME = f"ai_cli_tools.md"
 # 專題報告的 index.md 路徑
 TOPIC_REPORT_PATH = os.path.join(ROOT_DIR,TOPICS_FOLDER_NAME, TOPIC_FOLDER_NAME, 'index.md')
 
