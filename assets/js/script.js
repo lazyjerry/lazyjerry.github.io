@@ -93,26 +93,66 @@ function isParagraphStart(strong) {
    * 3. 對每一個符合條件的 <a>，將其父 <td> 內容清空，插入一個新的 <a>，
    *    並將 href 屬性改為 id 屬性，內容維持數字。
    */
-  // 取得所有 <td> 內含 <a href="#ref-{數字}">{數字}</a> 的 <a>
-  const refLinks = Array.from(document.querySelectorAll('td > a[href^="#ref-"]'));
-  // 過濾出 href="#ref-{數字}" 且 a 內容也是相同數字或 [數字] 的 <a>
+  // 取得所有 <td> 內的 <a> 標籤
+  const refLinks = Array.from(document.querySelectorAll('td a[href^="#ref-"], td a[id^="ref-"]'));
+  
+  // 過濾出符合條件的引用連結
   const matchedLinks = refLinks.filter(a => {
-    const hrefMatch = a.getAttribute('href').match(/^#ref-(\d+)$/);
-    return hrefMatch && (a.textContent.trim() === hrefMatch[1] || a.textContent.trim() === `[${hrefMatch[1]}]`);
+    const td = a.closest('td');
+    if (!td) return false;
+    
+    // 取得 td 的純文字內容，去除 <a> 標籤後的內容
+    const tdText = td.textContent.trim();
+    
+    // 檢查是否有中文字或英文字母（不包含數字、方括號、空白）
+    if (/[a-zA-Z\u4e00-\u9fff]/.test(tdText)) {
+      return false;
+    }
+    
+    // 檢查 href 或 id 屬性格式
+    const hrefMatch = a.getAttribute('href')?.match(/^#ref-(\d+)$/);
+    const idMatch = a.getAttribute('id')?.match(/^ref-(\d+)$/);
+    
+    if (hrefMatch) {
+      const num = hrefMatch[1];
+      const text = a.textContent.trim();
+      return text === num || text === `[${num}]`;
+    }
+    
+    if (idMatch) {
+      const num = idMatch[1];
+      // 檢查 td 內容是否符合 [數字]<a id="ref-數字"></a> 或 <a id="ref-數字"></a>[數字] 格式
+      return tdText === `[${num}]` || tdText === num;
+    }
+    
+    return false;
   });
   // 對每一個符合條件的 <a> 進行處理
   matchedLinks.forEach(link => {
-    const num = link.textContent.trim();
     const td = link.closest('td');
-    if (td) {
-      // 建立新的 <a>
-      const newA = document.createElement('a');
-      newA.setAttribute('id', `ref-${num}`);
-      newA.textContent = num;
-      // 清空 <td> 並插入新 <a>
-      td.innerHTML = '';
-      td.appendChild(newA);
+    if (!td) return;
+    
+    // 取得數字
+    let num;
+    const hrefMatch = link.getAttribute('href')?.match(/^#ref-(\d+)$/);
+    const idMatch = link.getAttribute('id')?.match(/^ref-(\d+)$/);
+    
+    if (hrefMatch) {
+      num = hrefMatch[1];
+    } else if (idMatch) {
+      num = idMatch[1];
+    } else {
+      return;
     }
+    
+    // 建立新的 <a>
+    const newA = document.createElement('a');
+    newA.setAttribute('id', `ref-${num}`);
+    newA.textContent = num;
+    
+    // 清空 <td> 並插入新 <a>
+    td.innerHTML = '';
+    td.appendChild(newA);
   });
 
   /**
