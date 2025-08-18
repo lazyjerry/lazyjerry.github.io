@@ -1,6 +1,6 @@
 ---
 title: 專題報告週記
-description: 不定時發布使用 Manus AI 所整理的相關專題，希望一週更新一次。
+description: 不定時發布使用 Manus AI 所整理的相關專題。
 og_image: https://lazyjerry.github.io/assets/og-image2.png
 ---
 
