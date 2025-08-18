@@ -210,23 +210,16 @@ og_image: https://lazyjerry.github.io/assets/og-image2.png
 
 **從代碼生成到全流程自動化**：CLI AI 工具正在從簡單的代碼生成器進化為能夠處理完整開發流程的智能助手。未來可能看到這些工具直接參與需求分析、架構設計、測試規劃、部署監控等更高層次的開發活動。**ReAct 循環** [2](#ref-2) 和 **即時引導** [3](#ref-3) 等技術的成熟，將讓 AI 助手具備更強的自主決策和學習能力。
 
-<a id="ref-1"></a>
-<a id="ref-2"></a>
-<a id="ref-3"></a>
-<a id="ref-4"></a>
-<a id="ref-5"></a>
-<a id="ref-6"></a>
-
 ## 參考資料來源
 
-| 編號 | 文章標題                                                                                                      | 結論/亮點                                                     | 發布日期   | 來源                                                                                                  |
-| ---- | ------------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------- | ---------- | ----------------------------------------------------------------------------------------------------- |
-| 1    | [Claude Code overview](https://www.google.com/search?q=Claude+Code+overview)                                  | Anthropic 推出的終端機 AI 編程助手，支援企業級安全和 MCP 整合 | \*未知時間 | [Anthropic API 文檔](https://docs.anthropic.com/en/docs/claude-code/overview)                         |
-| 2    | [Gemini CLI: your open-source AI agent](https://www.google.com/search?q=Gemini+CLI+your+open-source+AI+agent) | Google 推出開源 AI 代理，提供慷慨免費額度和 1M token 上下文   | 2025-06-25 | [Google Blog](https://blog.google/technology/developers/introducing-gemini-cli-open-source-ai-agent/) |
-| 3    | [Cursor CLI](https://www.google.com/search?q=Cursor+CLI)                                                      | Cursor 推出 Beta 版 CLI 工具，支援即時引導和多模型整合        | \*未知時間 | [Cursor 官網](https://cursor.com/cli)                                                                 |
-| 4    | [OpenAI Codex CLI](https://www.google.com/search?q=OpenAI+Codex+CLI)                                          | OpenAI 開源編程代理，提供強大沙盒保護和 ChatGPT 整合          | \*未知時間 | [GitHub - openai/codex](https://github.com/openai/codex)                                              |
-| 5    | [Anthropic Pricing](https://www.google.com/search?q=Anthropic+Pricing)                                        | Claude 訂閱制定價，Pro 方案 $17-20/月，Max 方案 $100+/月      | \*未知時間 | [Anthropic 定價頁面](https://www.anthropic.com/pricing)                                               |
-| 6    | [Cursor Models & Pricing](https://www.google.com/search?q=Cursor+Models+Pricing)                              | Cursor 多層級定價，從 $20/月到 $400/月，採用混合計費模式      | \*未知時間 | [Cursor 文檔](https://docs.cursor.com/en/account/pricing)                                             |
+| 編號                  | 文章標題                                                                                                      | 結論/亮點                                                     | 發布日期   | 來源                                                                                                  |
+| --------------------- | ------------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------- | ---------- | ----------------------------------------------------------------------------------------------------- | --- |
+| <a id="ref-1"></a>[1] | [Claude Code overview](https://www.google.com/search?q=Claude+Code+overview)                                  | Anthropic 推出的終端機 AI 編程助手，支援企業級安全和 MCP 整合 | \*未知時間 | [Anthropic API 文檔](https://docs.anthropic.com/en/docs/claude-code/overview)                         |
+| <a id="ref-2"></a>[2] | [Gemini CLI: your open-source AI agent](https://www.google.com/search?q=Gemini+CLI+your+open-source+AI+agent) | Google 推出開源 AI 代理，提供慷慨免費額度和 1M token 上下文   | 2025-06-25 | [Google Blog](https://blog.google/technology/developers/introducing-gemini-cli-open-source-ai-agent/) |
+| <a id="ref-3"></a>[3] | [Cursor CLI](https://www.google.com/search?q=Cursor+CLI)                                                      | Cursor 推出 Beta 版 CLI 工具，支援即時引導和多模型整合        | \*未知時間 | [Cursor 官網](https://cursor.com/cli)                                                                 |
+| <a id="ref-4"></a>[4] | [OpenAI Codex CLI](https://www.google.com/search?q=OpenAI+Codex+CLI)                                          | OpenAI 開源編程代理，提供強大沙盒保護和 ChatGPT 整合          | \*未知時間 | [GitHub - openai/codex](https://github.com/openai/codex)                                              |
+| <a id="ref-5"></a>[5] | [Anthropic Pricing](https://www.google.com/search?q=Anthropic+Pricing)                                        | Claude 訂閱制定價，Pro 方案 $17-20/月，Max 方案 $100+/月      | \*未知時間 | [Anthropic 定價頁面](https://www.anthropic.com/pricing)                                               |
+| <a id="ref-6"></a>[6] | [Cursor Models & Pricing](https://www.google.com/search?q=Cursor+Models+Pricing)                              | Cursor 多層級定價，從 $20/月到 $400/月，採用混合計費模式      | \*未知時間 | [Cursor 文檔](https://docs.cursor.com/en/account/pricing)                                             |     |
 
 ---
 
