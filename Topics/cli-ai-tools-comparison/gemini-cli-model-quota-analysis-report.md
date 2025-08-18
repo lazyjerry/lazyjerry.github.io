@@ -1,4 +1,12 @@
+---
+title: 專題報告週記
+description: 不定時發布使用 Manus AI 所整理的相關專題。
+og_image: https://lazyjerry.github.io/assets/og-image2.png
+---
+
 # Gemini CLI 指定模型額度限制分析報告
+
+**作者：Manus AI 　報告日期：2025-08-18**
 
 ## 總結
 
@@ -6,19 +14,19 @@
 
 ## 模型配額詳細對照
 
-| 模型名稱 | 免費層級 RPD | 付費層級 RPD | 每分鐘限制 (RPM) | Token 限制 (TPM) |
-|---------|-------------|-------------|-----------------|-----------------|
-| **Gemini 2.5 Pro** | 100 [[2]](#ref-2)[[3]](#ref-3) | 依付費層級而定 | 5 [[2]](#ref-2) | 250,000 [[2]](#ref-2) |
-| **Gemini 2.5 Flash** | 250 [[2]](#ref-2) | 依付費層級而定 | 10 [[2]](#ref-2) | 250,000 [[2]](#ref-2) |
-| **Gemini 2.5 Flash-Lite** | 1,000 [[2]](#ref-2) | 依付費層級而定 | 15 [[2]](#ref-2) | 250,000 [[2]](#ref-2) |
-| **Gemini 2.0 Flash** | 200 [[2]](#ref-2) | 依付費層級而定 | 15 [[2]](#ref-2) | 1,000,000 [[2]](#ref-2) |
-| **Gemini 2.0 Flash-Lite** | 200 [[2]](#ref-2) | 依付費層級而定 | 30 [[2]](#ref-2) | 1,000,000 [[2]](#ref-2) |
+| 模型名稱                  | 免費層級 RPD                   | 付費層級 RPD   | 每分鐘限制 (RPM) | Token 限制 (TPM)        |
+| ------------------------- | ------------------------------ | -------------- | ---------------- | ----------------------- |
+| **Gemini 2.5 Pro**        | 100 [[2]](#ref-2)[[3]](#ref-3) | 依付費層級而定 | 5 [[2]](#ref-2)  | 250,000 [[2]](#ref-2)   |
+| **Gemini 2.5 Flash**      | 250 [[2]](#ref-2)              | 依付費層級而定 | 10 [[2]](#ref-2) | 250,000 [[2]](#ref-2)   |
+| **Gemini 2.5 Flash-Lite** | 1,000 [[2]](#ref-2)            | 依付費層級而定 | 15 [[2]](#ref-2) | 250,000 [[2]](#ref-2)   |
+| **Gemini 2.0 Flash**      | 200 [[2]](#ref-2)              | 依付費層級而定 | 15 [[2]](#ref-2) | 1,000,000 [[2]](#ref-2) |
+| **Gemini 2.0 Flash-Lite** | 200 [[2]](#ref-2)              | 依付費層級而定 | 30 [[2]](#ref-2) | 1,000,000 [[2]](#ref-2) |
 
 ### Gemini CLI 特殊配額 (Google Cloud 整合)
 
-| 版本類型 | 每日請求限制 | 每分鐘請求限制 | 適用範圍 |
-|---------|-------------|---------------|----------|
-| **Standard** | 1,500 [[1]](#ref-1) | 120 [[1]](#ref-1) | Gemini CLI + Agent 模式 |
+| 版本類型       | 每日請求限制        | 每分鐘請求限制    | 適用範圍                |
+| -------------- | ------------------- | ----------------- | ----------------------- |
+| **Standard**   | 1,500 [[1]](#ref-1) | 120 [[1]](#ref-1) | Gemini CLI + Agent 模式 |
 | **Enterprise** | 2,000 [[1]](#ref-1) | 120 [[1]](#ref-1) | Gemini CLI + Agent 模式 |
 
 ## 配額限制機制分析
@@ -26,6 +34,7 @@
 ### 多維度限制系統
 
 **Gemini CLI** 採用多維度限制系統 [[2]](#ref-2)：
+
 - **每分鐘請求數 (RPM)**：防止短時間內大量請求
 - **每日請求數 (RPD)**：控制總體使用量
 - **每分鐘 Token 數 (TPM)**：限制處理的文本量
@@ -33,32 +42,33 @@
 
 ### 配額重置時間
 
-| 配額類型 | 重置時間 | 備註 |
-|---------|----------|------|
-| **API 配額** | 太平洋時間午夜 [[2]](#ref-2) | 官方標準重置時間 |
-| **實際觀察** | UTC 上午 5:00 左右 [[3]](#ref-3) | 社群用戶實際體驗 |
-| **分鐘級配額** | 每分鐘滾動重置 [[2]](#ref-2) | 即時重置 |
+| 配額類型       | 重置時間                         | 備註             |
+| -------------- | -------------------------------- | ---------------- |
+| **API 配額**   | 太平洋時間午夜 [[2]](#ref-2)     | 官方標準重置時間 |
+| **實際觀察**   | UTC 上午 5:00 左右 [[3]](#ref-3) | 社群用戶實際體驗 |
+| **分鐘級配額** | 每分鐘滾動重置 [[2]](#ref-2)     | 即時重置         |
 
 ## 不同使用場景的配額策略
 
 ### 個人開發者場景
 
-| 使用強度 | 推薦模型 | 每日可用請求 | 成本 |
-|---------|----------|-------------|------|
-| **輕度使用** | Gemini 2.5 Flash-Lite | 1,000 [[2]](#ref-2) | 免費 |
-| **中度使用** | Gemini 2.5 Flash | 250 [[2]](#ref-2) | 免費 |
-| **重度使用** | Gemini 2.5 Pro | 100 [[2]](#ref-2)[[3]](#ref-3) | 免費，但需多專案策略 |
+| 使用強度     | 推薦模型              | 每日可用請求                   | 成本                 |
+| ------------ | --------------------- | ------------------------------ | -------------------- |
+| **輕度使用** | Gemini 2.5 Flash-Lite | 1,000 [[2]](#ref-2)            | 免費                 |
+| **中度使用** | Gemini 2.5 Flash      | 250 [[2]](#ref-2)              | 免費                 |
+| **重度使用** | Gemini 2.5 Pro        | 100 [[2]](#ref-2)[[3]](#ref-3) | 免費，但需多專案策略 |
 
 ### 企業用戶場景
 
-| 需求類型 | 推薦方案 | 每日可用請求 | 額外優勢 |
-|---------|----------|-------------|----------|
-| **標準企業** | Google Cloud Standard | 1,500 [[1]](#ref-1) | 整合 Code Assist |
+| 需求類型     | 推薦方案                | 每日可用請求        | 額外優勢            |
+| ------------ | ----------------------- | ------------------- | ------------------- |
+| **標準企業** | Google Cloud Standard   | 1,500 [[1]](#ref-1) | 整合 Code Assist    |
 | **大型企業** | Google Cloud Enterprise | 2,000 [[1]](#ref-1) | 更高配額 + 企業支援 |
 
 ### 多專案策略
 
 **突破免費配額限制的合法方式** [[3]](#ref-3)：
+
 - **創建多個 Google Cloud 專案**：每個專案有獨立配額
 - **建議專案數量**：不超過 4 個專案 [[3]](#ref-3)
 - **配額累積效果**：4 個專案可獲得 400 個 Gemini 2.5 Pro 請求/天
@@ -68,17 +78,18 @@
 ### 觸發限制時的行為
 
 **自動降級機制** [[3]](#ref-3)：
+
 - 當 **Gemini 2.5 Pro** 達到配額限制時，系統自動切換到 **Gemini 2.5 Flash**
 - 用戶會收到 "Rate limiting detected" 提示
 - 可以手動切換認證方式或模型來繼續使用
 
 ### 配額監控建議
 
-| 監控指標 | 建議做法 | 工具 |
-|---------|----------|------|
-| **每日使用量** | 定期檢查剩餘配額 | Gemini CLI 內建統計 |
-| **模型選擇** | 根據任務複雜度選擇合適模型 | 手動切換或自動降級 |
-| **專案管理** | 合理分配多專案使用 | Google Cloud Console |
+| 監控指標       | 建議做法                   | 工具                 |
+| -------------- | -------------------------- | -------------------- |
+| **每日使用量** | 定期檢查剩餘配額           | Gemini CLI 內建統計  |
+| **模型選擇**   | 根據任務複雜度選擇合適模型 | 手動切換或自動降級   |
+| **專案管理**   | 合理分配多專案使用         | Google Cloud Console |
 
 ## 亮點分析
 
@@ -114,13 +125,12 @@
 
 ## 參考資料來源
 
-| 編號 | 文章標題 | 結論/亮點 | 發布日期 | 來源 |
-|------|----------|-----------|----------|------|
-| 1 | [Quotas and limits - Gemini for Google Cloud](https://www.google.com/search?q=Quotas+and+limits+Gemini+for+Google+Cloud) | Google Cloud Gemini CLI 配額：Standard 1,500 請求/天，Enterprise 2,000 請求/天 | *未知時間 | [Google Cloud 文檔](https://cloud.google.com/gemini/docs/quotas) |
-| 2 | [Rate limits - Gemini API](https://www.google.com/search?q=Rate+limits+Gemini+API) | Gemini API 各模型配額詳細規格：Pro 100 RPD，Flash 250 RPD，Flash-Lite 1,000 RPD | *未知時間 | [Google AI for Developers](https://ai.google.dev/gemini-api/docs/rate-limits) |
-| 3 | [Gemini CLI quota limit discussion](https://www.google.com/search?q=Gemini+CLI+quota+limit+discussion) | 社群確認 Gemini 2.5 Pro 免費限制 100 請求/天，支援多專案策略突破限制 | 2025-07-16 | [GitHub Issue #4300](https://github.com/google-gemini/gemini-cli/issues/4300) |
+| 編號 | 文章標題                                                                                                                 | 結論/亮點                                                                       | 發布日期   | 來源                                                                          |
+| ---- | ------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------- | ---------- | ----------------------------------------------------------------------------- |
+| 1    | [Quotas and limits - Gemini for Google Cloud](https://www.google.com/search?q=Quotas+and+limits+Gemini+for+Google+Cloud) | Google Cloud Gemini CLI 配額：Standard 1,500 請求/天，Enterprise 2,000 請求/天  | \*未知時間 | [Google Cloud 文檔](https://cloud.google.com/gemini/docs/quotas)              |
+| 2    | [Rate limits - Gemini API](https://www.google.com/search?q=Rate+limits+Gemini+API)                                       | Gemini API 各模型配額詳細規格：Pro 100 RPD，Flash 250 RPD，Flash-Lite 1,000 RPD | \*未知時間 | [Google AI for Developers](https://ai.google.dev/gemini-api/docs/rate-limits) |
+| 3    | [Gemini CLI quota limit discussion](https://www.google.com/search?q=Gemini+CLI+quota+limit+discussion)                   | 社群確認 Gemini 2.5 Pro 免費限制 100 請求/天，支援多專案策略突破限制            | 2025-07-16 | [GitHub Issue #4300](https://github.com/google-gemini/gemini-cli/issues/4300) |
 
 ---
 
-**報告編制說明**：本報告基於 Google 官方文檔和社群驗證資訊，提供 Gemini CLI 模型配額限制的完整分析。所有配額數據均來自可靠來源，標註 "*未知時間" 的來源表示發布日期無法確定但內容經過驗證。
-
+**報告編制說明**：本報告基於 Google 官方文檔和社群驗證資訊，提供 Gemini CLI 模型配額限制的完整分析。所有配額數據均來自可靠來源，標註 "\*未知時間" 的來源表示發布日期無法確定但內容經過驗證。
