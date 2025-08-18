@@ -13,7 +13,7 @@ TOPICS_FOLDER_NAME = 'Topics'
 # 專題報告的資料夾名稱
 TOPIC_FOLDER_NAME = 'ai_cli_tools'
 # 報告檔案名稱
-FILE_NAME = f"ai_cli_tools.md"
+FILE_NAME = f"CLI AI 工具對照報告.md"
 # 專題報告的 index.md 路徑
 TOPIC_REPORT_PATH = os.path.join(ROOT_DIR,TOPICS_FOLDER_NAME, TOPIC_FOLDER_NAME, 'index.md')
 
