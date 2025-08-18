@@ -94,7 +94,7 @@ function isParagraphStart(strong) {
    *    並將 href 屬性改為 id 屬性，內容維持數字。
    */
   // 取得所有 <td> 內的 <a> 標籤
-  const refLinks = Array.from(document.querySelectorAll('td a[href^="#ref-"], td a[id^="ref-"]'));
+  const refLinks = Array.from(document.querySelectorAll('td a[id^="ref-"]'));
   
   // 過濾出符合條件的引用連結
   const matchedLinks = refLinks.filter(a => {
