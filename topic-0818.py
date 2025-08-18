@@ -11,7 +11,7 @@ ROOT_DIR = os.path.dirname(os.path.abspath(__file__))
 # 專題報告根目錄資料夾名稱
 TOPICS_FOLDER_NAME = 'Topics'
 # 專題報告的資料夾名稱
-TOPIC_FOLDER_NAME = 'ai_cli_tools'
+TOPIC_FOLDER_NAME = 'cli-ai-tools-comparison'
 # 報告檔案名稱
 FILE_NAME = f"CLI AI 工具對照報告.md"
 # 專題報告的 index.md 路徑
