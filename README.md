@@ -4,7 +4,11 @@
 
 目前有實作[科技服務資訊週記](https://lazyjerry.github.io/weekly-report/)與不定期對自己感興趣的議題的專題報告。
 
-最近一次的專題報告是關於[台灣 823 大罷免與核三公投議題的分析](https://lazyjerry.github.io/Topics/analysis-of-taiwans-recall-votes-and-nuclear-power-referendum-on-823/) 這個報告我要記得在 8/12 號以後就不要再發了。
+最近一次專題報告是關於目前常見主流的[CLI AI 工具對照報告](https://lazyjerry.github.io/Topics/cli-ai-tools-comparison/) 應該只有一期，最後更新在 2025-08-18 目的是嘗試比較出目前主流使用的 CLI AI 工具中，成本、功能、上下文長度、應用等比較說明。
+
+過去的專題有：
+
+- [台灣 823 大罷免與核三公投議題的分析](https://lazyjerry.github.io/Topics/analysis-of-taiwans-recall-votes-and-nuclear-power-referendum-on-823/) 最後更新在 2025-08-11
 
 未來有更新其他專題議題，將會同步更新該頁面資訊。
 
