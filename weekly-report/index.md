@@ -131,7 +131,7 @@ description: AI 自動彙整的科技服務官方資訊週報，使用 Manus Plu
 | <a id="ref-22"></a>[22] | [2025 年區塊鏈生態繫統髮展趨勢：從基礎設施昇級到全球政策博弈](https://www.google.com/search?q=2025年區塊鏈生態繫統髮展趨勢：從基礎設施昇級到全球政策博弈)               | 區塊鏈技術邁向成熟，Layer 2 與 AI 深度融合成趨勢。            | 2025-08-22 | [Cointelegraph](https://tw.cointelegraph.com/news/blockchain-ecosystem-development-trends-in-2025-from-infrastructure-upgrades-to-global-policy-dynamics)                 |
 | <a id="ref-23"></a>[23] | [區塊鏈重點動態 2025 年 8 月 24 日晨間參考](https://www.google.com/search?q=區塊鏈重點動態2025年8月24日晨間參考)                                                        | LayerZero 收購 Stargate 獲 95%投票通過，區塊鏈整合加速。      | 2025-08-24 | [鉅亨網](https://m.cnyes.com/news/id/6123805)                                                                                                                             |
 
----
+** 參考資料有誤，將儘快修復 **
 
 ## <a id="報告說明"></a>報告說明
 
