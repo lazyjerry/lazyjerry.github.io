@@ -1,7 +1,6 @@
 # AI 提示詞原則中的英文簡寫：深入剖析與最佳實踐案例研究
 
-**作者**: Manus AI
-**日期**: 2025 年 8 月 27 日
+**作者: Manus AI 2025 年 8 月 27 日**
 
 ## 目錄
 
@@ -325,4 +324,4 @@
 [7] 關於 Adobe Firefly 的提示詞技巧，綜合了來自 [Adobe 官方文檔](https://helpx.adobe.com/firefly/using/tips-tricks.html) 和多個專業設計師社群分享的最佳實踐。
 <a id="ref-7"></a>
 
-**這裡有 PDF 版本可以[下載](https://github.com/lazyjerry/lazyjerry.github.io/blob/master/Topics/ai-prompt-acronyms-insights/0827/final_report.pdf)**
+**這裡有原始 PDF 版本可以[下載](https://github.com/lazyjerry/lazyjerry.github.io/blob/master/Topics/ai-prompt-acronyms-insights/0827/final_report.pdf)**
