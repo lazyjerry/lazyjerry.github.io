@@ -8,6 +8,8 @@ og_image: https://lazyjerry.github.io/assets/og-image2.png
 
 **作者: Manus AI 2025 年 8 月 27 日**
 
+**請特別注意參考資料內容，AI Agnet 搜尋資料並非完美，案例等資料內容僅供參考，作為啟發還不錯啦。**
+
 ## 目錄
 
 1. [引言](#introduction)
