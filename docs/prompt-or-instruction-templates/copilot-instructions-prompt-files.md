@@ -1,61 +1,676 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta name="description" content="Learn how to use .instructions.md and .prompt.md files to customize GitHub Copilot responses in VIsual Studio Code for consistent, project-specific AI assistance" />
-    <title>Master GitHub Copilot Customization in Visual Studio Code with Instructions and Prompt Files - Copilot That Jawn</title>
+# Master GitHub Copilot Customization in Visual Studio Code with Instructions and Prompt Files
 
-    <!-- Favicons -->
-    <link rel="icon" type="image/x-icon" href="/img/favicon.ico?v=qBciqMDkfA1YHQ4_Omfcmv_aajsXSEUcH4I8S_q_GJ0">
-    <link rel="icon" type="image/png" sizes="32x32" href="/img/favicon-32x32.png?v=XjxSW5oPopnC_84ux7VADwtkXkRwb7Cxgvqffpmhn3I">
-    <link rel="icon" type="image/png" sizes="16x16" href="/img/favicon-16x16.png?v=FqiG5xG-7MRoKE_AFzDsYbPLzXPIDatWbgQ8NHGA0qU">
-    <link rel="apple-touch-icon" sizes="180x180" href="/img/apple-touch-icon.png?v=dtFCi5gTgxu0J7GJ9h_wmuPEeBJDI7XNwVyZvTH-MiM">
-      <!-- PWA Support -->
-    <link rel="manifest" href="/manifest.json?v=39OyQEK_p_PAyrHFCqmX6Ovqzt0AzDvG_5oiDtyBI3Q">
-    <meta name="theme-color" content="#6200EE">
-    <meta name="msapplication-TileColor" content="#6200EE">
-    <meta name="msapplication-config" content="~/browserconfig.xml" asp-append-version="true">
+Take your GitHub Copilot experience to the next level by leveraging Visual Studio Code's powerful customization features: instructions files and prompt files. These tools allow you to create consistent, project-specific AI responses that understand your coding standards, preferences, and common workflows.
 
-    <!-- Prevent theme flash -->
-    <script>
-        (function() {
-            const theme = localStorage.getItem('theme') || 'auto';
-            const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
-            const isDark = theme === 'dark' || (theme === 'auto' && prefersDark);
-            document.documentElement.setAttribute('data-theme', theme);
-            document.documentElement.setAttribute('data-theme-resolved', isDark ? 'dark' : 'light');
-            if (isDark) {
-                document.documentElement.classList.add('theme-dark');
-            } else {
-                document.documentElement.classList.add('theme-light');
-            }
-        })();
-    </script>
-    
-    <!-- Critical CSS for immediate theme application -->
-    <style>
-        :root {
-            /* Light theme colors */
-            --bg-primary: #ffffff;
-            --bg-secondary: #f8f9fa;
-            --text-primary: #212529;
-            --text-secondary: #6c757d;
-            --navbar-bg: #ffffff;
-            --navbar-text: #212529;
-        }
-        
-        /* Dark theme colors */
-        html[data-theme="dark"],
-        html[data-theme-resolved="dark"] {
-            --bg-primary: #1a1a1a;
-            --bg-secondary: #2d3748;
-            --text-primary: #f7fafc;
-            --text-secondary: #cbd5e0;
-            --navbar-bg: #1a1a1a;
-            --navbar-text: #f7fafc;
-        }
-        
+> **Reference**: This guide is based on the official [Visual Studio Code Copilot Customization Documentation](https://code.visualstudio.com/docs/copilot/copilot-customization). For the most up-to-date technical details and API changes, refer to the official documentation.
+
+## Understanding the Customization Ecosystem
+
+Visual Studio Code offers three main ways to customize Copilot responses:
+
+1. **`.github/copilot-instructions.md`** - Global project instructions
+2. **`.instructions.md` files** - Granular, context-specific instructions
+3. **`.prompt.md` files** - Reusable prompt templates for common tasks
+
+## Setting Up Instructions Files
+
+### Global Project Instructions
+
+Create a `.github/copilot-instructions.md` file at your project root for project-wide guidelines:
+
+```markdown
+---
+# Example: .github/copilot-instructions.md
+---
+
+# Project Coding Standards
+
+## General Guidelines
+
+- Use TypeScript for all new JavaScript code
+- Follow functional programming patterns when possible
+- Prefer composition over inheritance
+- Write comprehensive JSDoc comments for all public APIs
+
+## Testing Requirements
+
+- Include unit tests for all business logic
+- Use Jest for testing framework
+- Aim for 80%+ code coverage
+- Write integration tests for API endpoints
+
+## Error Handling
+
+- Always use proper error boundaries in React components
+- Log errors with structured logging
+- Return meaningful error messages to users
+- Handle async operations with proper try-catch blocks
+```
+
+**Enable Global Instructions:**
+
+1. Open Visual Studio Code settings (Ctrl+Shift+P → "Preferences: Open Settings")
+2. Search for `github.copilot.chat.codeGeneration.useInstructionFiles`
+3. Set to `true`
+
+### Granular Instructions Files
+
+Create targeted `.instructions.md` files for specific scenarios:
+
+#### Understanding Instructions File Naming and Frontmatter
+
+Instructions files must follow the naming convention: `[name].instructions.md`
+
+**File Naming Examples:**
+
+- `react.instructions.md` - React component guidelines
+- `database.instructions.md` - Database development patterns
+- `testing.instructions.md` - Testing best practices
+- `api-endpoints.instructions.md` - API development standards
+- `typescript.instructions.md` - TypeScript coding conventions
+- `security.instructions.md` - Security review guidelines
+
+**File Location Options:**
+
+- **Workspace**: `.github/instructions/` folder (default)
+- **User Profile**: `%APPDATA%\Code\User\instructions\` (Windows)
+- **Custom Locations**: Configure via `chat.instructionsFilesLocations` setting
+
+The frontmatter section at the top of `.instructions.md` files uses YAML syntax and supports several key properties:
+
+```yaml
+---
+applyTo: "glob-pattern" # Required: Specifies which files to apply instructions to
+description: "Brief description" # Optional: Describes what the instructions do
+---
+```
+
+**Key Frontmatter Properties:**
+
+- **`applyTo`**: Controls when instructions are automatically applied
+
+  - `"**"` - Apply to all files in the workspace
+  - `"**/*.ts"` - Apply only to TypeScript files
+  - `"**/*.{tsx,jsx}"` - Apply to React component files
+  - `"**/tests/**/*.ts"` - Apply only to test files
+  - `"src/components/**/*"` - Apply to files in specific directories
+
+- **`description`**: Brief explanation shown when hovering over the instruction file in chat view
+
+**Complete File Examples with Suggested Names:**
+
+**File: `react.instructions.md`**
+
+```yaml
+---
+applyTo: "**/*.{tsx,jsx}"
+description: "React component development guidelines"
+---
+```
+
+**File: `database.instructions.md`**
+
+```yaml
+---
+applyTo: "**/models/**/*.ts"
+description: "Entity Framework patterns and database guidelines"
+---
+```
+
+**File: `testing.instructions.md`**
+
+```yaml
+---
+applyTo: "**/tests/**/*.{ts,js}"
+description: "Testing best practices and patterns"
+---
+```
+
+**File: `api-endpoints.instructions.md`**
+
+```yaml
+---
+applyTo: "src/api/**/*.ts"
+description: "RESTful API endpoint development guidelines"
+---
+```
+
+#### Framework-Specific Instructions
+
+**Example File: `react.instructions.md`**
+
+```markdown
+---
+applyTo: "**/*.{tsx,jsx}"
+description: "React component development guidelines"
+---
+
+# React Component Instructions
+
+## Component Structure
+
+- Use functional components with hooks
+- Implement proper prop validation with TypeScript interfaces
+- Extract custom hooks for reusable logic
+- Use React.memo for performance optimization when needed
+
+## State Management
+
+- Use useState for local component state
+- Use useReducer for complex state logic
+- Implement custom hooks for shared state logic
+- Avoid prop drilling - use Context API when appropriate
+
+## Styling
+
+- Use CSS Modules or styled-components
+- Follow BEM methodology for class naming
+- Implement responsive design with mobile-first approach
+- Use CSS custom properties for theming
+```
+
+#### Database-Specific Instructions
+
+**Example File: `database.instructions.md`**
+
+```markdown
+---
+applyTo: "**/models/**/*.ts"
+description: "Database model and query guidelines"
+---
+
+# Database Development Guidelines
+
+## Entity Framework Patterns
+
+- Use repository pattern for data access
+- Implement proper entity relationships
+- Include audit fields (CreatedAt, UpdatedAt, CreatedBy)
+- Use value objects for complex properties
+
+## Query Optimization
+
+- Always use parameterized queries
+- Implement proper indexing strategies
+- Use async methods for all database operations
+- Include proper error handling for database exceptions
+```
+
+### Creating Instructions Files via Visual Studio Code
+
+**Quick Creation Method:**
+
+1. Open Chat view in Visual Studio Code
+2. Click the "Configure Chat" button (gear icon)
+3. Select "Instructions" → "New instruction file"
+4. Choose workspace or user profile location
+5. Name your file and start writing instructions
+
+**Command Palette Method:**
+
+- Press `Ctrl+Shift+P`
+- Type "Chat: New Instructions File"
+- Follow the prompts
+
+## Mastering Prompt Files
+
+Prompt files (`.prompt.md`) are reusable templates for common development tasks.
+
+### Understanding Prompt File Naming and Frontmatter
+
+Prompt files must follow the naming convention: `[name].prompt.md`
+
+**File Naming Examples:**
+
+- `create-react-component.prompt.md` - Generate React components
+- `security-review.prompt.md` - Perform security code reviews
+- `api-endpoint.prompt.md` - Create RESTful API endpoints
+- `generate-tests.prompt.md` - Create unit and integration tests
+- `refactor-code.prompt.md` - Code refactoring workflows
+- `generate-docs.prompt.md` - Documentation generation
+
+**File Location Options:**
+
+- **Workspace**: `.github/prompts/` folder (default)
+- **User Profile**: `%APPDATA%\Code\User\prompts\` (Windows)
+- **Custom Locations**: Configure via `chat.promptFilesLocations` setting
+
+Prompt files use YAML frontmatter to configure how the prompt should be executed:
+
+```yaml
+---
+mode: "ask"|"edit"|"agent"        # Optional: Chat mode to use (default: "agent")
+model: "gpt-4"|"gpt-3.5-turbo"    # Optional: Specific AI model to use
+tools: ["tool1", "tool2"]         # Optional: Tools available in agent mode
+description: "Brief description"   # Optional: What the prompt does
+---
+```
+
+**Frontmatter Properties Explained:**
+
+- **`mode`**: Determines how the prompt operates
+
+  - `"ask"` - Simple question/answer mode
+  - `"edit"` - Direct file editing mode
+  - `"agent"` - Full agent mode with tool access (default)
+
+- **`model`**: Specifies which AI model to use
+
+  - `"gpt-4"` - Most capable model for complex tasks
+  - `"gpt-3.5-turbo"` - Faster, more cost-effective for simpler tasks
+  - If not specified, uses the currently selected model in Visual Studio Code
+
+- **`tools`**: Array of tool names/sets available in agent mode
+
+  - `["typescript"]` - TypeScript-specific tools
+  - `["react", "typescript"]` - Multiple tool sets
+  - `["web-search", "file-system"]` - External tools
+  - Configure available tools via "Configure Tools" in chat
+
+- **`description`**: Brief explanation of the prompt's purpose (shown in UI)
+
+**Common Frontmatter Patterns:**
+
+```yaml
+# For code generation tasks
+---
+mode: "agent"
+model: "gpt-4"
+tools: ["typescript", "react"]
+description: "Generate React component with tests"
+---
+# For code review tasks
+---
+mode: "ask"
+description: "Perform security code review"
+---
+# For file editing tasks
+---
+mode: "edit"
+model: "gpt-4"
+description: "Refactor code following team standards"
+---
+# For documentation tasks
+---
+mode: "agent"
+tools: ["markdown", "web-search"]
+description: "Generate comprehensive API documentation"
+---
+```
+
+### Basic Prompt File Structure
+
+**Example File: `create-react-component.prompt.md`**
+
+```markdown
+---
+mode: "agent"
+model: "gpt-4"
+tools: ["typescript", "react"]
+description: "Generate a React component with TypeScript"
+---
+
+# Create React Component
+
+Create a new React component with the following requirements:
+
+## Component Specifications
+
+- Component name: ${input:componentName:Enter component name}
+- Use TypeScript with proper interfaces
+- Include proper prop validation
+- Implement responsive design
+- Add comprehensive JSDoc comments
+
+## Additional Context
+
+- Follow our project's coding standards: [coding-standards](.github/copilot-instructions.md)
+- Reference existing components: #src/components/
+- Use our design system: #src/styles/design-system.ts
+
+## Output Requirements
+
+- Generate the component file
+- Create a corresponding test file
+- Include usage examples in comments
+- Export the component properly
+
+Selected files for context: ${selection}
+```
+
+### Advanced Prompt Examples
+
+#### Security Review Prompt
+
+**Example File: `security-review.prompt.md`**
+
+```markdown
+---
+mode: "agent"
+description: "Perform comprehensive security review"
+---
+
+# Security Code Review
+
+Perform a thorough security analysis of the selected code:
+
+## Review Areas
+
+1. **Input Validation**: Check for proper sanitization and validation
+2. **Authentication**: Verify proper auth implementation
+3. **Authorization**: Ensure proper access controls
+4. **Data Exposure**: Look for sensitive data leaks
+5. **SQL Injection**: Check for parameterized queries
+6. **XSS Prevention**: Verify proper output encoding
+
+## Context Files
+
+- Security guidelines: [security-guidelines](./docs/security.md)
+- Authentication service: #src/services/auth.ts
+
+## Output Format
+
+Provide findings in this format:
+
+- **Issue**: Description of the security concern
+- **Severity**: Critical/High/Medium/Low
+- **Location**: File and line number
+- **Recommendation**: Specific fix instructions
+- **Example**: Code example showing the fix
+
+Selected code: ${selection}
+```
+
+#### API Generation Prompt
+
+**Example File: `api-endpoint.prompt.md`**
+
+```markdown
+---
+mode: "edit"
+description: "Generate RESTful API endpoint"
+---
+
+# Generate API Endpoint
+
+Create a complete RESTful API endpoint with the following specifications:
+
+## Requirements
+
+- HTTP method: ${input:method:GET|POST|PUT|DELETE}
+- Resource: ${input:resource:Enter resource name}
+- Include proper validation middleware
+- Implement error handling
+- Add comprehensive OpenAPI documentation
+- Include unit and integration tests
+
+## Dependencies
+
+- Follow API patterns: [api-patterns](./docs/api-patterns.md)
+- Use validation schemas: #src/schemas/
+- Reference existing endpoints: #src/controllers/
+
+## File Structure
+
+Create these files:
+
+- Controller: `src/controllers/${input:resource}Controller.ts`
+- Routes: `src/routes/${input:resource}Routes.ts`
+- Tests: `tests/controllers/${input:resource}Controller.test.ts`
+- Schema: `src/schemas/${input:resource}Schema.ts`
+
+Target location: ${workspaceFolder}/src
+```
+
+## Using Prompt Files
+
+### Running Prompts
+
+**Via Chat Input:**
+
+- Type `/` followed by prompt name: `/create-react-component`
+- Pass parameters: `/create-api-endpoint: method=POST resource=users`
+
+**Via Command Palette:**
+
+- Press `Ctrl+Shift+P`
+- Type "Chat: Run Prompt"
+- Select your prompt file
+
+**Via Editor:**
+
+- Open the `.prompt.md` file
+- Click the play button in the editor title
+- Choose to run in current or new chat session
+
+## Advanced Customization Techniques
+
+### Variable System
+
+Leverage Visual Studio Code's variable system in your instructions and prompts:
+
+```markdown
+# Current workspace: ${workspaceFolder}
+
+# Current file: ${file}
+
+# Selected text: ${selectedText}
+
+# User input: ${input:variableName:placeholder}
+```
+
+### File References
+
+Link to other files and instructions:
+
+```markdown
+# Reference other instructions
+
+Follow guidelines in [typescript-rules](./typescript.instructions.md)
+
+# Reference workspace files
+
+Check existing patterns: #src/utils/helpers.ts
+
+# Reference with markdown links
+
+See [API documentation](../docs/api.md) for details
+```
+
+### Conditional Instructions
+
+Create context-aware instructions using the `applyTo` property:
+
+```markdown
+---
+applyTo: "**/tests/**/*.ts"
+description: "Testing-specific instructions"
+---
+
+# Testing Guidelines
+
+- Use describe/it pattern for test structure
+- Include setup and teardown as needed
+- Mock external dependencies
+- Test both success and error scenarios
+```
+
+## Organization Strategies
+
+### Workspace Structure
+
+```
+.github/
+├── copilot-instructions.md           # Global project instructions
+├── instructions/                     # Specific instruction files
+│   ├── react.instructions.md         # React component guidelines
+│   ├── database.instructions.md      # Database development patterns
+│   ├── testing.instructions.md       # Testing best practices
+│   ├── api-endpoints.instructions.md # API development standards
+│   └── security.instructions.md      # Security review guidelines
+└── prompts/                          # Reusable prompt templates
+    ├── create-react-component.prompt.md    # Generate React components
+    ├── api-endpoint.prompt.md             # Create API endpoints
+    ├── security-review.prompt.md          # Security code reviews
+    ├── generate-tests.prompt.md           # Create unit/integration tests
+    └── refactor-code.prompt.md            # Code refactoring workflows
+```
+
+### User Profile Instructions
+
+Store personal preferences in your user profile:
+
+- **Location**: `%APPDATA%\Code\User\prompts\` (Windows)
+- **Sync**: Enable Settings Sync to share across devices
+- **Access**: Available in all workspaces
+
+## Team Collaboration Best Practices
+
+### Version Control
+
+- Commit instruction and prompt files to your repository
+- Document your customization strategy in README
+- Review changes to instructions like code changes
+- Use descriptive commit messages for instruction updates
+
+### Team Standards
+
+```markdown
+---
+# Example: .github/copilot-instructions.md for team
+---
+
+# Team Development Standards
+
+## Code Review Requirements
+
+- All PRs require 2 approvals
+- Include tests for new features
+- Update documentation for API changes
+- Follow conventional commit format
+
+## Architecture Decisions
+
+- Use clean architecture patterns
+- Implement dependency injection
+- Follow SOLID principles
+- Document architectural decisions in ADRs
+```
+
+### Knowledge Sharing
+
+- Create prompt libraries for common team tasks
+- Share useful instructions via team documentation
+- Conduct training sessions on customization techniques
+- Maintain a team wiki of best practices
+
+## Troubleshooting Common Issues
+
+### Instructions Not Applied
+
+1. **Check Settings**: Ensure `github.copilot.chat.codeGeneration.useInstructionFiles` is enabled
+2. **File Location**: Verify files are in correct directories
+3. **Syntax**: Check YAML frontmatter formatting
+4. **File Extension**: Ensure `.instructions.md` or `.prompt.md` extensions
+
+### Conflicting Instructions
+
+- Avoid contradictory guidelines across files
+- Use specific `applyTo` patterns to prevent conflicts
+- Test instruction combinations before deployment
+- Document instruction hierarchy and precedence
+
+### Performance Considerations
+
+- Keep instruction files concise and focused
+- Avoid overly complex nested references
+- Monitor token usage in complex setups
+- Regular review and cleanup of unused instructions
+
+## Measuring Effectiveness
+
+### Success Metrics
+
+- **Consistency**: Are generated responses following your guidelines?
+- **Efficiency**: Are common tasks faster with prompts?
+- **Quality**: Is code quality improving with instructions?
+- **Adoption**: Is the team using the customizations?
+
+### Iterative Improvement
+
+1. Start with basic instructions
+2. Gather feedback from team usage
+3. Refine and expand based on common patterns
+4. Document lessons learned
+5. Share successful patterns with the team
+
+## Advanced Integration Patterns
+
+### CI/CD Integration
+
+```markdown
+---
+applyTo: "**/.github/workflows/*.yml"
+description: "GitHub Actions workflow guidelines"
+---
+
+# CI/CD Instructions
+
+## Workflow Standards
+
+- Use reusable workflows when possible
+- Include proper error handling
+- Implement security scanning
+- Use environment-specific deployments
+- Include rollback procedures
+```
+
+### Documentation Generation
+
+```markdown
+---
+mode: "agent"
+description: "Generate API documentation"
+---
+
+# Generate API Documentation
+
+Create comprehensive API documentation for: ${selection}
+
+## Requirements
+
+- OpenAPI 3.0 specification
+- Include request/response examples
+- Document error responses
+- Add authentication requirements
+- Include rate limiting information
+
+Reference: [API standards](./docs/api-standards.md)
+```
+
+## Conclusion
+
+Instructions and prompt files transform GitHub Copilot from a general-purpose assistant into a project-aware, team-aligned development partner. Start with basic instructions, gradually build your library of prompts, and continuously refine based on your team's needs.
+
+The key to success is consistency, team adoption, and iterative improvement. Begin with the most common tasks in your workflow, then expand your customization library as you discover new opportunities for automation and standardization.
+
+**Next Steps:**
+
+1. Create your first `.github/copilot-instructions.md` file
+2. Set up project-specific instruction files
+3. Build a library of common prompt templates
+4. Share and iterate with your team
+5. Measure and improve based on usage patterns
+
+Remember: these customizations are not just about making Copilot work better—they're about codifying your team's knowledge and best practices into reusable, scalable tools that help maintain consistency and quality across your entire codebase.
+--bg-primary: #1a1a1a;
+--bg-secondary: #2d3748;
+--text-primary: #f7fafc;
+--text-secondary: #cbd5e0;
+--navbar-bg: #1a1a1a;
+--navbar-text: #f7fafc;
+}
+
         /* Immediate body styling */
         body {
             background-color: var(--bg-primary);
@@ -63,7 +678,7 @@
             margin: 0;
             transition: background-color 0.3s ease, color 0.3s ease;
         }
-        
+
         /* Immediate navbar styling */
         .navbar {
             background-color: var(--navbar-bg) !important;
@@ -79,7 +694,7 @@
         .navbar .nav-link {
             color: var(--navbar-text) !important;
         }
-        
+
         /* Code block styling with word wrapping */
         pre {
             white-space: pre-wrap;       /* CSS3 */
@@ -89,32 +704,32 @@
             max-width: 100%;
             overflow-x: hidden !important;
         }
-        
+
         pre code {
             white-space: pre-wrap !important;
         }
     </style>
-    
+
     <!-- Feeds and Sitemap -->
     <link rel="sitemap" type="application/xml" title="Sitemap" href="/sitemap.xml" />
     <link rel="alternate" type="application/rss+xml" title="Latest Tips" href="/feed.rss" />      <!-- Fonts and External CSS -->
     <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@800&display=swap" rel="stylesheet" />
-    
+
     <!-- Preload critical CSS for faster loading -->
     <link rel="preload" href="/lib/bootstrap/dist/css/bootstrap.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
     <noscript b-x12e99zfhl><link rel="stylesheet" href="/lib/bootstrap/dist/css/bootstrap.min.css"></noscript>
-    
+
     <link rel="preload" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.0/font/bootstrap-icons.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
     <noscript b-x12e99zfhl><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.0/font/bootstrap-icons.css"></noscript>
       <link id="prism-theme" rel="preload" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
     <noscript b-x12e99zfhl><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism.min.css"></noscript>
-    
+
     <!-- Site CSS -->
-    
+
         <link rel="stylesheet" href="/css/bundle.min.css" />
-    
+
     <link rel="stylesheet" href="/Web.styles.css?v=mn5vqy0c70t6B8Vn5GDDsKuQSdvOGh5W2etKdpi0KY0" />
-    
+
     <!-- Social Media and SEO Meta Tags -->
     <meta property="og:title" content="Master GitHub Copilot Customization in Visual Studio Code with Instructions and Prompt Files" />
     <meta property="og:description" content="Learn how to use .instructions.md and .prompt.md files to customize GitHub Copilot responses in VIsual Studio Code for consistent, project-specific AI assistance" />
@@ -132,14 +747,14 @@
         <meta property="article:tag" content="customization" />
         <meta property="article:tag" content="workspace-configuration" />
         <meta property="article:tag" content="ai-assistance" />
-    
+
     <!-- Twitter Card tags -->
     <meta name="twitter:card" content="summary_large_image" />
     <meta name="twitter:title" content="Master GitHub Copilot Customization in Visual Studio Code with Instructions and Prompt Files" />
     <meta name="twitter:description" content="Learn how to use .instructions.md and .prompt.md files to customize GitHub Copilot responses in VIsual Studio Code for consistent, project-specific AI assistance" />
     <meta name="twitter:image" content="/img/social-preview.webp" />
     <meta name="twitter:site" content="@CopilotThatJawn" />
-    
+
     <!-- Additional SEO -->
     <link rel="canonical" href="https://copilotthatjawn.com/tips/copilot-instructions-prompt-files.md" />
     <meta name="author" content="Copilot That Jawn" />
@@ -148,7 +763,7 @@
 
 
     <!-- Google Analytics - Production Only -->
-    
+
         <script async src="https://www.googletagmanager.com/gtag/js?id=G-5Z6Y93FZC5"></script>
         <script>
             window.dataLayer = window.dataLayer || [];
@@ -156,10 +771,10 @@
             gtag('js', new Date());
             gtag('config', 'G-5Z6Y93FZC5');
         </script>
-    
+
 
     <!-- SEO metadata and canonical URLs -->
-    
+
 </head>
 <body>
     <header b-x12e99zfhl>
@@ -184,7 +799,7 @@
                             <a class="nav-link" href="/contribute">Contribute</a>
                         </li>
                     </ul>
-                    
+
                     <ul b-x12e99zfhl class="navbar-nav ms-auto" id="navbarTools">
                         <li b-x12e99zfhl class="nav-item" id="themeToggleContainer"></li>
                     </ul>
@@ -193,7 +808,6 @@
         </nav>    </header>
     <div b-x12e99zfhl class="container">
         <main b-x12e99zfhl role="main">
-            
 
 <div class="container">
     <!-- Breadcrumb -->
@@ -221,9 +835,9 @@
                             <div><i class="bi bi-calendar"></i> July 14, 2025</div>
                         </div>
                     </div>
-                    
+
                     <h1 class="display-5 fw-bold mb-3">Master GitHub Copilot Customization in Visual Studio Code with Instructions and Prompt Files</h1>
-                    
+
                         <p class="lead text-muted mb-4">Learn how to use .instructions.md and .prompt.md files to customize GitHub Copilot responses in VIsual Studio Code for consistent, project-specific AI assistance</p>
 
                     <!-- Author and Metadata -->
@@ -232,7 +846,7 @@
                             <i class="bi bi-person-circle me-2"></i>
                             <span>By <strong>Copilot That Jawn</strong></span>
                         </div>
-                        
+
                             <span class="badge bg-warning text-dark fs-6">Intermediate Level</span>
 
                         <!-- Tags -->
@@ -249,6 +863,7 @@
                 <!-- Content -->
                 <div class="tip-content">
                     <h1 id="master-copilot-customization-with-instructions-and-prompt-files">Master Copilot Customization with Instructions and Prompt Files</h1>
+
 <p>Take your GitHub Copilot experience to the next level by leveraging Visual Studio Code's powerful customization features: instructions files and prompt files. These tools allow you to create consistent, project-specific AI responses that understand your coding standards, preferences, and common workflows.</p>
 <blockquote>
 <p><strong>Reference</strong>: This guide is based on the official [Visual Studio Code Copilot Customization Documentation](https://code.visualstudio.com/docs/copilot/copilot-customization). For the most up-to-date technical details and API changes, refer to the official documentation.</p>
@@ -270,18 +885,21 @@
 # Project Coding Standards
 
 ## General Guidelines
+
 - Use TypeScript for all new JavaScript code
 - Follow functional programming patterns when possible
 - Prefer composition over inheritance
 - Write comprehensive JSDoc comments for all public APIs
 
 ## Testing Requirements
+
 - Include unit tests for all business logic
 - Use Jest for testing framework
 - Aim for 80%+ code coverage
 - Write integration tests for API endpoints
 
 ## Error Handling
+
 - Always use proper error boundaries in React components
 - Log errors with structured logging
 - Return meaningful error messages to users
@@ -317,8 +935,11 @@
 <pre class="language-yaml"><code class="language-yaml">---
 applyTo: &quot;glob-pattern&quot;           # Required: Specifies which files to apply instructions to
 description: &quot;Brief description&quot;  # Optional: Describes what the instructions do
+
 ---
+
 </code></pre>
+
 <p><strong>Key Frontmatter Properties:</strong></p>
 <ul>
 <li><p><strong><code>applyTo</code></strong>: Controls when instructions are automatically applied</p>
@@ -368,18 +989,21 @@ description: &quot;React component development guidelines&quot;
 # React Component Instructions
 
 ## Component Structure
+
 - Use functional components with hooks
 - Implement proper prop validation with TypeScript interfaces
 - Extract custom hooks for reusable logic
 - Use React.memo for performance optimization when needed
 
 ## State Management
+
 - Use useState for local component state
 - Use useReducer for complex state logic
 - Implement custom hooks for shared state logic
 - Avoid prop drilling - use Context API when appropriate
 
 ## Styling
+
 - Use CSS Modules or styled-components
 - Follow BEM methodology for class naming
 - Implement responsive design with mobile-first approach
@@ -390,17 +1014,20 @@ description: &quot;React component development guidelines&quot;
 <pre class="language-markdown"><code class="language-markdown">---
 applyTo: &quot;**/models/**/*.ts&quot;
 description: &quot;Database model and query guidelines&quot;
+
 ---
 
 # Database Development Guidelines
 
 ## Entity Framework Patterns
+
 - Use repository pattern for data access
 - Implement proper entity relationships
 - Include audit fields (CreatedAt, UpdatedAt, CreatedBy)
 - Use value objects for complex properties
 
 ## Query Optimization
+
 - Always use parameterized queries
 - Implement proper indexing strategies
 - Use async methods for all database operations
@@ -448,8 +1075,11 @@ mode: &quot;ask&quot;|&quot;edit&quot;|&quot;agent&quot;        # Optional: Chat
 model: &quot;gpt-4&quot;|&quot;gpt-3.5-turbo&quot;    # Optional: Specific AI model to use
 tools: [&quot;tool1&quot;, &quot;tool2&quot;]         # Optional: Tools available in agent mode
 description: &quot;Brief description&quot;   # Optional: What the prompt does
+
 ---
+
 </code></pre>
+
 <p><strong>Frontmatter Properties Explained:</strong></p>
 <ul>
 <li><p><strong><code>mode</code></strong>: Determines how the prompt operates</p>
@@ -487,25 +1117,36 @@ description: &quot;Generate React component with tests&quot;
 ---
 
 # For code review tasks
+
 ---
+
 mode: &quot;ask&quot;
 description: &quot;Perform security code review&quot;
+
 ---
 
 # For file editing tasks
+
 ---
+
 mode: &quot;edit&quot;
 model: &quot;gpt-4&quot;
 description: &quot;Refactor code following team standards&quot;
+
 ---
 
 # For documentation tasks
+
 ---
+
 mode: &quot;agent&quot;
 tools: [&quot;markdown&quot;, &quot;web-search&quot;]
 description: &quot;Generate comprehensive API documentation&quot;
+
 ---
+
 </code></pre>
+
 <h3 id="basic-prompt-file-structure">Basic Prompt File Structure</h3>
 <p><strong>Example File: <code>create-react-component.prompt.md</code></strong></p>
 <pre class="language-markdown"><code class="language-markdown">---
@@ -520,6 +1161,7 @@ description: &quot;Generate a React component with TypeScript&quot;
 Create a new React component with the following requirements:
 
 ## Component Specifications
+
 - Component name: ${input:componentName:Enter component name}
 - Use TypeScript with proper interfaces
 - Include proper prop validation
@@ -527,11 +1169,13 @@ Create a new React component with the following requirements:
 - Add comprehensive JSDoc comments
 
 ## Additional Context
+
 - Follow our project's coding standards: [coding-standards](.github/copilot-instructions.md)
 - Reference existing components: #src/components/
 - Use our design system: #src/styles/design-system.ts
 
 ## Output Requirements
+
 - Generate the component file
 - Create a corresponding test file
 - Include usage examples in comments
@@ -539,6 +1183,7 @@ Create a new React component with the following requirements:
 
 Selected files for context: ${selection}
 </code></pre>
+
 <h3 id="advanced-prompt-examples">Advanced Prompt Examples</h3>
 <h4 id="security-review-prompt">Security Review Prompt</h4>
 <p><strong>Example File: <code>security-review.prompt.md</code></strong></p>
@@ -552,6 +1197,7 @@ description: &quot;Perform comprehensive security review&quot;
 Perform a thorough security analysis of the selected code:
 
 ## Review Areas
+
 1. **Input Validation**: Check for proper sanitization and validation
 2. **Authentication**: Verify proper auth implementation
 3. **Authorization**: Ensure proper access controls
@@ -560,11 +1206,14 @@ Perform a thorough security analysis of the selected code:
 6. **XSS Prevention**: Verify proper output encoding
 
 ## Context Files
+
 - Security guidelines: [security-guidelines](./docs/security.md)
 - Authentication service: #src/services/auth.ts
 
 ## Output Format
+
 Provide findings in this format:
+
 - **Issue**: Description of the security concern
 - **Severity**: Critical/High/Medium/Low
 - **Location**: File and line number
@@ -573,6 +1222,7 @@ Provide findings in this format:
 
 Selected code: ${selection}
 </code></pre>
+
 <h4 id="api-generation-prompt">API Generation Prompt</h4>
 <p><strong>Example File: <code>api-endpoint.prompt.md</code></strong></p>
 <pre class="language-markdown"><code class="language-markdown">---
@@ -585,6 +1235,7 @@ description: &quot;Generate RESTful API endpoint&quot;
 Create a complete RESTful API endpoint with the following specifications:
 
 ## Requirements
+
 - HTTP method: ${input:method:GET|POST|PUT|DELETE}
 - Resource: ${input:resource:Enter resource name}
 - Include proper validation middleware
@@ -593,12 +1244,15 @@ Create a complete RESTful API endpoint with the following specifications:
 - Include unit and integration tests
 
 ## Dependencies
+
 - Follow API patterns: [api-patterns](./docs/api-patterns.md)
 - Use validation schemas: #src/schemas/
 - Reference existing endpoints: #src/controllers/
 
 ## File Structure
+
 Create these files:
+
 - Controller: `src/controllers/${input:resource}Controller.ts`
 - Routes: `src/routes/${input:resource}Routes.ts`
 - Tests: `tests/controllers/${input:resource}Controller.test.ts`
@@ -606,6 +1260,7 @@ Create these files:
 
 Target location: ${workspaceFolder}/src
 </code></pre>
+
 <h2 id="using-prompt-files">Using Prompt Files</h2>
 <h3 id="running-prompts">Running Prompts</h3>
 <p><strong>Via Chat Input:</strong></p>
@@ -641,11 +1296,14 @@ Target location: ${workspaceFolder}/src
 Follow guidelines in [typescript-rules](./typescript.instructions.md)
 
 # Reference workspace files
+
 Check existing patterns: #src/utils/helpers.ts
 
 # Reference with markdown links
+
 See [API documentation](../docs/api.md) for details
 </code></pre>
+
 <p><img src="/article-images/4012bd77d3f54cbe/original.png" title="" class="img-fluid" loading="lazy" /></p>
 <h3 id="conditional-instructions">Conditional Instructions</h3>
 <p>Create context-aware instructions using the <code>applyTo</code> property:</p>
@@ -655,6 +1313,7 @@ description: &quot;Testing-specific instructions&quot;
 ---
 
 # Testing Guidelines
+
 - Use describe/it pattern for test structure
 - Include setup and teardown as needed
 - Mock external dependencies
@@ -695,18 +1354,22 @@ description: &quot;Testing-specific instructions&quot;
 </ul>
 <h3 id="team-standards">Team Standards</h3>
 <pre class="language-markdown"><code class="language-markdown">---
+
 # Example: .github/copilot-instructions.md for team
+
 ---
 
 # Team Development Standards
 
 ## Code Review Requirements
+
 - All PRs require 2 approvals
 - Include tests for new features
 - Update documentation for API changes
 - Follow conventional commit format
 
 ## Architecture Decisions
+
 - Use clean architecture patterns
 - Implement dependency injection
 - Follow SOLID principles
@@ -762,11 +1425,13 @@ description: &quot;Testing-specific instructions&quot;
 <pre class="language-markdown"><code class="language-markdown">---
 applyTo: &quot;**/.github/workflows/*.yml&quot;
 description: &quot;GitHub Actions workflow guidelines&quot;
+
 ---
 
 # CI/CD Instructions
 
 ## Workflow Standards
+
 - Use reusable workflows when possible
 - Include proper error handling
 - Implement security scanning
@@ -777,6 +1442,7 @@ description: &quot;GitHub Actions workflow guidelines&quot;
 <pre class="language-markdown"><code class="language-markdown">---
 mode: &quot;agent&quot;
 description: &quot;Generate API documentation&quot;
+
 ---
 
 # Generate API Documentation
@@ -784,6 +1450,7 @@ description: &quot;Generate API documentation&quot;
 Create comprehensive API documentation for: ${selection}
 
 ## Requirements
+
 - OpenAPI 3.0 specification
 - Include request/response examples
 - Document error responses
@@ -792,6 +1459,7 @@ Create comprehensive API documentation for: ${selection}
 
 Reference: [API standards](./docs/api-standards.md)
 </code></pre>
+
 <h2 id="conclusion">Conclusion</h2>
 <p>Instructions and prompt files transform GitHub Copilot from a general-purpose assistant into a project-aware, team-aligned development partner. Start with basic instructions, gradually build your library of prompts, and continuously refine based on your team's needs.</p>
 <p>The key to success is consistency, team adoption, and iterative improvement. Begin with the most common tasks in your workflow, then expand your customization library as you discover new opportunities for automation and standardization.</p>
@@ -808,21 +1476,21 @@ Reference: [API standards](./docs/api-standards.md)
                 </div>
 
                 <!-- Social Sharing -->
-                <div class="mt-5 pt-4 border-top">                    
-									<h6 class="mb-3">Share this tip:</h6>
+                <div class="mt-5 pt-4 border-top">
+    								<h6 class="mb-3">Share this tip:</h6>
                     <div class="d-flex flex-wrap gap-2">
-                        <a href="https://x.com/intent/tweet?text=Master%20GitHub%20Copilot%20Customization%20in%20Visual%20Studio%20Code%20with%20Instructions%20and%20Prompt%20Files&url=https://copilotthatjawn.com/tips/copilot-instructions-prompt-files.md" 
+                        <a href="https://x.com/intent/tweet?text=Master%20GitHub%20Copilot%20Customization%20in%20Visual%20Studio%20Code%20with%20Instructions%20and%20Prompt%20Files&url=https://copilotthatjawn.com/tips/copilot-instructions-prompt-files.md"
                            target="_blank" class="btn btn-outline-x btn-sm">
                             <i class="bi bi-twitter-x"></i> X
-                        </a>                        <a href="javascript:shareLinkedIn()" 
+                        </a>                        <a href="javascript:shareLinkedIn()"
                            class="btn btn-outline-primary btn-sm">
                             <i class="bi bi-linkedin"></i> LinkedIn
                         </a>
-                        <a href="https://bsky.app/intent/compose?text=Master%20GitHub%20Copilot%20Customization%20in%20Visual%20Studio%20Code%20with%20Instructions%20and%20Prompt%20Files https://copilotthatjawn.com/tips/copilot-instructions-prompt-files.md" 
+                        <a href="https://bsky.app/intent/compose?text=Master%20GitHub%20Copilot%20Customization%20in%20Visual%20Studio%20Code%20with%20Instructions%20and%20Prompt%20Files https://copilotthatjawn.com/tips/copilot-instructions-prompt-files.md"
                            target="_blank" class="btn btn-outline-info btn-sm">
                             <i class="bi bi-cloud"></i> Bluesky
                         </a>
-                        <a href="javascript:shareMastodon()" 
+                        <a href="javascript:shareMastodon()"
                            class="btn btn-outline-purple btn-sm mastodon-share">
                             <i class="bi bi-mastodon"></i> Mastodon
                         </a>
@@ -894,7 +1562,7 @@ Reference: [API standards](./docs/api-standards.md)
                         <a class="btn btn-primary btn-sm" href="/tips">
                             <i class="bi bi-arrow-left"></i> Back to All Tips
                         </a>
-                        
+
                             <a class="btn btn-outline-purple btn-sm mt-2 d-block" href="/tips/category/github%20copilot">
                                 More from GitHub Copilot
                             </a>
@@ -902,6 +1570,7 @@ Reference: [API standards](./docs/api-standards.md)
                 </div>
             </div>
         </div>    </div>
+
 </div>
 
 <style>
@@ -1175,7 +1844,7 @@ document.addEventListener('DOMContentLoaded', function() {
             </div>
         </div>    </footer>    <!-- Core libraries -->
     <script src="/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
-    
+
     <!-- Syntax highlighting -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/components/prism-csharp.min.js"></script>
@@ -1185,21 +1854,21 @@ document.addEventListener('DOMContentLoaded', function() {
     <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/components/prism-json.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/components/prism-bash.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/components/prism-yaml.min.js"></script>    <!-- Site scripts -->
-    
+
         <script src="/js/bundle.min.js"></script>
-    
+
         <script>
         // Fix for code highlighting in theme changes
         document.addEventListener('DOMContentLoaded', function() {
             // Initial theme setup based on current setting
             const resolvedTheme = document.documentElement.getAttribute('data-theme-resolved');
             const prismThemeLink = document.getElementById('prism-theme');
-            
+
             if (prismThemeLink && resolvedTheme) {
                 const themeUrl = resolvedTheme === 'dark'
                     ? '/css/prism-atom-dark.css'
                     : 'https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism.min.css';
-                    
+
                 console.log(`Initial Prism theme setting to: ${resolvedTheme} (${themeUrl})`);
                 prismThemeLink.href = themeUrl;
             } else if (!prismThemeLink) {
@@ -1212,7 +1881,7 @@ document.addEventListener('DOMContentLoaded', function() {
                     : 'https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism.min.css';
                 document.head.appendChild(newLink);
             }
-            
+
             // Initial highlight
             if (window.Prism) {
                 setTimeout(() => Prism.highlightAll(), 100);
@@ -1223,14 +1892,14 @@ document.addEventListener('DOMContentLoaded', function() {
                     // Update data-theme-resolved attribute
                     const isDark = e.matches;
                     document.documentElement.setAttribute('data-theme-resolved', isDark ? 'dark' : 'light');
-                    
+
                     // Update Prism theme on system preference change
                     const prismThemeLink = document.getElementById('prism-theme');
                     if (prismThemeLink) {
-                        prismThemeLink.href = isDark 
+                        prismThemeLink.href = isDark
                             ? '/css/prism-atom-dark.css'
                             : 'https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism.min.css';
-                        
+
                         if (window.Prism) {
                             setTimeout(() => Prism.highlightAll(), 100);
                         }
@@ -1298,6 +1967,5 @@ document.addEventListener('DOMContentLoaded', function() {
         })(this);
     </script>
 
-    
 </body>
 </html>
