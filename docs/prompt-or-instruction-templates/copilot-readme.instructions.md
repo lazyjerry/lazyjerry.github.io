@@ -1,6 +1,8 @@
 ---
 applyTo: "README.md" # Required: Specifies which files to apply instructions to
 description: "自動產生或更新 README.md 的指令模板" # Optional: Describes what the instructions do
+mode: "agent"
+tools: ["markdown", "web-search"]
 ---
 
 # README.md 生成指令模板
