@@ -1,0 +1,1353 @@
+# Master Copilot Customization with Instructions and Prompt Files
+
+Take your GitHub Copilot experience to the next level by leveraging Visual Studio Code's powerful customization features: instructions files and prompt files. These tools allow you to create consistent, project-specific AI responses that understand your coding standards, preferences, and common workflows.
+
+    <!-- Favicons -->
+    <link rel="icon" type="image/x-icon" href="/img/favicon.ico?v=qBciqMDkfA1YHQ4_Omfcmv_aajsXSEUcH4I8S_q_GJ0">
+    <link rel="icon" type="image/png" sizes="32x32" href="/img/favicon-32x32.png?v=XjxSW5oPopnC_84ux7VADwtkXkRwb7Cxgvqffpmhn3I">
+    <link rel="icon" type="image/png" sizes="16x16" href="/img/favicon-16x16.png?v=FqiG5xG-7MRoKE_AFzDsYbPLzXPIDatWbgQ8NHGA0qU">
+    <link rel="apple-touch-icon" sizes="180x180" href="/img/apple-touch-icon.png?v=dtFCi5gTgxu0J7GJ9h_wmuPEeBJDI7XNwVyZvTH-MiM">
+      <!-- PWA Support -->
+    <link rel="manifest" href="/manifest.json?v=39OyQEK_p_PAyrHFCqmX6Ovqzt0AzDvG_5oiDtyBI3Q">
+    <meta name="theme-color" content="#6200EE">
+    <meta name="msapplication-TileColor" content="#6200EE">
+    <meta name="msapplication-config" content="~/browserconfig.xml" asp-append-version="true">
+
+    <!-- Prevent theme flash -->
+    <script>
+        (function() {
+            const theme = localStorage.getItem('theme') || 'auto';
+            const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+            const isDark = theme === 'dark' || (theme === 'auto' && prefersDark);
+            document.documentElement.setAttribute('data-theme', theme);
+            document.documentElement.setAttribute('data-theme-resolved', isDark ? 'dark' : 'light');
+            if (isDark) {
+                document.documentElement.classList.add('theme-dark');
+            } else {
+                document.documentElement.classList.add('theme-light');
+            }
+        })();
+    </script>
+
+    <!-- Critical CSS for immediate theme application -->
+    <style>
+        :root {
+            /* Light theme colors */
+            --bg-primary: #ffffff;
+            --bg-secondary: #f8f9fa;
+            --text-primary: #212529;
+            --text-secondary: #6c757d;
+            --navbar-bg: #ffffff;
+            --navbar-text: #212529;
+        }
+
+        /* Dark theme colors */
+        html[data-theme="dark"],
+        html[data-theme-resolved="dark"] {
+            --bg-primary: #1a1a1a;
+            --bg-secondary: #2d3748;
+            --text-primary: #f7fafc;
+            --text-secondary: #cbd5e0;
+            --navbar-bg: #1a1a1a;
+            --navbar-text: #f7fafc;
+        }
+
+        /* Immediate body styling */
+        body {
+            background-color: var(--bg-primary);
+            color: var(--text-primary);
+            margin: 0;
+            transition: background-color 0.3s ease, color 0.3s ease;
+        }
+
+        /* Immediate navbar styling */
+        .navbar {
+            background-color: var(--navbar-bg) !important;
+            color: var(--navbar-text) !important;
+        }
+        .navbar.navbar-light {
+            background-color: var(--navbar-bg) !important;
+        }
+        .navbar.bg-white {
+            background-color: var(--navbar-bg) !important;
+        }
+        .navbar .navbar-brand,
+        .navbar .nav-link {
+            color: var(--navbar-text) !important;
+        }
+
+        /* Code block styling with word wrapping */
+        pre {
+            white-space: pre-wrap;       /* CSS3 */
+            word-wrap: break-word;       /* IE */
+            word-break: break-word;
+            overflow-wrap: break-word;
+            max-width: 100%;
+            overflow-x: hidden !important;
+        }
+
+        pre code {
+            white-space: pre-wrap !important;
+        }
+    </style>
+
+    <!-- Feeds and Sitemap -->
+    <link rel="sitemap" type="application/xml" title="Sitemap" href="/sitemap.xml" />
+    <link rel="alternate" type="application/rss+xml" title="Latest Tips" href="/feed.rss" />      <!-- Fonts and External CSS -->
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@800&display=swap" rel="stylesheet" />
+
+    <!-- Preload critical CSS for faster loading -->
+    <link rel="preload" href="/lib/bootstrap/dist/css/bootstrap.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+    <noscript b-x12e99zfhl><link rel="stylesheet" href="/lib/bootstrap/dist/css/bootstrap.min.css"></noscript>
+
+    <link rel="preload" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.0/font/bootstrap-icons.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+    <noscript b-x12e99zfhl><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.0/font/bootstrap-icons.css"></noscript>
+      <link id="prism-theme" rel="preload" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+    <noscript b-x12e99zfhl><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism.min.css"></noscript>
+
+    <!-- Site CSS -->
+
+        <link rel="stylesheet" href="/css/bundle.min.css" />
+
+    <link rel="stylesheet" href="/Web.styles.css?v=mn5vqy0c70t6B8Vn5GDDsKuQSdvOGh5W2etKdpi0KY0" />
+
+    <!-- Social Media and SEO Meta Tags -->
+    <meta property="og:title" content="Master GitHub Copilot Customization in Visual Studio Code with Instructions and Prompt Files" />
+    <meta property="og:description" content="Learn how to use .instructions.md and .prompt.md files to customize GitHub Copilot responses in VIsual Studio Code for consistent, project-specific AI assistance" />
+    <meta property="og:url" content="https://copilotthatjawn.com/tips/copilot-instructions-prompt-files.md" />
+    <meta property="og:type" content="article" />
+    <meta property="og:site_name" content="Copilot That Jawn" />
+    <meta property="og:image" content="/img/social-preview.webp" />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta property="article:published_time" content="2025-07-14T00:00:00Z" />
+    <meta property="article:author" content="Copilot That Jawn" />
+    <meta property="article:section" content="GitHub Copilot" />
+        <meta property="article:tag" content="instructions-files" />
+        <meta property="article:tag" content="prompt-files" />
+        <meta property="article:tag" content="customization" />
+        <meta property="article:tag" content="workspace-configuration" />
+        <meta property="article:tag" content="ai-assistance" />
+
+    <!-- Twitter Card tags -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="Master GitHub Copilot Customization in Visual Studio Code with Instructions and Prompt Files" />
+    <meta name="twitter:description" content="Learn how to use .instructions.md and .prompt.md files to customize GitHub Copilot responses in VIsual Studio Code for consistent, project-specific AI assistance" />
+    <meta name="twitter:image" content="/img/social-preview.webp" />
+    <meta name="twitter:site" content="@CopilotThatJawn" />
+
+    <!-- Additional SEO -->
+    <link rel="canonical" href="https://copilotthatjawn.com/tips/copilot-instructions-prompt-files.md" />
+    <meta name="author" content="Copilot That Jawn" />
+        <meta name="category" content="GitHub Copilot" />
+    <meta name="robots" content="index, follow" />
+
+
+    <!-- Google Analytics - Production Only -->
+
+        <script async src="https://www.googletagmanager.com/gtag/js?id=G-5Z6Y93FZC5"></script>
+        <script>
+            window.dataLayer = window.dataLayer || [];
+            function gtag(){dataLayer.push(arguments);}
+            gtag('js', new Date());
+            gtag('config', 'G-5Z6Y93FZC5');
+        </script>
+
+
+    <!-- SEO metadata and canonical URLs -->
+
+</head>
+<body>
+    <header b-x12e99zfhl>
+        <nav b-x12e99zfhl class="navbar navbar-expand-sm navbar-toggleable-sm navbar-light bg-white border-bottom box-shadow mb-3">
+            <div b-x12e99zfhl class="container">                <a class="navbar-brand d-flex align-items-center" href="/">
+                    <img src="/img/icon-100.webp" alt="Copilot That Jawn" class="me-2" style="height: 24px; width: auto;">
+                    <span b-x12e99zfhl class="brand-title">Copilot That Jawn</span>
+                </a>                <button b-x12e99zfhl class="navbar-toggler" type="button" data-bs-toggle="collapse" 
+                        data-bs-target=".navbar-collapse" aria-controls="navbarSupportedContent"
+                        aria-expanded="false" aria-label="Toggle navigation">
+                    <span b-x12e99zfhl class="navbar-toggler-icon"></span>
+                </button>                <div b-x12e99zfhl class="navbar-collapse collapse d-sm-inline-flex justify-content-between">                    
+                    <ul b-x12e99zfhl class="navbar-nav">                     
+                        <li b-x12e99zfhl class="nav-item">
+                            <a class="nav-link" href="/tips">Tips</a>
+                        </li>
+                        <li b-x12e99zfhl class="nav-item">
+                            <a class="nav-link" href="/about">About</a>
+                        </li>
+
+                        <li b-x12e99zfhl class="nav-item">
+                            <a class="nav-link" href="/contribute">Contribute</a>
+                        </li>
+                    </ul>
+
+                    <ul b-x12e99zfhl class="navbar-nav ms-auto" id="navbarTools">
+                        <li b-x12e99zfhl class="nav-item" id="themeToggleContainer"></li>
+                    </ul>
+                </div>
+            </div>
+        </nav>    </header>
+    <div b-x12e99zfhl class="container">
+        <main b-x12e99zfhl role="main">
+
+
+<div class="container">
+    <!-- Breadcrumb -->
+    <nav aria-label="breadcrumb" class="mb-4">
+        <ol class="breadcrumb">
+            <li class="breadcrumb-item"><a href="/">Home</a></li>
+            <li class="breadcrumb-item"><a href="/tips">Tips</a></li>
+                <li class="breadcrumb-item">
+                    <a href="/tips/category/github%20copilot">GitHub Copilot</a>
+                </li>
+            <li class="breadcrumb-item active" aria-current="page">Master GitHub Copilot Customization in Visual Studio Code with Instructions and Prompt Files</li>
+        </ol>
+    </nav>
+
+    <div class="row">
+        <!-- Main Content -->
+        <div class="col-lg-8">
+            <article class="tip-detail">
+                <!-- Header -->
+                <header class="mb-4">
+                    <div class="d-flex justify-content-between align-items-start mb-3">
+                        <span class="badge bg-primary fs-6">GitHub Copilot</span>
+                        <div class="text-end text-muted small">
+                            <div><i class="bi bi-clock"></i> 10 min read</div>
+                            <div><i class="bi bi-calendar"></i> July 14, 2025</div>
+                        </div>
+                    </div>
+
+                    <h1 class="display-5 fw-bold mb-3">Master GitHub Copilot Customization in Visual Studio Code with Instructions and Prompt Files</h1>
+
+                        <p class="lead text-muted mb-4">Learn how to use .instructions.md and .prompt.md files to customize GitHub Copilot responses in VIsual Studio Code for consistent, project-specific AI assistance</p>
+
+                    <!-- Author and Metadata -->
+                    <div class="d-flex flex-wrap align-items-center gap-3 mb-4 pb-3 border-bottom">
+                        <div class="d-flex align-items-center">
+                            <i class="bi bi-person-circle me-2"></i>
+                            <span>By <strong>Copilot That Jawn</strong></span>
+                        </div>
+
+                            <span class="badge bg-warning text-dark fs-6">Intermediate Level</span>
+
+                        <!-- Tags -->
+                            <div class="d-flex flex-wrap gap-1">
+                                    <a class="badge bg-light text-dark text-decoration-none" href="/tips/tag/instructions-files">#instructions-files</a>
+                                    <a class="badge bg-light text-dark text-decoration-none" href="/tips/tag/prompt-files">#prompt-files</a>
+                                    <a class="badge bg-light text-dark text-decoration-none" href="/tips/tag/customization">#customization</a>
+                                    <a class="badge bg-light text-dark text-decoration-none" href="/tips/tag/workspace-configuration">#workspace-configuration</a>
+                                    <a class="badge bg-light text-dark text-decoration-none" href="/tips/tag/ai-assistance">#ai-assistance</a>
+                            </div>
+                    </div>
+                </header>
+
+                <!-- Content -->
+                <div class="tip-content">
+                    <h1 id="master-copilot-customization-with-instructions-and-prompt-files">Master Copilot Customization with Instructions and Prompt Files</h1>
+
+<p>Take your GitHub Copilot experience to the next level by leveraging Visual Studio Code's powerful customization features: instructions files and prompt files. These tools allow you to create consistent, project-specific AI responses that understand your coding standards, preferences, and common workflows.</p>
+<blockquote>
+<p><strong>Reference</strong>: This guide is based on the official [Visual Studio Code Copilot Customization Documentation](https://code.visualstudio.com/docs/copilot/copilot-customization). For the most up-to-date technical details and API changes, refer to the official documentation.</p>
+</blockquote>
+<h2 id="understanding-the-customization-ecosystem">Understanding the Customization Ecosystem</h2>
+<p>Visual Studio Code offers three main ways to customize Copilot responses:</p>
+<ol>
+<li><strong><code>.github/copilot-instructions.md</code></strong> - Global project instructions</li>
+<li><strong><code>.instructions.md</code> files</strong> - Granular, context-specific instructions</li>
+<li><strong><code>.prompt.md</code> files</strong> - Reusable prompt templates for common tasks</li>
+</ol>
+<h2 id="setting-up-instructions-files">Setting Up Instructions Files</h2>
+<h3 id="global-project-instructions">Global Project Instructions</h3>
+<p>Create a <code>.github/copilot-instructions.md</code> file at your project root for project-wide guidelines:</p>
+<pre class="language-markdown"><code class="language-markdown">---
+# Example: .github/copilot-instructions.md
+---
+
+# Project Coding Standards
+
+## General Guidelines
+
+- Use TypeScript for all new JavaScript code
+- Follow functional programming patterns when possible
+- Prefer composition over inheritance
+- Write comprehensive JSDoc comments for all public APIs
+
+## Testing Requirements
+
+- Include unit tests for all business logic
+- Use Jest for testing framework
+- Aim for 80%+ code coverage
+- Write integration tests for API endpoints
+
+## Error Handling
+
+- Always use proper error boundaries in React components
+- Log errors with structured logging
+- Return meaningful error messages to users
+- Handle async operations with proper try-catch blocks
+</code></pre>
+<p><strong>Enable Global Instructions:</strong></p>
+<ol>
+<li>Open Visual Studio Code settings (Ctrl+Shift+P → &quot;Preferences: Open Settings&quot;)</li>
+<li>Search for <code>github.copilot.chat.codeGeneration.useInstructionFiles</code></li>
+<li>Set to <code>true</code></li>
+</ol>
+<p><img src="/article-images/75713bca437ed0b6/original.png" title="" class="img-fluid" loading="lazy" /></p>
+<h3 id="granular-instructions-files">Granular Instructions Files</h3>
+<p>Create targeted <code>.instructions.md</code> files for specific scenarios:</p>
+<h4 id="understanding-instructions-file-naming-and-frontmatter">Understanding Instructions File Naming and Frontmatter</h4>
+<p>Instructions files must follow the naming convention: <code>[name].instructions.md</code></p>
+<p><strong>File Naming Examples:</strong></p>
+<ul>
+<li><code>react.instructions.md</code> - React component guidelines</li>
+<li><code>database.instructions.md</code> - Database development patterns</li>
+<li><code>testing.instructions.md</code> - Testing best practices</li>
+<li><code>api-endpoints.instructions.md</code> - API development standards</li>
+<li><code>typescript.instructions.md</code> - TypeScript coding conventions</li>
+<li><code>security.instructions.md</code> - Security review guidelines</li>
+</ul>
+<p><strong>File Location Options:</strong></p>
+<ul>
+<li><strong>Workspace</strong>: <code>.github/instructions/</code> folder (default)</li>
+<li><strong>User Profile</strong>: <code>%APPDATA%\Code\User\instructions\</code> (Windows)</li>
+<li><strong>Custom Locations</strong>: Configure via <code>chat.instructionsFilesLocations</code> setting</li>
+</ul>
+<p>The frontmatter section at the top of <code>.instructions.md</code> files uses YAML syntax and supports several key properties:</p>
+<pre class="language-yaml"><code class="language-yaml">---
+applyTo: &quot;glob-pattern&quot;           # Required: Specifies which files to apply instructions to
+description: &quot;Brief description&quot;  # Optional: Describes what the instructions do
+
+---
+
+</code></pre>
+
+<p><strong>Key Frontmatter Properties:</strong></p>
+<ul>
+<li><p><strong><code>applyTo</code></strong>: Controls when instructions are automatically applied</p>
+<ul>
+<li><code>&quot;**&quot;</code> - Apply to all files in the workspace</li>
+<li><code>&quot;**/*.ts&quot;</code> - Apply only to TypeScript files</li>
+<li><code>&quot;**/*.{tsx,jsx}&quot;</code> - Apply to React component files</li>
+<li><code>&quot;**/tests/**/*.ts&quot;</code> - Apply only to test files</li>
+<li><code>&quot;src/components/**/*&quot;</code> - Apply to files in specific directories</li>
+</ul>
+</li>
+<li><p><strong><code>description</code></strong>: Brief explanation shown when hovering over the instruction file in chat view</p>
+</li>
+</ul>
+<p><strong>Complete File Examples with Suggested Names:</strong></p>
+<p><strong>File: <code>react.instructions.md</code></strong></p>
+<pre class="language-yaml"><code class="language-yaml">---
+applyTo: &quot;**/*.{tsx,jsx}&quot;
+description: &quot;React component development guidelines&quot;
+---
+</code></pre>
+<p><strong>File: <code>database.instructions.md</code></strong></p>
+<pre class="language-yaml"><code class="language-yaml">---
+applyTo: &quot;**/models/**/*.ts&quot;
+description: &quot;Entity Framework patterns and database guidelines&quot;
+---
+</code></pre>
+<p><strong>File: <code>testing.instructions.md</code></strong></p>
+<pre class="language-yaml"><code class="language-yaml">---
+applyTo: &quot;**/tests/**/*.{ts,js}&quot;
+description: &quot;Testing best practices and patterns&quot;
+---
+</code></pre>
+<p><strong>File: <code>api-endpoints.instructions.md</code></strong></p>
+<pre class="language-yaml"><code class="language-yaml">---
+applyTo: &quot;src/api/**/*.ts&quot;
+description: &quot;RESTful API endpoint development guidelines&quot;
+---
+</code></pre>
+<h4 id="framework-specific-instructions">Framework-Specific Instructions</h4>
+<p><strong>Example File: <code>react.instructions.md</code></strong></p>
+<pre class="language-markdown"><code class="language-markdown">---
+applyTo: &quot;**/*.{tsx,jsx}&quot;
+description: &quot;React component development guidelines&quot;
+---
+
+# React Component Instructions
+
+## Component Structure
+
+- Use functional components with hooks
+- Implement proper prop validation with TypeScript interfaces
+- Extract custom hooks for reusable logic
+- Use React.memo for performance optimization when needed
+
+## State Management
+
+- Use useState for local component state
+- Use useReducer for complex state logic
+- Implement custom hooks for shared state logic
+- Avoid prop drilling - use Context API when appropriate
+
+## Styling
+
+- Use CSS Modules or styled-components
+- Follow BEM methodology for class naming
+- Implement responsive design with mobile-first approach
+- Use CSS custom properties for theming
+</code></pre>
+<h4 id="database-specific-instructions">Database-Specific Instructions</h4>
+<p><strong>Example File: <code>database.instructions.md</code></strong></p>
+<pre class="language-markdown"><code class="language-markdown">---
+applyTo: &quot;**/models/**/*.ts&quot;
+description: &quot;Database model and query guidelines&quot;
+
+---
+
+# Database Development Guidelines
+
+## Entity Framework Patterns
+
+- Use repository pattern for data access
+- Implement proper entity relationships
+- Include audit fields (CreatedAt, UpdatedAt, CreatedBy)
+- Use value objects for complex properties
+
+## Query Optimization
+
+- Always use parameterized queries
+- Implement proper indexing strategies
+- Use async methods for all database operations
+- Include proper error handling for database exceptions
+</code></pre>
+<h3 id="creating-instructions-files-via-visual-studio-code">Creating Instructions Files via Visual Studio Code</h3>
+<p><img src="./images/instructions-newfile.png" title="" class="img-fluid" loading="lazy" /></p>
+<p><strong>Quick Creation Method:</strong></p>
+<ol>
+<li>Open Chat view in Visual Studio Code</li>
+<li>Click the &quot;Configure Chat&quot; button (gear icon)</li>
+<li>Select &quot;Instructions&quot; → &quot;New instruction file&quot;</li>
+<li>Choose workspace or user profile location</li>
+<li>Name your file and start writing instructions</li>
+</ol>
+<p><img src="/article-images/75c9e978de9a084c/original.png" title="" class="img-fluid" loading="lazy" /></p>
+<p><strong>Command Palette Method:</strong></p>
+<ul>
+<li>Press <code>Ctrl+Shift+P</code></li>
+<li>Type &quot;Chat: New Instructions File&quot;</li>
+<li>Follow the prompts</li>
+</ul>
+<h2 id="mastering-prompt-files">Mastering Prompt Files</h2>
+<p>Prompt files (<code>.prompt.md</code>) are reusable templates for common development tasks.</p>
+<h3 id="understanding-prompt-file-naming-and-frontmatter">Understanding Prompt File Naming and Frontmatter</h3>
+<p>Prompt files must follow the naming convention: <code>[name].prompt.md</code></p>
+<p><strong>File Naming Examples:</strong></p>
+<ul>
+<li><code>create-react-component.prompt.md</code> - Generate React components</li>
+<li><code>security-review.prompt.md</code> - Perform security code reviews</li>
+<li><code>api-endpoint.prompt.md</code> - Create RESTful API endpoints</li>
+<li><code>generate-tests.prompt.md</code> - Create unit and integration tests</li>
+<li><code>refactor-code.prompt.md</code> - Code refactoring workflows</li>
+<li><code>generate-docs.prompt.md</code> - Documentation generation</li>
+</ul>
+<p><strong>File Location Options:</strong></p>
+<ul>
+<li><strong>Workspace</strong>: <code>.github/prompts/</code> folder (default)</li>
+<li><strong>User Profile</strong>: <code>%APPDATA%\Code\User\prompts\</code> (Windows)</li>
+<li><strong>Custom Locations</strong>: Configure via <code>chat.promptFilesLocations</code> setting</li>
+</ul>
+<p>Prompt files use YAML frontmatter to configure how the prompt should be executed:</p>
+<pre class="language-yaml"><code class="language-yaml">---
+mode: &quot;ask&quot;|&quot;edit&quot;|&quot;agent&quot;        # Optional: Chat mode to use (default: &quot;agent&quot;)
+model: &quot;gpt-4&quot;|&quot;gpt-3.5-turbo&quot;    # Optional: Specific AI model to use
+tools: [&quot;tool1&quot;, &quot;tool2&quot;]         # Optional: Tools available in agent mode
+description: &quot;Brief description&quot;   # Optional: What the prompt does
+
+---
+
+</code></pre>
+
+<p><strong>Frontmatter Properties Explained:</strong></p>
+<ul>
+<li><p><strong><code>mode</code></strong>: Determines how the prompt operates</p>
+<ul>
+<li><code>&quot;ask&quot;</code> - Simple question/answer mode</li>
+<li><code>&quot;edit&quot;</code> - Direct file editing mode</li>
+<li><code>&quot;agent&quot;</code> - Full agent mode with tool access (default)</li>
+</ul>
+</li>
+<li><p><strong><code>model</code></strong>: Specifies which AI model to use</p>
+<ul>
+<li><code>&quot;gpt-4&quot;</code> - Most capable model for complex tasks</li>
+<li><code>&quot;gpt-3.5-turbo&quot;</code> - Faster, more cost-effective for simpler tasks</li>
+<li>If not specified, uses the currently selected model in Visual Studio Code</li>
+</ul>
+</li>
+<li><p><strong><code>tools</code></strong>: Array of tool names/sets available in agent mode</p>
+<ul>
+<li><code>[&quot;typescript&quot;]</code> - TypeScript-specific tools</li>
+<li><code>[&quot;react&quot;, &quot;typescript&quot;]</code> - Multiple tool sets</li>
+<li><code>[&quot;web-search&quot;, &quot;file-system&quot;]</code> - External tools</li>
+<li>Configure available tools via &quot;Configure Tools&quot; in chat</li>
+</ul>
+</li>
+<li><p><strong><code>description</code></strong>: Brief explanation of the prompt's purpose (shown in UI)</p>
+</li>
+</ul>
+<p><strong>Common Frontmatter Patterns:</strong></p>
+<pre class="language-yaml"><code class="language-yaml"># For code generation tasks
+---
+mode: &quot;agent&quot;
+model: &quot;gpt-4&quot;
+tools: [&quot;typescript&quot;, &quot;react&quot;]
+description: &quot;Generate React component with tests&quot;
+---
+
+# For code review tasks
+
+---
+
+mode: &quot;ask&quot;
+description: &quot;Perform security code review&quot;
+
+---
+
+# For file editing tasks
+
+---
+
+mode: &quot;edit&quot;
+model: &quot;gpt-4&quot;
+description: &quot;Refactor code following team standards&quot;
+
+---
+
+# For documentation tasks
+
+---
+
+mode: &quot;agent&quot;
+tools: [&quot;markdown&quot;, &quot;web-search&quot;]
+description: &quot;Generate comprehensive API documentation&quot;
+
+---
+
+</code></pre>
+
+<h3 id="basic-prompt-file-structure">Basic Prompt File Structure</h3>
+<p><strong>Example File: <code>create-react-component.prompt.md</code></strong></p>
+<pre class="language-markdown"><code class="language-markdown">---
+mode: &quot;agent&quot;
+model: &quot;gpt-4&quot;
+tools: [&quot;typescript&quot;, &quot;react&quot;]
+description: &quot;Generate a React component with TypeScript&quot;
+---
+
+# Create React Component
+
+Create a new React component with the following requirements:
+
+## Component Specifications
+
+- Component name: ${input:componentName:Enter component name}
+- Use TypeScript with proper interfaces
+- Include proper prop validation
+- Implement responsive design
+- Add comprehensive JSDoc comments
+
+## Additional Context
+
+- Follow our project's coding standards: [coding-standards](.github/copilot-instructions.md)
+- Reference existing components: #src/components/
+- Use our design system: #src/styles/design-system.ts
+
+## Output Requirements
+
+- Generate the component file
+- Create a corresponding test file
+- Include usage examples in comments
+- Export the component properly
+
+Selected files for context: ${selection}
+</code></pre>
+
+<h3 id="advanced-prompt-examples">Advanced Prompt Examples</h3>
+<h4 id="security-review-prompt">Security Review Prompt</h4>
+<p><strong>Example File: <code>security-review.prompt.md</code></strong></p>
+<pre class="language-markdown"><code class="language-markdown">---
+mode: &quot;agent&quot;
+description: &quot;Perform comprehensive security review&quot;
+---
+
+# Security Code Review
+
+Perform a thorough security analysis of the selected code:
+
+## Review Areas
+
+1. **Input Validation**: Check for proper sanitization and validation
+2. **Authentication**: Verify proper auth implementation
+3. **Authorization**: Ensure proper access controls
+4. **Data Exposure**: Look for sensitive data leaks
+5. **SQL Injection**: Check for parameterized queries
+6. **XSS Prevention**: Verify proper output encoding
+
+## Context Files
+
+- Security guidelines: [security-guidelines](./docs/security.md)
+- Authentication service: #src/services/auth.ts
+
+## Output Format
+
+Provide findings in this format:
+
+- **Issue**: Description of the security concern
+- **Severity**: Critical/High/Medium/Low
+- **Location**: File and line number
+- **Recommendation**: Specific fix instructions
+- **Example**: Code example showing the fix
+
+Selected code: ${selection}
+</code></pre>
+
+<h4 id="api-generation-prompt">API Generation Prompt</h4>
+<p><strong>Example File: <code>api-endpoint.prompt.md</code></strong></p>
+<pre class="language-markdown"><code class="language-markdown">---
+mode: &quot;edit&quot;
+description: &quot;Generate RESTful API endpoint&quot;
+---
+
+# Generate API Endpoint
+
+Create a complete RESTful API endpoint with the following specifications:
+
+## Requirements
+
+- HTTP method: ${input:method:GET|POST|PUT|DELETE}
+- Resource: ${input:resource:Enter resource name}
+- Include proper validation middleware
+- Implement error handling
+- Add comprehensive OpenAPI documentation
+- Include unit and integration tests
+
+## Dependencies
+
+- Follow API patterns: [api-patterns](./docs/api-patterns.md)
+- Use validation schemas: #src/schemas/
+- Reference existing endpoints: #src/controllers/
+
+## File Structure
+
+Create these files:
+
+- Controller: `src/controllers/${input:resource}Controller.ts`
+- Routes: `src/routes/${input:resource}Routes.ts`
+- Tests: `tests/controllers/${input:resource}Controller.test.ts`
+- Schema: `src/schemas/${input:resource}Schema.ts`
+
+Target location: ${workspaceFolder}/src
+</code></pre>
+
+<h2 id="using-prompt-files">Using Prompt Files</h2>
+<h3 id="running-prompts">Running Prompts</h3>
+<p><strong>Via Chat Input:</strong></p>
+<ul>
+<li>Type <code>/</code> followed by prompt name: <code>/create-react-component</code></li>
+<li>Pass parameters: <code>/create-api-endpoint: method=POST resource=users</code></li>
+</ul>
+<p><img src="/article-images/80e8c4af2940a3ad/original.png" title="" class="img-fluid" loading="lazy" /></p>
+<p><strong>Via Command Palette:</strong></p>
+<ul>
+<li>Press <code>Ctrl+Shift+P</code></li>
+<li>Type &quot;Chat: Run Prompt&quot;</li>
+<li>Select your prompt file</li>
+</ul>
+<p><strong>Via Editor:</strong></p>
+<ul>
+<li>Open the <code>.prompt.md</code> file</li>
+<li>Click the play button in the editor title</li>
+<li>Choose to run in current or new chat session</li>
+</ul>
+<p><img src="/article-images/4d3bc3202723384e/original.png" title="" class="img-fluid" loading="lazy" /></p>
+<h2 id="advanced-customization-techniques">Advanced Customization Techniques</h2>
+<h3 id="variable-system">Variable System</h3>
+<p>Leverage Visual Studio Code's variable system in your instructions and prompts:</p>
+<pre class="language-markdown"><code class="language-markdown"># Current workspace: ${workspaceFolder}
+# Current file: ${file}
+# Selected text: ${selectedText}
+# User input: ${input:variableName:placeholder}
+</code></pre>
+<h3 id="file-references">File References</h3>
+<p>Link to other files and instructions:</p>
+<pre class="language-markdown"><code class="language-markdown"># Reference other instructions
+Follow guidelines in [typescript-rules](./typescript.instructions.md)
+
+# Reference workspace files
+
+Check existing patterns: #src/utils/helpers.ts
+
+# Reference with markdown links
+
+See [API documentation](../docs/api.md) for details
+</code></pre>
+
+<p><img src="/article-images/4012bd77d3f54cbe/original.png" title="" class="img-fluid" loading="lazy" /></p>
+<h3 id="conditional-instructions">Conditional Instructions</h3>
+<p>Create context-aware instructions using the <code>applyTo</code> property:</p>
+<pre class="language-markdown"><code class="language-markdown">---
+applyTo: &quot;**/tests/**/*.ts&quot;
+description: &quot;Testing-specific instructions&quot;
+---
+
+# Testing Guidelines
+
+- Use describe/it pattern for test structure
+- Include setup and teardown as needed
+- Mock external dependencies
+- Test both success and error scenarios
+</code></pre>
+<h2 id="organization-strategies">Organization Strategies</h2>
+<h3 id="workspace-structure">Workspace Structure</h3>
+<pre><code>.github/
+├── copilot-instructions.md           # Global project instructions
+├── instructions/                     # Specific instruction files
+│   ├── react.instructions.md         # React component guidelines
+│   ├── database.instructions.md      # Database development patterns
+│   ├── testing.instructions.md       # Testing best practices
+│   ├── api-endpoints.instructions.md # API development standards
+│   └── security.instructions.md      # Security review guidelines
+└── prompts/                          # Reusable prompt templates
+    ├── create-react-component.prompt.md    # Generate React components
+    ├── api-endpoint.prompt.md             # Create API endpoints
+    ├── security-review.prompt.md          # Security code reviews
+    ├── generate-tests.prompt.md           # Create unit/integration tests
+    └── refactor-code.prompt.md            # Code refactoring workflows
+</code></pre>
+<p><img src="/article-images/c55dca90d6ce2b4f/original.png" title="" class="img-fluid" loading="lazy" /></p>
+<h3 id="user-profile-instructions">User Profile Instructions</h3>
+<p>Store personal preferences in your user profile:</p>
+<ul>
+<li><strong>Location</strong>: <code>%APPDATA%\Code\User\prompts\</code> (Windows)</li>
+<li><strong>Sync</strong>: Enable Settings Sync to share across devices</li>
+<li><strong>Access</strong>: Available in all workspaces</li>
+</ul>
+<h2 id="team-collaboration-best-practices">Team Collaboration Best Practices</h2>
+<h3 id="version-control">Version Control</h3>
+<ul>
+<li>Commit instruction and prompt files to your repository</li>
+<li>Document your customization strategy in README</li>
+<li>Review changes to instructions like code changes</li>
+<li>Use descriptive commit messages for instruction updates</li>
+</ul>
+<h3 id="team-standards">Team Standards</h3>
+<pre class="language-markdown"><code class="language-markdown">---
+
+# Example: .github/copilot-instructions.md for team
+
+---
+
+# Team Development Standards
+
+## Code Review Requirements
+
+- All PRs require 2 approvals
+- Include tests for new features
+- Update documentation for API changes
+- Follow conventional commit format
+
+## Architecture Decisions
+
+- Use clean architecture patterns
+- Implement dependency injection
+- Follow SOLID principles
+- Document architectural decisions in ADRs
+</code></pre>
+<h3 id="knowledge-sharing">Knowledge Sharing</h3>
+<ul>
+<li>Create prompt libraries for common team tasks</li>
+<li>Share useful instructions via team documentation</li>
+<li>Conduct training sessions on customization techniques</li>
+<li>Maintain a team wiki of best practices</li>
+</ul>
+<h2 id="troubleshooting-common-issues">Troubleshooting Common Issues</h2>
+<h3 id="instructions-not-applied">Instructions Not Applied</h3>
+<ol>
+<li><strong>Check Settings</strong>: Ensure <code>github.copilot.chat.codeGeneration.useInstructionFiles</code> is enabled</li>
+<li><strong>File Location</strong>: Verify files are in correct directories</li>
+<li><strong>Syntax</strong>: Check YAML frontmatter formatting</li>
+<li><strong>File Extension</strong>: Ensure <code>.instructions.md</code> or <code>.prompt.md</code> extensions</li>
+</ol>
+<h3 id="conflicting-instructions">Conflicting Instructions</h3>
+<ul>
+<li>Avoid contradictory guidelines across files</li>
+<li>Use specific <code>applyTo</code> patterns to prevent conflicts</li>
+<li>Test instruction combinations before deployment</li>
+<li>Document instruction hierarchy and precedence</li>
+</ul>
+<h3 id="performance-considerations">Performance Considerations</h3>
+<ul>
+<li>Keep instruction files concise and focused</li>
+<li>Avoid overly complex nested references</li>
+<li>Monitor token usage in complex setups</li>
+<li>Regular review and cleanup of unused instructions</li>
+</ul>
+<h2 id="measuring-effectiveness">Measuring Effectiveness</h2>
+<h3 id="success-metrics">Success Metrics</h3>
+<ul>
+<li><strong>Consistency</strong>: Are generated responses following your guidelines?</li>
+<li><strong>Efficiency</strong>: Are common tasks faster with prompts?</li>
+<li><strong>Quality</strong>: Is code quality improving with instructions?</li>
+<li><strong>Adoption</strong>: Is the team using the customizations?</li>
+</ul>
+<h3 id="iterative-improvement">Iterative Improvement</h3>
+<ol>
+<li>Start with basic instructions</li>
+<li>Gather feedback from team usage</li>
+<li>Refine and expand based on common patterns</li>
+<li>Document lessons learned</li>
+<li>Share successful patterns with the team</li>
+</ol>
+<h2 id="advanced-integration-patterns">Advanced Integration Patterns</h2>
+<h3 id="cicd-integration">CI/CD Integration</h3>
+<pre class="language-markdown"><code class="language-markdown">---
+applyTo: &quot;**/.github/workflows/*.yml&quot;
+description: &quot;GitHub Actions workflow guidelines&quot;
+
+---
+
+# CI/CD Instructions
+
+## Workflow Standards
+
+- Use reusable workflows when possible
+- Include proper error handling
+- Implement security scanning
+- Use environment-specific deployments
+- Include rollback procedures
+</code></pre>
+<h3 id="documentation-generation">Documentation Generation</h3>
+<pre class="language-markdown"><code class="language-markdown">---
+mode: &quot;agent&quot;
+description: &quot;Generate API documentation&quot;
+
+---
+
+# Generate API Documentation
+
+Create comprehensive API documentation for: ${selection}
+
+## Requirements
+
+- OpenAPI 3.0 specification
+- Include request/response examples
+- Document error responses
+- Add authentication requirements
+- Include rate limiting information
+
+Reference: [API standards](./docs/api-standards.md)
+</code></pre>
+
+<h2 id="conclusion">Conclusion</h2>
+<p>Instructions and prompt files transform GitHub Copilot from a general-purpose assistant into a project-aware, team-aligned development partner. Start with basic instructions, gradually build your library of prompts, and continuously refine based on your team's needs.</p>
+<p>The key to success is consistency, team adoption, and iterative improvement. Begin with the most common tasks in your workflow, then expand your customization library as you discover new opportunities for automation and standardization.</p>
+<p><strong>Next Steps:</strong></p>
+<ol>
+<li>Create your first <code>.github/copilot-instructions.md</code> file</li>
+<li>Set up project-specific instruction files</li>
+<li>Build a library of common prompt templates</li>
+<li>Share and iterate with your team</li>
+<li>Measure and improve based on usage patterns</li>
+</ol>
+<p>Remember: these customizations are not just about making Copilot work better—they're about codifying your team's knowledge and best practices into reusable, scalable tools that help maintain consistency and quality across your entire codebase.</p>
+
+                </div>
+
+                <!-- Social Sharing -->
+                <div class="mt-5 pt-4 border-top">
+    								<h6 class="mb-3">Share this tip:</h6>
+                    <div class="d-flex flex-wrap gap-2">
+                        <a href="https://x.com/intent/tweet?text=Master%20GitHub%20Copilot%20Customization%20in%20Visual%20Studio%20Code%20with%20Instructions%20and%20Prompt%20Files&url=https://copilotthatjawn.com/tips/copilot-instructions-prompt-files.md"
+                           target="_blank" class="btn btn-outline-x btn-sm">
+                            <i class="bi bi-twitter-x"></i> X
+                        </a>                        <a href="javascript:shareLinkedIn()"
+                           class="btn btn-outline-primary btn-sm">
+                            <i class="bi bi-linkedin"></i> LinkedIn
+                        </a>
+                        <a href="https://bsky.app/intent/compose?text=Master%20GitHub%20Copilot%20Customization%20in%20Visual%20Studio%20Code%20with%20Instructions%20and%20Prompt%20Files https://copilotthatjawn.com/tips/copilot-instructions-prompt-files.md"
+                           target="_blank" class="btn btn-outline-info btn-sm">
+                            <i class="bi bi-cloud"></i> Bluesky
+                        </a>
+                        <a href="javascript:shareMastodon()"
+                           class="btn btn-outline-purple btn-sm mastodon-share">
+                            <i class="bi bi-mastodon"></i> Mastodon
+                        </a>
+                        <button class="btn btn-outline-secondary btn-sm" onclick="copyToClipboard()">
+                            <i class="bi bi-link"></i> Copy Link
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Navigation -->
+                <div class="mt-5 pt-4 border-top">
+                    <div class="row">
+                        <div class="col-6">
+                        </div>
+                        <div class="col-6 text-end">
+                        </div>
+                    </div>
+                </div>
+            </article>
+        </div>        <!-- Sidebar -->
+        <div class="col-lg-4">
+            <div class="sticky-top" style="top: 2rem; z-index: var(--z-index-sticky);">
+                <!-- Related Tips -->
+                    <div class="card shadow-sm mb-4">
+                        <div class="card-header bg-primary text-white">
+                            <h5 class="card-title mb-0">
+                                <i class="bi bi-lightbulb"></i> Related Tips
+                            </h5>
+                        </div>
+                        <div class="card-body p-0">
+                                <div class="p-3 border-bottom">
+                                    <h6 class="mb-2">
+                                        <a class="text-decoration-none" href="/tips/microsoft-docs-mcp-integration.md">Supercharge Your Development with Microsoft Docs MCP</a>
+                                    </h6>
+                                    <p class="text-muted small mb-2">Harness the power of Microsoft&#x27;s official documentation directly in GitHub Copilot using the Model Context Protocol (MCP) for instant, accurate answers</p>
+                                    <div class="d-flex justify-content-between align-items-center small text-muted">
+                                        <span class="badge bg-light text-dark">GitHub Copilot</span>
+                                        <span>5 min</span>
+                                    </div>
+                                </div>
+                                <div class="p-3 border-bottom">
+                                    <h6 class="mb-2">
+                                        <a class="text-decoration-none" href="/tips/using-copilot-agent-for-unit-tests.md">Supercharge Your Testing with GitHub Copilot Agent Mode</a>
+                                    </h6>
+                                    <p class="text-muted small mb-2">Learn how to leverage GitHub Copilot&#x27;s Agent mode to efficiently generate and maintain comprehensive unit tests</p>
+                                    <div class="d-flex justify-content-between align-items-center small text-muted">
+                                        <span class="badge bg-light text-dark">GitHub Copilot</span>
+                                        <span>2 min</span>
+                                    </div>
+                                </div>
+                                <div class="p-3 border-bottom">
+                                    <h6 class="mb-2">
+                                        <a class="text-decoration-none" href="/tips/refactor-legacy-code-with-copilot.md">Refactor Legacy Code Faster with GitHub Copilot</a>
+                                    </h6>
+                                    <p class="text-muted small mb-2">Modernize, clean up, and optimize your codebase across .NET, Python, TypeScript, and JavaScript using GitHub Copilot&#x27;s AI-powered suggestions.</p>
+                                    <div class="d-flex justify-content-between align-items-center small text-muted">
+                                        <span class="badge bg-light text-dark">GitHub Copilot</span>
+                                        <span>2 min</span>
+                                    </div>
+                                </div>
+                        </div>
+                    </div>
+
+                <!-- Back to Tips -->
+                <div class="card shadow-sm">
+                    <div class="card-body text-center">
+                        <h6 class="card-title">Explore More Tips</h6>
+                        <p class="card-text small text-muted">Discover more AI productivity tips and tricks</p>
+                        <a class="btn btn-primary btn-sm" href="/tips">
+                            <i class="bi bi-arrow-left"></i> Back to All Tips
+                        </a>
+
+                            <a class="btn btn-outline-purple btn-sm mt-2 d-block" href="/tips/category/github%20copilot">
+                                More from GitHub Copilot
+                            </a>
+                    </div>
+                </div>
+            </div>
+        </div>    </div>
+
+</div>
+
+<style>
+.btn-outline-x {
+    color: #563ACC;
+    border-color: #563ACC;
+    font-weight: bold;
+}
+
+.btn-outline-x:hover {
+    color: #fff;
+    background-color: #563ACC;
+    border-color: #563ACC;
+}
+
+.btn-outline-purple {
+    color: #563ACC;
+    border-color: #563ACC;
+}
+
+.btn-outline-purple:hover {
+    color: #fff;
+    background-color: #563ACC;
+    border-color: #563ACC;
+}
+
+.tip-content {
+    line-height: 1.8;
+    font-size: 1.1rem;
+}
+
+/* Copy button styles for code blocks */
+.tip-content pre {
+    position: relative !important;
+}
+
+.tip-content .copy-button {
+    position: absolute !important;
+    right: 0.5rem !important;
+    top: 0.35rem !important;
+    padding: 0.25rem 0.5rem !important;
+		margin-top: 0.5rem;
+    font-size: 0.875rem !important;
+    line-height: 1.5 !important;
+    color: #6c757d !important;
+    background-color: transparent !important;
+    border: 1px solid #6c757d !important;
+    border-radius: 0.25rem !important;
+    cursor: pointer !important;
+}
+
+.tip-content .copy-button:hover {
+    color: #fff !important;
+    background-color: #6c757d !important;
+}
+
+.tip-content .copy-button.success {
+    color: #fff !important;
+    background-color: #198754 !important;
+    border-color: #198754 !important;
+}
+
+.tip-content h1, .tip-content h2, .tip-content h3, 
+.tip-content h4, .tip-content h5, .tip-content h6 {
+    margin-top: 2rem;
+    margin-bottom: 1rem;
+}
+
+.tip-content p {
+    margin-bottom: 1.5rem;
+}
+
+.tip-content code {
+    font-family: Consolas, monospace;
+    padding: 0.2rem 0.4rem;
+    border-radius: 0.25rem;
+    font-size: 0.9em;
+}
+
+.tip-content pre {
+    padding: 1rem;
+    border-radius: 0.375rem;
+    overflow-x: auto;
+    margin-bottom: 1.5rem;
+}
+
+/* Ensure Prism.js styles take precedence over our generic styles */
+.tip-content pre[class*="language-"] {
+    padding: 1rem !important;
+    border-radius: 0.5rem !important;
+    overflow-x: auto !important;
+    margin-bottom: 1.5rem !important;
+}
+
+.tip-content code[class*="language-"] {
+		font-family: Consolas, monospace !important;
+    font-size: inherit !important;
+    padding-top: 0 !important;
+    display: block !important;
+}
+
+.tip-content blockquote {
+    border-left: 4px solid #0d6efd;
+    padding-left: 1rem;
+    margin: 1.5rem 0;
+    font-style: italic;
+}
+
+.tip-content img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 0.375rem;
+    margin: 1rem 0;
+}
+
+@media (max-width: 991.98px) {
+    .sticky-top {
+        position: static !important;
+    }
+}
+</style>
+
+<script>
+function shareLinkedIn() {
+    const url = window.location.href;
+    const title = "Master GitHub Copilot Customization in Visual Studio Code with Instructions and Prompt Files";
+ 
+    // Use LinkedIn's post creation with pre-populated content
+    // This method ensures both title and URL are included in the post
+    let linkedinUrl = `https://www.linkedin.com/shareArticle?mini=true&url=${encodeURIComponent(url)}&title=${encodeURIComponent(title)}`;
+
+    
+    // Add source
+    linkedinUrl += `&source=CopilotThatJawn`;
+    
+    window.open(linkedinUrl, '_blank', 'width=550,height=400');
+}
+
+function shareMastodon() {
+    // Prompt for Mastodon instance
+    const instance = prompt("Enter your Mastodon instance URL (e.g., mastodon.social):", "mastodon.social");
+    if (instance) {
+        // Construct share URL
+        const text = "Master GitHub Copilot Customization in Visual Studio Code with Instructions and Prompt Files";
+        const url = window.location.href;
+        const shareUrl = `https://${instance}/share?text=${encodeURIComponent(text)}&url=${encodeURIComponent(url)}`;
+        window.open(shareUrl, '_blank');
+    }
+}
+
+function copyToClipboard() {
+    navigator.clipboard.writeText(window.location.href).then(function() {
+        // Show success message
+        const button = event.target.closest('button');
+        const originalText = button.innerHTML;
+        button.innerHTML = '<i class="bi bi-check"></i> Copied!';
+        button.classList.remove('btn-outline-secondary');
+        button.classList.add('btn-success');
+        
+        setTimeout(() => {
+            button.innerHTML = originalText;
+            button.classList.remove('btn-success');
+            button.classList.add('btn-outline-secondary');
+        }, 2000);
+    });
+}
+
+// Ensure Prism.js highlights the code blocks after content is loaded
+document.addEventListener('DOMContentLoaded', function() {
+    // Wait a bit to ensure all styles are loaded
+    setTimeout(function() {
+        if (typeof Prism !== 'undefined') {
+            
+            // Remove any existing highlighting first
+            document.querySelectorAll('pre[class*="language-"] code').forEach(function(codeBlock) {
+                if (codeBlock.hasAttribute('class')) {
+                    codeBlock.setAttribute('data-original-class', codeBlock.className);
+                    codeBlock.removeAttribute('class');
+                }
+                codeBlock.className = codeBlock.parentElement.className;
+            });
+            
+            // Re-highlight everything
+            Prism.highlightAll();
+
+            // Handle copy button success states
+            document.querySelectorAll('.copy-button').forEach(function(button) {
+                button.addEventListener('click', async function() {
+                    const pre = this.closest('pre');
+                    const code = pre.querySelector('code')?.textContent || pre.textContent;
+                    
+                    try {
+                        await navigator.clipboard.writeText(code.trim());
+                        const originalText = button.innerHTML;
+                        button.innerHTML = '<i class="bi bi-check"></i>';
+                        button.classList.add('success');
+                        
+                        setTimeout(() => {
+                            button.innerHTML = originalText;
+                            button.classList.remove('success');
+                        }, 2000);
+                    } catch (err) {
+                        console.error('Failed to copy text: ', err);
+                    }
+                });
+            });
+        }
+    }, 100);
+});
+
+// Listen for theme changes and re-highlight code
+    document.addEventListener('theme-changed', function(e) {
+        // We need a small delay to ensure the CSS has been applied
+        setTimeout(function() {
+            if (window.Prism) {
+                console.log('Re-highlighting code blocks after theme change to: ' + e.detail.resolvedTheme);
+                Prism.highlightAll();
+            }
+        }, 200);
+    });
+
+document.addEventListener('DOMContentLoaded', function() {
+        // Track tip view
+        Analytics.trackTipView('Master GitHub Copilot Customization in Visual Studio Code with Instructions and Prompt Files', 'GitHub Copilot');
+
+        // Track tag clicks
+        document.querySelectorAll('a[asp-page="/Tips/Tag"]').forEach(function(tag) {
+            tag.addEventListener('click', function() {
+                Analytics.trackTagClick(this.getAttribute('asp-route-tag'));
+            });
+        });        // Track social shares
+        document.querySelectorAll('.btn[href^="https://x.com"], .btn[href^="https://bsky.app"]').forEach(function(shareBtn) {
+            shareBtn.addEventListener('click', function() {
+                Analytics.trackShare(this.textContent.trim(), 'tip', 'copilot-instructions-prompt-files.md');
+            });
+        });
+    });
+</script>
+
+        </main>
+    </div>    <footer b-x12e99zfhl class="footer py-4">
+        <div b-x12e99zfhl class="container">
+            <div b-x12e99zfhl class="row g-4 align-items-start justify-content-between">
+                <div b-x12e99zfhl class="col-lg-5">                    <div b-x12e99zfhl class="d-flex align-items-center mb-3">
+                        <img src="/img/icon-100.webp" alt="Copilot That Jawn" class="me-2" style="height: 24px; width: auto;">
+                        <h5 b-x12e99zfhl class="mb-0 brand-title">Copilot That Jawn</h5>
+                    </div>
+                    <p b-x12e99zfhl class="text-muted mb-0 pe-lg-4">Expert tips and tricks for Microsoft Copilot, GitHub Copilot, and related AI tools. Level up your workflow with our curated collection of productivity hacks.</p>
+                </div>                <div b-x12e99zfhl class="col-lg-3 col-md-6">
+                    <h6 b-x12e99zfhl class="mb-3 text-primary fw-bold border-bottom border-2 border-primary pb-2 d-inline-block">AI Tools</h6>
+                    <ul b-x12e99zfhl class="list-unstyled">
+                        <li b-x12e99zfhl class="mb-2"><a b-x12e99zfhl href="https://github.com/features/copilot" target="_blank" rel="noopener noreferrer" class="text-decoration-none text-muted hover-primary">GitHub Copilot</a></li>
+                        <li b-x12e99zfhl class="mb-2"><a b-x12e99zfhl href="https://www.microsoft.com/microsoft-365/copilot" target="_blank" rel="noopener noreferrer" class="text-decoration-none text-muted hover-primary">Microsoft 365 Copilot</a></li>
+                        <li b-x12e99zfhl class="mb-2"><a b-x12e99zfhl href="https://azure.microsoft.com/products/ai-services" target="_blank" rel="noopener noreferrer" class="text-decoration-none text-muted hover-primary">Azure AI</a></li>
+                        <li b-x12e99zfhl class="mb-2"><a b-x12e99zfhl href="https://powerapps.microsoft.com/copilot-studio/" target="_blank" rel="noopener noreferrer" class="text-decoration-none text-muted hover-primary">Copilot Studio</a></li>
+                    </ul>
+                </div>
+                <div b-x12e99zfhl class="col-lg-3 col-md-6">
+                    <h6 b-x12e99zfhl class="mb-3 text-primary fw-bold border-bottom border-2 border-primary pb-2 d-inline-block">Quick Links</h6><ul b-x12e99zfhl class="list-unstyled">                        <li b-x12e99zfhl class="mb-2"><a class="text-decoration-none text-muted hover-primary" href="/about">About</a></li>
+                        <li b-x12e99zfhl class="mb-2"><a b-x12e99zfhl href="mailto:info@copilotthatjawn.com" class="text-decoration-none text-muted hover-primary">Contact</a></li>                        <li b-x12e99zfhl class="mb-2"><a class="text-decoration-none text-muted hover-primary" href="/terms">Terms</a></li>
+                        <li b-x12e99zfhl class="mb-2"><a class="text-decoration-none text-muted hover-primary" href="/privacy">Privacy</a></li>
+                        <li b-x12e99zfhl class="mb-2"><a b-x12e99zfhl href="/feed.rss" class="text-decoration-none text-muted hover-primary">RSS Feed</a></li>
+                    </ul>
+                </div>
+            </div>
+            <hr b-x12e99zfhl class="my-4">
+            <div b-x12e99zfhl class="row align-items-center">
+                <div b-x12e99zfhl class="col-md-12 text-center">
+                    <p b-x12e99zfhl class="text-muted mb-0">&copy; 2025 Copilot That Jawn. All rights reserved.</p>
+                </div>
+            </div>
+        </div>    </footer>    <!-- Core libraries -->
+    <script src="/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+
+    <!-- Syntax highlighting -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/components/prism-csharp.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/components/prism-javascript.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/components/prism-typescript.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/components/prism-powershell.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/components/prism-json.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/components/prism-bash.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/components/prism-yaml.min.js"></script>    <!-- Site scripts -->
+
+        <script src="/js/bundle.min.js"></script>
+
+        <script>
+        // Fix for code highlighting in theme changes
+        document.addEventListener('DOMContentLoaded', function() {
+            // Initial theme setup based on current setting
+            const resolvedTheme = document.documentElement.getAttribute('data-theme-resolved');
+            const prismThemeLink = document.getElementById('prism-theme');
+
+            if (prismThemeLink && resolvedTheme) {
+                const themeUrl = resolvedTheme === 'dark'
+                    ? '/css/prism-atom-dark.css'
+                    : 'https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism.min.css';
+
+                console.log(`Initial Prism theme setting to: ${resolvedTheme} (${themeUrl})`);
+                prismThemeLink.href = themeUrl;
+            } else if (!prismThemeLink) {
+                console.warn('Prism theme link not found, creating element');
+                const newLink = document.createElement('link');
+                newLink.id = 'prism-theme';
+                newLink.rel = 'stylesheet';
+                newLink.href = resolvedTheme === 'dark'
+                    ? '/css/prism-atom-dark.css'
+                    : 'https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism.min.css';
+                document.head.appendChild(newLink);
+            }
+
+            // Initial highlight
+            if (window.Prism) {
+                setTimeout(() => Prism.highlightAll(), 100);
+            }
+              // Auto mode special case - ensure system preference changes are handled
+            window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', function(e) {
+                if (document.documentElement.getAttribute('data-theme') === 'auto') {
+                    // Update data-theme-resolved attribute
+                    const isDark = e.matches;
+                    document.documentElement.setAttribute('data-theme-resolved', isDark ? 'dark' : 'light');
+
+                    // Update Prism theme on system preference change
+                    const prismThemeLink = document.getElementById('prism-theme');
+                    if (prismThemeLink) {
+                        prismThemeLink.href = isDark
+                            ? '/css/prism-atom-dark.css'
+                            : 'https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism.min.css';
+
+                        if (window.Prism) {
+                            setTimeout(() => Prism.highlightAll(), 100);
+                        }
+                    }
+                }
+            });
+        });    </script>
+
+    <!-- CSS loading polyfill for better browser support -->
+    <script>
+        /*! loadCSS. [c]2017 Filament Group, Inc. MIT License */
+        (function(w){
+            "use strict";
+            if(!w.loadCSS){
+                w.loadCSS = function(){};
+            }
+            var rp = loadCSS.relpreload = {};
+            rp.support = (function(){
+                var ret;
+                try {
+                    ret = w.document.createElement("link").relList.supports("preload");
+                } catch (e) {
+                    ret = false;
+                }
+                return function(){
+                    return ret;
+                };
+            })();
+            rp.bindMediaToggle = function(link){
+                var finalMedia = link.media || "all";
+                function enableStylesheet(){
+                    if(link.addEventListener){
+                        link.removeEventListener("load", enableStylesheet);
+                    }
+                    link.media = finalMedia;
+                }
+                if(link.addEventListener){
+                    link.addEventListener("load", enableStylesheet);
+                }
+                link.onloadcssdefined = enableStylesheet;
+            };
+            rp.poly = function(){
+                if(rp.support()){
+                    return;
+                }
+                var links = w.document.getElementsByTagName("link");
+                for(var i = 0; i < links.length; i++){
+                    var link = links[i];
+                    if(link.rel === "preload" && link.getAttribute("as") === "style" && !link.getAttribute("data-loadcss")){
+                        link.setAttribute("data-loadcss", true);
+                        rp.bindMediaToggle(link);
+                    }
+                }
+            };
+            if(!rp.support()){
+                rp.poly();
+                var run = w.setInterval(rp.poly, 500);
+                if(w.addEventListener){
+                    w.addEventListener("load", function(){
+                        rp.poly();
+                        w.clearInterval(run);
+                    });
+                }
+            }
+        })(this);
+    </script>
+
+</body>
+</html>
