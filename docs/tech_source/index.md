@@ -1,7 +1,7 @@
 蒐集科技服務關鍵字：
-HuggingFace,OpenAI,Anthropic,YouAI,GitHubCopilot,GitHub,Manus,Grok,
-Apple,Microsoft,Azure,Nvidia,Tesla,Meta,Cloudflare,Perplexity,AWS,
-Google,Vultr,DigitalOcean,Kamatera,Ollama,Docker,Gemma,VertexAI,LMStudio,Kaggle
+Hugging Face, OpenAI, Anthropic, YouAI, GitHub Copilot, GitHub, Manus, Grok,
+Apple, Microsoft, Azure, Nvidia, Tesla, Meta, Cloudflare, Perplexity, AWS,
+Google, Vultr, DigitalOcean, Kamatera, Ollama, Docker, Gemma,Vertex AI, LM Studio, Kaggle
 
 時間規範：
 時間基準: {TODAY} = 執行當天
@@ -66,4 +66,5 @@ blog.google
 
 - 僅收集 {START_DATE} 至 {END_DATE} 期間的新聞、報導、評論
 - 如果沒有指定日期則以當下時間往前計算 15 天內
-- 無日期則忽略；若確認在期間內但日期不詳，標註 \*未知時間
+- 無日期則忽略；若確認在期間內但日期不詳，標註「未知時間」
+- 請著重權威公開資訊，新聞資訊來源請以權威新聞網站為主
