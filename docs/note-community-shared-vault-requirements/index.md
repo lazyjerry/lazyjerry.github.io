@@ -76,3 +76,5 @@
 
 - [建議需求清單（Recommendations）](./recommendations.md)
 - [功能需求清單（Feature Requirements）](./requirements.md)
+- [Obsidian 共享庫擁有者指南](./obsidian-share-owner-guide.md)
+- [Obsidian 共享庫成員指南](./obsidian-share-owner-member.md)
