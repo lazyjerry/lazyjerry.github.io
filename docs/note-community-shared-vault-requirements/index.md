@@ -78,3 +78,4 @@
 - [功能需求清單（Feature Requirements）](./requirements.md)
 - [Obsidian 共享庫擁有者指南](./obsidian-share-owner-guide.md)
 - [Obsidian 共享庫成員指南](./obsidian-share-owner-member.md)
+- 可以點擊[這裡](https://obsidian-sync-guide.pages.dev/)查看操作說明的互動網頁。
