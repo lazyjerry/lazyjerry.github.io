@@ -20,20 +20,20 @@ def main():
     if not date:
         date = today_str
 
-    # 依據日期組合出該週報資料夾路徑
+    # 依據日期組合出該週記資料夾路徑
     folder_path = os.path.join(ROOT_DIR, 'Tech', date)
     if not os.path.isdir(folder_path):
         print(f'找不到資料夾：{folder_path}，請確認日期輸入正確。')
         return
 
-    # 組合出週報檔案名稱與完整路徑
+    # 組合出週記檔案名稱與完整路徑
     filename = f"{date} 科技服務資訊週記.md"
     file_path = os.path.join(folder_path, filename)
     if not os.path.isfile(file_path):
-        print(f'找不到檔案：{file_path}，請確認該週報檔案存在。')
+        print(f'找不到檔案：{file_path}，請確認該週記檔案存在。')
         return
 
-    # 讀取原週報內容
+    # 讀取原週記內容
     with open(file_path, 'r', encoding='utf-8') as f:
         original_content = f.read()
 
@@ -43,7 +43,7 @@ def main():
     yaml_header = (
         "---\n"
         "title: 科技服務資訊週記\n"
-        "description: AI 自動彙整的科技服務官方資訊週報，使用 Manus Plus ，目前抓週六或週日更新。\n"
+        "description: AI 自動彙整的科技服務官方資訊週記，使用 Manus Plus ，目前抓週六或週日更新。\n"
         "---\n\n"
     )
 
