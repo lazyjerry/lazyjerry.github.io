@@ -43,7 +43,7 @@ def main():
     yaml_header = (
         "---\n"
         "title: 科技服務資訊週記 預覽版\n"
-        "description: AI 自動彙整的科技服務官方資訊週記，使用 Manus Plus （預覽版）\n"
+        "description: AI 自動彙整的科技服務資訊週記，使用 Manus Plus （預覽版）\n"
         "---\n\n"
     )
 
