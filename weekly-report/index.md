@@ -1,6 +1,6 @@
 ---
 title: 科技服務資訊週記
-description: AI 自動彙整的科技服務資訊週記，使用 Manus Plus ，目前抓週六或週日更新。
+description: AI 自動彙整的科技服務資訊週記，使用 Manus Plus ，這週國慶日紀念版。
 ---
 
 # 2025-10-10 科技服務資訊週記
