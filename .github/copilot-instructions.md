@@ -19,12 +19,12 @@ python just_push.py
 
 ### 2. 內容結構標準
 
-**週報檔案**: `Tech/YYYY-MM-DD/YYYY-MM-DD 科技服務資訊週記.md`
+**週記檔案**: `Tech/YYYY-MM-DD/YYYY-MM-DD 科技服務資訊週記.md`
 
 ```yaml
 ---
 title: 科技服務資訊週記 [預覽版]
-description: AI 自動彙整的科技服務官方資訊週報，使用 Manus Plus
+description: AI 自動彙整的科技服務官方資訊週記，使用 Manus Plus
 ---
 ```
 
@@ -62,13 +62,13 @@ new_content = yaml_header + original_content
 ### 檔案操作
 
 - **日期格式**: 一律 `YYYY-MM-DD`
-- **中文檔名**: 週報和專題用中文，輔助檔案用英文底線
+- **中文檔名**: 週記和專題用中文，輔助檔案用英文底線
 - **編碼**: 所有 `.py` 和 `.md` 檔案使用 `utf-8`
 - **路徑**: 使用 `os.path.join()` 跨平台相容
 
 ### 內容生成
 
-- **AI 工具**: 主要用 Manus AI，週報用 Wide Research 多代理功能
+- **AI 工具**: 主要用 Manus AI，週記用 Wide Research 多代理功能
 - **結構化資料**: `todo.md`, `analysis.md`, `categorized_news.md` 等輔助檔案
 - **表格格式**: 參考資料使用表格 `| 編號 | 文章標題 | 亮點 | 發布日期 | 來源 |`
 

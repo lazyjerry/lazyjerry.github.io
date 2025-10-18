@@ -24,7 +24,7 @@ def main():
   date = input(f'請輸入日期 (YYYY-MM-DD)（預設：{today_str}）：').strip()
   if not date:
     date = today_str
-  # 依據日期組合出該週報告的資料夾路徑
+  # 依據日期組合出該週記告的資料夾路徑
   folder_path = os.path.join(ROOT_DIR, TOPICS_FOLDER_NAME, TOPIC_FOLDER_NAME,  date)
   # 檢查資料夾是否存在
   if not os.path.isdir(folder_path):
@@ -36,7 +36,7 @@ def main():
   file_path = os.path.join(folder_path, FILE_NAME)
   # 檢查檔案是否存在
   if not os.path.isfile(file_path):
-    print(f'找不到檔案：{file_path}，請確認該週報檔案存在。')
+    print(f'找不到檔案：{file_path}，請確認該週記檔案存在。')
     return
 
   # 複製報告內容，覆蓋到 index.md
