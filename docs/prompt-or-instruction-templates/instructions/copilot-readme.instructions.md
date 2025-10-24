@@ -34,7 +34,7 @@ description: "自動產生或更新 README.md 的指令模板"
 ## README.md 章節結構
 
 1. **專案簡介（Project Overview）**  
-   一句話價值主張 + 主要亮點功能列表。
+   核心功能摘要 + 主要亮點功能列表+大綱
 2. **系統結構（System Architecture）**  
    高層級元件、資料流、主要目錄與模組（可用 tree 格式）。
 3. **安裝與啟動（Installation & Getting Started）**
