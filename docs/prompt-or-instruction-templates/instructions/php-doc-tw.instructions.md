@@ -49,19 +49,16 @@ private array $profile = [];
 
 ```php
 /**
- * 使用者註冊
+ * 使用者註冊.
  *
- * 功能說明：建立新使用者並寄送驗證信。
+ * 建立新使用者並寄送驗證信。
  *
- * 輸入：
  * @param non-empty-string $email 使用者 Email（需唯一）
  * @param non-empty-string $password 雜湊前的密碼
  * @param array<string,mixed> $profile 額外資料（例如暱稱、時區）
  *
- * 輸出：
  * @return int 新建立的使用者 ID
  *
- * 例外：
  * @throws DomainException 當 Email 已存在
  * @throws RuntimeException 寄信服務失敗
  *
