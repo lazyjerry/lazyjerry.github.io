@@ -1,5 +1,5 @@
 ---
-applyTo: "README.md"
+applyTo: "**/README.md"
 description: "自動產生或更新 README.md 的指令模板"
 ---
 
