@@ -4,15 +4,15 @@
 
 目前有實作[科技服務資訊週記](https://lazyjerry.github.io/weekly-report/)與不定期對自己感興趣的議題的專題報告。
 
-最近一次專題報告是關於 [114 年憲判字第 1 號判決：政治、社會與憲政影響綜合研究報告](https://lazyjerry.github.io/topics/taiwan-constitutional-ruling-2025-no1-political-social-impact/)。整合 Manus AI 與 Perplexity AI 研究成果，針對台灣 114 年憲判字第 1 號判決進行全面性分析，涵蓋政治影響、社會反響、憲政爭議及長期結構性影響。應該只會有一期，最後更新是在 2025-12-25。
+最近一次專題報告是關於 [114 年憲判字第 1 號判決：政治、社會與憲政影響綜合研究報告](https://lazyjerry.github.io/topic/taiwan-constitutional-ruling-2025-no1-political-social-impact/)。整合 Manus AI 與 Perplexity AI 研究成果，針對台灣 114 年憲判字第 1 號判決進行全面性分析，涵蓋政治影響、社會反響、憲政爭議及長期結構性影響。應該只會有一期，最後更新是在 2025-12-25。
 
 過去的專題有：
 
-- [ AI 提示詞原則的英文簡寫比較](https://lazyjerry.github.io/topics/ai-prompt-acronyms-insights/) 把常見的原則簡寫列出來並且比較不同領域使用。應該只會有一期，最後更新是在 2025-08-27。
+- [ AI 提示詞原則的英文簡寫比較](https://lazyjerry.github.io/topic/ai-prompt-acronyms-insights/) 把常見的原則簡寫列出來並且比較不同領域使用。應該只會有一期，最後更新是在 2025-08-27。
 
-- 目前常見主流的[CLI AI 工具對照報告](https://lazyjerry.github.io/topics/cli-ai-tools-comparison/) 應該只有一期，最後更新在 2025-08-18 目的是嘗試比較出目前主流使用的 CLI AI 工具中，成本、功能、上下文長度、應用等比較說明。
+- 目前常見主流的[CLI AI 工具對照報告](https://lazyjerry.github.io/topic/cli-ai-tools-comparison/) 應該只有一期，最後更新在 2025-08-18 目的是嘗試比較出目前主流使用的 CLI AI 工具中，成本、功能、上下文長度、應用等比較說明。
 
-- [台灣 823 大罷免與核三公投議題的分析](https://lazyjerry.github.io/topics/analysis-of-taiwans-recall-votes-and-nuclear-power-referendum-on-823/) 最後更新在 2025-08-11
+- [台灣 823 大罷免與核三公投議題的分析](https://lazyjerry.github.io/topic/analysis-of-taiwans-recall-votes-and-nuclear-power-referendum-on-823/) 最後更新在 2025-08-11
 
 未來有更新其他專題議題，將會同步更新該頁面資訊。
 
@@ -35,8 +35,8 @@
 
 本週專題聚焦於台灣即將於 8 月 23 日舉行的第二波大罷免行動，針對其優劣勢、影響因素及成功機率進行分析。其中內容包括：優勢、劣勢、成功機率評估
 
-- **最新進度請參閱** [`topics/2025-08-23-removal-analysis.md`](./topics/analysis-of-taiwans-recall-votes-and-nuclear-power-referendum-on-823/)
-- **線上瀏覽 GitHub Page）**：[https://lazyjerry.github.io/topics/analysis-of-taiwans-recall-votes-and-nuclear-power-referendum-on-823/](https://lazyjerry.github.io/topics/analysis-of-taiwans-recall-votes-and-nuclear-power-referendum-on-823/)
+- **最新進度請參閱** [`topic/2025-08-23-removal-analysis.md`](./topic/analysis-of-taiwans-recall-votes-and-nuclear-power-referendum-on-823/)
+- **線上瀏覽 GitHub Page）**：[https://lazyjerry.github.io/topic/analysis-of-taiwans-recall-votes-and-nuclear-power-referendum-on-823/](https://lazyjerry.github.io/topic/analysis-of-taiwans-recall-votes-and-nuclear-power-referendum-on-823/)
 
 ---
 
