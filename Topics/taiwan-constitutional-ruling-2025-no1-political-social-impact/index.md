@@ -1,17 +1,14 @@
 ---
 title: "114 年憲判字第 1 號判決：政治、社會與憲政影響綜合研究報告"
-description: "整合 Manus AI 與 Perplexity AI 研究成果，針對台灣 114 年憲判字第 1 號判決進行全面性分析，涵蓋政治影響、社會反響、憲政爭議及長期結構性影響"
+description: 針對台灣 114 年憲判字第 1 號判決進行全面性分析，涵蓋政治影響、社會反響、憲政爭議及長期結構性影響"
 tags: ["憲法判決", "司法獨立", "權力分立", "台灣政治", "憲政爭議", "綜合報告"]
 ---
-
-# 114 年憲判字第 1 號判決：政治、社會與憲政影響綜合研究報告
-
-> **報告資訊**  
+  
 > 整合製作：Claude Sonnet 4.5  
 > 製作日期：2025 年 12 月 25 日  
-> 資料來源：[Manus 與 Perplexity AI 研究報告](/topics/taiwan-constitutional-ruling-2025-no1-political-social-impact/2025-12-25/manus.md)、[Perplexity AI 研究報告](/topics/taiwan-constitutional-ruling-2025-no1-political-social-impact/2025-12-25/perplexity.md)
+> 整合資料：[Manus 與 Perplexity AI 研究報告](/topics/taiwan-constitutional-ruling-2025-no1-political-social-impact/2025-12-25/manus.md)、[Perplexity AI 研究報告](/topics/taiwan-constitutional-ruling-2025-no1-political-social-impact/2025-12-25/perplexity.md)
 
-## 執行摘要
+## 摘要
 
 台灣憲法法庭於 2025 年 12 月 19 日作成的 114 年憲判字第 1 號判決，標誌著台灣憲政發展的關鍵時刻。本綜合報告整合兩份 AI 輔助研究成果（Manus AI 與 Perplexity AI），從多重視角深入分析此一歷史性判決的政治、社會與憲政影響。
 
@@ -72,21 +69,11 @@ tags: ["憲法判決", "司法獨立", "權力分立", "台灣政治", "憲政�
 
 判決公布後，台灣政壇立即出現壁壘分明的對立：
 
-**執政黨（民主進步黨）**：
-- 全力支持判決，認為保障了人民合憲權益，使憲法法庭恢復運作
-- 強調判決捍衛憲政民主、維護權力分立原則
-- [[16. 民進黨]](https://www.dpp.org.tw/anti_rumor/contents/307) [[17. 民進黨]](https://www.dpp.org.tw/anti_rumor/contents/307) [[19. 民主進步黨臉書]](https://www.facebook.com/dpptw/posts/1446534680169618/)
-
-**在野黨（中國國民黨）**：
-- 強烈抨擊判決程序違法，認為 5 位大法官的判決無效
-- 於 12 月 22 日赴台北地檢署告發 5 位大法官涉犯刑法第 124 條枉法裁判罪
-- 提案修改《公民投票法》，意圖將憲法法庭判決納入公投複決範圍
-- [[11. 聲援台灣國家主義聯盟]](https://voicettank.org/20251224-1/) [[13. 上報]](https://www.upmedia.mg/tw/focus/politics/247851) [[23. Vigor Media]](https://vigormedia.tw/%E3%80%90%E5%B0%98%E6%AC%84%E3%80%91%E5%9C%8B%E6%B0%91%E9%BB%A8%E6%8F%90%E6%A1%88%E5%A4%A7%E6%B3%95%E5%AE%98%E6%86%B2%E5%88%A4%E7%84%A1%E6%95%88%EF%BC%8C%E6%9C%89%E6%95%88%E5%97%8E%EF%BC%9F/)
-
-**在野黨（台灣民眾黨）**：
-- 黨主席黃國昌批評 5 位大法官「玩法弄法」
-- 認為即使新法違憲，也應在遵守法律前提下進行判決
-- [[6. 報導者]](https://www.twreporter.org/a/amendment-to-constitutional-court-procedure-act-unconstitutional)
+| 政黨陣營 | 主要立場與行動 | 參考來源 |
+|---------|---------------|---------|
+| **執政黨<br>（民主進步黨）** | • 全力支持判決，認為保障了人民合憲權益，使憲法法庭恢復運作<br>• 強調判決捍衛憲政民主、維護權力分立原則 | [[16. 民進黨]](https://www.dpp.org.tw/anti_rumor/contents/307)<br>[[17. 民進黨]](https://www.dpp.org.tw/anti_rumor/contents/307)<br>[[19. 民主進步黨臉書]](https://www.facebook.com/dpptw/posts/1446534680169618/) |
+| **在野黨<br>（中國國民黨）** | • 強烈抨擊判決程序違法，認為 5 位大法官的判決無效<br>• 於 12 月 22 日赴台北地檢署告發 5 位大法官涉犯刑法第 124 條枉法裁判罪<br>• 提案修改《公民投票法》，意圖將憲法法庭判決納入公投複決範圍 | [[11. 聲援台灣國家主義聯盟]](https://voicettank.org/20251224-1/)<br>[[13. 上報]](https://www.upmedia.mg/tw/focus/politics/247851)<br>[[23. Vigor Media]](https://vigormedia.tw/%E3%80%90%E5%B0%88%E6%AC%84%E3%80%91%E5%9C%8B%E6%B0%91%E9%BB%A8%E6%8F%90%E6%A1%88%E5%A4%A7%E6%B3%95%E5%AE%98%E6%86%B2%E5%88%A4%E7%84%A1%E6%95%88%EF%BC%8C%E6%9C%89%E6%95%88%E5%97%8E%EF%BC%9F/) |
+| **在野黨<br>（台灣民眾黨）** | • 黨主席黃國昌批評 5 位大法官「玩法弄法」<br>• 認為即使新法違憲，也應在遵守法律前提下進行判決 | [[6. 報導者]](https://www.twreporter.org/a/amendment-to-constitutional-court-procedure-act-unconstitutional) |
 
 ### 立法與政策影響
 
