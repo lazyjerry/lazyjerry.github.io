@@ -9,7 +9,7 @@ tags: ["憲法判決", "司法獨立", "權力分立", "台灣政治", "憲政�
 > **報告資訊**  
 > 整合製作：Claude Sonnet 4.5  
 > 製作日期：2025 年 12 月 25 日  
-> 資料來源：[Manus 與 Perplexity AI 研究報告](/taiwan-constitutional-ruling-2025-no1-political-social-impact/2025-12-25/manus.md)、[Perplexity AI 研究報告](/taiwan-constitutional-ruling-2025-no1-political-social-impact/2025-12-25/perplexity.md)
+> 資料來源：[Manus 與 Perplexity AI 研究報告](/topics/taiwan-constitutional-ruling-2025-no1-political-social-impact/2025-12-25/manus.md)、[Perplexity AI 研究報告](/topics/taiwan-constitutional-ruling-2025-no1-political-social-impact/2025-12-25/perplexity.md)
 
 ## 執行摘要
 
