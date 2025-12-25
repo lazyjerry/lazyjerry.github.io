@@ -30,8 +30,8 @@ tags: ["憲法判決", "司法獨立", "權力分立", "台灣政治", "憲政�
 
 立法院於 2024 年 12 月 20 日三讀通過《憲法訴訟法》修正案，此修法由在野黨中國國民黨與台灣民眾黨聯手推動。[[4. 中央社]](https://www.cna.com.tw/news/aipl/202512190326.aspx) 修正案核心內容包括：
 
-- **評議門檻**：參與評議大法官人數不得低於 10 人（原法未明定）
-- **違憲宣告門檻**：同意違憲宣告的大法官人數不得低於 9 人（原為 2/3 多數決）
+1. **評議門檻**：參與評議大法官人數不得低於 10 人（原法未明定）
+2. **違憲宣告門檻**：同意違憲宣告的大法官人數不得低於 9 人（原為 2/3 多數決）
 
 憲法法庭認定此修法在審議過程中存在明顯重大瑕疵，包括缺乏充分實質討論、議事過程公開透明不足，構成違背正當立法程序的重大瑕疵。[[8. 遠見雜誌]](https://www.gvm.com.tw/article/126748) [[3. 中央社]](https://www.cna.com.tw/news/aipl/202512190174.aspx) [[35. 司法院新聞稿]](https://cons.judicial.gov.tw/docdata.aspx?fid=75&id=358025) [[36. 法源法律網]](https://www.lawbank.com.tw/news/NewsContent.aspx?NID=211630.00)
 
@@ -169,15 +169,15 @@ tags: ["憲法判決", "司法獨立", "權力分立", "台灣政治", "憲政�
 
 ### 類似案例的國際參照
 
-**美國經驗**：
+美國經驗：
 - Bush v. Gore（2000）案例中，美國最高法院面對程序爭議時強調司法獨立
 - 未允許國會事後修法干預，台灣判決可借鏡其快速決斷避免僵局
 
-**德國經驗**：
+德國經驗：
 - 德國聯邦憲法法院處理議會修法癱瘓時，援引基本法沉默原則宣告無效
 - 類似台灣論證，提供權力分立啟示
 
-**南韓參照**：
+南韓參照：
 - 台灣可參考南韓憲法法院重組經驗，透過跨黨協商化解提名僵局
 
 *註：本段落內容為延伸分析與一般憲政比較，暫無直接國際報導來源。*
@@ -287,10 +287,10 @@ tags: ["憲法判決", "司法獨立", "權力分立", "台灣政治", "憲政�
 | 36 | 法源法律網 | 憲法法庭今年第一件判決憲訴修正案被宣告違憲 | [https://www.lawbank.com.tw/news/NewsContent.aspx?NID=211630.00](https://www.lawbank.com.tw/news/NewsContent.aspx?NID=211630.00) |
 | 37 | 維基百科 | 憲法法庭114年憲判字第1號判決 | [https://zh.wikipedia.org/wiki/憲法法庭114年憲判字第1號判決](https://zh.wikipedia.org/wiki/憲法法庭114年憲判字第1號判決) |
 
-**編按**：
+編按：
 1. 第 29 項〈最沒資格質疑114年憲判字第1號判決的是藍白立委〉該篇文章因原文引用錯誤立場，於校稿時補充調整。
 2. 部分臉書貼文擷取資料有誤，於校稿時補充調整。
 
 ---
 
-**報告製作說明**：本綜合報告由 Claude Opus 4.5 整合 [Manus AI 研究報告](https://github.com/lazyjerry/lazyjerry.github.io/tree/master/topic/taiwan-constitutional-ruling-2025-no1-political-social-impact/2025-12-25/manus.md) 與 [Perplexity AI 研究報告](https://github.com/lazyjerry/lazyjerry.github.io/tree/master/topic/taiwan-constitutional-ruling-2025-no1-political-social-impact/2025-12-25/perplexity.md) 完成，所有引用資料來源均標註原始報告中使用的參考文獻，確保學術嚴謹性與可追溯性。
+報告製作說明：本綜合報告由 Claude Opus 4.5 整合 [Manus AI 研究報告](https://github.com/lazyjerry/lazyjerry.github.io/tree/master/topic/taiwan-constitutional-ruling-2025-no1-political-social-impact/2025-12-25/manus.md) 與 [Perplexity AI 研究報告](https://github.com/lazyjerry/lazyjerry.github.io/tree/master/topic/taiwan-constitutional-ruling-2025-no1-political-social-impact/2025-12-25/perplexity.md) 完成，所有引用資料來源均標註原始報告中使用的參考文獻，確保學術嚴謹性與可追溯性。
