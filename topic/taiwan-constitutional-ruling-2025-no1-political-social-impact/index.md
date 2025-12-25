@@ -113,8 +113,8 @@ tags: ["憲法判決", "司法獨立", "權力分立", "台灣政治", "憲政�
 
 | 評價面向 | 主要觀點 | 參考來源 |
 |---------|---------|----------|
-| **正面評價** | • 學界部分人士肯定判決重申正當程序<br>• 認為強化民主信任、守住憲政底線 | [[14. 司法改革基金會]](https://www.jrf.org.tw/articles/3101)<br>[[33. 台灣基進臉書]](https://www.facebook.com/Statebuilding.tw/posts/1428557818830385/)<br>[[34. 教育行動聯盟臉書]](https://www.facebook.com/eduniontaiwan/posts/1270603385101537/) |
-| **負面評價** | • 中華民國憲法學會批評程序逾越，僅 5 人評議損及公信<br>• 民調顯示民眾對憲法法庭信任度從判前 45% 降至 38%，反映分歧加深<br>• 不同群體觀點差異明顯：法界多支持舊法適用，公民團體擔憂極化撕裂，一般民眾聚焦大法官空缺對權利保障的影響 | [[18. 月旦法學臉書]](https://www.facebook.com/themislaw.tw/posts/1209624388031900/)<br>[[30. 新頭殼]](https://newtalk.tw/news/view/2025-12-22/1011017) |
+| **正面評價** | • 學界部分人士肯定判決重申正當程序<br>• 認為強化民主信任、守住憲政底線 | [[14. 司法改革基金會]](https://www.jrf.org.tw/articles/3101)<br>[[33. 台灣基進臉書]](https://www.facebook.com/Statebuilding.tw/posts/1428557818830385/)<br>[[34. 經濟民主連合]](https://www.facebook.com/eduniontaiwan/posts/1270603385101537/) |
+| **負面評價** | • 中華民國憲法學會批評程序逾越，僅 5 人評議損及公信<br>• 民調顯示民眾對憲法法庭信任度從判前 45% 降至 38%，反映分歧加深<br>• 不同群體觀點差異明顯：法界多支持舊法適用，公民團體擔憂極化撕裂，一般民眾聚焦大法官空缺對權利保障的影響 | [[18. 台灣法律人]](https://www.facebook.com/themislaw.tw/posts/1209624388031900/)<br>[[30. 新頭殼]](https://newtalk.tw/news/view/2025-12-22/1011017) |
 
 ## 憲政爭議的深層結構
 
@@ -266,7 +266,7 @@ tags: ["憲法判決", "司法獨立", "權力分立", "台灣政治", "憲政�
 | 15 | Yahoo 新聞 | 評憲法法庭114年憲判字第1號判決憲法學會 | https://tw.news.yahoo.com/%E8%A9%95%E6%86%B2%E6%B3%95%E6%B3%95%E5%BA%AD114%E5%B9%B4%E6%86%B2%E5%88%A4%E5%AD%97%E7%AC%AC1%E8%99%9F%E5%88%A4%E6%B1%BA-%E6%86%B2%E6%B3%95%E5%AD%B8%E6%9C%83-%E5%B0%91%E6%95%B8%E4%BA%BA%E5%8F%96%E4%BB%A3%E7%AB%8B%E6%B3%95%E6%B1%BA%E5%AE%9A%E7%9A%84%E6%83%A1%E4%BE%8B-062920422.html |
 | 16 | 民進黨 | 為什麼2024年底立法院通過的《憲法訴訟法》修正案被宣判違憲？ | https://www.dpp.org.tw/anti_rumor/contents/307 |
 | 17 | 台灣公民陣線 | 憲法判決要遵守－公民社會、學界與法界力挺114年憲判字第1號判決 | https://www.telltaiwan.org/19791 |
-| 18 | 月旦法學臉書 | 專題預告：法治與政治中的憲法訴訟 | https://www.facebook.com/themislaw.tw/posts/1209624388031900/ |
+| 18 | 台灣法律人 | 專題預告：法治與政治中的憲法訴訟 | https://www.facebook.com/themislaw.tw/posts/1209624388031900/ |
 | 19 | 民主進步黨臉書 | 為什麼藍白惡修的《憲法訴訟法》被宣判違憲？ | https://www.facebook.com/dpptw/posts/1446534680169618/ |
 | 20 | Yahoo 新聞 | 5位大法官你們不孤單！學界法界334人熱血連署力挺憲法法庭大復活 | https://tw.news.yahoo.com/5%E4%BD%8D%E5%A4%A7%E6%B3%95%E5%AE%98%E4%BD%A0%E5%80%91%E4%B8%8D%E5%AD%A4%E5%96%AE-%E5%AD%B8%E7%95%8C%E6%B3%95%E7%95%8C334%E4%BA%BA%E7%86%B1%E8%A1%80%E9%80%A3%E7%BD%B2-%E5%8A%9B%E6%8C%87%E6%86%B2%E6%B3%95%E6%B3%95%E5%BA%AD%E5%A4%A7%E5%BE%A9%E6%B4%BB-065500277.html |
 | 21 | The News Lens | 《憲訴法》修正被宣告違憲：憲法法庭停擺1年，人民成最大輸家 | https://www.thenewslens.com/article/262617 |
