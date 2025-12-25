@@ -249,45 +249,47 @@ tags: ["憲法判決", "司法獨立", "權力分立", "台灣政治", "憲政�
 
 | 編號 | 來源名稱 | 標題 | 網址 |
 |:----:|---------|------|------|
-| 1 | 憲法法庭官方網站 | 114 年憲判字第 1 號判決摘要 | https://cons.judicial.gov.tw/docdata.aspx?fid=77&id=358011 |
-| 2 | 憲法法庭官方網站 | 完整判決書 | https://cons.judicial.gov.tw/docdata.aspx?fid=52&id=355485 |
-| 3 | 中央社 | 憲法法庭今年首例判決　憲法訴訟法修法宣告違憲【判決書全文】 | https://www.cna.com.tw/news/aipl/202512190174.aspx |
-| 4 | 中央社 | 憲法訴訟法修法爭議大事記 | https://www.cna.com.tw/news/aipl/202512190326.aspx |
-| 5 | 關鍵評論網 | 3位大法官不同意見質疑《憲訴法》違憲判決效力 | https://www.thenewslens.com/article/262651 |
-| 6 | 報導者 | 憲法法庭重啟，《憲訴法》部分修正條文違憲失效 | https://www.twreporter.org/a/amendment-to-constitutional-court-procedure-act-unconstitutional |
-| 7 | 天下雜誌 | 憲訟法違憲，即日起失效！停擺415天的憲法法庭復活 | https://www.cw.com.tw/index.php/article/5139035 |
-| 8 | 遠見雜誌 | 憲法法庭停擺一年首次宣判！藍白版「憲法訴訟法案」被宣告違憲 | https://www.gvm.com.tw/article/126748 |
-| 9 | 自由時報 | 憲法法庭今判憲訴法修正案違憲3大法官提不同意見書 | https://news.ltn.com.tw/news/society/breakingnews/5283578 |
-| 10 | 聯合新聞網 | 大法官的操守何等重要 | https://udn.com/news/story/7339/9224994 |
-| 11 | 聯合新聞網 | 新聞眼／5大法官踩2紅線誰來宣告違憲？ | https://udn.com/news/story/124686/9217874 |
-| 12 | 聯合新聞網 | 憲法學會：排除異議大法官掏空憲法 | https://udn.com/news/story/124686/9216491 |
-| 13 | 上報 | 不滿《憲訴法》違憲判決程序國民黨團今赴北檢告發5大法官涉 | https://www.upmedia.mg/tw/focus/politics/247851 |
-| 14 | 司法改革基金會 | 化解立法、行政惡鬥，全民聲援憲法法庭！ | https://www.jrf.org.tw/articles/3101 |
-| 15 | Yahoo 新聞 | 評憲法法庭114年憲判字第1號判決憲法學會 | https://tw.news.yahoo.com/%E8%A9%95%E6%86%B2%E6%B3%95%E6%B3%95%E5%BA%AD114%E5%B9%B4%E6%86%B2%E5%88%A4%E5%AD%97%E7%AC%AC1%E8%99%9F%E5%88%A4%E6%B1%BA-%E6%86%B2%E6%B3%95%E5%AD%B8%E6%9C%83-%E5%B0%91%E6%95%B8%E4%BA%BA%E5%8F%96%E4%BB%A3%E7%AB%8B%E6%B3%95%E6%B1%BA%E5%AE%9A%E7%9A%84%E6%83%A1%E4%BE%8B-062920422.html |
-| 16 | 民進黨 | 為什麼2024年底立法院通過的《憲法訴訟法》修正案被宣判違憲？ | https://www.dpp.org.tw/anti_rumor/contents/307 |
-| 17 | 台灣公民陣線 | 憲法判決要遵守－公民社會、學界與法界力挺114年憲判字第1號判決 | https://www.telltaiwan.org/19791 |
-| 18 | 台灣法律人 | 專題預告：法治與政治中的憲法訴訟 | https://www.facebook.com/themislaw.tw/posts/1209624388031900/ |
-| 19 | 民主進步黨臉書 | 為什麼藍白惡修的《憲法訴訟法》被宣判違憲？ | https://www.facebook.com/dpptw/posts/1446534680169618/ |
-| 20 | Yahoo 新聞 | 5位大法官你們不孤單！學界法界334人熱血連署力挺憲法法庭大復活 | https://tw.news.yahoo.com/5%E4%BD%8D%E5%A4%A7%E6%B3%95%E5%AE%98%E4%BD%A0%E5%80%91%E4%B8%8D%E5%AD%A4%E5%96%AE-%E5%AD%B8%E7%95%8C%E6%B3%95%E7%95%8C334%E4%BA%BA%E7%86%B1%E8%A1%80%E9%80%A3%E7%BD%B2-%E5%8A%9B%E6%8C%87%E6%86%B2%E6%B3%95%E6%B3%95%E5%BA%AD%E5%A4%A7%E5%BE%A9%E6%B4%BB-065500277.html |
-| 21 | The News Lens | 《憲訴法》修正被宣告違憲：憲法法庭停擺1年，人民成最大輸家 | https://www.thenewslens.com/article/262617 |
-| 22 | 風傳媒 | 風評：莫讓「司法護憲」成為毀憲的遮羞布 | https://www.storm.mg/article/11090209 |
-| 23 | 上報 | 114年憲判字第1號難解正當性危機 | https://www.upmedia.mg/tw/commentary/political-and-economics-debate/247776 |
-| 24 | 風傳媒 | 當大法官可以為自己解釋一切，憲法還剩下多少保障？ | https://www.storm.mg/article/11089740 |
-| 25 | 自由評論網 | 新聞線上》台灣人正在溫水煮自己 | https://talk.ltn.com.tw/article/paper/1737217 |
-| 26 | Vigor Media | 【專欄】國民黨提案大法官憲判無效，有效嗎？ | https://vigormedia.tw/%E3%80%90%E5%B0%88%E6%AC%84%E3%80%91%E5%9C%8B%E6%B0%91%E9%BB%A8%E6%8F%90%E6%A1%88%E5%A4%A7%E6%B3%95%E5%AE%98%E6%86%B2%E5%88%A4%E7%84%A1%E6%95%88%EF%BC%8C%E6%9C%89%E6%95%88%E5%97%8E%EF%BC%9F/ |
-| 27 | LINE今日大台灣 | 「邏輯不通的5名大法官」！沈政男打臉釋憲理由 | https://today.line.me/tw/v3/article/Opy23P6 |
-| 28 | 商業周刊 | 憲法法庭今年首例判決出爐！憲法訴訟法修法宣告違憲 | https://www.businessweekly.com.tw/focus/blog/3020248 |
-| 29 | 思想坦克 | 最沒資格質疑114年憲判字第1號判決的是藍白立委 | https://voicettank.org/20251224-1/ |
-| 30 | 新頭殼 | 評憲法法庭114年憲判字第1號判決憲法學會 | https://newtalk.tw/news/view/2025-12-22/1011017 |
-| 31 | 風傳媒 | 綠色獨裁的最後一塊拼圖─大法官自甘墮成為獨裁幫兇 | https://www.storm.mg/article/11089713 |
-| 32 | 維基文庫 | 憲法法庭114年憲判字第1號判決 | https://zh.wikisource.org/wiki/憲法法庭114年憲判字第1號判決 |
-| 33 | 台灣基進臉書 | 憲法法庭114年憲判字第1號判決分析 | https://www.facebook.com/Statebuilding.tw/posts/1428557818830385/ |
-| 34 | 經濟民主連合 | 民主不能再倒退，憲法判決要遵守 | https://www.facebook.com/eduniontaiwan/posts/1270603385101537/ |
-| 35 | 司法院新聞稿 | 114年憲判字第1號判決新聞稿 | https://cons.judicial.gov.tw/docdata.aspx?fid=75&id=358025 |
-| 36 | 法源法律網 | 憲法法庭今年第一件判決憲訴修正案被宣告違憲 | https://www.lawbank.com.tw/news/NewsContent.aspx?NID=211630.00 |
-| 37 | 維基百科 | 憲法法庭114年憲判字第1號判決 | https://zh.wikipedia.org/wiki/憲法法庭114年憲判字第1號判決 |
+| 1 | 憲法法庭官方網站 | 114 年憲判字第 1 號判決摘要 | [連結](https://cons.judicial.gov.tw/docdata.aspx?fid=77&id=358011) |
+| 2 | 憲法法庭官方網站 | 完整判決書 | [連結](https://cons.judicial.gov.tw/docdata.aspx?fid=52&id=355485) |
+| 3 | 中央社 | 憲法法庭今年首例判決　憲法訴訟法修法宣告違憲【判決書全文】 | [連結](https://www.cna.com.tw/news/aipl/202512190174.aspx) |
+| 4 | 中央社 | 憲法訴訟法修法爭議大事記 | [連結](https://www.cna.com.tw/news/aipl/202512190326.aspx) |
+| 5 | 關鍵評論網 | 3位大法官不同意見質疑《憲訴法》違憲判決效力 | [連結](https://www.thenewslens.com/article/262651) |
+| 6 | 報導者 | 憲法法庭重啟，《憲訴法》部分修正條文違憲失效 | [連結](https://www.twreporter.org/a/amendment-to-constitutional-court-procedure-act-unconstitutional) |
+| 7 | 天下雜誌 | 憲訟法違憲，即日起失效！停擺415天的憲法法庭復活 | [連結](https://www.cw.com.tw/index.php/article/5139035) |
+| 8 | 遠見雜誌 | 憲法法庭停擺一年首次宣判！藍白版「憲法訴訟法案」被宣告違憲 | [連結](https://www.gvm.com.tw/article/126748) |
+| 9 | 自由時報 | 憲法法庭今判憲訴法修正案違憲3大法官提不同意見書 | [連結](https://news.ltn.com.tw/news/society/breakingnews/5283578) |
+| 10 | 聯合新聞網 | 大法官的操守何等重要 | [連結](https://udn.com/news/story/7339/9224994) |
+| 11 | 聯合新聞網 | 新聞眼／5大法官踩2紅線誰來宣告違憲？ | [連結](https://udn.com/news/story/124686/9217874) |
+| 12 | 聯合新聞網 | 憲法學會：排除異議大法官掏空憲法 | [連結](https://udn.com/news/story/124686/9216491) |
+| 13 | 上報 | 不滿《憲訴法》違憲判決程序國民黨團今赴北檢告發5大法官涉 | [連結](https://www.upmedia.mg/tw/focus/politics/247851) |
+| 14 | 司法改革基金會 | 化解立法、行政惡鬥，全民聲援憲法法庭！ | [連結](https://www.jrf.org.tw/articles/3101) |
+| 15 | Yahoo 新聞 | 評憲法法庭114年憲判字第1號判決憲法學會 | [連結](https://tw.news.yahoo.com/%E8%A9%95%E6%86%B2%E6%B3%95%E6%B3%95%E5%BA%AD114%E5%B9%B4%E6%86%B2%E5%88%A4%E5%AD%97%E7%AC%AC1%E8%99%9F%E5%88%A4%E6%B1%BA-%E6%86%B2%E6%B3%95%E5%AD%B8%E6%9C%83-%E5%B0%91%E6%95%B8%E4%BA%BA%E5%8F%96%E4%BB%A3%E7%AB%8B%E6%B3%95%E6%B1%BA%E5%AE%9A%E7%9A%84%E6%83%A1%E4%BE%8B-062920422.html) |
+| 16 | 民進黨 | 為什麼2024年底立法院通過的《憲法訴訟法》修正案被宣判違憲？ | [連結](https://www.dpp.org.tw/anti_rumor/contents/307) |
+| 17 | 台灣公民陣線 | 憲法判決要遵守－公民社會、學界與法界力挺114年憲判字第1號判決 | [連結](https://www.telltaiwan.org/19791) |
+| 18 | 台灣法律人 | 專題預告：法治與政治中的憲法訴訟 | [連結](https://www.facebook.com/themislaw.tw/posts/1209624388031900/) |
+| 19 | 民主進步黨臉書 | 為什麼藍白惡修的《憲法訴訟法》被宣判違憲？ | [連結](https://www.facebook.com/dpptw/posts/1446534680169618/) |
+| 20 | Yahoo 新聞 | 5位大法官你們不孤單！學界法界334人熱血連署力挺憲法法庭大復活 | [連結](https://tw.news.yahoo.com/5%E4%BD%8D%E5%A4%A7%E6%B3%95%E5%AE%98%E4%BD%A0%E5%80%91%E4%B8%8D%E5%AD%A4%E5%96%AE-%E5%AD%B8%E7%95%8C%E6%B3%95%E7%95%8C334%E4%BA%BA%E7%86%B1%E8%A1%80%E9%80%A3%E7%BD%B2-%E5%8A%9B%E6%8C%87%E6%86%B2%E6%B3%95%E6%B3%95%E5%BA%AD%E5%A4%A7%E5%BE%A9%E6%B4%BB-065500277.html) |
+| 21 | The News Lens | 《憲訴法》修正被宣告違憲：憲法法庭停擺1年，人民成最大輸家 | [連結](https://www.thenewslens.com/article/262617) |
+| 22 | 風傳媒 | 風評：莫讓「司法護憲」成為毀憲的遮羞布 | [連結](https://www.storm.mg/article/11090209) |
+| 23 | 上報 | 114年憲判字第1號難解正當性危機 | [連結](https://www.upmedia.mg/tw/commentary/political-and-economics-debate/247776) |
+| 24 | 風傳媒 | 當大法官可以為自己解釋一切，憲法還剩下多少保障？ | [連結](https://www.storm.mg/article/11089740) |
+| 25 | 自由評論網 | 新聞線上》台灣人正在溫水煮自己 | [連結](https://talk.ltn.com.tw/article/paper/1737217) |
+| 26 | Vigor Media | 【專欄】國民黨提案大法官憲判無效，有效嗎？ | [連結](https://vigormedia.tw/%E3%80%90%E5%B0%88%E6%AC%84%E3%80%91%E5%9C%8B%E6%B0%91%E9%BB%A8%E6%8F%90%E6%A1%88%E5%A4%A7%E6%B3%95%E5%AE%98%E6%86%B2%E5%88%A4%E7%84%A1%E6%95%88%EF%BC%8C%E6%9C%89%E6%95%88%E5%97%8E%EF%BC%9F/) |
+| 27 | LINE今日大台灣 | 「邏輯不通的5名大法官」！沈政男打臉釋憲理由 | [連結](https://today.line.me/tw/v3/article/Opy23P6) |
+| 28 | 商業周刊 | 憲法法庭今年首例判決出爐！憲法訴訟法修法宣告違憲 | [連結](https://www.businessweekly.com.tw/focus/blog/3020248) |
+| 29 | 思想坦克 | 最沒資格質疑114年憲判字第1號判決的是藍白立委 | [連結](https://voicettank.org/20251224-1/) |
+| 30 | 新頭殼 | 評憲法法庭114年憲判字第1號判決憲法學會 | [連結](https://newtalk.tw/news/view/2025-12-22/1011017) |
+| 31 | 風傳媒 | 綠色獨裁的最後一塊拼圖─大法官自甘墮成為獨裁幫兇 | [連結](https://www.storm.mg/article/11089713) |
+| 32 | 維基文庫 | 憲法法庭114年憲判字第1號判決 | [連結](https://zh.wikisource.org/wiki/憲法法庭114年憲判字第1號判決) |
+| 33 | 台灣基進臉書 | 憲法法庭114年憲判字第1號判決分析 | [連結](https://www.facebook.com/Statebuilding.tw/posts/1428557818830385/) |
+| 34 | 經濟民主連合 | 民主不能再倒退，憲法判決要遵守 | [連結](https://www.facebook.com/eduniontaiwan/posts/1270603385101537/) |
+| 35 | 司法院新聞稿 | 114年憲判字第1號判決新聞稿 | [連結](https://cons.judicial.gov.tw/docdata.aspx?fid=75&id=358025) |
+| 36 | 法源法律網 | 憲法法庭今年第一件判決憲訴修正案被宣告違憲 | [連結](https://www.lawbank.com.tw/news/NewsContent.aspx?NID=211630.00) |
+| 37 | 維基百科 | 憲法法庭114年憲判字第1號判決 | [連結](https://zh.wikipedia.org/wiki/憲法法庭114年憲判字第1號判決) |
 
-**編按**：第 29 項〈最沒資格質疑114年憲判字第1號判決的是藍白立委〉該篇文章因原文引用錯誤立場，於校稿時補充調整。
+**編按**：
+1. 第 29 項〈最沒資格質疑114年憲判字第1號判決的是藍白立委〉該篇文章因原文引用錯誤立場，於校稿時補充調整。
+2. 部分臉書貼文擷取資料有誤，於校稿時補充調整。
 
 ---
 
