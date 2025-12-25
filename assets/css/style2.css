@@ -9,3 +9,7 @@ strong > a,
 a > strong {
 	color: #aa381e;
 }
+
+.main-content table {
+    word-break: break-word;
+}
