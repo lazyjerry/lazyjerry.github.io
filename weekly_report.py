@@ -21,7 +21,7 @@ def main():
         date = today_str
 
     # 依據日期組合出該週記資料夾路徑
-    folder_path = os.path.join(ROOT_DIR, 'Tech', date)
+    folder_path = os.path.join(ROOT_DIR, 'tech', date)
     if not os.path.isdir(folder_path):
         print(f'找不到資料夾：{folder_path}，請確認日期輸入正確。')
         return
