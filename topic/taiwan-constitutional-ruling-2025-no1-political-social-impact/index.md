@@ -6,7 +6,7 @@ tags: ["憲法判決", "司法獨立", "權力分立", "台灣政治", "憲政�
   
 > 整合製作：Claude Opus 4.5  
 > 製作日期：2025 年 12 月 25 日  
-> 整合資料：[Manus 與 Perplexity AI 研究報告](/topics/taiwan-constitutional-ruling-2025-no1-political-social-impact/2025-12-25/manus.md)、[Perplexity AI 研究報告](/topics/taiwan-constitutional-ruling-2025-no1-political-social-impact/2025-12-25/perplexity.md)
+> 整合資料：[Manus 與 Perplexity AI 研究報告](/topic/taiwan-constitutional-ruling-2025-no1-political-social-impact/2025-12-25/manus)、[Perplexity AI 研究報告](/topic/taiwan-constitutional-ruling-2025-no1-political-social-impact/2025-12-25/perplexity)
 
 ## 摘要
 
@@ -291,4 +291,4 @@ tags: ["憲法判決", "司法獨立", "權力分立", "台灣政治", "憲政�
 
 ---
 
-**報告製作說明**：本綜合報告由 Claude Opus 4.5 整合 [Manus AI 研究報告](2025-12-25/manus.md) 與 [Perplexity AI 研究報告](2025-12-25/perplexity.md) 完成，所有引用資料來源均標註原始報告中使用的參考文獻，確保學術嚴謹性與可追溯性。
+**報告製作說明**：本綜合報告由 Claude Opus 4.5 整合 [Manus AI 研究報告](https://github.com/lazyjerry/lazyjerry.github.io/tree/master/topic/taiwan-constitutional-ruling-2025-no1-political-social-impact/2025-12-25/manus.md) 與 [Perplexity AI 研究報告](https://github.com/lazyjerry/lazyjerry.github.io/tree/master/topic/taiwan-constitutional-ruling-2025-no1-political-social-impact/2025-12-25/perplexity.md) 完成，所有引用資料來源均標註原始報告中使用的參考文獻，確保學術嚴謹性與可追溯性。
