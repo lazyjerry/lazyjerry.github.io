@@ -11,5 +11,5 @@ a > strong {
 }
 
 .main-content table {
-    word-break: break-word;
+    /* word-break: break-word; */
 }
