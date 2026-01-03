@@ -10,6 +10,15 @@ a > strong {
 	color: #aa381e;
 }
 
+p a {
+    font-size: 0.7rem;
+}
+
+p strong > a,
+p a > strong {
+    font-size: initial;
+}
+
 .main-content table {
     /* word-break: break-word; */
 }
