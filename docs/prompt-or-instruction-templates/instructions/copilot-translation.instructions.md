@@ -1,9 +1,9 @@
 ---
 applyTo: "**/*.{md,txt,php,js,ts,jsx,tsx,vue,py,go,html,css,scss,sass,json,yaml,yml,env}"
-description: "文件與程式碼的繁體中文翻譯規範：包含註解、docstring、錯誤訊息、UI 文字等中文內容須使用台灣用語"
+description: "文件與程式碼的繁體中文撰寫規範：包含註解、docstring、錯誤訊息、UI 文字等中文內容須使用台灣用語"
 ---
 
-# 全域中文翻譯規範（繁體中文／台灣用語）
+# 全域中文撰寫規範（繁體中文／台灣用語）
 
 ## 核心原則
 
@@ -13,9 +13,9 @@ description: "文件與程式碼的繁體中文翻譯規範：包含註解、doc
 - 語氣正式專業，避免主觀形容詞與誇大修飾
 - 避免使用 emoji
 
-## 翻譯範圍
+## 適用範圍
 
-| 檔案類型 | 翻譯內容 |
+| 檔案類型 | 中文內容 |
 |----------|----------|
 | 文件檔案 | 標題、內文、表格、清單、註解 |
 | 程式碼 | docstring、註解、錯誤訊息、輸出文字 |
@@ -49,7 +49,7 @@ description: "文件與程式碼的繁體中文翻譯規範：包含註解、doc
 
 - **保留原文**：API、CLI、Token、Commit、Pull Request、Webhook、Endpoint
 - **中英並列**：第一次出現時使用「中文（英文）」格式
-- **程式碼內**：變數、函數、類別名稱保持英文，註解翻譯成中文
+- **程式碼內**：變數、函數、類別名稱保持英文，註解使用中文
 
 ## 格式規範
 
@@ -58,7 +58,7 @@ description: "文件與程式碼的繁體中文翻譯規範：包含註解、doc
 - 中英文之間適當留空格
 - 數字表達：阿拉伯數字 + 中文單位（2025 年、3 個步驟）
 
-## 不需翻譯的內容
+## 保留原文的內容
 
 - URL 和網址
 - 檔案路徑
@@ -70,80 +70,6 @@ description: "文件與程式碼的繁體中文翻譯規範：包含註解、doc
 
 1. 全文無簡體字
 2. 使用台灣常用詞彙
-3. 專有名詞翻譯一致
+3. 專有名詞使用一致
 4. 語意自然流暢
 5. Markdown 結構完整
-
-## 翻譯範例
-
-### 文件標題與說明
-
-| 原文 | 翻譯 |
-|------|------|
-| Database Instructions | 資料庫操作指引 |
-| API Endpoint Guidelines | API 端點指引 |
-| Getting Started | 快速開始 |
-| Configuration | 設定說明 |
-| Troubleshooting | 疑難排解 |
-
-### 程式碼註解
-
-**Python docstring**
-```python
-def get_user_profile(user_id):
-    """
-    取得使用者個人資料
-
-    Args:
-        user_id (str): 使用者識別碼
-
-    Returns:
-        dict: 包含使用者資料的字典
-
-    Raises:
-        ValueError: 當使用者 ID 無效時拋出
-    """
-```
-
-**JavaScript JSDoc**
-```javascript
-/**
- * 計算購物車總金額
- * @param {Array} items - 購物車商品陣列
- * @returns {number} 總金額
- */
-```
-
-**PHP PHPDoc**
-```php
-/**
- * 驗證使用者輸入資料
- *
- * @param array $data 使用者提交的表單資料
- * @return bool 驗證結果
- * @throws InvalidArgumentException 當資料格式錯誤時拋出
- */
-```
-
-### 錯誤訊息
-
-| 英文 | 中文 |
-|------|------|
-| Invalid email format | 電子郵件格式無效 |
-| Password too short | 密碼長度不足 |
-| Network error, please try again | 網路連線發生問題，請稍後再試 |
-| Permission denied | 您沒有權限執行此操作 |
-| Resource not found | 找不到您要求的資源 |
-
-### 常用 UI 文字
-
-| 英文 | 中文 |
-|------|------|
-| Submit | 提交 |
-| Cancel | 取消 |
-| Save | 儲存 |
-| Delete | 刪除 |
-| Edit | 編輯 |
-| Search | 搜尋 |
-| Loading... | 載入中... |
-| No results found | 查無結果 |
