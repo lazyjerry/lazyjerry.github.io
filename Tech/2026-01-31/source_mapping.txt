@@ -1,0 +1,37 @@
+1:dev.to
+2:The Wall Street Journal
+3:數位時代
+4:CNBC
+5:OpenAI
+6:Reuters
+7:Meta
+8:The New York Times
+9:CNBC
+10:GitHub Blog
+11:IT Brief Asia
+12:InfoWorld
+13:科技新報
+14:Paranoid Cybersecurity
+15:Kocho
+16:Reuters
+17:iThome
+18:資安人
+19:Linktech
+20:The Hacker News
+21:中華資安國際發展協會
+22:TweakTown
+23:科技新報
+24:Yahoo 股市
+25:Forbes
+26:AMD Blogs
+27:科技新報
+28:中時新聞網
+29:iThome
+30:JDSupra
+31:Cross River
+32:科技新報
+33:CoinDesk
+34:Nuvei
+35:University of Victoria
+36:Newswire.ca
+37:FOX 4 News
