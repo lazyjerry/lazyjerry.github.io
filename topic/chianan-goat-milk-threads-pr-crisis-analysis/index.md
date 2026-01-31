@@ -1,5 +1,5 @@
 ---
-title: 專題報告週記
+title: 專題報告週記 - 嘉南羊乳 Threads 公關危機分析報告
 description: 不定時發布使用 Manus AI 所整理的相關專題。
 og_image: https://lazyjerry.github.io/assets/og-image2.png
 ---
