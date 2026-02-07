@@ -1,0 +1,27 @@
+# 替代來源資訊
+
+## 原始來源（編號 19）
+- 標題：【半导体行业聚焦】2026年1月半导体市场快报及存储市场
+- 來源：EET China
+- 日期：2026-02-07
+- 內容：受 AI 伺服器需求影響，2026 年 Q1 DRAM 價格預計上漲 60-70%，NAND flash 漲幅更超過 100%
+
+## 替代來源
+- 標題：Memory Price Outlook for 1Q26 Sharply Upgraded; QoQ Increases of All Product Categories to Hit Record Highs
+- 來源：TrendForce（台灣知名半導體市場研究機構）
+- 日期：2026-02-02
+- URL：https://www.trendforce.com/presscenter/news/20260202-12911.html
+- 內容：
+  * DRAM 合約價格上漲 90-95% QoQ
+  * NAND Flash 合約價格上漲 55-60% QoQ
+  * PC DRAM 價格預計上漲超過 100% QoQ
+  * 企業 SSD 價格預計上漲 53-58% QoQ
+
+## 評估
+✅ 權威性：TrendForce 是台灣權威半導體市場研究機構，高權重來源
+✅ 時效性：2026-02-02，符合時間範圍（2026-01-24 至 2026-02-07）
+✅ 內容相關性：提供更詳細的記憶體價格預測數據
+✅ 語言：英文，符合國際來源標準
+
+## 決定
+使用 TrendForce 替代 EET China
