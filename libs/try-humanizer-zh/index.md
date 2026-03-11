@@ -1,3 +1,8 @@
+---
+title: 科技服務資訊實驗室
+description: 杜芬舒斯博士的～邪惡企業～
+---
+
 # 測試 [lazyjerry/Humanizer-zh](https://github.com/lazyjerry/Humanizer-zh) 與[lazyjerry/writer-skill](https://github.com/lazyjerry/writer-skill) skill 功能
 
 ## 大綱
@@ -24,6 +29,7 @@
 ## 環境
 Model: Claude Opus 4.6
 Tool: Github Copilot / VSCode IDE
+發表平台： https://lazyjerry.github.io/libs/try-humanizer-zh
 
 ## 原文
 
