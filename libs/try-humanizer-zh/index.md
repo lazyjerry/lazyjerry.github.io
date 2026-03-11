@@ -29,6 +29,7 @@ description: 杜芬舒斯博士的～邪惡企業～
 ## 環境
 Model: Claude Opus 4.6
 Tool: Github Copilot / VSCode IDE
+Skills:  [lazyjerry/Humanizer-zh](https://github.com/lazyjerry/Humanizer-zh) , [lazyjerry/writer-skill](https://github.com/lazyjerry/writer-skill) 
 發表平台： https://lazyjerry.github.io/libs/try-humanizer-zh
 
 ## 原文
