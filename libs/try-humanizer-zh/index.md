@@ -1,6 +1,6 @@
 ---
 title: 科技服務資訊實驗室
-description: 測試 [lazyjerry/Humanizer-zh](https://github.com/lazyjerry/Humanizer-zh) 與[lazyjerry/writer-skill](https://github.com/lazyjerry/writer-skill) skill 功能
+description: 測試 lazyjerry/Humanizer-zh 與 lazyjerry/writer-skill skill 功能
 ---
 
 # 測試 [lazyjerry/Humanizer-zh](https://github.com/lazyjerry/Humanizer-zh) 與[lazyjerry/writer-skill](https://github.com/lazyjerry/writer-skill) skill 功能
@@ -27,10 +27,10 @@ description: 測試 [lazyjerry/Humanizer-zh](https://github.com/lazyjerry/Humani
     - [八、結論](#八結論)
 
 ## 環境
-Model: Claude Opus 4.6
-Tool: Github Copilot / VSCode IDE
-Skills:  [lazyjerry/Humanizer-zh](https://github.com/lazyjerry/Humanizer-zh) , [lazyjerry/writer-skill](https://github.com/lazyjerry/writer-skill) 
-發表平台： https://lazyjerry.github.io/libs/try-humanizer-zh
+- Model: Claude Opus 4.6
+- Tool: Github Copilot / VSCode IDE
+- Skills:  [lazyjerry/Humanizer-zh](https://github.com/lazyjerry/Humanizer-zh) , [lazyjerry/writer-skill](https://github.com/lazyjerry/writer-skill) 
+- 發表平台： https://lazyjerry.github.io/libs/try-humanizer-zh
 
 ## 原文
 
