@@ -1,0 +1,112 @@
+{
+  "results": [
+    {
+      "input": "AI 科技（人工智慧、大型語言模型、機器學習、AI 應用）",
+      "output": {
+        "category": "AI 科技",
+        "report_file": "/home/ubuntu/report_file/0_q0nXFY9ilLo8G59s6pzUIp_1775269763205_na1fn_L2hvbWUvdWJ1bnR1L2FpX3RlY2hfbmV3c19yZXBvcnQ.md",
+        "article_count": 3
+      },
+      "error": ""
+    },
+    {
+      "input": "軟體工程（程式語言、開發工具、框架、DevOps、雲端服務）",
+      "output": {
+        "category": "軟體工程",
+        "report_file": "/home/ubuntu/report_file/1_8WnVDrkfVCsfJx2sdBmz2Y_1775269690616_na1fn_L2hvbWUvdWJ1bnR1L25ld3NfcmVwb3J0.txt",
+        "article_count": 3
+      },
+      "error": ""
+    },
+    {
+      "input": "軟硬體資訊安全（網路安全、漏洞、資料外洩、隱私保護）",
+      "output": {
+        "category": "軟硬體資訊安全",
+        "report_file": "/home/ubuntu/report_file/2_85JTgAy3EnBIIknDq46nHu_1775269801534_na1fn_L2hvbWUvdWJ1bnR1L3JlcG9ydA.md",
+        "article_count": 3
+      },
+      "error": ""
+    },
+    {
+      "input": "硬體或軟硬整合（晶片、處理器、硬體設備、IoT）",
+      "output": {
+        "category": "硬體或軟硬整合",
+        "report_file": "/home/ubuntu/report_file/3_mExkTUTGItBHgEpKzqXoY3_1775269841216_na1fn_L2hvbWUvdWJ1bnR1L2hhcmR3YXJlX3JlcG9ydA.md",
+        "article_count": 4
+      },
+      "error": ""
+    },
+    {
+      "input": "網路/伺服器等基礎設施（DNS、CDN、雲端基礎設施、網路協定）",
+      "output": {
+        "category": "網路/伺服器等基礎設施",
+        "report_file": "/home/ubuntu/report_file/4_Y8zwF9cjWTJZh7otrSMrSS_1775269744249_na1fn_L2hvbWUvdWJ1bnR1L2luZnJhX25ld3NfcmVwb3J0.txt",
+        "article_count": 3
+      },
+      "error": ""
+    },
+    {
+      "input": "金融科技（FinTech、數位支付、區塊鏈、加密貨幣、數位銀行）",
+      "output": {
+        "category": "金融科技 (FinTech)",
+        "report_file": "/home/ubuntu/report_file/5_ZzNSaCGhd8rQKwqBS5DbmS_1775269873039_na1fn_L2hvbWUvdWJ1bnR1L2ZpbnRlY2hfbmV3c19yZXBvcnQ.md",
+        "article_count": 3
+      },
+      "error": ""
+    },
+    {
+      "input": "醫療科技（MedTech、數位健康、AI醫療、生物科技）",
+      "output": {
+        "category": "醫療科技",
+        "report_file": "/home/ubuntu/report_file/6_UzHbWxBfWh7Pc9DVCZlgXg_1775270047618_na1fn_L2hvbWUvdWJ1bnR1L21lZGljYWxfdGVjaF9uZXdz.txt",
+        "article_count": 5
+      },
+      "error": ""
+    },
+    {
+      "input": "運輸物流（自動駕駛、無人機、智慧物流、電動車）",
+      "output": {
+        "category": "運輸物流科技",
+        "report_file": "/home/ubuntu/report_file/7_svUBjVckEcamGEc2y5aCgZ_1775269927907_na1fn_L2hvbWUvdWJ1bnR1L2ZpbmFsX3JlcG9ydA.md",
+        "article_count": 4
+      },
+      "error": ""
+    },
+    {
+      "input": "房地產與室內外裝潢（PropTech、智慧建築、3D列印建築）",
+      "output": {
+        "category": "房地產與室內外裝潢",
+        "report_file": "/home/ubuntu/report_file/8_J8yoDwEUjfBXl8P4LLSQpX_1775269819398_na1fn_L2hvbWUvdWJ1bnR1L25ld3NfcmVwb3J0.txt",
+        "article_count": 4
+      },
+      "error": ""
+    },
+    {
+      "input": "現場表演藝術（演唱會科技、舞台技術、AR/VR表演）",
+      "output": {
+        "category": "現場表演藝術",
+        "report_file": "/home/ubuntu/report_file/9_3lLGKMtPF7CdpEgx6zXlUw_1775269766394_na1fn_L2hvbWUvdWJ1bnR1L2xpdmVfcGVyZm9ybWFuY2VfbmV3cw.txt",
+        "article_count": 3
+      },
+      "error": ""
+    },
+    {
+      "input": "影視音樂（串流平台、AI生成內容、影視製作技術）",
+      "output": {
+        "category": "影視音樂",
+        "report_file": "/home/ubuntu/report_file/10_CavHFq2gBabowRaOLiikYB_1775269842765_na1fn_L2hvbWUvdWJ1bnR1L2ZpbmFsX3JlcG9ydA.txt",
+        "article_count": 3
+      },
+      "error": ""
+    },
+    {
+      "input": "其他領域科技應用突破（農業科技、教育科技、太空科技、環保科技）",
+      "output": {
+        "category": "其他領域科技應用突破（農業科技、教育科技、太空科技、環保科技）",
+        "report_file": "/home/ubuntu/report_file/11_XknlEkoV8ix3p8kVNJG534_1775270108846_na1fn_L2hvbWUvdWJ1bnR1L2ZpbmFsX3JlcG9ydA.md",
+        "article_count": 8
+      },
+      "error": ""
+    }
+  ]
+}
