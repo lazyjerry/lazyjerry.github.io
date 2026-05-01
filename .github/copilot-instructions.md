@@ -24,7 +24,7 @@ python just_push.py
 ```yaml
 ---
 title: 科技服務資訊週記 [預覽版]
-description: AI 自動彙整的科技服務官方資訊週記，使用 Manus Plus
+description: AI 自動彙整的科技服務官方資訊週記，使用 各種 AI 工具
 ---
 ```
 
