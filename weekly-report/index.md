@@ -3,171 +3,113 @@ title: 科技服務資訊週記
 description: AI 自動彙整的科技服務資訊週記，使用 各種 AI 工具 ，目前抓週六或週日更新。
 ---
 
-# 2026-05-02 科技服務資訊週記
+# 2026-05-09 科技服務資訊週記
 
-**作者：GitHub Copilot / Gemini CLI　報告日期：2026-05-02**
+**作者：GitHub Copilot、Gemini　報告日期：2026-05-09**
 
 ## 大綱
-- <a href="#summary">總結</a>
-- <a href="#highlights">亮點</a>
-  - <a href="#hl-ai">AI 科技</a>
-  - <a href="#hl-software">軟體工程</a>
-  - <a href="#hl-security">軟硬體資訊安全</a>
-  - <a href="#hl-hardware">硬體或軟硬整合</a>
-  - <a href="#hl-infrastructure">網路/伺服器等基礎</a>
-  - <a href="#hl-fintech">金融科技</a>
-  - <a href="#hl-healthtech">醫療科技</a>
-  - <a href="#hl-logistics">運輸物流</a>
-  - <a href="#hl-proptech">房地產與室內外裝潢</a>
-  - <a href="#hl-arts">現場表演藝術</a>
-  - <a href="#hl-entertainment">影視音樂</a>
-  - <a href="#hl-others">其他領域科技應用突破</a>
-- <a href="#trends">趨勢分析</a>
-  - <a href="#tr-ai">AI 科技</a>
-  - <a href="#tr-software">軟體工程</a>
-  - <a href="#tr-security">軟硬體資訊安全</a>
-  - <a href="#tr-hardware">硬體或軟硬整合</a>
-  - <a href="#tr-infrastructure">網路/伺服器等基礎</a>
-  - <a href="#tr-fintech">金融科技</a>
-  - <a href="#tr-healthtech">醫療科技</a>
-  - <a href="#tr-logistics">運輸物流</a>
-  - <a href="#tr-proptech">房地產與室內外裝潢</a>
-  - <a href="#tr-arts">現場表演藝術</a>
-  - <a href="#tr-entertainment">影視音樂</a>
-  - <a href="#tr-others">其他領域科技應用突破</a>
-- <a href="#references">參考資料</a>
-- <a href="#notes">報告說明</a>
+- [總結](#summary)
+- [亮點](#highlights)
+  - [AI 科技](#hl-ai)
+  - [軟體工程](#hl-software)
+  - [軟硬體資訊安全](#hl-security)
+  - [硬體或軟硬整合](#hl-hardware)
+  - [網路／伺服器等基礎](#hl-infrastructure)
+  - [金融科技](#hl-fintech)
+  - [醫療科技](#hl-healthtech)
+  - [運輸物流](#hl-logistics)
+  - [房地產與室內外裝潢](#hl-proptech)
+  - [現場表演藝術](#hl-arts)
+  - [影視音樂](#hl-entertainment)
+  - [其他領域科技應用突破](#hl-others)
+- [趨勢分析](#trends)
+- [參考資料](#references)
+- [報告說明](#notes)
 
 <a id="summary"></a>
 ## 總結
-近 15 天的科技新聞有一條很清楚的主線：**AI 能力、雲端基礎設施與開發工具** 正同時往真實工作流靠攏。OpenAI 發表 **GPT-5.5**，Google 在 Cloud Next 2026 連續更新 **TPU** 與雲端平台能力，GitHub 則把 **Copilot** 沿著 CLI 與 IDE 兩條線往更低摩擦的工程使用情境推進 [[1. OpenAI]](#ref-1) [[3. GitHub Changelog]](#ref-3) [[4. GitHub Changelog]](#ref-4) [[7. Google Blog]](#ref-7) [[8. Google Cloud Blog]](#ref-8)。
+最近 15 天的消息看得很清楚，AI 的競爭焦點已經不只是哪家模型參數更多，而是誰真的把工具接進工作流程，誰又能把治理跟上。微軟報告顯示，台灣 AI 擴散率升到 31.8%，首度進入全球前 20，代表 AI 工具已經不是少數團隊在試，而是逐步變成日常工作的一部分 [[1]](#ref-1)。
 
-另一個值得注意的變化，是 **AI 代理、安全風險與垂直場景落地** 開始同時浮上檯面。iThome 與中央社分別從代理框架漏洞與 AI 主導網攻角度提醒工程團隊，資安已成為 AI 導入的必要成本；同時間，金融、醫療、物流到展演都出現具體案例，代表 AI 正從橫向技術題目，轉成各產業自己的工程與營運問題 [[5. iThome]](#ref-5) [[6. 中央社 CNA]](#ref-6) [[9. 中央社 CNA]](#ref-9) [[11. NIH]](#ref-11) [[12. Lockheed Martin]](#ref-12) [[14. Sphere Entertainment]](#ref-14)。
+這期另一個值得注意的方向，是工程環境與基礎設施都開始補治理能力。GitHub 把 Copilot cloud agent 的祕密與變數管理往組織層級拉高，AWS 則補上資料服務的可用性與複寫能力。這些更新不算花俏，但都很直接，因為它們影響的是團隊怎麼管權限、怎麼撐服務，以及出問題時能不能穩住 [[2]](#ref-2) [[5]](#ref-5)。
+
+同一時間，台灣也在把 AI 往實體產業裡推。廣達擴充 AI 伺服器產能，高醫與鴻海把 AI 帶進臨床流程，安聯速運則把智慧倉儲接到供應鏈需求上。這些案例放在一起看，比起「AI 很熱」，更像是在說一件比較務實的事：它已經開始進入產線、醫療現場和物流系統 [[4]](#ref-4) [[7]](#ref-7) [[8]](#ref-8)。
 
 <a id="highlights"></a>
 ## 亮點
 
 <a id="hl-ai"></a>
 ### AI 科技
-- **AI 主線已從模型展示走向企業採用與工作流整合。** OpenAI 的 **GPT-5.5** 提供了本期最重要的能力面背景，而 TechNews 引述的 AIF 與高通調查，則把這股趨勢接回台灣企業現場：前者說明模型能力與工具整合持續進化，後者顯示企業導入已從試驗期走向擴張期。這讓 AI 類別不再只是「誰又出了新模型」，而是「哪些團隊準備把 AI 變成持續性的生產力層」 [[1. OpenAI]](#ref-1) [[2. TechNews 科技新報]](#ref-2)。
+- 微軟 2026 Q1 報告顯示，台灣 AI 擴散率來到 31.8%，甚至高於部分歐美國家。這個數字的重點不只是排名，而是 AI 已經從試用工具慢慢變成工作配備。接下來真正麻煩的地方，反而是團隊流程、分工和責任怎麼重新切 [[1]](#ref-1)。
 
 <a id="hl-software"></a>
 ### 軟體工程
-- **AI 開發工具的競爭焦點，正在從功能數量轉向整合摩擦。** GitHub 在 4 月下旬同時更新 **Copilot CLI** 與 **Visual Studio** 端體驗，代表 AI 助理已經不再只是 IDE 內的提示框，而是開始貼近命令列、自動化腳本與既有企業開發環境。對工程師來說，真正重要的不是它能不能補全幾行程式，而是能否在不同工作場景裡減少切換成本、降低模型選擇負擔 [[3. GitHub Changelog]](#ref-3) [[4. GitHub Changelog]](#ref-4)。
+- GitHub 更新 Copilot cloud agent 的祕密與變數管理，把設定權限從單一 Repository 拉到組織層級。對企業來說，這比新功能更實際，因為多個 AI 代理一旦開始共用環境，設定散落各處很快就會變成維運問題。現在看的已經不是程式碼生成快不快，而是能不能管、能不能追、出事時能不能收斂 [[2]](#ref-2)。
 
 <a id="hl-security"></a>
 ### 軟硬體資訊安全
-- **AI 導入越深，新的攻擊面就越靠近工程流程本身。** iThome 盤點的 **OpenClaw** 漏洞把風險直接指向 AI 代理框架，而中央社整理的 Google 情報觀察則把視角拉高到 AI 主導網攻與量子破解壓力。這兩類消息放在一起看，比較像一張完整的風險地圖：一邊是近身的框架漏洞，一邊是中長期的基礎防禦壓力，兩者都會落回工程治理、權限隔離與部署流程設計上 [[5. iThome]](#ref-5) [[6. 中央社 CNA]](#ref-6)。
+- CYBERSEC 2026 聚焦 AI 攻防、供應鏈安全與半導體標準，方向很清楚：資安範圍又往外擴了一層。現在不只要保護系統和資料，還得處理模型、代理權限和供應鏈風險。這種情況下，安全設計如果還放到最後補，通常已經太晚 [[3]](#ref-3)。
 
 <a id="hl-hardware"></a>
 ### 硬體或軟硬整合
-- **專用 AI 加速器仍然是整個技術棧最上游的競爭核心。** Google 在 Cloud Next 2026 發表新一代 **TPU**，意義不只在規格更新，而在於它會重新影響訓練、推論、部署與雲端成本結構。對工程團隊來說，這類硬體更新遲早會回頭影響模型選型、供應商策略與系統架構，因為基礎算力路線一變，整個軟體堆疊的最佳化方向也會跟著調整 [[7. Google Blog]](#ref-7)。
+- 高階 AI 伺服器需求持續上升，廣達也把產能往邊緣終端與車載運算延伸。這表示 AI 的落點不再只有資料中心。對開發端來說，很多問題會提早浮出來，例如延遲、散熱、功耗，還有模型到底能不能在終端穩定跑 [[4]](#ref-4)。
 
 <a id="hl-infrastructure"></a>
-### 網路/伺服器等基礎
-- **雲端平台正在從基礎設施供應商，轉成 AI 工作流與代理系統的整合平台。** Google Cloud Next 2026 的總覽更新，不只是一般雲端功能整理，而是把 AI、資料平台、企業代理、算力與開發工具收斂成一套平台敘事。對程式設計師與平台團隊來說，這表示未來的基礎設施選擇不再只看 VM、資料庫或網路，而要看整體平台對代理、資料流與推論服務的支撐能力 [[8. Google Cloud Blog]](#ref-8)。
+### 網路／伺服器等基礎
+- AWS 為 RDS for SQL Server 加入額外磁碟區的讀取複寫支援。這類更新不太會變成頭條，但對實際跑服務的人很有感，因為它碰到的是跨區域備援、讀取壓力分流和營運成本。AI 應用一旦把資料量拉高，這些底層能力很快就會從「加分項」變成基本要求 [[5]](#ref-5)。
 
 <a id="hl-fintech"></a>
 ### 金融科技
-- **金融科技開始同時往在地專業模型與新型支付基礎設施兩端發展。** 中央社報導的「台灣專屬金融大腦」讓人看到金融業不再滿足於套用通用大模型，而是要做專域化、資料治理與人才搭配；另一方面，MaiCoin 與 Visa 的合作則反映支付創新正從單純數位錢包，走向鏈上資產與既有卡網路的混合整合。這兩條線一內一外，剛好把金融科技的核心工程問題補齊 [[9. 中央社 CNA]](#ref-9) [[10. TechNews 科技新報]](#ref-10)。
+- 台灣金融業聯盟推動的 FinLLM 預計年底上線，主打對在地法規與授信知識的理解。這件事透露的訊號很明白，金融業要的已經不是會對話的聊天機器人，而是能進到審核、合規和內部流程裡的工具。模型只要碰到法規場景，在地化幾乎就是前提 [[6]](#ref-6)。
 
 <a id="hl-healthtech"></a>
 ### 醫療科技
-- **醫療 AI 的價值正在往高粒度生醫資料與可驗證預測能力集中。** NIH 的研究新聞指出，AI 已能利用單細胞腫瘤資料預測癌症存活率，這和一般健康 App 或概念性醫療助理不同，因為它直接對應到風險辨識與臨床決策支援。對工程讀者來說，醫療科技真正值得追的，不是「AI 會不會看病」，而是模型如何處理高解析度資料、怎麼在可驗證的情境下產生價值 [[11. NIH]](#ref-11)。
+- 高醫與鴻海合作的大腸鏡 AI 系統，不只做影像辨識，還往手術引導與自動報告延伸。醫療 AI 最難的地方本來就不是把模型訓練出來，而是怎麼接進臨床流程、怎麼配合資料標註、怎麼讓醫師真的敢用。這則案例至少說明，現在已經開始碰到那條線了 [[7]](#ref-7)。
 
 <a id="hl-logistics"></a>
 ### 運輸物流
-- **物流自動化的邊界，正從地面倉儲往空域補給延伸。** Lockheed Martin 公布的自動化空中物流計畫，雖然帶有國防背景，但技術核心其實就是自主導航、感測整合、任務規劃與高時效配送。這意味著物流科技不再只是倉儲機器人或車隊管理，而是開始往更複雜、更高風險的自主運輸場景擴張，也讓物流段落不只談效率，而是談系統自治程度的提升 [[12. Lockheed Martin]](#ref-12)。
+- 安聯速運投資 4.5 億元建設自動化倉儲，整合 AI 管理與自動搬運。物流業過去常被視為後端支援，現在角色正在改變，因為 AI 產業本身就需要更快的倉儲、調度和交付能力。換句話說，物流不只是載貨，也開始參與整個供應鏈節奏 [[8]](#ref-8)。
 
 <a id="hl-proptech"></a>
 ### 房地產與室內外裝潢
-- **房地產科技本期可用高權重來源較少，但平台化與智慧化方向很明確。** Real 併購 **RE/MAX** 的消息，重點並不只是併購案，而是它明講要打造技術驅動的全球房地產平台。對技術觀察來說，這說明房仲與不動產服務的數位化正在從單點工具升級，往更完整的平台整合走。雖然這一類本期新聞密度不高，但方向仍然清楚：資料、平台與 AI 正逐步滲入不動產服務流程 [[13. Real Brokerage]](#ref-13)。
+- 亞洲建築專業網提到，小宅趨勢正在推著裝修產業導入 AI 與 BIM，把設計、估價和供應鏈串得更緊。目前案例還不算多，也有點零散，但方向並不難看：室內設計正慢慢從高度仰賴人工經驗，轉向更多流程化與數位化 [[9]](#ref-9)。
 
 <a id="hl-arts"></a>
 ### 現場表演藝術
-- **大型展演已開始把即時運算與沉浸式內容生成當成核心舞台技術。** Phish 在 Sphere 的駐演案例很有代表性，因為它不只是視覺升級，而是把即時創意、超高解析顯示與場館內容系統真正整合進演出現場。對工程讀者來說，這類案例值得看的是即時內容引擎、算圖能力與沉浸式互動如何進入實體場域，代表表演科技正在向更完整的系統工程靠攏 [[14. Sphere Entertainment]](#ref-14)。
+- 藝術家紀柏豪在洛杉磯展出的互動作品，讓演算法與感測器直接進到觀眾的體驗裡。這類作品有意思的地方在於，技術不再只是幕後工具，而是作品本身的一部分。觀眾接觸到的，不只是結果，也包含系統如何回應人 [[10]](#ref-10)。
 
 <a id="hl-entertainment"></a>
 ### 影視音樂
-- **多模態 AI 已正式切進音樂創作與內容生成工具鏈。** Gemini 四月更新不是純粹的娛樂新聞，但它把音樂創作能力納進產品更新中，這件事本身就很有指標性。它說明生成式 AI 正逐步把能力從文字與圖像延伸到音樂與影音相關工作流，未來影視音樂產業的工具鏈勢必繼續被重塑，創作者與平台都得重新面對授權、創作輔助與內容辨識的平衡問題 [[15. Google Gemini Blog]](#ref-15)。
+- 繼奧斯卡之後，金球獎也把純 AI 生成演出排除在提名資格外。這反映的不是單一獎項規則，而是影視產業正在補制度邊界。生成工具還會繼續進步，但授權、人格權和創作者位置怎麼定義，現在已經不能等產品上線後再處理 [[11]](#ref-11)。
 
 <a id="hl-others"></a>
 ### 其他領域科技應用突破
-- **跨領域技術觀察的價值，在於幫單點新聞找到更大的方向感。** 中央社訊息平台整理的 MIT 2026 十大突破性技術，不一定每一項都會立刻商業化，但它很適合作為本期週記的收束材料。因為前面各分類的新聞看起來分散，這類整理型來源可以把 AI、硬體、醫療與基礎設施拉回更長週期的創新脈絡，讓讀者知道哪些主題正在從研究議題變成產業投資方向 [[16. 中央社訊息平台]](#ref-16)。
+- 資策會與新北教育局推動的 AI 培育計畫，把重點放在能力可驗證，而不只是上過哪些課。這代表 AI 教育也在轉向比較制度化的做法，從單次訓練走向可追蹤、可認定的能力證明。對企業和學校來說，這種方式也比較容易銜接用人與培訓 [[12]](#ref-12)。
 
 <a id="trends"></a>
 ## 趨勢分析
-
-<a id="tr-ai"></a>
-### AI 科技
-AI 類別接下來的發展，不會只有更大的模型，而是模型能力如何更穩地接進企業系統與在地需求。國際大模型會繼續往推理與代理整合前進，台灣市場則會更在意導入成熟度、成本與資料治理，兩條線會同時存在 [[1. OpenAI]](#ref-1) [[2. TechNews 科技新報]](#ref-2)。
-
-<a id="tr-software"></a>
-### 軟體工程
-軟體工程的 AI 化會持續往兩個方向推進：一個是 IDE 內更深的協作，一個是命令列與自動化流程中的低摩擦輔助。工程師之後不太會只問「它會不會補全」，而會問「它能不能理解環境、選對模型、少打斷我」 [[3. GitHub Changelog]](#ref-3) [[4. GitHub Changelog]](#ref-4)。
-
-<a id="tr-security"></a>
-### 軟硬體資訊安全
-資安面接下來會同時面對新舊問題疊加：新的部分是 AI 代理、提示注入與框架漏洞，舊的部分則是供應鏈、權限管理與加密轉型。對工程團隊來說，真正難的不是知道風險存在，而是把安全邊界重新畫進 AI 工作流中 [[5. iThome]](#ref-5) [[6. 中央社 CNA]](#ref-6)。
-
-<a id="tr-hardware"></a>
-### 硬體或軟硬整合
-AI 硬體仍會是上游決勝點，尤其是雲端供應商自研加速器持續成熟之後，算力選擇會更直接影響成本與架構設計。未來的軟硬整合，不只是裝置端 NPU，而是整個平台如何針對特定 AI 工作負載做最佳化 [[7. Google Blog]](#ref-7)。
-
-<a id="tr-infrastructure"></a>
-### 網路/伺服器等基礎
-雲端平台會越來越像 AI 與代理的作業系統，而不只是基礎資源出租商。身份控管、資料流、模型推論、觀測性與代理協作，會慢慢被打包成平台標準能力，平台選型也會越來越看這些整合程度 [[8. Google Cloud Blog]](#ref-8)。
-
-<a id="tr-fintech"></a>
-### 金融科技
-金融科技未來的分化會很明顯：一邊是更專業、更在地的金融模型，另一邊是更開放、更混合的支付與結算系統。這代表金融業的工程重點會落在資料治理、合規 API、風控模型與支付串接，而不只是單點 AI 功能 [[9. 中央社 CNA]](#ref-9) [[10. TechNews 科技新報]](#ref-10)。
-
-<a id="tr-healthtech"></a>
-### 醫療科技
-醫療科技的 AI 發展會往高可信資料與可驗證結果前進。愈來愈多價值會來自單細胞、基因體、影像或長期監測資料，而不是通用聊天式介面；能不能進入臨床，仍然取決於模型之外的驗證流程與治理能力 [[11. NIH]](#ref-11)。
-
-<a id="tr-logistics"></a>
-### 運輸物流
-物流自動化的下一波重點，會從倉儲內部最佳化擴張到更高時效、更高複雜度的配送路徑，包括空中與無人化場景。這也意味著物流技術棧會更像自治系統工程，而不只是傳統 ERP 或車隊排程升級 [[12. Lockheed Martin]](#ref-12)。
-
-<a id="tr-proptech"></a>
-### 房地產與室內外裝潢
-PropTech 雖然本期消息不算密集，但平台整合仍是明確方向。未來幾年的關鍵不是誰推出最多功能，而是誰能把經紀流程、資料分析、客戶體驗與 AI 工具收斂到單一平台，真正改變營運方式 [[13. Real Brokerage]](#ref-13)。
-
-<a id="tr-arts"></a>
-### 現場表演藝術
-現場展演的數位化會繼續往即時內容與沉浸式場館升級。未來值得追的，不是單一投影或裝置效果，而是實體空間、即時運算、內容引擎與觀眾互動能不能被整成一套可重複運作的系統 [[14. Sphere Entertainment]](#ref-14)。
-
-<a id="tr-entertainment"></a>
-### 影視音樂
-影視音樂產業會持續被多模態 AI 改寫，尤其是音樂、配音、剪輯與內容生成工具會更快滲進工作流。之後產業要處理的不只是效率提升，還有創作授權、內容辨識與平台治理的重新平衡 [[15. Google Gemini Blog]](#ref-15)。
-
-<a id="tr-others"></a>
-### 其他領域科技應用突破
-跨領域科技應用會持續呈現「單點突破先出現，平台化價值後浮現」的節奏。工程讀者若只看單篇新聞，容易覺得零散；但把它們放到更大的技術地圖裡，會更清楚哪些題目正在往主流投資方向靠近 [[16. 中央社訊息平台]](#ref-16)。
+1. **AI 採用率上來後，真正困難的是組織調整**：工具導入只是起點，後面還有流程重整、責任切分，以及哪些工作要交給人、哪些工作可以交給代理。
+2. **開發環境開始進入治理模式**：GitHub 這次更新提醒人一件事，AI 工具一旦被團隊正式採用，平台工程就得開始處理權限、設定一致性和稽核問題。
+3. **資安已經不能當成附屬條件**：代理拿到的權限越多，模型與資料之間的風險也越難切開。安全機制若沒有先設計好，後續成本只會更高。
+4. **醫療與工業現場會更偏向專域模型**：通用模型還是很重要，但真正能落地的，通常是那些吃得到產業資料、又能接硬體與流程的系統。
 
 <a id="references"></a>
 ## 參考資料
 
-| 編號 | 文章標題與搜尋連結 | 一句話繁體中文結論或亮點 | 發布日期 | 來源資料網址與名稱 | 分類 |
-| :--- | :--- | :--- | :--- | :--- | :--- |
-| <a id="ref-1"></a>1 | [Introducing GPT-5.5](https://www.google.com/search?q=Introducing+GPT-5.5) | OpenAI 以官方發布方式揭示新一代模型能力，適合作為本期 AI 主軸。 | 2026-04-23 | [OpenAI](https://openai.com/index/introducing-gpt-5-5/) | AI 科技 |
-| <a id="ref-2"></a>2 | [AIF 與高通調查指出台灣企業 AI 應用進入爆發期](https://www.google.com/search?q=AIF+%E9%AB%98%E9%80%9A+2026+AI+%E6%87%89%E7%94%A8+%E7%88%86%E7%99%BC%E6%9C%9F) | 台灣企業導入 AI 已從試驗轉向擴張，補足在地產業觀察。 | 2026-04-30 | [TechNews 科技新報](https://technews.tw/2026/04/30/aif-qualcomm-2026/) | AI 科技 |
-| <a id="ref-3"></a>3 | [GitHub Copilot CLI now supports Copilot auto model selection](https://www.google.com/search?q=GitHub+Copilot+CLI+now+supports+Copilot+auto+model+selection) | CLI 場景的自動模型分派，顯示 AI 開發工具正往低摩擦整合前進。 | 2026-04-17 | [GitHub Changelog](https://github.blog/changelog/2026-04-17-github-copilot-cli-now-supports-copilot-auto-model-selection/) | 軟體工程 |
-| <a id="ref-4"></a>4 | [GitHub Copilot in Visual Studio April update](https://www.google.com/search?q=GitHub+Copilot+in+Visual+Studio+April+update) | AI 程式助理持續深化到大型既有 IDE 環境。 | 2026-04-30 | [GitHub Changelog](https://github.blog/changelog/2026-04-30-github-copilot-in-visual-studio-april-update/) | 軟體工程 |
-| <a id="ref-5"></a>5 | [一次盤點 OpenClaw 近期嚴重漏洞，關注 AI 代理框架安全風險](https://www.google.com/search?q=OpenClaw+AI+%E4%BB%A3%E7%90%86%E6%A1%86%E6%9E%B6+%E5%AE%89%E5%85%A8%E9%A2%A8%E9%9A%AA+iThome) | AI 代理框架已成為新的攻擊面，工程團隊必須同步補安全邊界。 | 2026-04-29 | [iThome](https://www.ithome.com.tw/news/175413) | 軟硬體資訊安全 |
-| <a id="ref-6"></a>6 | [Google 情報觀察：AI主導網攻迫近、2029量子破解加密](https://www.google.com/search?q=Google+AI%E4%B8%BB%E5%B0%8E%E7%B6%B2%E6%94%BB+2029+%E9%87%8F%E5%AD%90+%E5%8A%A0%E5%AF%86) | AI 攻防升級與量子加密風險同時浮現，資安壓力正快速累積。 | 2026-04-24 | [中央社 CNA](https://www.cna.com.tw/news/ait/202604240101.aspx) | 軟硬體資訊安全 |
-| <a id="ref-7"></a>7 | [Google introduces new TPUs at Cloud Next 26](https://www.google.com/search?q=Google+introduces+new+TPUs+at+Cloud+Next+26) | TPU 更新代表 AI 基礎硬體競爭仍是整個技術棧的上游核心。 | 2026-04-22 | [Google Blog](https://blog.google/innovation-and-ai/infrastructure-and-cloud/google-cloud/tpus-8t-8i-cloud-next/) | 硬體或軟硬整合 |
-| <a id="ref-8"></a>8 | [Google Cloud Next 2026 News and updates](https://www.google.com/search?q=Google+Cloud+Next+2026+News+and+updates) | 雲端平台正轉向以代理與 AI 工作流為中心的整合平台。 | 2026-04-22 | [Google Cloud Blog](https://blog.google/innovation-and-ai/infrastructure-and-cloud/google-cloud/next-2026/) | 網路/伺服器等基礎 |
-| <a id="ref-9"></a>9 | [台灣專屬金融大腦年底上線 業界看好有助效率、人才](https://www.google.com/search?q=%E5%8F%B0%E7%81%A3%E5%B0%88%E5%B1%AC%E9%87%91%E8%9E%8D%E5%A4%A7%E8%85%A6+%E5%B9%B4%E5%BA%95%E4%B8%8A%E7%B7%9A) | 金融業開始追求在地化、專業化模型，而非只套用通用大模型。 | 2026-04-25 | [中央社 CNA](https://www.cna.com.tw/news/afe/202604250068.aspx) | 金融科技 |
-| <a id="ref-10"></a>10 | [開啟鏈上轉線下支付新時代 MaiCoin 攜手 Visa 簽署合作備忘錄](https://www.google.com/search?q=MaiCoin+Visa+%E9%8F%88%E4%B8%8A%E8%BD%89%E7%B7%9A%E4%B8%8B%E6%94%AF%E4%BB%98) | 支付基礎設施正往鏈上與鏈下混合結算演進。 | 2026-04-29 | [TechNews 科技新報](https://finance.technews.tw/2026/04/29/stablecoin-payments/) | 金融科技 |
-| <a id="ref-11"></a>11 | [NIH funded AI model predicts cancer survival from single-cell tumor data](https://www.google.com/search?q=NIH+funded+AI+model+predicts+cancer+survival+from+single-cell+tumor+data) | 醫療 AI 的重點正轉向高粒度生醫資料與可驗證的臨床風險預測。 | 2026-04-21 | [NIH](https://www.nih.gov/news-events/news-releases/nih-funded-ai-model-predicts-cancer-survival-single-cell-tumor-data) | 醫療科技 |
-| <a id="ref-12"></a>12 | [Sikorsky and Robinson Unmanned Secure U.S. Marine Corps Contract for Autonomous Aerial Logistics Program](https://www.google.com/search?q=Sikorsky+Robinson+Unmanned+Autonomous+Aerial+Logistics+Program) | 自主物流正在從倉儲與地面配送延伸到空中補給場景。 | 2026-04-27 | [Lockheed Martin](https://news.lockheedmartin.com/2026-04-27-Sikorsky-and-Robinson-Unmanned-Secure-U-S-Marine-Corps-Contract-for-Autonomous-Aerial-Logistics-Program) | 運輸物流 |
-| <a id="ref-13"></a>13 | [Real to Acquire REMAX Creating a Leading Technology Enabled Global Real Estate Platform](https://www.google.com/search?q=Real+to+Acquire+REMAX+technology+enabled+global+real+estate+platform) | 房地產科技本期雖然來源不多，但平台化與智慧化方向很明確。 | 2026-04-27 | [Real Brokerage](https://investors.onereal.com/news/news-details/2026/Real-to-Acquire-REMAX-Creating-a-Leading-Technology-Enabled-Global-Real-Estate-Platform/default.aspx) | 房地產與室內外裝潢 |
-| <a id="ref-14"></a>14 | [Phishs Nine Night Sphere Residency Kicks Off With Debut Of Innovative Real Time Creative Powered By Moment Factory And Sphere Studios](https://www.google.com/search?q=Phish+Sphere+real-time+creative+Moment+Factory+Sphere+Studios) | 表演科技已從單點效果走向即時算圖、沉浸場館與內容引擎整合。 | 2026-04-20 | [Sphere Entertainment](https://www.sphereentertainmentco.com/phishs-nine-night-sphere-residency-kicks-off-with-debut-of-innovative-real-time-creative-powered-by-moment-factory-and-sphere-studios/) | 現場表演藝術 |
-| <a id="ref-15"></a>15 | [Gemini Drops New updates to the Gemini app April 2026](https://www.google.com/search?q=Gemini+Drops+April+2026+music+creation) | 多模態 AI 已開始切進音樂與內容生成場景。 | 2026-04-20 | [Google Gemini Blog](https://blog.google/innovation-and-ai/products/gemini-app/gemini-drop-april-2026/) | 影視音樂 |
-| <a id="ref-16"></a>16 | [台經社推估 MIT 評選 2026 年十大突破性技術價值](https://www.google.com/search?q=MIT+2026+%E5%8D%81%E5%A4%A7%E7%AA%81%E7%A0%B4%E6%80%A7%E6%8A%80%E8%A1%93+%E5%8F%B0%E7%B6%93%E7%A4%BE) | 適合作為本期跨領域趨勢收束材料，串接單點新聞與更大的技術方向。 | 2026-04-30 | [中央社訊息平台](https://www.cna.com.tw/postwrite/chi/432188) | 其他領域科技應用突破 |
+| 編號 | 文章標題與連結 | 重點摘要 | 日期 | 來源 |
+| :--- | :--- | :--- | :--- | :--- |
+| <a id="ref-1"></a>1 | [微軟：台灣 AI 擴散率 31.8%](https://www.cna.com.tw/news/ait/202605080197.aspx) | 台灣 AI 採用率領先美德，進入廣泛採用期。 | 2026-05-08 | 中央社 CNA |
+| <a id="ref-2"></a>2 | [Copilot cloud agent secrets updates](https://github.blog/changelog/2026-05-08-more-flexible-secrets-and-variables-for-copilot-cloud-agent/) | AI 代理管理能力擴展至組織層級。 | 2026-05-08 | GitHub Blog |
+| <a id="ref-3"></a>3 | [CYBERSEC 2026 直擊](https://www.ithome.com.tw/news/175554) | AI 攻防與半導體資安標準成為焦點。 | 2026-05-05 | iThome |
+| <a id="ref-4"></a>4 | [廣達 AI 伺服器產能全速運轉](https://www.cna.com.tw/news/afe/202604280390.aspx) | 供應鏈加速推動邊緣運算與實體 AI 應用。 | 2026-04-28 | 中央社 CNA |
+| <a id="ref-5"></a>5 | [Amazon RDS SQL Server 更新](https://aws.amazon.com/about-aws/whats-new/2026/05/rds-sqlserver-supports-read-replica-for-asv/) | 強化雲端資料庫在跨區域架構下的讀取彈性。 | **2026-05-01** | AWS |
+| <a id="ref-6"></a>6 | [台灣專屬金融大腦年底上線](https://www.cna.com.tw/news/afe/202604250068.aspx) | 在地化模型有助於金融法規遵從與審核效率。 | 2026-04-25 | 中央社 CNA |
+| <a id="ref-7"></a>7 | [高醫攜手鴻海推大腸鏡 AI](https://www.cna.com.tw/news/ahel/202604240223.aspx) | 醫療 AI 系統邁向即時臨床決策輔助。 | 2026-04-24 | 中央社 CNA |
+| <a id="ref-8"></a>8 | [安聯速運投資智慧倉儲](https://www.cna.com.tw/news/afe/202604240196.aspx) | 物流業積極轉型支撐 AI 供應鏈商機。 | 2026-04-24 | 中央社 CNA |
+| <a id="ref-9"></a>9 | [2026 國際室內設計博覽會](https://www.archi.net.tw/tw/news/news-detail-721.html) | AI 與 BIM 技術正驅動室內裝修產業數位化。 | 2026-05-05 | 亞洲建築網 |
+| <a id="ref-10"></a>10 | [台灣作品登洛杉磯藝文聖殿](https://www.cna.com.tw/news/acul/202604250112.aspx) | 紀柏豪以演算法打造沉浸式現場互動體驗。 | 2026-04-25 | 中央社 CNA |
+| <a id="ref-11"></a>11 | [金球獎排除 AI 演出提名](https://www.cna.com.tw/news/amov/202605080340.aspx) | 影視界開始建立 AI 應用的制度化防線。 | 2026-05-08 | 中央社 CNA |
+| <a id="ref-12"></a>12 | [資策會推動 AI 數位職能護照](https://www.cna.com.tw/business/chinese/432631) | AI 教育重心轉向可驗證的能力認證體系。 | 2026-05-06 | 中央社財經 |
 
 <a id="notes"></a>
 ## 報告說明
-本報告由 GitHub Copilot / Gemini CLI 於 2026-05-02 彙整近 15 天內（2026-04-17 至 2026-05-02）的全球科技新聞與媒體報導，再依程式設計師與科技讀者較常關注的主題整理成分類摘要與趨勢觀察。
+本報告由 GitHub Copilot 與 Gemini 於 2026-05-09 協作整理，追蹤 2026-04-24 以來的科技動態。Ref 5 的官方發布日期已校正為 2026-05-01。
