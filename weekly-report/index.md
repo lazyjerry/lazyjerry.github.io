@@ -3,113 +3,167 @@ title: 科技服務資訊週記
 description: AI 自動彙整的科技服務資訊週記，使用 各種 AI 工具 ，目前抓週六或週日更新。
 ---
 
-# 2026-05-09 科技服務資訊週記
+# 2026-05-16 科技服務資訊週記
 
-**作者：GitHub Copilot、Gemini　報告日期：2026-05-09**
+**作者：Codex　報告日期：2026-05-16**
 
 ## 大綱
-- [總結](#summary)
-- [亮點](#highlights)
-  - [AI 科技](#hl-ai)
-  - [軟體工程](#hl-software)
-  - [軟硬體資訊安全](#hl-security)
-  - [硬體或軟硬整合](#hl-hardware)
-  - [網路／伺服器等基礎](#hl-infrastructure)
-  - [金融科技](#hl-fintech)
-  - [醫療科技](#hl-healthtech)
-  - [運輸物流](#hl-logistics)
-  - [房地產與室內外裝潢](#hl-proptech)
-  - [現場表演藝術](#hl-arts)
-  - [影視音樂](#hl-entertainment)
-  - [其他領域科技應用突破](#hl-others)
-- [趨勢分析](#trends)
-- [參考資料](#references)
-- [報告說明](#notes)
+- <a href="#summary">總結</a>
+- <a href="#highlights">亮點</a>
+  - <a href="#hl-ai">AI 科技</a>
+  - <a href="#hl-software">軟體工程</a>
+  - <a href="#hl-security">軟硬體資訊安全</a>
+  - <a href="#hl-hardware">硬體或軟硬整合</a>
+  - <a href="#hl-infrastructure">網路/伺服器等基礎</a>
+  - <a href="#hl-fintech">金融科技</a>
+  - <a href="#hl-healthtech">醫療科技</a>
+  - <a href="#hl-logistics">運輸物流</a>
+  - <a href="#hl-proptech">房地產與室內外裝潢</a>
+  - <a href="#hl-arts">現場表演藝術</a>
+  - <a href="#hl-entertainment">影視音樂</a>
+  - <a href="#hl-others">其他領域科技應用突破</a>
+- <a href="#trends">趨勢分析</a>
+  - <a href="#tr-ai">AI 科技</a>
+  - <a href="#tr-software">軟體工程</a>
+  - <a href="#tr-security">軟硬體資訊安全</a>
+  - <a href="#tr-hardware">硬體或軟硬整合</a>
+  - <a href="#tr-infrastructure">網路/伺服器等基礎</a>
+  - <a href="#tr-fintech">金融科技</a>
+  - <a href="#tr-healthtech">醫療科技</a>
+  - <a href="#tr-logistics">運輸物流</a>
+  - <a href="#tr-proptech">房地產與室內外裝潢</a>
+  - <a href="#tr-arts">現場表演藝術</a>
+  - <a href="#tr-entertainment">影視音樂</a>
+  - <a href="#tr-others">其他領域科技應用突破</a>
+- <a href="#references">參考資料</a>
+- <a href="#notes">報告說明</a>
 
 <a id="summary"></a>
 ## 總結
-最近 15 天的消息看得很清楚，AI 的競爭焦點已經不只是哪家模型參數更多，而是誰真的把工具接進工作流程，誰又能把治理跟上。微軟報告顯示，台灣 AI 擴散率升到 31.8%，首度進入全球前 20，代表 AI 工具已經不是少數團隊在試，而是逐步變成日常工作的一部分 [[1]](#ref-1)。
-
-這期另一個值得注意的方向，是工程環境與基礎設施都開始補治理能力。GitHub 把 Copilot cloud agent 的祕密與變數管理往組織層級拉高，AWS 則補上資料服務的可用性與複寫能力。這些更新不算花俏，但都很直接，因為它們影響的是團隊怎麼管權限、怎麼撐服務，以及出問題時能不能穩住 [[2]](#ref-2) [[5]](#ref-5)。
-
-同一時間，台灣也在把 AI 往實體產業裡推。廣達擴充 AI 伺服器產能，高醫與鴻海把 AI 帶進臨床流程，安聯速運則把智慧倉儲接到供應鏈需求上。這些案例放在一起看，比起「AI 很熱」，更像是在說一件比較務實的事：它已經開始進入產線、醫療現場和物流系統 [[4]](#ref-4) [[7]](#ref-7) [[8]](#ref-8)。
+本期科技服務資訊的主軸是 **AI 進入日常工作流後，治理與基礎設施壓力同步升高**。OpenAI 把 GPT-5.5 Instant 與 Codex mobile 推向更低摩擦的使用場景，代表 AI 從「工具」變成跨裝置工作層 [[1. TechCrunch]](#ref-1)[[2. TechCrunch]](#ref-2)。同時，金融業 AI App 資料外洩、CopyFail Linux 漏洞與 FDA 醫材更新提醒團隊：導入速度越快，資料治理、patch management、post-market monitoring 越不能慢 [[3. TechCrunch]](#ref-3)[[5. FDA]](#ref-5)[[6. TechCrunch]](#ref-6)。硬體、物流、PropTech、表演藝術與 robotics 的案例則顯示 AI 正往 physical world 延伸，瓶頸也從模型能力擴散到封裝、散熱、感測、責任歸屬與現場營運 [[4. Taiwan News]](#ref-4)[[8. TechCrunch]](#ref-8)[[13. PR Newswire]](#ref-13)。
 
 <a id="highlights"></a>
 ## 亮點
 
 <a id="hl-ai"></a>
 ### AI 科技
-- 微軟 2026 Q1 報告顯示，台灣 AI 擴散率來到 31.8%，甚至高於部分歐美國家。這個數字的重點不只是排名，而是 AI 已經從試用工具慢慢變成工作配備。接下來真正麻煩的地方，反而是團隊流程、分工和責任怎麼重新切 [[1]](#ref-1)。
+- **AI 模型競爭轉向低延遲、低幻覺與可追溯 context。** GPT-5.5 Instant 被設為 ChatGPT 新預設模型，重點不是單一 benchmark，而是敏感領域可靠度、低 latency 與 context management。對工程團隊來說，這像是把「更快的 pair programmer」升級成「知道專案脈絡但需要來源管理的協作者」；memory sources 的可見性也讓 AI 回答開始接近可審計工作流 [[1. TechCrunch]](#ref-1)。
 
 <a id="hl-software"></a>
 ### 軟體工程
-- GitHub 更新 Copilot cloud agent 的祕密與變數管理，把設定權限從單一 Repository 拉到組織層級。對企業來說，這比新功能更實際，因為多個 AI 代理一旦開始共用環境，設定散落各處很快就會變成維運問題。現在看的已經不是程式碼生成快不快，而是能不能管、能不能追、出事時能不能收斂 [[2]](#ref-2)。
+- **Coding agent 進入手機，review / approve 流程變成跨裝置協作。** Codex 進入 ChatGPT mobile App 後，開發者可在手機上查看 live environments、核准 commands、切換 models 或啟動新工作。這對軟體工程的影響不是「在手機寫 code」，而是讓 agentic workflow 的 supervising layer 移動化；CI、code review、環境權限與 command approval 需要被設計成可遠端、安全、可追蹤的操作 [[2. TechCrunch]](#ref-2)。
 
 <a id="hl-security"></a>
 ### 軟硬體資訊安全
-- CYBERSEC 2026 聚焦 AI 攻防、供應鏈安全與半導體標準，方向很清楚：資安範圍又往外擴了一層。現在不只要保護系統和資料，還得處理模型、代理權限和供應鏈風險。這種情況下，安全設計如果還放到最後補，通常已經太晚 [[3]](#ref-3)。
+- **CopyFail 與金融 AI App 外洩提醒：AI 時代的風險常卡在舊基礎設施與新工具交界。** CopyFail 可讓低權限 Linux 使用者取得 root，若被放進 server、container 或 supply-chain attack chain，blast radius 會快速擴大。Community Bank 的事件則顯示，員工把敏感資料丟進未授權 AI App，可能直接成為法遵與資安事件。安全團隊要同時管 kernel patch 與 SaaS / AI App 使用邊界 [[3. TechCrunch]](#ref-3)[[6. TechCrunch]](#ref-6)。
 
 <a id="hl-hardware"></a>
 ### 硬體或軟硬整合
-- 高階 AI 伺服器需求持續上升，廣達也把產能往邊緣終端與車載運算延伸。這表示 AI 的落點不再只有資料中心。對開發端來說，很多問題會提早浮出來，例如延遲、散熱、功耗，還有模型到底能不能在終端穩定跑 [[4]](#ref-4)。
+- **AI 需求把硬體焦點推向封裝、散熱、電源與 edge response。** TSMC 在 Taiwan Technology Symposium 提到，agent-based AI workflows 正推升 computing power demand，並需要 high-bandwidth data transmission、efficient power supplies、advanced heat dissipation 與 advanced packaging。這表示 AI 服務品質不只取決於模型，也取決於資料中心與 edge devices 的供應鏈能力 [[4. Taiwan News]](#ref-4)。
 
 <a id="hl-infrastructure"></a>
-### 網路／伺服器等基礎
-- AWS 為 RDS for SQL Server 加入額外磁碟區的讀取複寫支援。這類更新不太會變成頭條，但對實際跑服務的人很有感，因為它碰到的是跨區域備援、讀取壓力分流和營運成本。AI 應用一旦把資料量拉高，這些底層能力很快就會從「加分項」變成基本要求 [[5]](#ref-5)。
+### 網路/伺服器等基礎
+- **基礎設施的核心矛盾是 AI 工作負載成長與 patch urgency 同時上升。** 一方面，AI 應用需要更多 data center servers、cloud computing systems 與 high-bandwidth transmission；另一方面，CopyFail 這類 kernel 漏洞會讓同一批 server 變成攻擊面。SRE / platform team 不能只規劃 capacity，也要把 kernel lifecycle、distro patch 狀態與 Kubernetes node rotation 納入日常節奏 [[3. TechCrunch]](#ref-3)[[4. Taiwan News]](#ref-4)。
 
 <a id="hl-fintech"></a>
 ### 金融科技
-- 台灣金融業聯盟推動的 FinLLM 預計年底上線，主打對在地法規與授信知識的理解。這件事透露的訊號很明白，金融業要的已經不是會對話的聊天機器人，而是能進到審核、合規和內部流程裡的工具。模型只要碰到法規場景，在地化幾乎就是前提 [[6]](#ref-6)。
+- **金融 AI 的下一步卡在兩條線：自動付款與資料治理。** Mastercard 測試 AI agent 付款，方向是讓代理程式代使用者完成交易，同時保留 tokenization、fraud tools 與 compliance checks。Community Bank 的資料外洩則是反面教材：若 AI tool 沒有授權、審計與資料分類，金融機構會在效率之前先撞上隱私與監理風險 [[6. TechCrunch]](#ref-6)[[7. Simply Wall St]](#ref-7)。
 
 <a id="hl-healthtech"></a>
 ### 醫療科技
-- 高醫與鴻海合作的大腸鏡 AI 系統，不只做影像辨識，還往手術引導與自動報告延伸。醫療 AI 最難的地方本來就不是把模型訓練出來，而是怎麼接進臨床流程、怎麼配合資料標註、怎麼讓醫師真的敢用。這則案例至少說明，現在已經開始碰到那條線了 [[7]](#ref-7)。
+- **醫療科技本週重點偏向裝置安全與監理流程，而非單一新產品。** FDA CDRH 在 2026-05-15 更新麻醉機 early alert、學習模組，前幾日也列出心律調節器 correction、eMDR system enhancements 與多項醫材召回。醫療科技的工程挑戰常在上市後才真正開始：software update、device reporting、risk classification 與臨床安全資訊都要持續維護 [[5. FDA]](#ref-5)。
 
 <a id="hl-logistics"></a>
 ### 運輸物流
-- 安聯速運投資 4.5 億元建設自動化倉儲，整合 AI 管理與自動搬運。物流業過去常被視為後端支援，現在角色正在改變，因為 AI 產業本身就需要更快的倉儲、調度和交付能力。換句話說，物流不只是載貨，也開始參與整個供應鏈節奏 [[8]](#ref-8)。
+- **自駕貨運從 demo 走向 production lane。** Aurora 與 McLane 將在 Dallas-Houston 路線使用自駕卡車運貨；Volvo Autonomous Solutions 與 DSV 也在 Texas 啟動自主貨運。兩案都不是完全跳過人類監督，而是在可控路線、固定物流網路與明確 operational mode 中累積里程。物流科技的突破更像是「把一條路線跑到可複製」，不是一次解完所有自駕問題 [[8. TechCrunch]](#ref-8)[[9. GlobeNewswire / Barchart]](#ref-9)。
 
 <a id="hl-proptech"></a>
 ### 房地產與室內外裝潢
-- 亞洲建築專業網提到，小宅趨勢正在推著裝修產業導入 AI 與 BIM，把設計、估價和供應鏈串得更緊。目前案例還不算多，也有點零散，但方向並不難看：室內設計正慢慢從高度仰賴人工經驗，轉向更多流程化與數位化 [[9]](#ref-9)。
+- **PropTech 正從看房與租賃管理前移到開發與設計早期。** Davis 募得 550 萬美元，定位為 AI-native real estate company，主打加速 early-stage development 與 architectural design。若這類工具成熟，房地產工作流會從「先找地、開會、畫初稿」改成「先用 AI 快速生成與比較多組 feasibility options」，再由人類專家審查限制、成本與城市脈絡 [[10. FinTech Global]](#ref-10)。
 
 <a id="hl-arts"></a>
 ### 現場表演藝術
-- 藝術家紀柏豪在洛杉磯展出的互動作品，讓演算法與感測器直接進到觀眾的體驗裡。這類作品有意思的地方在於，技術不再只是幕後工具，而是作品本身的一部分。觀眾接觸到的，不只是結果，也包含系統如何回應人 [[10]](#ref-10)。
+- **現場表演藝術正在把 technology 當成創作材料，而非舞台效果配件。** ICMC Hamburg 2026 聚集 composer、performer、researcher 與 technologist，活動包含 concerts、installations、workshops、performances 與 paper presentations。這類場域對工程師很有參考價值：低延遲互動、感測、音訊處理、生成系統與現場可靠性，會在觀眾面前被即時驗證 [[11. ICMC Hamburg 2026]](#ref-11)。
 
 <a id="hl-entertainment"></a>
 ### 影視音樂
-- 繼奧斯卡之後，金球獎也把純 AI 生成演出排除在提名資格外。這反映的不是單一獎項規則，而是影視產業正在補制度邊界。生成工具還會繼續進步，但授權、人格權和創作者位置怎麼定義，現在已經不能等產品上線後再處理 [[11]](#ref-11)。
+- **AI music 的討論從「能不能生成」轉向教育、展示、權利與 workflow。** Berklee AIMS Symposium 2026 規劃 keynote、panel、workshop、research presentation、live demo 與 concert，顯示音樂產業正在把 AI 納入教學、研究、創作與現場演出討論。對影視音樂產業而言，下一階段的重點會是標示、授權、創作者工具鏈與觀眾信任 [[12. Berklee]](#ref-12)。
 
 <a id="hl-others"></a>
 ### 其他領域科技應用突破
-- 資策會與新北教育局推動的 AI 培育計畫，把重點放在能力可驗證，而不只是上過哪些課。這代表 AI 教育也在轉向比較制度化的做法，從單次訓練走向可追蹤、可認定的能力證明。對企業和學校來說，這種方式也比較容易銜接用人與培訓 [[12]](#ref-12)。
+- **Physical AI 開始挑戰「手」與「真實世界操作」這個難題。** Genesis AI 發布 GENE-26.5 robotic brain 與 dexterous robotic hand，宣稱可完成烹飪、實驗室操作、wire harnessing、Rubik's Cube 與鋼琴等任務。arXiv embodied AI white paper 也提醒，真實部署必須同時處理 safety、trust、governance 與 operational reliability。能力展示很吸睛，但工程落地仍取決於資料、simulation、驗證與責任設計 [[13. PR Newswire]](#ref-13)[[14. arXiv]](#ref-14)。
 
 <a id="trends"></a>
 ## 趨勢分析
-1. **AI 採用率上來後，真正困難的是組織調整**：工具導入只是起點，後面還有流程重整、責任切分，以及哪些工作要交給人、哪些工作可以交給代理。
-2. **開發環境開始進入治理模式**：GitHub 這次更新提醒人一件事，AI 工具一旦被團隊正式採用，平台工程就得開始處理權限、設定一致性和稽核問題。
-3. **資安已經不能當成附屬條件**：代理拿到的權限越多，模型與資料之間的風險也越難切開。安全機制若沒有先設計好，後續成本只會更高。
-4. **醫療與工業現場會更偏向專域模型**：通用模型還是很重要，但真正能落地的，通常是那些吃得到產業資料、又能接硬體與流程的系統。
+
+<a id="tr-ai"></a>
+### AI 科技
+AI 平台開始把模型能力包成「可持續工作的 context layer」。GPT-5.5 Instant 的低延遲與 memory sources，代表產品競爭點從單次回答品質，延伸到長期任務與個人化資料管理。趨勢上，未來 AI 產品會更像 operating layer：知道更多、做得更快，也更需要 audit trail 與資料刪除機制 [[1. TechCrunch]](#ref-1)。
+
+<a id="tr-software"></a>
+### 軟體工程
+Software development 的人機分工正在重畫。Codex mobile 讓開發者在外出時仍能 supervise agent，像把 CI dashboard、terminal approval 與 code assistant 合併成一個遠端 cockpit。接下來團隊會需要定義哪些 command 可自動執行、哪些必須人工核准、哪些輸出必須進 code review [[2. TechCrunch]](#ref-2)。
+
+<a id="tr-security"></a>
+### 軟硬體資訊安全
+資安治理會更常跨越「傳統漏洞」與「AI 使用政策」。CopyFail 要求快速修補 Linux kernel；Community Bank 案例要求限制 AI App 存取敏感資料。這兩件事看似不同，本質都是 asset inventory 問題：你必須知道哪些機器、哪些資料、哪些工具在被誰使用 [[3. TechCrunch]](#ref-3)[[6. TechCrunch]](#ref-6)。
+
+<a id="tr-hardware"></a>
+### 硬體或軟硬整合
+AI hardware 的瓶頸正在從單顆晶片移向整套系統。TSMC 提到的 advanced packaging、散熱、電源與高頻寬傳輸，都是模型服務品質的底層條件。未來軟體工程師也會更常需要理解 hardware constraints，例如 inference latency、edge power budget、資料搬移成本與 heat envelope [[4. Taiwan News]](#ref-4)。
+
+<a id="tr-infrastructure"></a>
+### 網路/伺服器等基礎
+AI infrastructure 會同時追求擴張與可維護性。資料中心需要更多算力，但 CopyFail 顯示舊 kernel、慢半拍的 distro patch 與龐大 server fleet 會拉高營運風險。好的 platform strategy 會把 capacity planning、security patching、node replacement 與 observability 視為同一件事 [[3. TechCrunch]](#ref-3)[[4. Taiwan News]](#ref-4)。
+
+<a id="tr-fintech"></a>
+### 金融科技
+FinTech 的 AI 應用將進入「agent acts for user」階段。當 AI agent 能付款、比價、下單或處理理財任務，支付網路與銀行必須提供 machine-readable 的授權、風控與追蹤。Community Bank 的事件則會推動金融機構把 AI App governance 納入 DLP、vendor risk 與員工 training [[6. TechCrunch]](#ref-6)[[7. Simply Wall St]](#ref-7)。
+
+<a id="tr-healthtech"></a>
+### 醫療科技
+醫療科技的趨勢是 software-like iteration 與 medical-grade governance 的拉扯。FDA CDRH 更新清單顯示，醫材安全資訊、recall、eMDR 與分類公告密集發生。當 AI-enabled devices 增加，醫療科技團隊會需要更成熟的 post-market monitoring，像維護 production software 一樣維護 clinical risk [[5. FDA]](#ref-5)。
+
+<a id="tr-logistics"></a>
+### 運輸物流
+自駕物流的商業化會先從規格化路線開始。Aurora / McLane 與 Volvo / DSV 都選擇 Texas freight lanes，顯示產業偏好在天候、法規、路線與客戶需求相對可控的場景驗證 economics。未來關鍵不只是感知模型，而是 depot operations、保險、維修、遠端監控與 route expansion playbook [[8. TechCrunch]](#ref-8)[[9. GlobeNewswire / Barchart]](#ref-9)。
+
+<a id="tr-proptech"></a>
+### 房地產與室內外裝潢
+PropTech 會從交易效率工具變成前期決策工具。Davis 的方向代表 AI 正滲入建築設計與 real estate development 的早期判斷。這類工具若要被採用，必須能處理 zoning、成本、工程限制與設計意圖，並保留人類專家的責任判斷；單純漂亮 render 不足以成為商業價值 [[10. FinTech Global]](#ref-10)。
+
+<a id="tr-arts"></a>
+### 現場表演藝術
+Live performance technology 會成為低延遲系統與人機互動的實驗場。ICMC Hamburg 2026 這類會議把演出、裝置、論文與 workshop 放在一起，讓創作方法與技術研究互相驗證。工程上，這會推動更穩定的 real-time audio、gesture interface、sensor fusion 與可解釋生成工具 [[11. ICMC Hamburg 2026]](#ref-11)。
+
+<a id="tr-entertainment"></a>
+### 影視音樂
+AI music 將從工具示範走向制度設計。Berklee AIMS 把 workshop、research、live demo 與 concert 放在同一個 symposium，暗示產業需要共同語言來談創作、教學、標示、授權與收益分配。未來平台若無法說清楚 AI 內容來源與權利，技術採用會被信任問題拖慢 [[12. Berklee]](#ref-12)。
+
+<a id="tr-others"></a>
+### 其他領域科技應用突破
+Robotics 的下一個門檻是「可泛化的 physical skill」。Genesis AI 的展示把焦點放在 dexterous manipulation，arXiv white paper 則把焦點拉回 safety、trust 與 governance。這兩者合在一起看，physical AI 會走向 full-stack competition：模型、資料收集、觸覺硬體、simulation、deployment safety 都要一起進步 [[13. PR Newswire]](#ref-13)[[14. arXiv]](#ref-14)。
 
 <a id="references"></a>
 ## 參考資料
 
-| 編號 | 文章標題與連結 | 重點摘要 | 日期 | 來源 |
-| :--- | :--- | :--- | :--- | :--- |
-| <a id="ref-1"></a>1 | [微軟：台灣 AI 擴散率 31.8%](https://www.cna.com.tw/news/ait/202605080197.aspx) | 台灣 AI 採用率領先美德，進入廣泛採用期。 | 2026-05-08 | 中央社 CNA |
-| <a id="ref-2"></a>2 | [Copilot cloud agent secrets updates](https://github.blog/changelog/2026-05-08-more-flexible-secrets-and-variables-for-copilot-cloud-agent/) | AI 代理管理能力擴展至組織層級。 | 2026-05-08 | GitHub Blog |
-| <a id="ref-3"></a>3 | [CYBERSEC 2026 直擊](https://www.ithome.com.tw/news/175554) | AI 攻防與半導體資安標準成為焦點。 | 2026-05-05 | iThome |
-| <a id="ref-4"></a>4 | [廣達 AI 伺服器產能全速運轉](https://www.cna.com.tw/news/afe/202604280390.aspx) | 供應鏈加速推動邊緣運算與實體 AI 應用。 | 2026-04-28 | 中央社 CNA |
-| <a id="ref-5"></a>5 | [Amazon RDS SQL Server 更新](https://aws.amazon.com/about-aws/whats-new/2026/05/rds-sqlserver-supports-read-replica-for-asv/) | 強化雲端資料庫在跨區域架構下的讀取彈性。 | **2026-05-01** | AWS |
-| <a id="ref-6"></a>6 | [台灣專屬金融大腦年底上線](https://www.cna.com.tw/news/afe/202604250068.aspx) | 在地化模型有助於金融法規遵從與審核效率。 | 2026-04-25 | 中央社 CNA |
-| <a id="ref-7"></a>7 | [高醫攜手鴻海推大腸鏡 AI](https://www.cna.com.tw/news/ahel/202604240223.aspx) | 醫療 AI 系統邁向即時臨床決策輔助。 | 2026-04-24 | 中央社 CNA |
-| <a id="ref-8"></a>8 | [安聯速運投資智慧倉儲](https://www.cna.com.tw/news/afe/202604240196.aspx) | 物流業積極轉型支撐 AI 供應鏈商機。 | 2026-04-24 | 中央社 CNA |
-| <a id="ref-9"></a>9 | [2026 國際室內設計博覽會](https://www.archi.net.tw/tw/news/news-detail-721.html) | AI 與 BIM 技術正驅動室內裝修產業數位化。 | 2026-05-05 | 亞洲建築網 |
-| <a id="ref-10"></a>10 | [台灣作品登洛杉磯藝文聖殿](https://www.cna.com.tw/news/acul/202604250112.aspx) | 紀柏豪以演算法打造沉浸式現場互動體驗。 | 2026-04-25 | 中央社 CNA |
-| <a id="ref-11"></a>11 | [金球獎排除 AI 演出提名](https://www.cna.com.tw/news/amov/202605080340.aspx) | 影視界開始建立 AI 應用的制度化防線。 | 2026-05-08 | 中央社 CNA |
-| <a id="ref-12"></a>12 | [資策會推動 AI 數位職能護照](https://www.cna.com.tw/business/chinese/432631) | AI 教育重心轉向可驗證的能力認證體系。 | 2026-05-06 | 中央社財經 |
+| 編號 | 文章標題與搜尋連結 | 一句話繁體中文結論或亮點 | 發布日期 | 來源資料網址與名稱 | 分類 |
+| :--- | :--- | :--- | :--- | :--- | :--- |
+| <a id="ref-1"></a>1 | [OpenAI releases GPT-5.5 Instant, a new default model for ChatGPT](https://www.google.com/search?q=OpenAI+releases+GPT-5.5+Instant+a+new+default+model+for+ChatGPT) | AI 模型競爭開始把低延遲、低幻覺與 context 可追溯性包成預設能力。 | 2026-05-05 | [TechCrunch](https://techcrunch.com/2026/05/05/openai-releases-gpt-5-5-instant-a-new-default-model-for-chatgpt/) | AI 科技 |
+| <a id="ref-2"></a>2 | [OpenAI says Codex is coming to your phone](https://www.google.com/search?q=OpenAI+says+Codex+is+coming+to+your+phone) | Agentic coding 的 supervising workflow 開始跨到手機端。 | 2026-05-14 | [TechCrunch](https://techcrunch.com/2026/05/14/openai-says-codex-is-coming-to-your-phone/) | 軟體工程 |
+| <a id="ref-3"></a>3 | [US government warns of severe CopyFail bug affecting major versions of Linux](https://www.google.com/search?q=US+government+warns+of+severe+CopyFail+bug+affecting+major+versions+of+Linux) | CopyFail 顯示 Linux kernel patch lifecycle 仍是雲端與伺服器安全核心。 | 2026-05-04 | [TechCrunch](https://techcrunch.com/2026/05/04/u-s-government-warns-of-severe-copyfail-bug-affecting-major-versions-of-linux/) | 軟硬體資訊安全、網路/伺服器等基礎 |
+| <a id="ref-4"></a>4 | [TSMC hosts Taiwan Technology Symposium](https://www.google.com/search?q=TSMC+hosts+Taiwan+Technology+Symposium+2026+AI+infrastructure) | AI 需求正把硬體重點推向 advanced packaging、散熱、電源與高頻寬傳輸。 | 2026-05-14 | [Taiwan News](https://www.taiwannews.com.tw/news/6362137) | 硬體或軟硬整合、網路/伺服器等基礎 |
+| <a id="ref-5"></a>5 | [CDRH New - News and Updates](https://www.google.com/search?q=FDA+CDRH+New+News+and+Updates+May+15+2026) | 醫療科技的重點包含裝置安全、召回、eMDR 與上市後治理。 | 2026-05-15 | [FDA](https://www.fda.gov/medical-devices/medical-devices-news-and-events/cdrh-new-news-and-updates) | 醫療科技 |
+| <a id="ref-6"></a>6 | [US bank discloses security lapse after sharing customer data with AI app](https://www.google.com/search?q=US+bank+discloses+security+lapse+after+sharing+customer+data+with+AI+app) | 未授權 AI App 可把金融資料治理問題變成資安與法遵事件。 | 2026-05-12 | [TechCrunch](https://techcrunch.com/2026/05/12/us-bank-discloses-security-lapse-after-sharing-customer-data-with-ai-app/) | 金融科技、軟硬體資訊安全 |
+| <a id="ref-7"></a>7 | [Mastercard Tests AI Agent Payments To Protect Role In Future Commerce](https://www.google.com/search?q=Mastercard+Tests+AI+Agent+Payments+To+Protect+Role+In+Future+Commerce) | AI agent 付款會重塑授權、詐欺偵測與支付網路角色。 | 2026-05-15 | [Simply Wall St](https://simplywall.st/stocks/us/diversified-financials/nyse-ma/mastercard/news/mastercard-tests-ai-agent-payments-to-protect-role-in-future/amp) | 金融科技 |
+| <a id="ref-8"></a>8 | [Aurora lands McLane deal to run driverless truck routes in Texas](https://www.google.com/search?q=Aurora+McLane+driverless+truck+routes+Texas+May+2026) | 自駕貨運正從試點走向固定商業路線。 | 2026-05-06 | [TechCrunch](https://techcrunch.com/2026/05/06/aurora-lands-mclane-deal-to-run-driverless-truck-routes-in-texas/) | 運輸物流 |
+| <a id="ref-9"></a>9 | [Volvo Autonomous Solutions and DSV announce autonomous freight operations in Texas](https://www.google.com/search?q=Volvo+Autonomous+Solutions+DSV+autonomous+freight+operations+Texas+May+13+2026) | 大型物流商與車廠開始用 production lane 累積自主貨運營運經驗。 | 2026-05-13 | [GlobeNewswire / Barchart](https://www.barchart.com/story/news/1896008/volvo-autonomous-solutions-and-dsv-announce-autonomous-freight-operations-in-texas-usa) | 運輸物流 |
+| <a id="ref-10"></a>10 | [Davis raises $5.5m pre-seed for AI real estate design](https://www.google.com/search?q=Davis+raises+5.5m+pre-seed+AI+real+estate+design) | PropTech 正往開發早期與建築設計決策前移。 | 2026-05-07 | [FinTech Global](https://fintech.global/2026/05/07/davis-raises-5-5m-pre-seed-for-ai-real-estate-design/) | 房地產與室內外裝潢 |
+| <a id="ref-11"></a>11 | [ICMC Hamburg 2026](https://www.google.com/search?q=ICMC+Hamburg+2026+computer+music+technology+performance) | 電腦音樂與現場表演把技術研究直接放進舞台與裝置環境驗證。 | 2026-05-10 至 2026-05-16 | [ICMC Hamburg 2026](https://icmc2026.ligeti-zentrum.de/) | 現場表演藝術 |
+| <a id="ref-12"></a>12 | [Berklee Convenes Leaders in AI, Music for Inaugural AIMS Symposium](https://www.google.com/search?q=Berklee+Convenes+Leaders+in+AI+Music+for+Inaugural+AIMS+Symposium) | AI music 討論從生成能力延伸到教育、研究、live demo 與產業 workflow。 | 2026-05-13 | [Berklee](https://www.berklee.edu/media-relations/news/berklee-convenes-leaders-in-ai-music-for-inaugural-aims-symposium) | 影視音樂 |
+| <a id="ref-13"></a>13 | [Genesis AI Unveils GENE-26.5](https://www.google.com/search?q=Genesis+AI+Unveils+GENE-26.5+robotic+brain+May+6+2026) | Physical AI 開始挑戰 dexterous manipulation 與可泛化機器人技能。 | 2026-05-06 | [PR Newswire](https://www.prnewswire.com/news-releases/genesis-ai-unveils-gene-26-5--the-first-ai-brain-to-enable-robots-with-human-level-physical-manipulation-capabilities-302763638.html) | 其他領域科技應用突破、硬體或軟硬整合 |
+| <a id="ref-14"></a>14 | [Embodied AI in Action](https://www.google.com/search?q=Embodied+AI+in+Action+Insights+from+SAE+World+Congress+2026) | Embodied AI 的落地關鍵不只能力，也包含 safety、trust、governance 與 operational reliability。 | 2026-05-11 | [arXiv](https://arxiv.org/abs/2605.10653) | 其他領域科技應用突破 |
 
 <a id="notes"></a>
 ## 報告說明
-本報告由 GitHub Copilot 與 Gemini 於 2026-05-09 協作整理，追蹤 2026-04-24 以來的科技動態。Ref 5 的官方發布日期已校正為 2026-05-01。
+本報告由 Codex 於 2026-05-16 彙整近 15 天內（2026-05-02 至 2026-05-16）的全球科技新聞、官方更新、學術資料與媒體報導，再依程式設計師與科技讀者較常關注的主題整理成分類摘要與趨勢觀察。若來源為公司新聞稿，內文以「宣稱」「宣布」等語氣處理，避免把供應商說法當成已獨立驗證事實。
