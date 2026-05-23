@@ -1,0 +1,15 @@
+這一週，台灣科技圈真正要看的，無是單一 model 進步幾分，也無是 demo 較華麗。
+
+真正的重點是，AI 已經從 chat 走進 infrastructure，從工具走進營運，變成整個 ecosystem 的競爭。
+
+Google、xAI、OpenAI 把 agent 往更深的工作流推進；鴻海、伺服器、交換機、液冷、供電也攏講同一件代誌：這場局，已經不是一家公司或一個 product 的競爭。
+
+台灣為什麼重要？因為世界要的是 scale、可靠交付，還有從 silicon、system 到 supply chain 全部接起來。這部分，咱真的有位置。
+
+講較白咧，未來會贏的，毋是講話上大聲的人，是有法度共 compute、network、power、security 和 execution 全攏兜做伙的人。
+
+AI 當然會繼續變，但只要台灣把技術、製造、整合力顧好，這一局，咱無是坐佇場邊看戲，是站佇場中央。
+
+你這週最有感的是 AI agent、資料中心 infrastructure，還是台灣在全球科技 supply chain 的位置？
+
+#科技服務資訊週記 #AI #台灣科技 #資料中心 #伺服器 #供應鏈 #科技觀察
