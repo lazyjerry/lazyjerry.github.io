@@ -22,3 +22,4 @@
 | `knowledge/taiwan-media-landscape.md` | 評估台灣新聞與財經媒體權重時 | 整理台灣主流媒體類型與代表網站，供來源選擇時參考。 |
 | `knowledge/date-citation-rules.md` | 檢查 15 天時間範圍、文中引用與錨點時 | 定義日期判定、`*未知時間`、引用編號格式與錨點規則。 |
 | `knowledge/report-format.md` | 撰寫 `report.md` 或交付前檢查時 | 定義四段式報告結構、Markdown 格式、台灣用語與 TODO 檢查項目。 |
+| `knowledge/fetch-gotchas.md` | 以 WebFetch 抓內文或查核發布日期時 | iThome 等站常回 403 需改用搜尋摘要；趨勢型文章常落窗外須逐篇查核日期。 |
