@@ -198,3 +198,111 @@ function isParagraphStart(strong) {
   });
 
 })(); // end of (function () {})()
+
+// TTS — 語音朗讀功能
+(function () {
+  if (!('speechSynthesis' in window)) return;
+
+  const synth = window.speechSynthesis;
+  let chunks = [];
+  let chunkIndex = 0;
+  let isPaused = false;
+
+  const style = document.createElement('style');
+  style.textContent = [
+    '#tts-bar{position:fixed;bottom:24px;right:24px;display:flex;align-items:center;gap:6px;',
+    'background:#155799;border-radius:10px;padding:8px 14px;',
+    'box-shadow:0 3px 12px rgba(0,0,0,.28);z-index:999;}',
+    '#tts-bar button{background:transparent;border:1px solid rgba(255,255,255,.55);color:#fff;',
+    'border-radius:6px;padding:5px 12px;font-size:13px;cursor:pointer;',
+    'transition:background .15s;white-space:nowrap;}',
+    '#tts-bar button:hover:not(:disabled){background:rgba(255,255,255,.18);}',
+    '#tts-bar button:disabled{opacity:.35;cursor:not-allowed;}',
+    '#tts-progress{color:rgba(255,255,255,.8);font-size:12px;min-width:44px;text-align:center;}'
+  ].join('');
+  document.head.appendChild(style);
+
+  const bar = document.createElement('div');
+  bar.id = 'tts-bar';
+  bar.innerHTML =
+    '<button id="tts-play">▶ 朗讀</button>' +
+    '<button id="tts-pause" disabled>⏸ 暫停</button>' +
+    '<button id="tts-stop" disabled>⏹ 停止</button>' +
+    '<span id="tts-progress"></span>';
+  document.body.appendChild(bar);
+
+  const playBtn  = document.getElementById('tts-play');
+  const pauseBtn = document.getElementById('tts-pause');
+  const stopBtn  = document.getElementById('tts-stop');
+  const progress = document.getElementById('tts-progress');
+
+  function getChunks() {
+    var content = document.querySelector('.main-content');
+    var clone = content ? content.cloneNode(true) : document.body.cloneNode(true);
+    var footer = clone.querySelector('.site-footer');
+    if (footer) footer.remove();
+    var text = (clone.innerText || clone.textContent || '').replace(/\t/g, ' ');
+    return text.split('\n').map(function (s) { return s.trim(); }).filter(function (s) { return s.length > 1; });
+  }
+
+  function getVoice() {
+    var voices = synth.getVoices();
+    return voices.find(function (v) { return v.lang === 'zh-TW'; }) ||
+           voices.find(function (v) { return v.lang === 'zh-HK'; }) ||
+           voices.find(function (v) { return v.lang.startsWith('zh'); }) ||
+           null;
+  }
+
+  function speakChunk(index) {
+    if (index >= chunks.length) { reset(); return; }
+    chunkIndex = index;
+    progress.textContent = (index + 1) + '/' + chunks.length;
+
+    var u = new SpeechSynthesisUtterance(chunks[index]);
+    u.lang = 'zh-TW';
+    u.rate = 1.0;
+    var voice = getVoice();
+    if (voice) u.voice = voice;
+
+    u.onend = function () { if (!isPaused) speakChunk(index + 1); };
+    u.onerror = function (e) { if (e.error !== 'interrupted') reset(); };
+    synth.speak(u);
+  }
+
+  function reset() {
+    synth.cancel();
+    chunks = []; chunkIndex = 0; isPaused = false;
+    progress.textContent = '';
+    playBtn.disabled  = false;
+    pauseBtn.disabled = true;
+    pauseBtn.textContent = '⏸ 暫停';
+    stopBtn.disabled  = true;
+  }
+
+  playBtn.addEventListener('click', function () {
+    reset();
+    chunks = getChunks();
+    playBtn.disabled  = true;
+    pauseBtn.disabled = false;
+    stopBtn.disabled  = false;
+    if (synth.getVoices().length === 0) {
+      synth.addEventListener('voiceschanged', function () { speakChunk(0); }, { once: true });
+    } else {
+      speakChunk(0);
+    }
+  });
+
+  pauseBtn.addEventListener('click', function () {
+    if (synth.paused) {
+      synth.resume();
+      isPaused = false;
+      pauseBtn.textContent = '⏸ 暫停';
+    } else {
+      synth.pause();
+      isPaused = true;
+      pauseBtn.textContent = '▶ 繼續';
+    }
+  });
+
+  stopBtn.addEventListener('click', reset);
+})();
