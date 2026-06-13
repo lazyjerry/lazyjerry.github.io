@@ -14,6 +14,12 @@ p a {
     font-size: 0.7rem;
 }
 
+.main-content a[href^="#ref-"] {
+	font-size: 0.7rem;
+	font-weight: 400;
+	color: #1e6bb8;
+}
+
 p strong > a,
 p a > strong {
     font-size: initial;
