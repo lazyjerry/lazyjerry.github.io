@@ -285,10 +285,27 @@ function isParagraphStart(strong) {
     playBtn.disabled  = true;
     pauseBtn.disabled = false;
     stopBtn.disabled  = false;
-    if (synth.getVoices().length === 0) {
-      synth.addEventListener('voiceschanged', function () { speakChunk(0); }, { once: true });
-    } else {
+
+    // 某些瀏覽器可能不會觸發 voiceschanged，直接提供 fallback 以確保可朗讀
+    var started = false;
+    var startSpeak = function () {
+      if (started) return;
+      started = true;
+      synth.removeEventListener('voiceschanged', onVoicesChanged);
       speakChunk(0);
+    };
+
+    var onVoicesChanged = function () {
+      startSpeak();
+    };
+
+    synth.addEventListener('voiceschanged', onVoicesChanged);
+
+    if (synth.getVoices().length > 0) {
+      startSpeak();
+    } else {
+      // 保留短暫等待，避免在語音尚未初始化時就朗讀
+      window.setTimeout(startSpeak, 700);
     }
   });
 
