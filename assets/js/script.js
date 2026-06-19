@@ -207,6 +207,7 @@ function isParagraphStart(strong) {
   let chunks = [];
   let chunkIndex = 0;
   let isPaused = false;
+  let keepAliveTimer = null;
 
   const style = document.createElement('style');
   style.textContent = [
@@ -269,7 +270,20 @@ function isParagraphStart(strong) {
     synth.speak(u);
   }
 
+  // Chrome 約 15 秒會自動中斷長文，且偶爾卡在 paused 狀態；週期性 resume 保活
+  function startKeepAlive() {
+    stopKeepAlive();
+    keepAliveTimer = window.setInterval(function () {
+      if (synth.speaking && !isPaused) { synth.pause(); synth.resume(); }
+    }, 10000);
+  }
+
+  function stopKeepAlive() {
+    if (keepAliveTimer) { window.clearInterval(keepAliveTimer); keepAliveTimer = null; }
+  }
+
   function reset() {
+    stopKeepAlive();
     synth.cancel();
     chunks = []; chunkIndex = 0; isPaused = false;
     progress.textContent = '';
@@ -292,7 +306,9 @@ function isParagraphStart(strong) {
       if (started) return;
       started = true;
       synth.removeEventListener('voiceschanged', onVoicesChanged);
-      speakChunk(0);
+      startKeepAlive();
+      // 延遲一拍再 speak，避開 Chrome 「cancel() 後立刻 speak() 會被吞掉」的競態
+      window.setTimeout(function () { speakChunk(0); }, 250);
     };
 
     var onVoicesChanged = function () {
