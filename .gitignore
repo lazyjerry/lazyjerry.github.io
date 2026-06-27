@@ -16,3 +16,27 @@
 # Python bytecode files
 __pycache__/
 _ignore/*
+.ai-global
+.claude/CLAUDE.md
+.claude/commands
+.claude/skills
+.claude/agents
+.agents/skills
+.codex/agents
+.github/copilot-instructions.md
+.github/instructions
+.github/prompts
+.github/skills
+.github/agents
+.cursor/AGENTS.md
+.cursor/rules
+.cursor/commands
+.cursor/skills
+.cursor/agents
+.gemini/GEMINI.md
+.gemini/.agents/rules
+.gemini/antigravity/skills
+.opencode/AGENTS.md
+.opencode/commands
+.opencode/skills
+.opencode/agents
