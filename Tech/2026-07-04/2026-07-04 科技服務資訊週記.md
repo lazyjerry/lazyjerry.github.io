@@ -42,7 +42,7 @@
 
 <a id="hl-ai"></a>
 ### AI 科技
-- **AI agent 的採用正在改變組織裡的工作單位。** OpenAI 的 Codex 使用資料顯示，agentic AI 不再只是工程師用來補完程式碼的工具，而是逐步成為法務、財務、招募、客服與營運的委派式工作環境。使用者開始把超過 30 分鐘、1 小時甚至 8 小時的人類工作交給 agent 分段處理，這會迫使企業重新設計權限、任務拆分、成本追蹤與成果驗收流程 [[1. OpenAI]](#ref-1)。
+- **AI agent 的採用正在改變組織裡的工作單位。** OpenAI 的 Codex 使用資料顯示，agentic AI 不再只是工程師用來補完程式碼的工具，而是逐步成為法務、財務、招募、客服與營運的委派式工作環境。使用者開始把超過 30 分鐘、甚至數小時的人類工作交給 agent 分段處理，這會迫使企業重新設計權限、任務拆分、成本追蹤與成果驗收流程 [[1. OpenAI]](#ref-1)。
 - **前沿模型供應正在被合規與名單制部署牽動。** Reuters 報導美國允許 Anthropic 向受信任企業釋出 Mythos，代表高階模型可用性不只看模型能力，也看政策條件、企業資格與資料治理要求。對平台團隊而言，模型路由與供應商備援會變得像雲端區域與資料主權一樣重要 [[2. Reuters]](#ref-2)。
 - **Agentic model 競爭開始直接指向成本效能與工具使用。** Anthropic 發表 Claude Sonnet 5，主打更強的 reasoning、tool use、coding 與 knowledge work，並在 Claude Code 與 API 提供 effort level 與明確 token 價格。這讓模型選型不只比較 benchmark，也要比較長任務完成率、工具呼叫穩定度、審查成本與安全評估 [[20. Anthropic]](#ref-20)。
 
@@ -62,7 +62,7 @@
 
 <a id="hl-infrastructure"></a>
 ### 網路/伺服器等基礎
-- **AI data center 已經從算力採購變成地緣、土地與資源治理問題。** 烏克蘭與 Kyivstar 規劃境內 AI 運算能力，強調國防、企業與文化資料留在本地處理；Kuok Group 則評估在義大利投資大型 data center campus。再加上 Microsoft 對水資源強度的說明，可以看到 AI 基礎設施決策已同時牽動資料主權、電力、水資源、土地開發與社群溝通 [[7. Reuters]](#ref-7) [[8. Reuters]](#ref-8) [[9. Microsoft]](#ref-9)。
+- **AI data center 已經從算力採購變成地緣、土地與資源治理問題。** 烏克蘭與 Kyivstar 規劃境內 AI 運算能力，強調國防、公共行政與研發資料留在本地處理；Kuok Group 則評估在義大利投資大型 data center campus。再加上 Microsoft 對水資源強度的說明，可以看到 AI 基礎設施決策已同時牽動資料主權、電力、水資源、土地開發與社群溝通 [[7. Reuters]](#ref-7) [[8. Reuters]](#ref-8) [[9. Microsoft]](#ref-9)。
 
 <a id="hl-fintech"></a>
 ### 金融科技
