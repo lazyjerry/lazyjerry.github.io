@@ -35,7 +35,7 @@
 
 <a id="summary"></a>
 ## 總結
-本期（2026-06-26 至 07-11）主軸是 **AI 從模型競賽轉入 Agent 與產品落地**。OpenAI 公開 GPT-5.6 並推出 ChatGPT Work、GPT-Live [[1. CNBC]](#ref-1)，Anthropic 以較低成本的 Claude Sonnet 5 應戰 [[2. TechCrunch]](#ref-2)，Z.ai 則推出 ZCode 搶攻 AI Coding IDE [[3. TechOrange]](#ref-3)。硬體端，人形機器人轉向規模部署 [[5. TechNews]](#ref-5)，南韓三星與 SK 海力士規劃投資 800 兆韓元擴建 AI 晶片聚落 [[6. AP]](#ref-6)。資安面，Pi 拍錢包傳出 350 萬名用戶個資外洩 [[4. iThome]](#ref-4)；金融科技則進入穩定幣系統性監管階段 [[8. Bank of England]](#ref-8)。
+AI 競爭正在換戰場：OpenAI 公開 GPT-5.6 並推出 ChatGPT Work、GPT-Live [[1. CNBC]](#ref-1)，Anthropic 以較低成本的 Claude Sonnet 5 應戰 [[2. TechCrunch]](#ref-2)，Z.ai 則以 ZCode 搶攻 AI Coding IDE [[3. TechOrange]](#ref-3)。硬體端，人形機器人轉向規模部署 [[5. TechNews]](#ref-5)，南韓三星與 SK 海力士規劃投資 800 兆韓元擴建 AI 晶片聚落 [[6. AP]](#ref-6)。資安面，Pi 拍錢包傳出 350 萬名用戶個資外洩 [[4. iThome]](#ref-4)；金融科技則進入穩定幣系統性監管階段 [[8. Bank of England]](#ref-8)。
 
 <a id="highlights"></a>
 ## 亮點
