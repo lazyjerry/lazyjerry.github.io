@@ -1,0 +1,21 @@
+#!/usr/bin/env bash
+set -euo pipefail
+
+repo_root="$(cd "$(dirname "${BASH_SOURCE[0]}")/.." && pwd)"
+target="$repo_root/social-post/2026-07-11.txt"
+
+content='🌪️ 強烈颱風「巴威」（Bavi）侵襲與金融韌性討論
+
+我挾著強風逼近台灣，巡視科技產業防線。海上只有一個風眼，AI 戰場卻形成三個低壓中心。
+
+我從雲牆往下看，OpenAI 把 GPT-5.6、ChatGPT Work 與 GPT-Live 堆成上升氣流；Anthropic 壓低 Claude Sonnet 5 成本，補上一道氣壓梯度；Z.ai 讓 ZCode 轉向 AI Coding IDE，把開發者工作流捲進外圍環流。
+
+陸地熱源也在升溫。人形機器人走向規模部署，三星與 SK 海力士用 800 兆韓元擴建南韓 AI 晶片聚落，替算力風暴蓄能。
+
+真正破口藏在看不見的地方。Pi 拍錢包傳出 350 萬名用戶個資外洩；Bank of England 也把穩定幣推向系統性監管，檢驗儲備、贖回、流動性與營運持續。
+
+我會遠離，系統風暴卻不會。你的科技服務，撐得過下一個低壓中心嗎？🌧️
+
+#強烈颱風巴威 #AI競爭 #資訊安全 #金融科技 #科技韌性'
+
+printf '%s\n' "$content" > "$target"
