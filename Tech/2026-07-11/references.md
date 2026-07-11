@@ -1,23 +1,20 @@
-# 2026-07-11 科技服務資訊週記 — 正式參考資料清單
+## 參考資料
 
-- 時間範圍：2026-06-26 至 2026-07-11
-- 共 16 筆，涵蓋 12 個必要分類
-
-| 編號 | 文章標題 | 一句話結論或亮點 | 發布日期 | 來源網址與名稱 | 分類 |
+| 編號 | 文章標題與搜尋連結 | 一句話繁體中文結論或亮點 | 發布日期 | 來源資料網址與名稱 | 分類 |
 | :--- | :--- | :--- | :--- | :--- | :--- |
-| 1 | OpenAI 公開發布 GPT-5.6 並推出 ChatGPT Work 與 GPT-Live | 政府解禁後 GPT-5.6 全面開放，AI Agent 與語音模型成新戰線 | 2026-07-08 | [CNBC](https://www.cnbc.com/2026/07/08/openai-expanding-gpt-5point6-ai-model-release-ending-government-limits.html) | AI 科技 |
-| 2 | Anthropic 發布 Claude Sonnet 5，主打低成本 Agent | 效能逼近 Opus 4.8 但更便宜，成免費與 Pro 預設模型 | 2026-06-30 | [TechCrunch](https://techcrunch.com/2026/06/30/anthropic-launches-claude-sonnet-5-as-a-cheaper-way-to-run-agents/) | AI 科技 |
-| 3 | 中國 Z.ai 推出 ZCode 挑戰 Claude Code | AI Coding 戰場由模型能力轉向 IDE 與訂閱平台 | 2026-07-03 | [TechOrange 科技報橘](https://techorange.com/2026/07/03/z-ai-launches-zcode/) | 軟體工程 |
-| 4 | PChome 旗下 Pi 拍錢包遭 Settra 勒索、350 萬個資外洩 | 350 萬筆個資外洩，數產署行政檢查 | 2026-07-01 | [iThome](https://www.ithome.com.tw/news/177011) | 軟硬體資訊安全 |
-| 5 | 調研：美中人形機器人競爭進入新階段 | 競爭從展示轉向商業化與規模部署，全球部署達 160 萬台 | 2026-07-07 | [TechNews 科技新報](https://technews.tw/2026/07/07/humanoid-robot-embodied-ai/) | 硬體或軟硬整合 |
-| 6 | SK 海力士赴美上市、HBM 記憶體超級循環 | SK 海力士募資 290 億美元，HBM 短缺延續至 2027 後 | *未知時間（2026-07） | [豐雲學堂（永豐金證券）](https://www.sinotrade.com.tw/richclub/industry/2026-AI-記憶體新戰局-SRAM-異軍突起與-HBM-雙雄並立-台廠供應鏈解析-產業熱話-6951f732cfa1251682968c6c) | 硬體或軟硬整合 |
-| 7 | 經濟部修法草案，AI 資料中心納入產業效益評估 | 用電成 AI 基建硬約束，估 2030 年新增用電破 5 GW | 2026-07-01 | [TechNews 科技新報](https://technews.tw/2026/07/01/data-center-law-in-taiwan/) | 網路/伺服器等基礎 |
-| 8 | Fintech Pulse 每日產業簡報（2026-07-08） | 穩定幣年逾 8.9 兆美元交易量，產業轉向韌性與監管 | 2026-07-08 | [Hipther / Fintech Pulse](https://hipther.com/latest-news/2026/07/08/114785/fintech-pulse-your-daily-industry-brief-july-8-2026-afac-2026-ant-group-nvidia-belitsoft-eromnet-payverse-paypal-goldman-sachs-icbc-tencent/) | 金融科技 |
-| 9 | 2026 亞洲生技大會 7/15 登場，AI 重塑新藥研發 | AI 貫穿新藥設計到商業化全鏈 | 2026-07-03 | [TechNews 科技新報](https://technews.tw/2026/07/03/speed-to-patients/) | 醫療科技 |
-| 10 | 日本啟動電動個人運具最後一哩配送實證 | 幹線自駕＋末端電動運具，分層自動化 | 2026-07-06 | [LNEWS（日本物流媒體）](https://www.lnews.jp/2026/07/s0706102.html) | 運輸物流 |
-| 11 | 潮居科技發表《AI 理家》房產 AI 搜尋整合服務 | PropTech 把 AI 摘要導入看房決策 | 2026-07-04 | [潮居科技 inHom](https://www.inhom.ai/search-agent) | 房地產與室內外裝潢 |
-| 12 | 日本 PropTech 品牌 RENOSY 利諾喜登台 | AI 帶動廠房物流投資年增 279% | 2026-06-26 | [PChome 新聞](https://news.pchome.com.tw/public/morenews/20260626/index-78246955232471350016.html) | 房地產與室內外裝潢 |
-| 13 | 「Wayne McGregor：異・地」沉浸式 AI 舞蹈裝置 | AI 與空間音效走上舞台 | *未知時間（展期 2026-06-25 起） | [香港01](https://www.hk01.com/藝文/60366008/) | 現場表演藝術 |
-| 14 | 盧廣仲台北演唱會因颱風延期 | 極端天氣考驗票務與退款系統韌性 | *未知時間（事件 2026-07-10） | [NOWnews 今日新聞](https://www.nownews.com/news/6854220) | 現場表演藝術 |
-| 15 | 全球影視媒體產業週報：AI 數位分身與虛擬製作 | 產業搶建數位替身授權與分潤規則 | 2026-07-08 | [Further & Better（產業週報）](https://furtherandbetter.substack.com/p/global-tv-film-and-media-industry-b96) | 影視音樂 |
-| 16 | SpaceX 發射全球第一顆核動力商用衛星 | 核電池上太空，解決深空持續供電問題 | 2026-07-10 | [TechNews 科技新報](https://technews.tw/2026/07/10/spacex-just-launched-the-1st-ever-nuclear-powered-commercial-satellite/) | 其他領域科技應用突破 |
+| <a id="ref-1"></a>1 | [OpenAI 公開發布 GPT-5.6 並推出 ChatGPT Work 與 GPT-Live](https://www.google.com/search?q=OpenAI+GPT-5.6+ChatGPT+Work+GPT-Live) | 政府解禁後 GPT-5.6 全面開放，AI Agent 與語音模型成新戰線 | 2026-07-08 | [CNBC](https://www.cnbc.com/2026/07/08/openai-expanding-gpt-5point6-ai-model-release-ending-government-limits.html) | AI 科技 |
+| <a id="ref-2"></a>2 | [Anthropic 發布 Claude Sonnet 5，主打低成本 Agent](https://www.google.com/search?q=Anthropic+Claude+Sonnet+5+launch) | 效能逼近 Opus 4.8 但更便宜，成免費與 Pro 預設模型 | 2026-06-30 | [TechCrunch](https://techcrunch.com/2026/06/30/anthropic-launches-claude-sonnet-5-as-a-cheaper-way-to-run-agents/) | AI 科技 |
+| <a id="ref-3"></a>3 | [中國 Z.ai 推出 ZCode 挑戰 Claude Code](https://www.google.com/search?q=Z.ai+ZCode+Claude+Code) | AI Coding 戰場由模型能力轉向 IDE 與訂閱平台 | 2026-07-03 | [TechOrange 科技報橘](https://techorange.com/2026/07/03/z-ai-launches-zcode/) | 軟體工程 |
+| <a id="ref-4"></a>4 | [PChome 旗下 Pi 拍錢包遭 Settra 勒索、350 萬個資外洩](https://www.google.com/search?q=Pi+拍錢包+Settra+勒索軟體+外洩) | 350 萬筆個資外洩，數產署行政檢查，勒索集團把戰果包裝成稽核報告 | 2026-07-01 | [iThome](https://www.ithome.com.tw/news/177011) | 軟硬體資訊安全 |
+| <a id="ref-5"></a>5 | [調研：美中人形機器人競爭進入新階段](https://www.google.com/search?q=人形機器人+具身智能+Counterpoint+2026) | 競爭從展示轉向商業化與規模部署，全球部署達 160 萬台 | 2026-07-07 | [TechNews 科技新報](https://technews.tw/2026/07/07/humanoid-robot-embodied-ai/) | 硬體或軟硬整合 |
+| <a id="ref-6"></a>6 | [南韓三星與 SK 海力士投資 800 兆韓元擴建 AI 晶片聚落](https://www.google.com/search?q=South+Korea+Samsung+SK+Hynix+800+trillion+won+chip+hub) | AI 硬體競爭擴大到記憶體產能、區域配置與供應鏈韌性 | 2026-06-29 | [AP](https://apnews.com/article/22352d95c7a821c5f4548b2d1a4ebde8) | 硬體或軟硬整合 |
+| <a id="ref-7"></a>7 | [經濟部修法草案，AI 資料中心納入產業效益評估](https://www.google.com/search?q=經濟部+AI+資料中心+產業效益評估+修法) | 用電成 AI 基建硬約束，估 2030 年新增用電需求破 5 GW | 2026-07-01 | [TechNews 科技新報](https://technews.tw/2026/07/01/data-center-law-in-taiwan/) | 網路/伺服器等基礎 |
+| <a id="ref-8"></a>8 | [Bank of England 金融政策委員會檢視系統性穩定幣監管進度](https://www.google.com/search?q=Bank+of+England+Financial+Policy+Committee+Record+July+2026+stablecoins) | 穩定幣監管由市場實驗走向支付基礎設施與金融穩定框架 | 2026-07-07 | [Bank of England](https://www.bankofengland.co.uk/financial-policy-committee-record/2026/july-2026) | 金融科技 |
+| <a id="ref-9"></a>9 | [2026 亞洲生技大會 7/15 登場，AI 重塑新藥研發](https://www.google.com/search?q=2026+亞洲生技大會+Speed+to+Patients+AI+新藥) | AI 貫穿新藥設計到商業化全鏈，主題「加速上市、造福病患」 | 2026-07-03 | [TechNews 科技新報](https://technews.tw/2026/07/03/speed-to-patients/) | 醫療科技 |
+| <a id="ref-10"></a>10 | [日本啟動電動個人運具最後一哩配送實證](https://www.google.com/search?q=glafit+電動+ラストワンマイル+配送+実証+2026) | 幹線自駕＋末端電動運具，分層自動化回應缺工與減碳 | 2026-07-06 | [LNEWS（日本物流媒體）](https://www.lnews.jp/2026/07/s0706102.html) | 運輸物流 |
+| <a id="ref-11"></a>11 | [潮居科技發表《AI 理家》房產 AI 搜尋整合服務](https://www.google.com/search?q=潮居科技+inHom+AI理家+房地產) | PropTech 把 Google 式 AI 摘要導入看房決策 | 2026-07-04 | [潮居科技 inHom](https://www.inhom.ai/search-agent) | 房地產與室內外裝潢 |
+| <a id="ref-12"></a>12 | [日本 PropTech 品牌 RENOSY 利諾喜登台](https://www.google.com/search?q=RENOSY+利諾喜+台灣+房地產博覽會+2026) | AI 帶動廠房物流投資年增 279%，PropTech 加速登台 | 2026-06-26 | [PChome 新聞](https://news.pchome.com.tw/public/morenews/20260626/index-78246955232471350016.html) | 房地產與室內外裝潢 |
+| <a id="ref-13"></a>13 | [「Wayne McGregor：異・地」沉浸式 AI 舞蹈裝置](https://www.google.com/search?q=Wayne+McGregor+異地+大館+沉浸式+AI+舞蹈) | AI 與空間音效走上舞台，擴張現場表演的感官維度 | 2026-07-08 | [香港01](https://www.hk01.com/藝文/60366008/) | 現場表演藝術 |
+| <a id="ref-14"></a>14 | [盧廣仲台北演唱會因颱風延期](https://www.google.com/search?q=盧廣仲+演唱會+颱風+延期+7月+北流) | 極端天氣考驗票務與退款系統的即時應變韌性 | 2026-07-07 | [NOWnews 今日新聞](https://www.nownews.com/news/6854220) | 現場表演藝術 |
+| <a id="ref-15"></a>15 | [全球影視媒體產業週報：AI 數位分身與虛擬製作](https://www.google.com/search?q=CAA+AI+digital+doubles+Harry+Shearer+virtual+production+2026) | 產業搶建數位替身授權與分潤規則，聲音權成焦點 | 2026-07-08 | [Further & Better（產業週報）](https://furtherandbetter.substack.com/p/global-tv-film-and-media-industry-b96) | 影視音樂 |
+| <a id="ref-16"></a>16 | [SpaceX 發射全球第一顆核動力商用衛星](https://www.google.com/search?q=SpaceX+核動力+商用衛星+City+Labs+BOHR+tritium) | 核電池上太空，解決深空與背陽面持續供電問題 | 2026-07-10 | [TechNews 科技新報](https://technews.tw/2026/07/10/spacex-just-launched-the-1st-ever-nuclear-powered-commercial-satellite/) | 其他領域科技應用突破 |

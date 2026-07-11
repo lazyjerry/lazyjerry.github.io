@@ -1,6 +1,6 @@
 # 2026-07-11 科技服務資訊週記
 
-**作者：Claude Code (Opus 4.8)　報告日期：2026-07-11**
+**作者：Claude Code、Codex　報告日期：2026-07-11**
 
 ## 大綱
 - <a href="#summary">總結</a>
@@ -35,14 +35,14 @@
 
 <a id="summary"></a>
 ## 總結
-本期（2026-06-26 至 07-11）最大主軸是 **AI 從「模型競賽」轉入「產品與 Agent 落地」**。OpenAI 在政府解除限制後公開 **GPT-5.6** 並推出 **ChatGPT Work** 與語音模型 **GPT-Live** [[1. CNBC]](#ref-1)；Anthropic 則以低成本、強 Agent 的 **Claude Sonnet 5** 正面應戰 [[2. TechCrunch]](#ref-2)；戰場延伸到開發工具，中國 **Z.ai** 推出 **ZCode** 搶攻 AI Coding IDE [[3. TechOrange]](#ref-3)。硬體端，人形機器人進入商業化與規模部署 [[5. TechNews]](#ref-5)，**SK 海力士** 以 290 億美元赴美上市、**HBM** 超級循環延燒 [[6. 豐雲學堂]](#ref-6)。資安面台灣 **Pi 拍錢包** 350 萬筆個資外洩 [[4. iThome]](#ref-4)；基礎設施則見經濟部把 **AI 資料中心** 納入產業效益評估 [[7. TechNews]](#ref-7)。醫療、金融、影視、太空亦同步以 AI 為核心推進 [[8. hipther]](#ref-8) [[9. TechNews]](#ref-9) [[15. Further & Better]](#ref-15) [[16. TechNews]](#ref-16)。
+本期（2026-06-26 至 07-11）主軸是 **AI 從模型競賽轉入 Agent 與產品落地**。OpenAI 公開 GPT-5.6 並推出 ChatGPT Work、GPT-Live [[1. CNBC]](#ref-1)，Anthropic 以較低成本的 Claude Sonnet 5 應戰 [[2. TechCrunch]](#ref-2)，Z.ai 則推出 ZCode 搶攻 AI Coding IDE [[3. TechOrange]](#ref-3)。硬體端，人形機器人轉向規模部署 [[5. TechNews]](#ref-5)，南韓三星與 SK 海力士規劃投資 800 兆韓元擴建 AI 晶片聚落 [[6. AP]](#ref-6)。資安面，Pi 拍錢包傳出 350 萬名用戶個資外洩 [[4. iThome]](#ref-4)；金融科技則進入穩定幣系統性監管階段 [[8. Bank of England]](#ref-8)。
 
 <a id="highlights"></a>
 ## 亮點
 
 <a id="hl-ai"></a>
 ### AI 科技
-- **兩大實驗室在同一週把「Agent」推成預設體驗。** OpenAI 在美國政府 7 月 9 日解禁後公開 GPT-5.6 三階梯（旗艦 Sol、中階 Terra、低成本 Luna），並設為 ChatGPT 預設模型；更關鍵的是同步推出 **ChatGPT Work**——把聊天機器人與程式工具合體的 AI Agent，以及能同時聽與說、互動像真人對話的 **GPT-Live** 語音模型 [[1. CNBC]](#ref-1)。幾乎同時，Anthropic 於 6 月 30 日發布 **Claude Sonnet 5**，主打「最 Agent 化的 Sonnet」，效能逼近 Opus 4.8（SWE-bench Pro 63.2% vs. 69.2%）卻更便宜，並成為免費與 Pro 使用者的預設模型 [[2. TechCrunch]](#ref-2)。就像餐廳從「賣食材」改成「直接上桌一整套套餐」，模型本身不再是賣點，能不能自己規劃、動手完成多步驟任務才是。
+- **兩大實驗室在同一週把「Agent」推成預設體驗。** OpenAI 在美國政府解除限制後公開 GPT-5.6 三階梯（旗艦 Sol、中階 Terra、低成本 Luna），並設為 ChatGPT 預設模型；更關鍵的是同步推出 **ChatGPT Work**——把聊天機器人與程式工具合體的 AI Agent，以及能同時聽與說、互動像真人對話的 **GPT-Live** 語音模型 [[1. CNBC]](#ref-1)。幾乎同時，Anthropic 於 6 月 30 日發布 **Claude Sonnet 5**，主打「最 Agent 化的 Sonnet」，效能逼近 Opus 4.8（SWE-bench Pro 63.2% vs. 69.2%）卻更便宜，並成為免費與 Pro 使用者的預設模型 [[2. TechCrunch]](#ref-2)。就像餐廳從「賣食材」改成「直接上桌一整套套餐」，模型本身不再是賣點，能不能自己規劃、動手完成多步驟任務才是。
 
 <a id="hl-software"></a>
 ### 軟體工程
@@ -54,7 +54,7 @@
 
 <a id="hl-hardware"></a>
 ### 硬體或軟硬整合
-- **人形機器人與 HBM 記憶體，是本期軟硬整合的兩條主線。** Counterpoint 指出人形機器人已從「秀動作」進入商業化、規模部署與生態建構階段，中國更喊出年底形成萬台級部署能力，截至 2025 年全球部署達 160 萬台、中國占逾八成 [[5. TechNews]](#ref-5)。另一邊，記憶體成 AI 基建的咽喉：**SK 海力士** 7 月 10 日赴美上市募資 290 億美元，三星 Q3 擬再調漲通用 DRAM／LPDDR 約 20%，台積電 CoWoS 產能售罄至 2026 年、HBM 結構性短缺估延續至 2027 年後 [[6. 豐雲學堂]](#ref-6)。算力像蓋高樓，GPU 是鋼骨、HBM 就是水泥，水泥缺貨整棟工程都得排隊。
+- **人形機器人商業化與記憶體產能擴張，是本期軟硬整合的兩條主線。** Counterpoint 指出，人形機器人競爭正從動作展示轉向規模部署與生態建構，中國並提出萬台級部署目標 [[5. TechNews]](#ref-5)。另一邊，南韓政府、三星與 SK 海力士宣布在西南部建立大型晶片聚落，兩家公司規劃合計投資 800 兆韓元（約 5,180 億美元），涵蓋四座記憶體晶圓廠與相關供應鏈設施 [[6. AP]](#ref-6)。AI 硬體競爭已不只比單顆晶片，而是同時比量產速度、先進封裝與區域供應鏈能否承接需求。
 
 <a id="hl-infrastructure"></a>
 ### 網路/伺服器等基礎
@@ -62,7 +62,7 @@
 
 <a id="hl-fintech"></a>
 ### 金融科技
-- **穩定幣正在變成看不見的清算軌道。** 金融科技產業簡報指出，即時支付與穩定幣已成主流基礎設施——2025 上半年穩定幣處理逾 8.9 兆美元交易量，甚至超越 Visa 與 Mastercard 的轉帳量；全球逾 130 國正探索央行數位貨幣（CBDC）[[8. hipther]](#ref-8)。產業關鍵字也從「創新速度」轉為「營運韌性與監管成熟度」。這就像高速公路蓋好後，大家不再討論路多炫，而是比誰的收費、稽核與塞車管理更穩；能在高度監理下持續擴張的業者才是贏家。
+- **穩定幣開始被當成系統性支付基礎設施監管。** Bank of England 於 7 月 7 日發布的金融政策委員會紀錄，明確歡迎英鎊計價系統性穩定幣政策聲明與規則草案 [[8. Bank of England]](#ref-8)。焦點已從「能否發行」轉為儲備資產、流動性、營運韌性與跨機關監管；當穩定幣進入大眾支付，發行人面對的要求會更接近金融市場基礎設施，而非一般加密資產專案。
 
 <a id="hl-healthtech"></a>
 ### 醫療科技
@@ -105,7 +105,7 @@ AI Coding 進入 **平台化圈地** 階段。廠商不再只賣 API，而是自
 
 <a id="tr-hardware"></a>
 ### 硬體或軟硬整合
-硬體競爭聚焦 **「具身智能」與「記憶體瓶頸」** 兩端。人形機器人從展示轉向規模量產與場景落地 [[5. TechNews]](#ref-5)；HBM 則因 AI 需求進入結構性短缺的超級循環，資本大量湧入記憶體與先進封裝 [[6. 豐雲學堂]](#ref-6)。兩者共同點是「軟體定義、硬體變現」：演算法決定價值，但產能與供應鏈決定誰能真正出貨，台廠在封裝與供應鏈的位置值得持續追蹤。
+硬體競爭聚焦 **「具身智能落地」與「記憶體產能版圖」**。人形機器人從展示轉向規模部署與場景驗證 [[5. TechNews]](#ref-5)；南韓則以 800 兆韓元投資案擴建記憶體晶圓廠與供應鏈聚落 [[6. AP]](#ref-6)。兩者共同顯示，演算法能力必須靠量產、封裝、能源與供應商協作才能變成可交付產品。未來競爭不只看規格，也要看資本支出能否準時轉化為穩定產能。
 
 <a id="tr-infrastructure"></a>
 ### 網路/伺服器等基礎
@@ -113,7 +113,7 @@ AI Coding 進入 **平台化圈地** 階段。廠商不再只賣 API，而是自
 
 <a id="tr-fintech"></a>
 ### 金融科技
-金融科技從 **「拚成長」轉向「拚合規與韌性」**。穩定幣與即時支付已具備清算級規模，CBDC 在全球鋪開 [[8. hipther]](#ref-8)。這意味競爭門檻抬高：能通過反洗錢、資本與稽核要求、又能在監理沙盒外規模化的業者才會勝出。對開發者而言，支付與資產類產品的重點正從「功能創新」轉向「可稽核、可監理、可對接央行基礎設施」。
+金融科技進入 **「穩定幣制度化」** 階段。Bank of England 已把廣泛用於支付、可能影響金融穩定的穩定幣納入專門規則草案 [[8. Bank of England]](#ref-8)。產品團隊不能只處理鏈上轉帳，還要把儲備管理、贖回、流動性、營運持續性與監理報告納入系統設計。這也代表競爭門檻由發幣速度轉向能否在金融穩定要求下長期營運。
 
 <a id="tr-healthtech"></a>
 ### 醫療科技
@@ -149,18 +149,18 @@ PropTech 的近期主戰場是 **「資訊整合與決策輔助」**。生成式
 | <a id="ref-3"></a>3 | [中國 Z.ai 推出 ZCode 挑戰 Claude Code](https://www.google.com/search?q=Z.ai+ZCode+Claude+Code) | AI Coding 戰場由模型能力轉向 IDE 與訂閱平台 | 2026-07-03 | [TechOrange 科技報橘](https://techorange.com/2026/07/03/z-ai-launches-zcode/) | 軟體工程 |
 | <a id="ref-4"></a>4 | [PChome 旗下 Pi 拍錢包遭 Settra 勒索、350 萬個資外洩](https://www.google.com/search?q=Pi+拍錢包+Settra+勒索軟體+外洩) | 350 萬筆個資外洩，數產署行政檢查，勒索集團把戰果包裝成稽核報告 | 2026-07-01 | [iThome](https://www.ithome.com.tw/news/177011) | 軟硬體資訊安全 |
 | <a id="ref-5"></a>5 | [調研：美中人形機器人競爭進入新階段](https://www.google.com/search?q=人形機器人+具身智能+Counterpoint+2026) | 競爭從展示轉向商業化與規模部署，全球部署達 160 萬台 | 2026-07-07 | [TechNews 科技新報](https://technews.tw/2026/07/07/humanoid-robot-embodied-ai/) | 硬體或軟硬整合 |
-| <a id="ref-6"></a>6 | [SK 海力士赴美上市、HBM 記憶體超級循環](https://www.google.com/search?q=SK+海力士+赴美上市+HBM+記憶體+2026) | SK 海力士募資 290 億美元，HBM 結構性短缺延續至 2027 後 | *未知時間（2026-07） | [豐雲學堂（永豐金證券）](https://www.sinotrade.com.tw/richclub/industry/2026-AI-記憶體新戰局-SRAM-異軍突起與-HBM-雙雄並立-台廠供應鏈解析-產業熱話-6951f732cfa1251682968c6c) | 硬體或軟硬整合 |
+| <a id="ref-6"></a>6 | [南韓三星與 SK 海力士投資 800 兆韓元擴建 AI 晶片聚落](https://www.google.com/search?q=South+Korea+Samsung+SK+Hynix+800+trillion+won+chip+hub) | AI 硬體競爭擴大到記憶體產能、區域配置與供應鏈韌性 | 2026-06-29 | [AP](https://apnews.com/article/22352d95c7a821c5f4548b2d1a4ebde8) | 硬體或軟硬整合 |
 | <a id="ref-7"></a>7 | [經濟部修法草案，AI 資料中心納入產業效益評估](https://www.google.com/search?q=經濟部+AI+資料中心+產業效益評估+修法) | 用電成 AI 基建硬約束，估 2030 年新增用電需求破 5 GW | 2026-07-01 | [TechNews 科技新報](https://technews.tw/2026/07/01/data-center-law-in-taiwan/) | 網路/伺服器等基礎 |
-| <a id="ref-8"></a>8 | [Fintech Pulse 每日產業簡報（2026-07-08）](https://www.google.com/search?q=Fintech+Pulse+July+8+2026+stablecoin+CBDC) | 穩定幣年逾 8.9 兆美元交易量，產業重心轉向韌性與監管成熟度 | 2026-07-08 | [Hipther / Fintech Pulse](https://hipther.com/latest-news/2026/07/08/114785/fintech-pulse-your-daily-industry-brief-july-8-2026-afac-2026-ant-group-nvidia-belitsoft-eromnet-payverse-paypal-goldman-sachs-icbc-tencent/) | 金融科技 |
+| <a id="ref-8"></a>8 | [Bank of England 金融政策委員會檢視系統性穩定幣監管進度](https://www.google.com/search?q=Bank+of+England+Financial+Policy+Committee+Record+July+2026+stablecoins) | 穩定幣監管由市場實驗走向支付基礎設施與金融穩定框架 | 2026-07-07 | [Bank of England](https://www.bankofengland.co.uk/financial-policy-committee-record/2026/july-2026) | 金融科技 |
 | <a id="ref-9"></a>9 | [2026 亞洲生技大會 7/15 登場，AI 重塑新藥研發](https://www.google.com/search?q=2026+亞洲生技大會+Speed+to+Patients+AI+新藥) | AI 貫穿新藥設計到商業化全鏈，主題「加速上市、造福病患」 | 2026-07-03 | [TechNews 科技新報](https://technews.tw/2026/07/03/speed-to-patients/) | 醫療科技 |
 | <a id="ref-10"></a>10 | [日本啟動電動個人運具最後一哩配送實證](https://www.google.com/search?q=glafit+電動+ラストワンマイル+配送+実証+2026) | 幹線自駕＋末端電動運具，分層自動化回應缺工與減碳 | 2026-07-06 | [LNEWS（日本物流媒體）](https://www.lnews.jp/2026/07/s0706102.html) | 運輸物流 |
 | <a id="ref-11"></a>11 | [潮居科技發表《AI 理家》房產 AI 搜尋整合服務](https://www.google.com/search?q=潮居科技+inHom+AI理家+房地產) | PropTech 把 Google 式 AI 摘要導入看房決策 | 2026-07-04 | [潮居科技 inHom](https://www.inhom.ai/search-agent) | 房地產與室內外裝潢 |
 | <a id="ref-12"></a>12 | [日本 PropTech 品牌 RENOSY 利諾喜登台](https://www.google.com/search?q=RENOSY+利諾喜+台灣+房地產博覽會+2026) | AI 帶動廠房物流投資年增 279%，PropTech 加速登台 | 2026-06-26 | [PChome 新聞](https://news.pchome.com.tw/public/morenews/20260626/index-78246955232471350016.html) | 房地產與室內外裝潢 |
-| <a id="ref-13"></a>13 | [「Wayne McGregor：異・地」沉浸式 AI 舞蹈裝置](https://www.google.com/search?q=Wayne+McGregor+異地+大館+沉浸式+AI+舞蹈) | AI 與空間音效走上舞台，擴張現場表演的感官維度 | *未知時間（展期 2026-06-25 起） | [香港01](https://www.hk01.com/藝文/60366008/) | 現場表演藝術 |
-| <a id="ref-14"></a>14 | [盧廣仲台北演唱會因颱風延期](https://www.google.com/search?q=盧廣仲+演唱會+颱風+延期+7月+北流) | 極端天氣考驗票務與退款系統的即時應變韌性 | *未知時間（事件 2026-07-10） | [NOWnews 今日新聞](https://www.nownews.com/news/6854220) | 現場表演藝術 |
+| <a id="ref-13"></a>13 | [「Wayne McGregor：異・地」沉浸式 AI 舞蹈裝置](https://www.google.com/search?q=Wayne+McGregor+異地+大館+沉浸式+AI+舞蹈) | AI 與空間音效走上舞台，擴張現場表演的感官維度 | 2026-07-08 | [香港01](https://www.hk01.com/藝文/60366008/) | 現場表演藝術 |
+| <a id="ref-14"></a>14 | [盧廣仲台北演唱會因颱風延期](https://www.google.com/search?q=盧廣仲+演唱會+颱風+延期+7月+北流) | 極端天氣考驗票務與退款系統的即時應變韌性 | 2026-07-07 | [NOWnews 今日新聞](https://www.nownews.com/news/6854220) | 現場表演藝術 |
 | <a id="ref-15"></a>15 | [全球影視媒體產業週報：AI 數位分身與虛擬製作](https://www.google.com/search?q=CAA+AI+digital+doubles+Harry+Shearer+virtual+production+2026) | 產業搶建數位替身授權與分潤規則，聲音權成焦點 | 2026-07-08 | [Further & Better（產業週報）](https://furtherandbetter.substack.com/p/global-tv-film-and-media-industry-b96) | 影視音樂 |
 | <a id="ref-16"></a>16 | [SpaceX 發射全球第一顆核動力商用衛星](https://www.google.com/search?q=SpaceX+核動力+商用衛星+City+Labs+BOHR+tritium) | 核電池上太空，解決深空與背陽面持續供電問題 | 2026-07-10 | [TechNews 科技新報](https://technews.tw/2026/07/10/spacex-just-launched-the-1st-ever-nuclear-powered-commercial-satellite/) | 其他領域科技應用突破 |
 
 <a id="notes"></a>
 ## 報告說明
-本報告由 Claude Code (Opus 4.8) 於 2026-07-11 彙整近 15 天內（2026-06-26 至 2026-07-11）的全球科技新聞與媒體報導，再依程式設計師與科技讀者較常關注的主題整理成分類摘要與趨勢觀察。來源以台灣主流與權威科技媒體優先，中國來源與社群平台已依規範替換或排除；凡無法確認落在近 15 天內的資料一律不採用，確認落在範圍內但發布時間不精確者於「發布日期」欄標註 `*未知時間`。完整候選來源與淘汰理由見同資料夾 `source.md`。
+本報告由 Claude Code、Codex 於 2026-07-11 彙整與查核近 15 天內（2026-06-26 至 2026-07-11）的全球科技新聞與媒體報導，再依程式設計師與科技讀者較常關注的主題整理成分類摘要與趨勢觀察。來源以台灣主流與權威科技媒體優先，中國來源與社群平台已依規範替換或排除；凡無法確認落在近 15 天內的資料一律不採用，確認落在範圍內但發布時間不精確者於「發布日期」欄標註 `*未知時間`。完整候選來源與淘汰理由見同資料夾 `source.md`。
