@@ -1,0 +1,18 @@
+<a id="references"></a>
+## 參考資料
+
+| 編號 | 文章標題與搜尋連結 | 一句話繁體中文結論或亮點 | 發布日期 | 來源資料網址與名稱 | 分類 |
+| :--- | :--- | :--- | :--- | :--- | :--- |
+| <a id="ref-1"></a>1 | [GPT-5.6](https://www.google.com/search?q=OpenAI+GPT-5.6+July+9+2026) | 模型家族依能力、成本與工作負載分級。 | 2026-07-09 | [OpenAI](https://openai.com/index/gpt-5-6/) | AI 科技 |
+| <a id="ref-2"></a>2 | [GitLab 19.2](https://www.google.com/search?q=GitLab+19.2+July+16+2026) | AI review 開始理解程式意圖與邏輯缺陷。 | 2026-07-16 | [GitLab](https://about.gitlab.com/press/releases/2026-07-16-gitlab-19-2-brings-governed-agentic-automation/) | 軟體工程 |
+| <a id="ref-3"></a>3 | [EU AI cybersecurity action plan](https://www.google.com/search?q=EU+AI+cybersecurity+action+plan+July+7+2026) | 歐盟建立 AI 攻防與通報的治理框架。 | 2026-07-07 | [European Commission](https://digital-strategy.ec.europa.eu/en/news/commission-presents-eu-action-plan-cybersecurity-and-artificial-intelligence) | 軟硬體資訊安全 |
+| <a id="ref-4"></a>4 | [TSMC US investment](https://www.google.com/search?q=TSMC+100+billion+July+16+2026) | AI 需求推升先進製程跨區域擴產。 | 2026-07-16 | [AP](https://apnews.com/article/ba05b1b952257d371acb9d070e7914ff) | 硬體或軟硬整合 |
+| <a id="ref-5"></a>5 | [GitHub Actions incident](https://www.google.com/search?q=GitHub+Actions+incident+July+13+2026) | Actions 中斷連帶影響 agent 與 Pages。 | 2026-07-13 | [GitHub Status](https://www.githubstatus.com/) | 網路/伺服器等基礎 |
+| <a id="ref-6"></a>6 | [Visa Stablecoin Platform](https://www.google.com/search?q=Visa+Stablecoin+Platform+July+16+2026) | Visa 將穩定幣能力整合為企業平台。 | 2026-07-16 | [Visa](https://investor.visa.com/news/news-details/2026/Visa-Introduces-Platform-for-Stablecoin-Minting-Movement-and-Management/default.aspx) | 金融科技 |
+| <a id="ref-7"></a>7 | [AI prescription refill](https://www.google.com/search?q=Utah+AI+prescription+refill+July+6+2026) | AI 續方試辦帶出臨床責任與監管問題。 | 2026-07-06 | [AP](https://apnews.com/article/cf94ce370c05f686e8792be8671a2ef0) | 醫療科技 |
+| <a id="ref-8"></a>8 | [Waymo four cities and IONIQ 5](https://www.google.com/search?q=Waymo+IONIQ+5+July+8+2026) | Waymo 同步驗證跨城市與跨車型擴張。 | 2026-07-08 | [Waymo](https://waymo.com/blog/shorts/ro-den-lv-sd-tmpa/) | 運輸物流 |
+| <a id="ref-9"></a>9 | [Singapore built environment measures](https://www.google.com/search?q=JTC+smart+hoists+July+17+2026) | 新加坡以規範與 sandbox 推動智慧工地。 | 2026-07-17 | [JTC](https://www.jtc.gov.sg/about-jtc/news-and-stories/press-releases/new-measures-to-accelerate-productivity-and-innovation-in-the-built-environment-sector) | 房地產與室內外裝潢 |
+| <a id="ref-10"></a>10 | [AI and XR in performing arts](https://www.google.com/search?q=PAP+Berlin+AI+XR+performing+arts+July+2026) | AI、XR 與動作捕捉進入表演製作鏈。 | 2026-07-16 | [PAP Berlin](https://pap-berlin.de/en/summer-sessions-ai-independent-performing-arts) | 現場表演藝術 |
+| <a id="ref-11"></a>11 | [Talk to Spotify](https://www.google.com/search?q=Talk+to+Spotify+July+14+2026) | Spotify 將內容探索改為文字與語音對話。 | 2026-07-14 | [Spotify](https://newsroom.spotify.com/2026-07-14/talk-to-spotify-announcement-beta/) | 影視音樂 |
+| <a id="ref-12"></a>12 | [NASA CubeSat technology testing](https://www.google.com/search?q=NASA+CubeSat+speed+technology+testing+July+10+2026) | CubeSat 降低在軌技術驗證成本與週期。 | 2026-07-10 | [NASA](https://www.nasa.gov/blogs/smallsatellites/2026/07/10/nasa-cubesat-to-speed-technology-testing-in-orbit/) | 其他領域科技應用突破 |
+

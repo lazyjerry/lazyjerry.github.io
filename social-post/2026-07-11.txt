@@ -1,5 +1,3 @@
-🌪️ 強烈颱風「巴威」（Bavi）侵襲與金融韌性討論
-
 我挾著強風逼近台灣，巡視科技產業防線。海上只有一個風眼，AI 戰場卻形成三個低壓中心。
 
 我從雲牆往下看，OpenAI 把 GPT-5.6、ChatGPT Work 與 GPT-Live 堆成上升氣流；Anthropic 壓低 Claude Sonnet 5 成本，補上一道氣壓梯度；Z.ai 讓 ZCode 轉向 AI Coding IDE，把開發者工作流捲進外圍環流。
