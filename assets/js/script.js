@@ -208,6 +208,9 @@ function isParagraphStart(strong) {
   let chunkIndex = 0;
   let isPaused = false;
   let keepAliveTimer = null;
+  let pauseTimer = null;
+  let pendingChunkIndex = null;
+  let runId = 0;
 
   const style = document.createElement('style');
   style.textContent = [
@@ -237,13 +240,40 @@ function isParagraphStart(strong) {
   const stopBtn  = document.getElementById('tts-stop');
   const progress = document.getElementById('tts-progress');
 
+  function cleanText(element) {
+    var clone = element.cloneNode(true);
+    clone.querySelectorAll('sup, .footnote, .reversefootnote, ol, ul').forEach(function (node) {
+      node.remove();
+    });
+    clone.querySelectorAll('a').forEach(function (link) {
+      if (/^\s*\[\d+[^\]]*\]\s*$/.test(link.textContent || '')) link.remove();
+    });
+    return (clone.innerText || clone.textContent || '')
+      .replace(/\s+/g, ' ')
+      .trim();
+  }
+
   function getChunks() {
     var content = document.querySelector('.main-content');
-    var clone = content ? content.cloneNode(true) : document.body.cloneNode(true);
-    var footer = clone.querySelector('.site-footer');
-    if (footer) footer.remove();
-    var text = (clone.innerText || clone.textContent || '').replace(/\t/g, ' ');
-    return text.split('\n').map(function (s) { return s.trim(); }).filter(function (s) { return s.length > 1; });
+    if (!content) return [];
+
+    return Array.from(content.querySelectorAll('h1, h2, h3, p, li')).map(function (element) {
+      if (element.closest('.site-footer') || element.closest('#tts-bar')) return null;
+      if (element.matches('p') && element.closest('li')) return null;
+
+      var text = cleanText(element);
+      if (text.length <= 1) return null;
+
+      if (element.matches('h1, h2, h3')) {
+        return { text: text, type: 'heading', rate: 0.9, pitch: 1.08, pauseAfter: 600 };
+      }
+      if (element.matches('li')) {
+        return { text: text, type: 'list-item', rate: 0.97, pitch: 1.0, pauseAfter: 350 };
+      }
+      return { text: text, type: 'paragraph', rate: 1.0, pitch: 1.0, pauseAfter: 250 };
+    }).filter(function (chunk) {
+      return chunk !== null;
+    });
   }
 
   function getVoice() {
@@ -254,19 +284,41 @@ function isParagraphStart(strong) {
            null;
   }
 
-  function speakChunk(index) {
+  function clearPauseTimer() {
+    if (pauseTimer) { window.clearTimeout(pauseTimer); pauseTimer = null; }
+  }
+
+  function queueNextChunk(index, delay, currentRunId) {
+    pendingChunkIndex = index;
+    clearPauseTimer();
+    pauseTimer = window.setTimeout(function () {
+      pauseTimer = null;
+      if (currentRunId !== runId || isPaused) return;
+      pendingChunkIndex = null;
+      speakChunk(index, currentRunId);
+    }, delay);
+  }
+
+  function speakChunk(index, currentRunId) {
+    if (currentRunId !== runId) return;
     if (index >= chunks.length) { reset(); return; }
     chunkIndex = index;
     progress.textContent = (index + 1) + '/' + chunks.length;
 
-    var u = new SpeechSynthesisUtterance(chunks[index]);
+    var chunk = chunks[index];
+    var u = new SpeechSynthesisUtterance(chunk.text);
     u.lang = 'zh-TW';
-    u.rate = 1.0;
+    u.rate = chunk.rate;
+    u.pitch = chunk.pitch;
     var voice = getVoice();
     if (voice) u.voice = voice;
 
-    u.onend = function () { if (!isPaused) speakChunk(index + 1); };
-    u.onerror = function (e) { if (e.error !== 'interrupted') reset(); };
+    u.onend = function () {
+      if (currentRunId === runId) queueNextChunk(index + 1, chunk.pauseAfter, currentRunId);
+    };
+    u.onerror = function (e) {
+      if (currentRunId === runId && e.error !== 'interrupted') reset();
+    };
     synth.speak(u);
   }
 
@@ -283,7 +335,10 @@ function isParagraphStart(strong) {
   }
 
   function reset() {
+    runId += 1;
     stopKeepAlive();
+    clearPauseTimer();
+    pendingChunkIndex = null;
     synth.cancel();
     chunks = []; chunkIndex = 0; isPaused = false;
     progress.textContent = '';
@@ -296,6 +351,9 @@ function isParagraphStart(strong) {
   playBtn.addEventListener('click', function () {
     reset();
     chunks = getChunks();
+    if (chunks.length === 0) return;
+
+    var currentRunId = runId;
     playBtn.disabled  = true;
     pauseBtn.disabled = false;
     stopBtn.disabled  = false;
@@ -303,12 +361,12 @@ function isParagraphStart(strong) {
     // 某些瀏覽器可能不會觸發 voiceschanged，直接提供 fallback 以確保可朗讀
     var started = false;
     var startSpeak = function () {
-      if (started) return;
+      if (started || currentRunId !== runId) return;
       started = true;
       synth.removeEventListener('voiceschanged', onVoicesChanged);
       startKeepAlive();
       // 延遲一拍再 speak，避開 Chrome 「cancel() 後立刻 speak() 會被吞掉」的競態
-      window.setTimeout(function () { speakChunk(0); }, 250);
+      window.setTimeout(function () { speakChunk(0, currentRunId); }, 250);
     };
 
     var onVoicesChanged = function () {
@@ -326,13 +384,19 @@ function isParagraphStart(strong) {
   });
 
   pauseBtn.addEventListener('click', function () {
-    if (synth.paused) {
-      synth.resume();
+    if (isPaused) {
       isPaused = false;
+      synth.resume();
       pauseBtn.textContent = '⏸ 暫停';
+      if (pendingChunkIndex !== null && !pauseTimer) {
+        var nextIndex = pendingChunkIndex;
+        pendingChunkIndex = null;
+        speakChunk(nextIndex, runId);
+      }
     } else {
-      synth.pause();
       isPaused = true;
+      synth.pause();
+      clearPauseTimer();
       pauseBtn.textContent = '▶ 繼續';
     }
   });
