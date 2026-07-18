@@ -1,6 +1,6 @@
 # 候選來源整理
 
-## 正式納入
+## 正式納入來源
 
 ### 1. GPT-5.6 正式推出
 - 來源網址：https://openai.com/index/gpt-5-6/
@@ -108,6 +108,42 @@
 - 權重分數：9/10
 - 發布日期：2026-07-10
 - 分類：其他領域科技應用突破
+- 是否納入正式參考資料：是
+
+### 13. 中央社查核台積電美國與台灣同步擴產
+- 來源網址：https://www.cna.com.tw/news/aipl/202607180008.aspx
+- 繁體中文標題：中央社：台積電加碼美國投資，同步規劃在台興建 13 座先進晶圓廠
+- 摘要：中央社於 7 月 18 日報導，台積電宣布再加碼 1,000 億美元投資美國，使美國總投資達 2,650 億美元；同時規劃未來數年在台灣建置 13 座先進晶圓廠。這項台灣通訊社報導交叉確認 AP 的投資數字，也補足跨國布局並非單向外移，而是與台灣核心製造、先進技術及供應鏈生態系同步擴充。
+- 權重分數：9/10
+- 發布日期：2026-07-18
+- 分類：硬體或軟硬整合
+- 是否納入正式參考資料：是
+
+### 14. AI coding agent 弱點凸顯人工核准仍可能失效
+- 來源網址：https://www.theregister.com/security/2026/07/08/bug-in-top-ai-coding-agents-shows-that-unix-era-security-headaches-never-really-die/5268025
+- 繁體中文標題：The Register：GhostApproval 弱點揭露 AI coding agent 核准機制的風險
+- 摘要：The Register 於 7 月 8 日報導 Wiz 揭露的 GhostApproval 弱點，指出多款 AI coding agent 可能透過 symlink 等機制，在使用者核准畫面與實際存取目標之間製造落差。案例顯示 human-in-the-loop 並不會自動等於安全；團隊仍需限制 agent 權限、保留可稽核紀錄，並以測試及獨立審查驗證自動化建議。
+- 權重分數：8/10
+- 發布日期：2026-07-08
+- 分類：軟體工程
+- 是否納入正式參考資料：是
+
+### 15. TechCrunch 交叉確認 Spotify 對話式助理
+- 來源網址：https://techcrunch.com/2026/07/14/spotify-expands-its-ai-push-with-a-chatgpt-like-music-assistant/
+- 繁體中文標題：TechCrunch：Spotify 以自家與多供應商模型打造對話式音訊助理
+- 摘要：TechCrunch 於 7 月 14 日確認 Spotify 對話功能可用文字或語音控制播放、查詢收聽紀錄與持續修正推薦，首波提供美國、愛爾蘭與瑞典的成年 Premium 使用者。Spotify 另向媒體確認系統會依任務混用自家 AI 與多個供應商模型，使模型來源、歷史資料使用方式與 beta 限制成為產品透明度的一部分。
+- 權重分數：8/10
+- 發布日期：2026-07-14
+- 分類：影視音樂
+- 是否納入正式參考資料：是
+
+### 16. CoinDesk 補充 Visa 穩定幣平台的企業控制能力
+- 來源網址：https://www.coindesk.com/business/2026/07/16/visa-backs-open-usd-with-new-stablecoin-platform-as-circle-faces-fresh-competition
+- 繁體中文標題：CoinDesk：Visa 將穩定幣錢包、發行與既有支付網路整合
+- 摘要：CoinDesk 於 7 月 16 日報導，Visa Stablecoin Platform 結合 wallet infrastructure、穩定幣發行及 Visa 支付網路，並提供雙重核准、稽核紀錄與 transfer allow list。金融機構可把穩定幣能力接入既有 treasury、settlement 與 payment 產品，顯示企業採用門檻集中在控制、稽核及既有系統整合，而非只比較鏈上速度。
+- 權重分數：8/10
+- 發布日期：2026-07-16
+- 分類：金融科技
 - 是否納入正式參考資料：是
 
 ## 淘汰來源

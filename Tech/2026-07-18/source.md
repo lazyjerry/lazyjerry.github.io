@@ -1,6 +1,6 @@
 # 候選來源整理
 
-## 正式納入
+## 正式納入來源
 
 ### 1. GPT-5.6 正式推出
 - 來源網址：https://openai.com/index/gpt-5-6/
@@ -12,7 +12,7 @@
 - 是否納入正式參考資料：是
 
 ### 2. GitLab 19.2 加入語意式 Security Review
-- 來源網址：https://about.gitlab.com/whats-new/
+- 來源網址：https://about.gitlab.com/press/releases/2026-07-16-gitlab-19-2-brings-governed-agentic-automation/
 - 繁體中文標題：GitLab 19.2 讓 AI 依程式意圖檢查 merge request 邏輯缺陷
 - 摘要：GitLab 於 7 月 16 日發布 19.2，其中 Duo Security Review 不只比對已知規則，也會理解 merge request 想完成的行為，再找出可能的邏輯瑕疵。這類能力把 AI 從程式碼生成端推進到 review 與交付治理端，對團隊而言，關鍵將是如何把建議納入既有審查與責任分工。
 - 權重分數：9/10
@@ -48,7 +48,7 @@
 - 是否納入正式參考資料：是
 
 ### 6. Visa 推出 Stablecoin Platform
-- 來源網址：https://visa.gcs-web.com/news-releases/news-release-details/visa-introduces-platform-stablecoin-minting-movement-and
+- 來源網址：https://investor.visa.com/news/news-details/2026/Visa-Introduces-Platform-for-Stablecoin-Minting-Movement-and-Management/default.aspx
 - 繁體中文標題：Visa 推出企業級穩定幣鑄造、移轉與管理平台
 - 摘要：Visa 於 7 月 16 日宣布 Visa Stablecoin Platform，讓金融機構、fintech 與加密資產業者在單一受 Visa 管理的環境存取、保管與贖回穩定幣，初期支援 Open USD。傳統卡組織開始把穩定幣能力包裝成企業基礎設施，競爭焦點因而轉向法遵、整合與流動性管理。
 - 權重分數：9/10
@@ -102,12 +102,48 @@
 - 是否納入正式參考資料：是
 
 ### 12. NASA 以 CubeSat 加速太空技術測試
-- 來源網址：https://www.nasa.gov/blogs/smallsatellites/
+- 來源網址：https://www.nasa.gov/blogs/smallsatellites/2026/07/10/nasa-cubesat-to-speed-technology-testing-in-orbit/
 - 繁體中文標題：NASA 推動以 CubeSat 縮短太空技術驗證週期
 - 摘要：NASA Small Satellite Missions 於 7 月 10 日介紹利用 CubeSat 加速在軌技術測試的任務。小型衛星能以較低成本、較短開發週期把元件送入真實太空環境，讓新型通訊、感測與航太系統更快取得飛行證據，降低大型任務直接承擔未成熟技術的風險。
 - 權重分數：9/10
 - 發布日期：2026-07-10
 - 分類：其他領域科技應用突破
+- 是否納入正式參考資料：是
+
+### 13. 中央社查核台積電美國與台灣同步擴產
+- 來源網址：https://www.cna.com.tw/news/aipl/202607180008.aspx
+- 繁體中文標題：中央社：台積電加碼美國投資，同步規劃在台興建 13 座先進晶圓廠
+- 摘要：中央社於 7 月 18 日報導，台積電宣布再加碼 1,000 億美元投資美國，使美國總投資達 2,650 億美元；同時規劃未來數年在台灣建置 13 座先進晶圓廠。這項台灣通訊社報導交叉確認 AP 的投資數字，也補足跨國布局並非單向外移，而是與台灣核心製造、先進技術及供應鏈生態系同步擴充。
+- 權重分數：9/10
+- 發布日期：2026-07-18
+- 分類：硬體或軟硬整合
+- 是否納入正式參考資料：是
+
+### 14. AI coding agent 弱點凸顯人工核准仍可能失效
+- 來源網址：https://www.theregister.com/security/2026/07/08/bug-in-top-ai-coding-agents-shows-that-unix-era-security-headaches-never-really-die/5268025
+- 繁體中文標題：The Register：GhostApproval 弱點揭露 AI coding agent 核准機制的風險
+- 摘要：The Register 於 7 月 8 日報導 Wiz 揭露的 GhostApproval 弱點，指出多款 AI coding agent 可能透過 symlink 等機制，在使用者核准畫面與實際存取目標之間製造落差。案例顯示 human-in-the-loop 並不會自動等於安全；團隊仍需限制 agent 權限、保留可稽核紀錄，並以測試及獨立審查驗證自動化建議。
+- 權重分數：8/10
+- 發布日期：2026-07-08
+- 分類：軟體工程
+- 是否納入正式參考資料：是
+
+### 15. TechCrunch 交叉確認 Spotify 對話式助理
+- 來源網址：https://techcrunch.com/2026/07/14/spotify-expands-its-ai-push-with-a-chatgpt-like-music-assistant/
+- 繁體中文標題：TechCrunch：Spotify 以自家與多供應商模型打造對話式音訊助理
+- 摘要：TechCrunch 於 7 月 14 日確認 Spotify 對話功能可用文字或語音控制播放、查詢收聽紀錄與持續修正推薦，首波提供美國、愛爾蘭與瑞典的成年 Premium 使用者。Spotify 另向媒體確認系統會依任務混用自家 AI 與多個供應商模型，使模型來源、歷史資料使用方式與 beta 限制成為產品透明度的一部分。
+- 權重分數：8/10
+- 發布日期：2026-07-14
+- 分類：影視音樂
+- 是否納入正式參考資料：是
+
+### 16. CoinDesk 補充 Visa 穩定幣平台的企業控制能力
+- 來源網址：https://www.coindesk.com/business/2026/07/16/visa-backs-open-usd-with-new-stablecoin-platform-as-circle-faces-fresh-competition
+- 繁體中文標題：CoinDesk：Visa 將穩定幣錢包、發行與既有支付網路整合
+- 摘要：CoinDesk 於 7 月 16 日報導，Visa Stablecoin Platform 結合 wallet infrastructure、穩定幣發行及 Visa 支付網路，並提供雙重核准、稽核紀錄與 transfer allow list。金融機構可把穩定幣能力接入既有 treasury、settlement 與 payment 產品，顯示企業採用門檻集中在控制、稽核及既有系統整合，而非只比較鏈上速度。
+- 權重分數：8/10
+- 發布日期：2026-07-16
+- 分類：金融科技
 - 是否納入正式參考資料：是
 
 ## 淘汰來源
