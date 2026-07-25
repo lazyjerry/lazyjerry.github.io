@@ -121,6 +121,14 @@ replacements = [
         "本報告由 Codex、Claude Code 於 2026-07-25 彙整近 15 天內（2026-07-10 至 2026-07-25）的全球科技新聞、官方公告與台灣科技媒體報導，再依程式設計師與科技讀者較常關注的主題整理成分類摘要與趨勢觀察。來源日期以文章或公告的實際發布日為準；只有更新日期落在範圍內的舊文不列入正式參考資料。",
         "本報告由 Codex、Claude Code 整理 2026-07-10 至 2026-07-25 的全球科技新聞、官方公告與台灣科技媒體報導，內容依程式設計師及科技讀者關注的主題分類。來源日期以文章或公告的實際發布日為準；舊文若只有更新日期落在範圍內，不列入正式參考資料。",
     ),
+    (
+        '- <a href="#notes">報告說明</a>',
+        '- <a href="#notes">報告說明</a>\n- <a href="#disclaimer">免責聲明</a>',
+    ),
+    (
+        "本報告由 Codex、Claude Code 整理 2026-07-10 至 2026-07-25 的全球科技新聞、官方公告與台灣科技媒體報導，內容依程式設計師及科技讀者關注的主題分類。來源日期以文章或公告的實際發布日為準；舊文若只有更新日期落在範圍內，不列入正式參考資料。",
+        "本報告由 Codex、Claude Code 整理 2026-07-10 至 2026-07-25 的全球科技新聞、官方公告與台灣科技媒體報導，內容依程式設計師及科技讀者關注的主題分類。來源日期以文章或公告的實際發布日為準；舊文若只有更新日期落在範圍內，不列入正式參考資料。\n\n<a id=\"disclaimer\"></a>\n## 免責聲明\n本報告內容僅供資訊參考，不構成投資、法律、醫療或其他專業建議。新聞事件與相關資訊可能持續更新，請以原始來源及官方公告為準。",
+    ),
 ]
 
 anchor_pattern = re.compile(r'<a id="[^"]+"></a>')
@@ -131,9 +139,11 @@ for path in paths:
     updated = original
 
     for old, new in replacements:
+        if new in updated:
+            continue
         if old in updated:
             updated = updated.replace(old, new)
-        elif new not in updated:
+        else:
             raise SystemExit(f"missing expected text in {path}: {old[:60]}")
 
     original_reference_table = original.split('<a id="references"></a>', 1)[1].split('<a id="notes"></a>', 1)[0]
@@ -141,7 +151,15 @@ for path in paths:
 
     if original_reference_table != updated_reference_table:
         raise SystemExit(f"reference table changed in {path}")
-    if anchor_pattern.findall(original) != anchor_pattern.findall(updated):
+    original_anchors = [
+        anchor for anchor in anchor_pattern.findall(original)
+        if anchor != '<a id="disclaimer"></a>'
+    ]
+    updated_anchors = [
+        anchor for anchor in anchor_pattern.findall(updated)
+        if anchor != '<a id="disclaimer"></a>'
+    ]
+    if original_anchors != updated_anchors:
         raise SystemExit(f"anchors changed in {path}")
     if citation_pattern.findall(original) != citation_pattern.findall(updated):
         raise SystemExit(f"citations changed in {path}")
