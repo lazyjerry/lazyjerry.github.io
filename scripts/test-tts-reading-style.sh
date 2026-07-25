@@ -19,6 +19,7 @@ function assert(condition, message) {
 function createElement(tag, text, options = {}) {
   return {
     tag,
+    tagName: tag.toUpperCase(),
     text,
     options,
     matches(selector) {
@@ -49,6 +50,10 @@ function createElement(tag, text, options = {}) {
 }
 
 const contentElements = [
+  createElement('h2', '大綱'),
+  createElement('li', '大綱清單'),
+  createElement('h3', '大綱子標題'),
+  createElement('p', '大綱詳細內容'),
   createElement('h2', '總結'),
   createElement('p', '第一段內容 [1. OpenAI]', { citation: '[1. OpenAI]' }),
   createElement('li', '清單重點'),
@@ -122,6 +127,7 @@ buttons['tts-play'].click();
 runTimer(250);
 assert(spoken.length === 1, '未朗讀第一個標題片段');
 assert(spoken[0].text === '總結', '標題文字錯誤');
+assert(!spoken.some((utterance) => utterance.text.includes('大綱')), '大綱區段未完整排除');
 assert(spoken[0].rate === 0.9 && spoken[0].pitch === 1.08, '標題語氣參數錯誤');
 assert(buttons['tts-progress'].textContent === '1/3', '語意片段總數錯誤');
 

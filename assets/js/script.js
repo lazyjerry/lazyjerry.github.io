@@ -257,14 +257,26 @@ function isParagraphStart(strong) {
     var content = document.querySelector('.main-content');
     if (!content) return [];
 
+    var skipHeadingLevel = null;
     return Array.from(content.querySelectorAll('h1, h2, h3, p, li')).map(function (element) {
       if (element.closest('.site-footer') || element.closest('#tts-bar')) return null;
       if (element.matches('p') && element.closest('li')) return null;
 
       var text = cleanText(element);
       if (text.length <= 1) return null;
+      var isHeading = element.matches('h1, h2, h3');
+      var headingLevel = isHeading ? Number(element.tagName.slice(1)) : null;
 
-      if (element.matches('h1, h2, h3')) {
+      if (skipHeadingLevel !== null) {
+        if (!isHeading || headingLevel > skipHeadingLevel) return null;
+        skipHeadingLevel = null;
+      }
+      if (isHeading && text === '大綱') {
+        skipHeadingLevel = headingLevel;
+        return null;
+      }
+
+      if (isHeading) {
         return { text: text, type: 'heading', rate: 0.9, pitch: 1.08, pauseAfter: 600 };
       }
       if (element.matches('li')) {

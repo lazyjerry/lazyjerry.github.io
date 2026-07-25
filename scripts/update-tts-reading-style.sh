@@ -76,14 +76,26 @@ new_tts = r"""// TTS — 語音朗讀功能
     var content = document.querySelector('.main-content');
     if (!content) return [];
 
+    var skipHeadingLevel = null;
     return Array.from(content.querySelectorAll('h1, h2, h3, p, li')).map(function (element) {
       if (element.closest('.site-footer') || element.closest('#tts-bar')) return null;
       if (element.matches('p') && element.closest('li')) return null;
 
       var text = cleanText(element);
       if (text.length <= 1) return null;
+      var isHeading = element.matches('h1, h2, h3');
+      var headingLevel = isHeading ? Number(element.tagName.slice(1)) : null;
 
-      if (element.matches('h1, h2, h3')) {
+      if (skipHeadingLevel !== null) {
+        if (!isHeading || headingLevel > skipHeadingLevel) return null;
+        skipHeadingLevel = null;
+      }
+      if (isHeading && text === '大綱') {
+        skipHeadingLevel = headingLevel;
+        return null;
+      }
+
+      if (isHeading) {
         return { text: text, type: 'heading', rate: 0.9, pitch: 1.08, pauseAfter: 600 };
       }
       if (element.matches('li')) {
@@ -240,12 +252,13 @@ task_dir.mkdir(parents=True, exist_ok=True)
 
 ## 原始請求
 
-依核准計畫實作週報朗讀語氣分層：辨識標題、段落與清單，設定自然的語速、音高與停頓；排除引用及控制元件；保留播放狀態與 Chrome keep-alive。
+依核准計畫實作週報朗讀語氣分層：辨識標題、段落與清單，設定自然的語速、音高與停頓；排除引用、控制元件及「大綱」完整區段；保留播放狀態與 Chrome keep-alive。
 
 ## 期望產出
 
 - [x] 建立可重跑的固定更新腳本。
 - [x] 修改朗讀片段結構及播放狀態處理。
+- [x] 略過「大綱」標題及其完整內容。
 - [ ] 完成靜態、內容與瀏覽器狀態驗證。
 
 ## 參考文件
@@ -260,7 +273,7 @@ task_dir.mkdir(parents=True, exist_ok=True)
 (task_dir / "task_plan.md").write_text("""# 任務計劃：朗讀語氣分層改良
 
 ## 目標
-讓週報朗讀依標題、段落與清單呈現自然語速、音高及停頓，並維持既有控制功能。
+讓週報朗讀依標題、段落與清單呈現自然語速、音高及停頓，略過「大綱」完整區段，並維持既有控制功能。
 
 ## 執行模式
 一次完成
@@ -280,10 +293,12 @@ task_dir.mkdir(parents=True, exist_ok=True)
 ## 關鍵問題
 1. 標題、段落、清單能否依 DOM 正確分類？
 2. 暫停發生在段落間隔時，能否繼續下一片段？
+3. 「大綱」及其較低層內容能否略過，並於下一個同層標題恢復？
 
 ## 已做決策
 - 採自然分層：標題 0.9/1.08/600ms、段落 1.0/1.0/250ms、清單 0.97/1.0/350ms。
 - 不使用 SSML：跨瀏覽器語音引擎支援不一致。
+- 依標題層級略過「大綱」區段，不綁定固定 DOM 位置。
 - 只修改 TTS 區塊、script cache 版號與固定更新／任務紀錄。
 
 ## 遇到的錯誤
@@ -318,6 +333,7 @@ task_dir.mkdir(parents=True, exist_ok=True)
 ### 實作
 - 使用 `h1, h2, h3, p, li` 保留文件順序與語意。
 - 移除 citation-like links、`sup`、巢狀清單及頁尾，避免重複或朗讀引用。
+- 遇到「大綱」標題後，略過內容直到下一個同層或更高層標題。
 - 以 `pendingChunkIndex` 保留段落間停頓時的下一片段，暫停後仍可繼續。
 """)
 
@@ -328,7 +344,7 @@ if mode == "finalize":
 ## 驗證結果
 - JavaScript 語法檢查通過。
 - 更新腳本重跑後工作樹內容不變，確認冪等。
-- 模擬 DOM 與 Web Speech API 的自動化測試確認語意片段分類、參數、引用排除與控制狀態。
+- 模擬 DOM 與 Web Speech API 的自動化測試確認語意片段分類、參數、引用排除、「大綱」區段排除與控制狀態。
 - Chrome extension 在本次 session 未連線，未執行實際聲音播放驗收。
 """)
     (task_dir / "task_plan.md").write_text((task_dir / "task_plan.md").read_text()
@@ -342,6 +358,7 @@ if mode == "finalize":
 - 朗讀內容改為依 `h1–h3`、`p`、`li` 建立語意片段。
 - 標題、段落與清單分別套用核准的語速、音高及停頓。
 - 排除頁尾、引用標記、巢狀清單重複內容與朗讀控制列。
+- 排除「大綱」標題及其下方內容，於下一個同層或更高層標題恢復。
 - 暫停發生於 utterance 或段落停頓期間時皆可繼續。
 - 保留 voice fallback、Chrome keep-alive、播放、停止與進度顯示。
 
