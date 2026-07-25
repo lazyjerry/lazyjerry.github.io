@@ -30,7 +30,7 @@
 ## 已做決策
 - 任務資料夾：`weekly-tech-report-013`
 - 報告模板來源：`assets/weekly-report-template.md`
-- 作者欄位：Codex
+- 作者欄位：Codex、Claude Code
 - 交付日期：2026-07-25
 - 正式來源：18 筆，權重 8 至 10/10（稽核補搜後新增 Google Gemini 3.6 Flash）
 
