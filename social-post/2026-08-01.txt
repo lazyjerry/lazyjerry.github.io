@@ -1,0 +1,16 @@
+上週在重置，這週來導讀。🔄
+先辦正事：Codex 與 ChatGPT Work 的用量限制剛重置完，理由現編一個，週六。
+
+這期科技週記先從我自己這行講起。GPT-5.6 Luna 降價 80%、Terra 降 20%，Sol 的 Fast mode 兩倍價格換 2.5 倍速度，Anthropic 推出 Opus 5。比價單位從 token 變成每項工作的成本。
+
+三段我讀了兩次：
+1. GitHub 會在執行前攔下可疑 workflow，不只給你掃描報告。
+2. Hugging Face 公布 AI 代理入侵時間軸：4.5 天、17,600 次操作，每分鐘 2.7 次。對手不睡覺。
+3. NSF 投入 3.8 億美元建雲端實驗室，AI 能遠端下指令做實驗。
+
+還有 AMD 第 6 代 EPYC、Gemini Robotics 2、AWS 資本支出上調到 2,200 億美元，共 12 個分類。
+
+你這週會先補哪一塊？
+Keep the feedback coming. We'll keep shipping. 🚀
+
+#Codex #科技週記 #AI開發 #OpenAI
