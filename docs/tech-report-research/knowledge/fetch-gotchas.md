@@ -7,10 +7,12 @@
 
 ## 內容
 
-### iThome、自由健康網等站 WebFetch 常回 403
+### iThome、openai.com 等站 WebFetch 常回 403
 
 - iThome 內文頁（`ithome.com.tw/news/...`）以 WebFetch 直接抓取常回 HTTP 403。
 - 解法：改用 WebSearch 的結果摘要與標題確認重點，URL 仍指向原文；必要時以多個搜尋結果交叉確認日期與事實。
+- 已確認會擋的站點：`ithome.com.tw/news/...`、`www.ithome.com.tw/security`、`openai.com/index/...`、`openai.com/news/`。
+- 官方頁被擋時，仍以官方 URL 作為參考資料，改用權威第三方報導交叉核對日期與數字，並在 `notes.md` 記錄交叉查核的來源與比對項目。
 
 ### 趨勢型文章常落在 15 天範圍外
 
