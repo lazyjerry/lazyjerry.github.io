@@ -2,7 +2,7 @@
 set -euo pipefail
 
 repo_root="$(cd "$(dirname "${BASH_SOURCE[0]}")/.." && pwd)"
-target="$repo_root/social-post/2026-07-25.txt"
+target="$repo_root/social-post/2026-07-25.md"
 
 content='🛵 今天這單有點重，送的不是便當，是整個科技圈的系統升級包。
 

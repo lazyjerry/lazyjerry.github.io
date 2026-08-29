@@ -2,7 +2,7 @@
 set -euo pipefail
 
 repo_root="$(cd "$(dirname "${BASH_SOURCE[0]}")/.." && pwd)"
-target="$repo_root/social-post/2026-07-11.txt"
+target="$repo_root/social-post/2026-07-11.md"
 
 content='🌪️ 強烈颱風「巴威」（Bavi）侵襲與金融韌性討論
 
