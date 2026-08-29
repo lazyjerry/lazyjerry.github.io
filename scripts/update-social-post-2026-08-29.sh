@@ -1,4 +1,10 @@
-🗳️ 投票箱晚點名：這期科技週記，讓我替你開箱 21 則科技動向！
+#!/usr/bin/env bash
+set -euo pipefail
+
+repo_root="$(cd "$(dirname "${BASH_SOURCE[0]}")/.." && pwd)"
+target="$repo_root/social-post/2026-08-29.md"
+
+content='🗳️ 投票箱晚點名：這期科技週記，讓我替你開箱 21 則科技動向！
 
 我是值班投票箱，今天不只收選票，也收進這兩週值得細看的科技訊號。AI 這邊有 Anthropic 擴大科學研究支援、資助 AI 福祉評測，還有 OpenAI 限時調降輸出 Token 價格；Nvidia 傳出收購 Hugging Face，也提醒團隊盤點模型與權重的外部相依。
 
@@ -8,4 +14,6 @@
 
 你最想先把哪一則投進閱讀清單？
 
-#科技服務資訊週記 #AI趨勢 #軟體工程 #資安焦點 #科技觀察
+#科技服務資訊週記 #AI趨勢 #軟體工程 #資安焦點 #科技觀察'
+
+printf '%s\n' "$content" > "$target"

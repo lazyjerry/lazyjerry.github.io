@@ -3,9 +3,9 @@ title: 科技服務資訊週記
 description: AI 自動彙整的科技服務資訊週記，使用 各種 AI 工具 ，目前抓週六或週日更新。
 ---
 
-# 2026-08-22 科技服務資訊週記
+# 2026-08-29 科技服務資訊週記
 
-**作者：Claude Code、Codex　報告日期：2026-08-22**
+**作者：Claude Code、Codex　報告日期：2026-08-29**
 
 ## 大綱
 - <a href="#summary">總結</a>
@@ -41,149 +41,194 @@ description: AI 自動彙整的科技服務資訊週記，使用 各種 AI 工�
 
 <a id="summary"></a>
 ## 總結
-本期有兩條清楚的主線。第一條是**標示與治理**：Anthropic 公開文字浮水印機制，Spotify 為 AI 生成的藝人身分加上標籤，Cloudflare 則把爬蟲政策同步寫入 `robots.txt`，讓 AI 產出與流量更容易辨識 [[1. Anthropic]](#ref-1) [[14. Spotify Newsroom]](#ref-14) [[8. Cloudflare]](#ref-8)。第二條是**機制的實際落地**：RFC 9234 的 OTC 屬性會被兩家 Tier-1 網路移除；Cloudflare 的遠端 Spectre 研究也證明，偵測型隔離仍須搭配 V8 沙箱、MPK 與持續改良的行為偵測 [[7. Cloudflare]](#ref-7) [[3. Cloudflare]](#ref-3)。實體應用方面，台灣啟動數位健康認證實驗室與嘉義無人機物流驗證，聯電也切入 12 吋矽光子量產 [[10. 中央社 CNA]](#ref-10) [[11. 中央社 CNA]](#ref-11) [[5. TechNews 科技新報]](#ref-5)。OpenAI 因能力風險暫停部分訓練，vCenter 漏洞修補五天後即遭利用 [[16. OpenAI]](#ref-16) [[17. The Hacker News]](#ref-17)。
+本期的共同線索，是自動化流量與代理行為開始被放進可申報、可計費、可稽核的欄位。Cloudflare 用 `MCP-Protocol-Version` 等協定層特徵辨識 MCP 流量，也讓機器人營運者自行登錄 BotBase 目錄 [[7. Cloudflare]](#ref-7) [[11. Cloudflare]](#ref-11)。GitHub 的變化落在帳務與預設值：席次先付款、Chat 資料保留到帳號存續期間、預設審查強度調高，並取消規模上限、開始審查機器人建立的 PR [[3. GitHub Changelog]](#ref-3) [[4. GitHub Changelog]](#ref-4)。資安面，Zimbra 漏洞 7 月已修補，8 月中旬才被大規模利用 [[5. The Hacker News]](#ref-5)。Cloudflare 靠重排資料結構，把 1.1.1.1 DNS 快取每筆記憶體用量降低 56% [[10. Cloudflare]](#ref-10)。MIT 材料研究採取相同方向：先把化學合價放進生成約束，再產生結構 [[18. MIT News]](#ref-18)。
 
 <a id="highlights"></a>
 ## 亮點
 
 <a id="hl-ai"></a>
 ### AI 科技
-- **AI 產出的辨識問題，被搬到取樣器裡解決。** Anthropic 說明 **Claude** 的文字浮水印如何運作：模型在挑選同樣合理的下一個詞時，把亂數來源換成「金鑰 + 前文」決定的偽隨機值。讀起來沒有差別，但持金鑰者可以驗證。作法沿用 Google DeepMind 發表於《自然》的 **SynthID-Text**，源頭可追到 2022 年的提案。範圍上，未來模型的文字全面套用；圖片與檔案改用 **C2PA** 內容憑證寫進中繼資料；程式碼因為輸出必須精確，只在註解等處做最小標記。值得注意的是限制被寫在同一篇裡：無法分辨「Claude 寫的」與「Claude 大幅改過的」、短樣本效果差、不含任何使用者身分，而偵測 API 還在規劃 [[1. Anthropic]](#ref-1)。
+- 模型供應商開始用「席次」而不是「API 額度」進入學術現場。Anthropic 開放一萬個 Claude 訂閱席次給全球科學家，效期一年；標準席次免費，五倍用量上限的進階席次每月 15 美元。AI for Science 計畫另外提供符合資格的研究專案最高五萬美元額度，範圍從生物科學擴大到其他運算密集領域。申請者必須先驗證為學術或非營利研究機構的計畫主持人或同等職位，之後才能加入實驗室成員。公告也清楚列出限制：基於軍民兩用疑慮，Fable 系列仍會封鎖專業生物與藥物開發查詢；生物與化學研究者目前只能使用 Opus 等級模型，Mythos 等級則要透過政府合作計畫取得，名額有限。補助增加的是用量，不是權限 [[1. Anthropic]](#ref-1)。
 
-- **前沿實驗室第一次把「暫停」寫成可執行的動作。** OpenAI 公開說明放慢模型開發節奏的理由：先前的 OpenAI–Hugging Face 資安事件，加上初步證據顯示即將推出的 **Astra** 可能達到自家 Preparedness Framework 中網路安全能力的 **Critical** 門檻——這是 OpenAI 首度把模型標到這個等級。動作是具體的：預計部署的最新模型暫停強化學習訓練兩週，規模最大的前沿 RL 訓練仍在暫停中；研究環境加上新的隔離要求與更嚴格的沙箱；多階段監控以 30 分鐘內發出警示為目標，代價是約兩成的受監督推論算力。門檻判定與暫停時長都是 OpenAI 自述，沒有外部稽核，但把安全成本寫成算力比例，比宣示性的承諾容易查核 [[16. OpenAI]](#ref-16)。
+- 五百萬美元沒有拿去擴大模型，而是用來建立評估工具。Anthropic 邀請獨立研究者衡量 AI 對使用者福祉的影響，聚焦情緒支持與心理健康危機情境，申請截止日為 9 月 21 日。公告指出，福祉不像正確率，不能靠單題對錯判斷；同一句回應放在不同脈絡裡，可能是支持，也可能造成傷害，多輪對話還會讓風險逐步累積。評估工具需要有明確標準、臨床專家參與，並同時測過度順從與過度拒答，使用接近真實的多輪情境，再與領域專家比對。這些條件對正在做 LLM 評測的團隊很實用 [[2. Anthropic]](#ref-2)。
+
+- 降價幅度不對稱，輸出端砍得比輸入端多。OpenAI 將 GPT-5.6 Sol 的輸入價格從每百萬 token 5 美元降到 4 美元，輸出價格則從 30 美元降到 20 美元，降幅分別為 20% 與 33%，措施維持三個月。API、符合資格的訂閱額度與 Codex 都適用，Pro、Plus 與 Business 月費不變；GPT-5.6 Terra 先前已降兩成，Luna 則降八成。長輸出的程式碼生成、報告撰寫與翻譯會比較有感，長輸入短輸出的檢索增強應用則有限。Claude Fable 5 目前每百萬 token 的輸入與輸出價格為 10 美元與 50 美元，兩者差距仍大。這次是限時降價，不是永久調價 [[19. 鉅亨網]](#ref-19)。
+
+- 開發者天天使用的模型倉庫，可能要換持有人了。The Information 率先報導 Nvidia 同意以 129 億美元收購 Hugging Face，Fortune 與 Forbes 同日跟進。不過兩家公司都沒有證實，Business Insider 指出雙方尚未簽署，談判仍可能破局，Fortune 也表示無法獨立查證。若交易成真，開源 AI 生態常用的分發樞紐就會落入 GPU 供應商旗下。Hugging Face 2023 年 Series D 的估值是 45 億美元，Nvidia 當輪投資 2.35 億美元；它此前也曾拒絕一筆 70 億美元估值的投資。外界把這筆交易解讀為 Nvidia 往模型分發與託管層延伸。工程團隊現在該盤點的是相依性：`transformers`、模型權重下載與 Spaces 都指向同一個網域，持有人若改變，授權條款與速率限制才是實際風險 [[20. Fortune]](#ref-20)。
 
 <a id="hl-software"></a>
 ### 軟體工程
-- **開發代理正在往「同事待的地方」移動，而不是等你打開 IDE。** GitHub 讓 **Copilot** 進入 Slack 並開放公開預覽：在頻道裡 @GitHub 就能問程式碼與專案動態、分類臭蟲，也能讓代理在雲端沙箱裡調查失敗、實作修改、自我驗證，最後開出 pull request 並附上對話連結。它還能開專屬程式碼頻道，讓團隊追蹤計畫、看 diff、預覽 HTML 輸出。權限邊界寫得很明確：代理產生的 issue 與 PR 掛在 Copilot 應用身分下，仍受既有 GitHub 權限約束，管理者可要求代理的 PR 需額外核准才能合併。這比較像把實習生放進團隊群組，而不是給他一把萬能鑰匙 [[2. GitHub Changelog]](#ref-2)。
+- Copilot 這次變動落在預設值與帳單。GitHub 同時公告三項調整：Copilot Business 與 Enterprise 重新開放註冊，但席次必須先付款，費用在帳單週期開始時預收；新客戶自 2026-09-01 起適用，既有信用卡與 PayPal 客戶則自 2026-10-01 起適用。最早 2026-09-28 起，github.com 的 Copilot Chat、GitHub Mobile 聊天與雲端代理會整合成單一體驗，聊天資料保留期從 28 天延長到帳號存續期間，且預設啟用，退出後便失去存取權。code review 的預設強度也從 Lite 改為 Balanced。對需要控管資料保留期的團隊來說，這不是小改動；不調整設定，就會沿用新預設值 [[3. GitHub Changelog]](#ref-3)。
+
+- Copilot code review 開始審查機器人建立的 PR，也取消了原本的規模上限。關閉意見時，使用者要選 Addressed、Won't fix 或 Incorrect，這些回饋會回到 GitHub。機器人建立的 pull request，包括 Copilot 雲端代理開的 PR，只要被要求自動審查就能進入流程；雲端代理的 PR 也從受限功能改為完整的代理式審查。原本 300 個檔案或兩萬行的上限一併取消。大型重構與自動產生的變更終於不會在門口被擋下，但新的問題是：代理審代理之後，誰來判斷哪些結論可信 [[4. GitHub Changelog]](#ref-4)。
 
 <a id="hl-security"></a>
 ### 軟硬體資訊安全
-- **偵測型隔離會被「看起來很忙」的攻擊騙過。** Cloudflare 公布在自家生產環境實作出的遠端 **Spectre** 攻擊，速度可達每秒 12 位元，準確率逾 99%。攻擊以推測式型別混淆從 JavaScript heap 洩漏 64 位元指標，用樹狀 PLRU 快取替換策略放大訊號，再透過 WebSocket 與 **Durable Objects** 維持長時間執行。原本的動態行程隔離要等單次執行結束才判斷；WebSocket 保活讓攻擊先完成，大量 I/O 又壓低偵測比率。Cloudflare 因此改良 DyPrIs，並整合 **V8 沙箱**與**記憶體保護金鑰（MPK）**。原文也明確提醒，V8 沙箱與 MPK 都不是完整解法，只能阻斷特定 gadget 或縮小洩漏面 [[3. Cloudflare]](#ref-3)。
-- **預設關閉的選項，一旦被打開就是完整管理權。** Fortinet 修補 **FortiWeb** 的 CVE-2026-26035：當管理者帳號設為遠端 RADIUS 驗證且開啟 wildcard（預設關閉）時，遠端未經驗證的攻擊者可用任意帳號密碼登入 GUI 與 CLI，直接拿到這台 Web 應用防火牆的管理權限。修補版本為 8.0.3、7.6.7、7.4.12、7.2.13，暫時解法是關掉 wildcard。同批還修了 **FortiManager** 可冒充受管 FortiGate 裝置的 CVE-2026-70468，以及 **FortiClient** Windows 可經偽造 DNS 回應執行任意程式碼的 CVE-2026-70465。Fortinet 表示尚無遭實際利用的跡象 [[4. SecurityWeek]](#ref-4)。
+- 修補完成一個月後，攻擊才出現，這段空窗就是實際曝險期。Zimbra Collaboration Suite 的選用套件 zimbra-snmp 有指令注入漏洞 CVE-2026-73570（CVSS 8.9）。未驗證的攻擊者送出特製 SMTP 請求，就能以 Zimbra 使用者身分執行系統指令，影響 10.1.20 之前的版本。原廠在 7 月隨 10.1.20 完成修補，直到 8 月 20 日才確認有人利用；CISA 8 月 21 日將它列入已知遭利用漏洞目錄，要求聯邦文職機關在 8 月 24 日前完成修補。到了期限當天，仍有 267 台伺服器遭入侵，比前一週的 274 台只少 7 台，美國最多有 46 台。問題不只是漏洞難不難修，而是修補通知到真正完成修補之間隔了多久 [[5. The Hacker News]](#ref-5)。
 
-- **修補發布五天後就被打，「有沒有修」已經不是唯一問題。** Broadcom 在 2026-07-29 修補 VMware vCenter 的 **CVE-2026-59310**（CVSS 9.8，Syslog 元件的目錄遍歷，可遠端執行任意程式碼），德國事件應變公司 **QUIRSO** 觀察到攻擊在公開後第五天就展開，鎖定可從網際網路存取的 vCenter。已知 361 個受害 IP、橫跨 47 個國家，德國 55、美國 41、土耳其 38 居前。攻擊鏈是典型的虛擬化平台打法：在 vCenter 與 ESXi 建立未授權管理者帳號、用竊得的 VMware Directory Service 憑證提權，最後在 ESXi 投放 Babuk 衍生勒索軟體，副檔名 .babyk。研究者認為勒索未必是主要目的，可能只是掩護。受害規模是單一廠商的觀測值，不是全球普查 [[17. The Hacker News]](#ref-17)。
+- ServiceNow 同時修補三個 CVSS 10.0 漏洞，而且都不需要登入。CVE-2026-18885 是 GraphQL Composite Data API 程式碼注入，CVE-2026-18886 涉及系統設定影像上傳處理器的存取控制，CVE-2026-74820 則是動態結構描述的 ORDER BY 子句可導致 SQL 注入。三者都不需要權限或使用者互動，機密性、完整性與可用性都可能受到高衝擊，影響 Xanadu、Yokohama、Zurich 與 Australia 等版本線。託管執行個體已由原廠部署修補，自架客戶必須自行套用。現階段沒有已知利用或公開利用程式碼，還在可以主動處理的時間窗內 [[6. The Hacker News]](#ref-6)。
+
+- MCP 流量現在可以在網路層被看見，不必只靠端點自律。Cloudflare Gateway 以協定層特徵辨識 Model Context Protocol，主要訊號是初始化後由客戶端送出的 `MCP-Protocol-Version` 標頭。較新的 MCP 2026-07-28 規格更進一步，讓每個 POST 都帶協定識別，並用 `Mcp-Method` 與 `Mcp-Name` 標頭說明操作，不必檢查請求內容。安全團隊可以使用政策選擇器 `experimental.is_mcp == true`，從儀表板查看哪些伺服器與使用者正在產生流量，也能分辨 Portal 代理與直連。官方建議先盤點，再把核准的伺服器放到 Portal 後方，最後才封鎖直連 [[7. Cloudflare]](#ref-7)。
 
 <a id="hl-hardware"></a>
 ### 硬體或軟硬整合
-- **AI 資料中心的頻寬瓶頸，把矽光子推成代工新戰場。** 聯電向比利時 **imec** 取得 12 吋光子積體電路（PIC）平台授權，2026 年 7 月與新加坡客戶 SILITH 完成首批量產。聯電執行長王石表示，目標是三年內把 AI 相關代工營收從約 3 億美元推到 10 億美元以上；財務長稱初步數據顯示自家矽光子表現與競爭者相當甚至更好，關鍵是 12 吋產能。這兩點都是公司自述，尚未經獨立驗證。Yole 預估全球矽光子市場將從 2024 年 2.78 億美元成長到 2030 年 27 億美元；高塔半導體市占估逾五成，格羅方德則靠併購新加坡 AMF 補上製造 IP 與客戶 [[5. TechNews 科技新報]](#ref-5)。
-- **人型機器人的出貨量開始有意義，但用途仍集中在展示。** TrendForce 估中國人型機器人市場 2026 年達人民幣 150 億元、2027 年至少再成長六成；Counterpoint 則指 2026 上半年全球出貨超過 2.2 萬台、年增近 300%，前五大廠合計市占 86%，智元機器人以 9,700 台居首。真正該看的是用途分布：娛樂與資料採集仍占逾六成，工業製造 13%、倉儲物流 5%。換句話說，多數機器人現在的工作是「被看」與「產生訓練資料」，而不是頂替產線上的人。以上皆為研究機構估算 [[6. TechNews 科技新報]](#ref-6)。
+- 手機最貴的零件換了，DRAM 已超過 SoC。Counterpoint Research 的數據顯示，這波漲價在不同價位的分布並不平均：入門機物料清單年增 70%，幾乎都來自儲存；中階機年增 52%，記憶體占總成本四成；旗艦機年增近 50%，DRAM 成為最貴的單一元件。小米、榮耀、OPPO、vivo 的中階機已調漲人民幣 300 至 800 元，入門機則出現降規與減少改款。Counterpoint 預估 2026 年全球智慧手機出貨年減 14.3%，創 2013 年以來新低。對嵌入式與行動端開發者來說，低階裝置接下來一兩年的瓶頸可能先出現在記憶體，而不是運算 [[8. TechNews 科技新報]](#ref-8)。
+
+- 一片 2 美元的塑膠磚，效果接近昂貴的主動式反射面。加州大學聖地牙哥分校提出 FlowForm，以 3D 列印的被動超穎材料磚把 5G 毫米波導向被遮蔽的死角。它靠反射工作，沒有電子元件，也不需要供電；一片約 6 吋見方的結構裡有數千個次波長單元，可控制反射方向。五種室內環境的測試顯示，毫米波平均連線速率接近翻倍，涵蓋範圍擴大一倍以上，表現與昂貴的主動式智慧反射面相當。依室內格局與基地台、接收端位置排列即可部署，不必改韌體或協定，也不需要網路端協調。成果發表於 ACM SIGCOMM 2026 [[9. TechNews 科技新報]](#ref-9)。
 
 <a id="hl-infrastructure"></a>
 ### 網路/伺服器等基礎
-- **把防呆寫進協定，比要每個人寫對過濾規則實際。** **RFC 9234** 要求建立 BGP 連線的兩端先對彼此的關係達成一致，並新增 **Only to Customer（OTC）** 路徑屬性，標記不該傳出客戶網路之外的路由。這等於把「這條路由不應該出現在這裡」的判斷從人工政策移進協定本身。Cloudflare 利用自身全球對接位置，觀察哪些對接網路實際送出 OTC，藉此追蹤採用率。結果指出一個關鍵阻礙：有兩家主要 Tier-1 網路會把轉發路由上的 OTC 屬性刪掉，讓機制在其基礎設施上失效；Cloudflare 表示已與對方接觸。一條防呆規則只要中途被抹掉一次，後面就全部白做 [[7. Cloudflare]](#ref-7)。
-- **站方的爬蟲政策，終於不用維護兩份。** Cloudflare 推出 **Bot Preference Sync**，把儀表板上針對 Search、Agent、Training 三類爬蟲的設定自動同步寫進 `robots.txt`，採前置寫入以保留既有的 Disallow。Training 選 Disallow 時，會擋掉訓練用途但仍允許合規的混合用途爬蟲做搜尋索引；Search 與 Agent 可選允許、僅在含廣告頁面阻擋、或全站阻擋。功能對 Free 到 Enterprise 全開放。對爬蟲營運者則設了門檻：要享有「善意推定」需遵守 robots.txt、提供退出機制與 URL 層級的使用可見性，不透明的爬蟲在站方禁止訓練時一律照擋 [[8. Cloudflare]](#ref-8)。
+- Cloudflare 沒換演算法或硬體，只重排資料結構，就替 1.1.1.1 DNS 快取省下約 100 TB 記憶體。做法包括把 `Vec<T>` 與 `String` 換成 `Box<[T]>` 與 `Box<str>`，移除各占 8 位元組的容量欄位；把 answer、authority、additional 三段紀錄合成一份清單，用 2 位元組偏移量取代 8 位元組指標，每筆省 28 位元組；只在 owner 與查詢網域不同時保存完整名稱；把大型列舉變體裝箱；最後用線路格式把紀錄連續存入單一緩衝區。每筆資料從 953 位元組降到 420 位元組，2,500 億筆合計約 100 TB。效能也沒有變差，插入吞吐量增加 43%，查詢延遲降低 19%，p99 記憶體用量從每個執行個體 9.3 GB 降到 5.3 GB [[10. Cloudflare]](#ref-10)。
+
+- 爬蟲的身分從「被猜測」改成「自己申報」。Cloudflare 讓機器人營運者在儀表板送出、追蹤與維護 BotBase 登錄，填寫用途、內容使用方式與營運者。系統會自動偵測重複項目、檢查 user-agent 是否具體，再核對 IP 清單、反向 DNS 紀錄或 Web Bot Auth 簽章。網站經營者因此能查到哪些機器人在讀取內容；營運者也能直接編輯變動後的識別資訊，不必整份重送。限制同樣明顯：這份目錄由單一 CDN 業者維護，涵蓋率與中立性仍要另外驗證 [[11. Cloudflare]](#ref-11)。
 
 <a id="hl-fintech"></a>
 ### 金融科技
-- **AI 代理要能付錢之前，得先有人決定「誰能代表你」。** 穩定幣支付基礎設施商 **Rain** 發起 **Agentic Payments Alliance（APA）**，創始成員包含 Visa、Mastercard、Fiserv、Circle、Solana 與 Remitly，另有約二十多家業者加入。聯盟目標是為代理身分與授權建立新興標準，共同研究詐欺偵測、紅利點數整合等基礎設施缺口，並處理監管問題。Rain 執行長 Farooq Malik 說，趁這個領域還在成形時就把相關方拉到同一張桌子，是成立聯盟的動機。報導引用 McKinsey 預估，代理式 AI 商務到 2030 年全球規模可達 3 兆至 5 兆美元。這是預測，不是既成事實；目前聯盟也還沒有上線的共通規格 [[9. PYMNTS]](#ref-9)。
+- 台灣金融監理的討論，開始從「能不能用 AI」轉向「怎麼證明可信」。中央社 8 月 25 日在集思交通部國際會議中心舉辦 2026 金融永續論壇，主軸是資訊揭露、信任與安全。中央社社長胡婉玲稱「信任與安全」是面對 AI 浪潮不可或缺的調節變數；金管會副主委陳彥良則以金融業與媒體業為喻，認為兩者都需要信任與永續。講者來自經濟部、數位發展部數位產業署與學研界，與談單位包括會計師公會全國聯合會、台北富邦銀行與全盈支付。這場論壇沒有發布具體政策條文或量化目標，因此反映的是議題設定，不是制度已經落地；而且主辦方同時也是報導方，解讀時要保留這項限制 [[12. 中央社 CNA]](#ref-12)。
 
 <a id="hl-healthtech"></a>
 ### 醫療科技
-- **智慧醫療的瓶頸不在模型，在兩套系統能不能對話。** 衛福部成立**國家數位健康互通性與效能認證實驗室**，建立國家級的醫療資訊驗測與認證機制。部長石崇良指出，智慧醫療取決於高品質資料、安全與資料互通性；衛福部先前已完成資料標準化、藥物編碼、檢驗編碼與醫學術語編碼等基礎。配套的 **FHIR Box** 平台讓醫院不必整套更換資訊系統也能交換資料，規劃年底前推廣到所有醫學中心。實驗室預計建立軟體、硬體與整體解決方案廠商三類認證。認證制度與全面推廣目前都仍是後續規劃 [[10. 中央社 CNA]](#ref-10)。
+- 這次合作要處理的不是新設備，而是既有檢驗資料怎麼再利用。衛福部 8 月 21 日與羅氏醫療診斷設備公司簽署合作備忘錄，第一階段鎖定慢性腎臟病照護。AI 會分析常規臨床檢驗資料，建立疾病風險分層與腎功能惡化的早期預警，協助醫療團隊提早找出高風險病人。腎功能惡化通常緩慢，早期也沒有明顯症狀；相關檢驗值原本就在例行抽血中，這個應用等於把既有資料再讀一次，換取更早介入的機會。台灣已導入 FHIR 標準並發展 FHIR Box，讓跨院交換病歷時不必更換醫院現有系統，目前有三家醫學中心支援即時互通。合作仍停在備忘錄階段，沒有上線時程或臨床成效數據 [[13. 中央社 CNA]](#ref-13)。
 
 <a id="hl-logistics"></a>
 ### 運輸物流
-- **無人機物流從單次試飛走向固定配送。** 中華電信與點點全球、金屬工業研究發展中心、新樂飛無人機及中華系統整合合作，在嘉義縣太保市與朴子市建立無人機物流商業化驗證場域，並在嘉義縣無人機日首度展示送餐服務。計畫整合 5G 通訊、智慧物流平台、空中廊道管理與 AI，並建置台灣首條 5G 空中廊道。中華電信表示，此案強調每日固定配送與持續營運，是全台首例在非偏鄉地區常態化運作的示範場域；目前已完成近 1,200 件配送任務、約 120 小時飛行時數與 1,100 公里飛行里程。這些數字均為業者自述，計畫仍屬商業化驗證，尚非全面商轉 [[11. 中央社 CNA]](#ref-11)。
+- AI 先進入程式碼領域，原因比較像介面成熟，不是因為程式碼最有價值。TechNews 的觀點文引用 Anthropic 2026 年 1 月經濟指數報告：約一百萬筆公開 API 工具呼叫中，旅遊與物流合計只占 0.8%。這個比例顯示，AI 的滲透順序與一個領域是否已有可呼叫的 API 有關，未必按照商業價值排列。物流協調涉及車隊、倉儲、通關、天候與客戶承諾，多數環節仍靠電話、郵件和封閉系統，代理要加入流程，先得有介面。文章提到 project44、FourKites、Samsara、Motive、Navan 與 SAP Concur 的布局。這是觀點文，不是事件報導，市場規模等數字沒有標明原始出處 [[14. TechNews 科技新報]](#ref-14)。
 
 <a id="hl-proptech"></a>
 ### 房地產與室內外裝潢
-- **營建機器人開始以「社區」為單位部署，而不是單棟示範屋。** 美國科羅拉多州 Salida 的 **Cleora** 開發案占地 55 英畝、規劃 106 戶，目前已完成 7 戶，工地有兩套 **RIC Robotics** 自主列印系統運作，預計 65 戶以上採用該技術。參與方包含開發商 Cleora、3D 列印總承包商 True North 與技術供應商 RIC Robotics；案件同時建立該地區第一個 3D 列印計畫區，配套公用設施與水處理，並與 Colorado Mountain College 合作培訓相關人力。過去 3D 列印住宅多是單棟樣品屋，難以驗證重複性與供應鏈；把規模拉到上百戶才會真正暴露排程、養護與驗收問題。「全球規模最大」與缺工改善效果均為開發方主張，尚無獨立查證 [[12. ManufacturingTomorrow]](#ref-12)。
+- 社會住宅成了建築淨零政策的示範場域。內政部在亞太永續博覽會公布，截至 2026 年 6 月底，全台 273 處社會住宅已規劃設置太陽光電，容量 3,755.92 瓩；其中 82 案取得建築能效 1 級標章，17 案達 1+ 級。政策目標是 2050 年新建建築全面近零碳，既有建築 85% 完成改造，執行順序為節能設計、再生能源、儲能與智慧控制。自 2023 年起，相關計畫培訓超過一萬人取得綠領技能，並培養 58 位種子講師。再生水方面，七座設施目前每日供水 19.42 萬噸，預計年底增至 28.85 萬噸。2050 目標仍是政策宣示，公布內容沒有中期查核點達成率 [[15. 中央社 CNA]](#ref-15)。
 
 <a id="hl-arts"></a>
 ### 現場表演藝術
-- **夜間開放、互動式劇場與既有展演，讓柴電工場有了多層次的觀看方式。** 國家鐵道博物館的柴電工場於 8 月 22 至 23 日首度開放夜間參觀，延長開放至晚間 8 時，並推出互動式劇場《噓！這是火車精靈的秘密》。蕭淳嫻擔任編劇、導演及肢體設計，何昀庭、洪子晏、曾冠瑜、陳柏毓與謝香臺等青年演員與創作者共同演出。夜間開放期間，原有的「柴電機車的運作」及「電樞的檢修與保養」展演也會繼續，後者包含虛實整合的沉浸式劇場。報導所指的互動式劇場與既有檢修展演是不同節目，不能混為同一場演出 [[13. 中央社 CNA]](#ref-13)。
+- 2026 大稻埕夏日節的壓軸場在 8 月 15 日於大稻埕碼頭與延平河濱公園舉行，8 分鐘煙火接上無人機展演，連成約 20 分鐘的演出。無人機以「蜘蛛人×台北意象」為主題，在夜空排出台北景點、熊讚、蜘蛛人與愛心圖案；煙火段落則有萬花千輪與水上爆破，並配合音樂對時。當晚超過 14 萬人到場。兩段節目要接得上，製作團隊至少得先對齊時間軸；報導沒有說明是否使用共用時碼，也沒有交代無人機數量與飛控方案 [[16. 中央社 CNA]](#ref-16)。
+
+- 澎湖國際海上花火節在 8 月 25 日閉幕，會期從 5 月 4 日開始，近四個月內在六個地點舉辦 33 場。壓軸場遇到風雨仍照常演出，約一萬名觀眾到場；700 台無人機以七龍珠為主題排出圖案，接著施放 720 秒煙火。與大稻埕那場放在一起看，兩者都把無人機和煙火放進同一條節目時間軸，只是規模不同。無人機編隊對風速與定位精度敏感，雨中完成表定內容，至少顯示現場有相應的中止判準與備援安排。報導沒有交代飛控方案或備援機制 [[21. 中央社 CNA]](#ref-21)。
 
 <a id="hl-entertainment"></a>
 ### 影視音樂
-- **平台選擇標示身分，而不是判斷作品好壞。** Spotify 推出 **AI Persona** 標籤，標示那些代表 AI 生成身分、而非真人的藝人檔案，標籤會出現在藝人頁、相關搜尋結果與播放清單的曲目列，9 月中旬開始推出，藝人即刻起可透過 Spotify for Artists 自我揭露。判定走兩條路：藝人主動揭露，以及審核團隊辨識以擬真 AI 形象呈現且達一定聽眾門檻的檔案；被標記者會收到通知，可申訴或改為自行揭露。推薦端預設不納入任何編輯或演算法推薦，除非聽眾主動追蹤。界線劃得很清楚：用 AI 工具作曲、混音或做視覺設計的真人，不會因此被歸為 AI Persona [[14. Spotify Newsroom]](#ref-14)。
+- 影音場館的競爭焦點，正從單一規格轉向廳型組合。台中市政府與威秀影城在台中流行影音中心三、四樓規劃 9 個影廳、1,628 席，配置 Dolby Cinema、Ultra 4DX 與 LED Screen 光感影廳。當中兩廳規劃保留給藝術片、國片與公益放映，營運方每年另提供最多 150 場次給市府動畫影展與藝文活動。營運採 OT 模式，由市府興建、民間營運，台中流行影音中心股份有限公司結合威剛科技團隊與威秀投入。不同廳型集中在同一棟建築，還保留固定時段給非商業內容，等於把「商業片養藝術片」寫進場館配置。報導沒有揭露完工時程與預算金額 [[17. 中央社 CNA]](#ref-17)。
 
 <a id="hl-others"></a>
 ### 其他領域科技應用突破
-- **把致動器留在機外，改由聲場提供推力。** 瑞士洛桑聯邦理工學院（EPFL）的 **MicroBioRobotic Systems Laboratory（MICROBS）** 以 3D 列印製作中空共振腔。特定頻率使腔內空氣振動，再由噴口形成集中氣流。公分尺度的微型船可用不同可聞頻率分別啟動三個共振腔，進行轉向與自動導航；3D 奈米列印的 microflier 則使用超音波。一款 150 微克原型可直接向上推進，另一款的微型葉片最高轉速達每分鐘 13,000 轉，能產生穩定升力。研究已刊登於《Science Advances》，目前仍是實驗室原型 [[15. EPFL]](#ref-15)。
+- MIT 團隊提出 CrysVCD，處理生成式材料模型常見的浪費：模型一次產出數百萬個設計，但多數化學上不穩定，篩選可能占掉九成成本。CrysVCD 先讓語言模型產生符合化學合價的化學式，再交給擴散模型產生原子結構，生成步驟因此從約 1,000 步降到約 5 步。研究結果是機械穩定率 68%、亞穩定率 85%，產出穩定材料的效率比生成後再篩選高一個數量級，也找出了具備高導熱等目標性質的候選材料。這個做法的重點，是把領域規則放進生成階段；但團隊也說明，它目前最適合內部排列高度有序的固體結構，不能直接套用到所有材料類型。成果發表於《Nature Computational Science》 [[18. MIT News]](#ref-18)。
 
 <a id="trends"></a>
 ## 趨勢分析
 
 <a id="tr-ai"></a>
 ### AI 科技
-供應商正把「這是不是 AI 產出」的判斷責任往自己這邊挪，但同時公開承認判斷力有限。文字浮水印做在取樣器層，不改變詞的合理性，只換掉亂數來源；代價是短樣本測不準、也分不出「AI 寫的」與「AI 改的」。對開發者的實際影響有兩點：一是程式碼因為要求精確輸出，只在註解等處做最小標記，代表拿浮水印當程式碼來源判定並不可靠；二是偵測 API 尚未推出，短期內外部系統無法直接接上。把浮水印當成「可查證的簽名」比較準確，把它當成「AI 偵測器」則會失望 [[1. Anthropic]](#ref-1)。
+供應商投入資源的方向很清楚：先補信任所需的基礎。Anthropic 提供一萬個學術席次與最高五萬美元研究額度，取得的是模型進入科學工作流程後的使用經驗；五百萬美元福祉評估資助，則要建立一套由外部研究者製作的衡量工具 [[1. Anthropic]](#ref-1) [[2. Anthropic]](#ref-2)。這些都不是新模型發布，卻更直接碰到模型能不能被長期採用的問題。
 
-另一條線是能力成長本身被當成風險來管。OpenAI 以「可能達到網路安全 Critical 門檻」為由暫停部分訓練，並把監控成本量化成約兩成的受監督推論算力，等於承認安全措施會直接吃掉產能。這兩件事合起來看，供應商正在把「事後辨識產出」與「事前限制能力」當成兩道並行的閥門；對下游團隊的意義是，模型的可得性與發布時程未來可能因為安全評估而變動，排程假設不該只看廠商的路線圖 [[16. OpenAI]](#ref-16)。
+那份評估條件清單對開發者最有參考價值：要有明確衡量標準、臨床或領域專家參與，並同時測過度順從與過度拒答，使用接近真實的多輪情境，再和專家結果比對 [[2. Anthropic]](#ref-2)。多數團隊自做的 LLM 評測只做到第一步；「過度拒答」尤其容易漏掉。模型在該拒絕時拒絕，和不該拒絕時也拒絕，是兩種不同失敗，單看正確率會把它們混在一起。補助增加的是用量，不是權限，生物與化學領域的能力封鎖仍在，規劃科學應用時不能跳過這個前提 [[1. Anthropic]](#ref-1)。
+
+價格也透露出不同訊號。GPT-5.6 Sol 的輸出價降 33%，輸入價降 20%，但只維持三個月 [[19. 鉅亨網]](#ref-19)。輸出 token 要逐一生成，輸入則可以批次預填，兩者成本曲線不同，這或許是降幅不對稱的原因。估算成本時，輸入和輸出應分開計算；限時價格也不該直接寫進長期單位經濟模型，否則三個月後長輸出產品的成本會突然變形。
+
+供應鏈還有一個變化值得觀察。Nvidia 傳出要以 129 億美元收購 Hugging Face，約是後者 2023 年估值的三倍 [[20. Fortune]](#ref-20)。交易未經證實，也尚未簽署，但方向很明顯：晶片供應商正往模型分發層靠近。模型倉庫、資料集託管與推論 Spaces 已集中在少數網域，工程團隊至少應盤點建置流程依賴哪些外部服務，以及模型權重是否有本地鏡像。這和 BotBase 的問題相似，單一供應商維護的基礎設施並不是公共財，所有權一變，授權條款和速率限制都可能跟著變。
 
 <a id="tr-software"></a>
 ### 軟體工程
-代理的部署位置正從編輯器往協作工具擴散，這改變的不是能力而是治理面。當代理能從 Slack 被指派、非同步跑完、直接開 PR，審查就成了唯一的閘門。所以官方一併給了三道約束：行為歸屬到應用身分、受既有 GitHub 權限限制、管理者可要求代理 PR 需額外核准。這個組合值得抄：任何把代理接進團隊流程的專案，都該先確認「它以誰的身分行動」「它能碰哪些資源」「誰負責放行」，而不是先比較它寫得多快。目前功能仍是公開預覽，且限 Business 與 Enterprise 方案 [[2. GitHub Changelog]](#ref-2)。
+這一期 Copilot 的兩則公告，重點在代理使用的帳務與治理。席次改為預先付款，機器人建立的 PR 由組織負擔審查費，聊天資料保留期從 28 天延長到帳號存續期間，審查預設強度也改變 [[3. GitHub Changelog]](#ref-3) [[4. GitHub Changelog]](#ref-4)。這些調整共同指向一件事：不改設定，就會接受新預設值。需要控管資料保留期的團隊，應把 2026-09-28 列入變更檢查。
+
+審查工具也開始處理過去碰不到的變更。300 個檔案或兩萬行的上限取消後，大型重構與自動產生的內容都能進入自動審查範圍 [[4. GitHub Changelog]](#ref-4)。代理開的 PR 再交給代理審查，人類需要判斷哪些意見可信；Addressed、Won't fix、Incorrect 這三個解決原因，正好留下判斷紀錄。追蹤 Incorrect 的比例，可能比只看審查意見總數更能反映工具品質。
 
 <a id="tr-security"></a>
 ### 軟硬體資訊安全
-兩則新聞指向同一個判斷方式：風險取決於防護假設能否被繞過。Spectre 案例中，DyPrIs 要等執行結束才隔離，攻擊者便用 WebSocket 保活延長單次執行，再以大量 I/O 壓低偵測比率。Cloudflare 後來整合 V8 沙箱與 MPK，並改良偵測，但原文仍強調兩種隔離都不是完整的 Spectre 解法。Fortinet 案例則顯示，wildcard 雖預設關閉，只要管理者為了遠端 RADIUS 驗證而啟用，FortiWeb 本身就會成為入口。設定稽核除了比對版本，也應掃描「預設安全但可被打開」的高風險選項 [[3. Cloudflare]](#ref-3) [[4. SecurityWeek]](#ref-4)。
+本期三則資安來源分別落在風險處理的不同階段。Zimbra 在 7 月完成修補，8 月才遭利用，CISA 期限當天仍有 267 台伺服器被入侵 [[5. The Hacker News]](#ref-5)。ServiceNow 的三個 CVSS 10.0 漏洞目前沒有已知實際攻擊 [[6. The Hacker News]](#ref-6)。Cloudflare 則在漏洞造成事件前，先讓團隊看見 MCP 流量 [[7. Cloudflare]](#ref-7)。
 
-vCenter 事件則補上第三種假設失效：修補已經發布，但修補與套用之間的窗口成了攻擊面。漏洞公開後第五天就出現實際利用，受害集中在可從網際網路存取的管理介面，攻擊鏈最後落在 ESXi 的勒索軟體。虛擬化管理平面一旦失守，上面的所有工作負載都跟著陷落，這類系統的修補窗口不能比一般應用寬鬆。可行的收斂順序是：先把管理介面移出公開網路，再談修補節奏 [[17. The Hacker News]](#ref-17)。
+放在一起看，損失規模往往取決於修補延遲，而不是 CVSS 分數。很多管理者甚至不知道選用套件裡裝了 zimbra-snmp，資產盤點因此很實際。MCP 也有相同問題，只是換了形式：影子 MCP 伺服器不在採購清單裡，只會出現在流量中。先盤點，再把核准的伺服器放到 Portal 後方，最後才封鎖直連，這個順序也適用於其他內部工具 [[7. Cloudflare]](#ref-7)。
 
 <a id="tr-hardware"></a>
 ### 硬體或軟硬整合
-AI 的瓶頸正從算力往互連移動，這讓製程優勢的定義跟著改變。矽光子的競爭點不是線寬，而是能不能用 12 吋產線把光學元件當一般晶片量產。聯電押的就是這點，高塔靠既有市占、格羅方德靠併購補製造 IP，三方同時打市場與專利。另一邊的人型機器人則提醒不要只看出貨曲線：出貨年增近 300%，但娛樂與資料採集仍占逾六成，工業製造只有 13%。訂單成長與產線替代是兩件事，中間隔著可靠度、安全規範與維護成本。以上市場數字皆為公司自述或研究機構估算 [[5. TechNews 科技新報]](#ref-5) [[6. TechNews 科技新報]](#ref-6)。
+記憶體超越 SoC 成為手機最貴元件，影響會一路傳到軟體端 [[8. TechNews 科技新報]](#ref-8)。入門機 BOM 年增 70%，而且幾乎都來自儲存，低階裝置的記憶體規格可能停滯甚至倒退。行動開發過去常假設下一代裝置會有更多記憶體，但這個假設未必適用於未來一兩年；Counterpoint 預估 2026 年出貨年減 14.3%，現有舊機的使用年限也可能拉長。應用程式的記憶體足跡需要重新列入日常管理。
+
+FlowForm 提供另一條路：用被動結構取代主動電子 [[9. TechNews 科技新報]](#ref-9)。一片 2 美元、不需供電或修改協定的 3D 列印磚，效果接近昂貴的主動式反射面。當運算與記憶體都在漲價，回到物理層改結構，可能比繼續加硬體便宜。它和 Cloudflare 的 DNS 快取調整，其實是同一種思考方式：先改結構，再考慮增加資源。
 
 <a id="tr-infrastructure"></a>
 ### 網路/伺服器等基礎
-網路治理的難處從來不是設計，而是跨組織的遵循率，這兩則案例把同一個結構講了兩次。RFC 9234 把路由洩漏的防護寫進協定，理論上不必再依賴人工過濾政策；實測卻發現有兩家 Tier-1 網路會刪掉 OTC 屬性，鏈條中間斷一節，整條就失效。Bot Preference Sync 同理：站方可以一鍵把政策同步到 `robots.txt`，但真正的效果取決於爬蟲營運者願不願意遵守，所以 Cloudflare 把「透明度」設成享有善意推定的前提，不合格者照擋。兩者都說明：可觀測性應該和機制一起設計，否則沒人知道規則有沒有真的生效 [[7. Cloudflare]](#ref-7) [[8. Cloudflare]](#ref-8)。
+Cloudflare 的 DNS 快取調整值得工程團隊逐項讀過，因為五個做法都不依賴特殊硬體 [[10. Cloudflare]](#ref-10)。它移除 `Vec` 不需要的容量欄位，改用偏移量取代指標，讓選用欄位只在需要時佔空間，把過大的列舉變體裝箱，再以線路格式連續存放資料。結果是每筆資料從 953 位元組降到 420 位元組，2,500 億筆合計約 100 TB；插入吞吐量增加 43%，查詢延遲降低 19%。減少配置和改善記憶體區域性同時發揮作用，所以省空間沒有換來較慢的速度。
+
+BotBase 顯示，自動化流量的身分正從被動推測走向主動申報與自動驗證 [[11. Cloudflare]](#ref-11)。系統會核對 IP 清單、反向 DNS 與 Web Bot Auth 簽章，user-agent 字串因此退到輔助位置。限制也很直接：目錄由單一業者維護，涵蓋率與中立性都還需要持續驗證。
 
 <a id="tr-fintech"></a>
 ### 金融科技
-代理商務目前缺的不是支付管道，而是身分與授權的共通語彙。卡組織、支付處理商、穩定幣發行方與公鏈坐上同一張桌子，本身就說明沒有任何一方能單獨定義「代理代表誰、能花多少、出事算誰的」。值得留意的是聯盟現階段產出僅止於研究與框架，沒有可實作的規格；對工程團隊而言，短期能做的是把授權邊界、額度上限與稽核軌跡先設計成可替換的介面，等標準明朗再接。至於兆元級市場預估，是用來說明關注度，不宜當成需求量的依據 [[9. PYMNTS]](#ref-9)。
+台灣金融監理的公開討論還在處理「信任要怎麼證明」這件事 [[12. 中央社 CNA]](#ref-12)。論壇談到 AI 治理、揭露透明度與數位信任防線，這些偏向程序要求。對金融科技團隊而言，未來要交付的可能不只是模型效能報告，還包括可稽核的決策軌跡：資料來源、模型版本，以及每次決策使用的版本。這類記錄若等到事後補做，成本會很高。
+
+這則來源是論壇發言彙整，沒有具體政策條文或量化目標，權重因此偏低。本期能查到的一手政策文件不多，顯示制度討論的密度和落地文件的產出速度還有落差。
 
 <a id="tr-healthtech"></a>
 ### 醫療科技
-台灣的智慧醫療政策重心明顯放在互通性而非模型能力，這是務實的順序。FHIR Box 的設計思路是「不換系統也能交換資料」，避開了醫院最抗拒的一次性大改；認證實驗室則補上另一半：當軟體模組、硬體裝置與導入廠商都有共同驗收標準，採購方才有辦法比較。這對供應鏈的影響是雙面的：小廠商多了一條可被信任的門票，但也要負擔認證成本。要提醒的是三類認證與 FHIR Box 全面推廣目前都還在時程上，實際效果要等醫學中心陸續接上後才看得出來 [[10. 中央社 CNA]](#ref-10)。
+台灣智慧醫療目前走的是先處理資料標準，再接應用的路線。FHIR 標準與 FHIR Box 讓跨院交換病歷時不必更換醫院既有系統，這比要求各院重做整合容易推動 [[13. 中央社 CNA]](#ref-13)。目前只有三家醫學中心支援即時互通，進度仍在早期。
+
+慢性腎臟病適合作為第一個應用，因為病程通常緩慢，早期也沒有明顯症狀，而相關檢驗值原本就在例行抽血裡。應用端不必增加檢查或設備，先把既有資料重新利用即可。合作目前仍停在備忘錄階段，沒有上線時程或臨床成效數據，現階段只能視為方向，不是成果 [[13. 中央社 CNA]](#ref-13)。
 
 <a id="tr-logistics"></a>
 ### 運輸物流
-無人機物流的觀察指標正在從單次載重與航程，轉向每日班次與累計時數。嘉義這案選在非偏鄉地區做常態化驗證，未來須直接面對配送成本、排程、天候與空域管理等問題。業者公布的近 1,200 件配送任務、約 120 小時與 1,100 公里，至少提供了比單次試飛更完整的營運紀錄，但尚不足以證明商業可行性。5G 空中廊道也顯示，除了飛行器本身，即時影像、飛航控制與遠端監管同樣是擴大營運的前提 [[11. 中央社 CNA]](#ref-11)。
+「旅遊與物流只占公開 API 工具呼叫的 0.8%」這個數字，說明問題不只在市場需求 [[14. TechNews 科技新報]](#ref-14)。AI 代理先進入程式碼領域，與版本控制、CI、issue 追蹤都有現成介面有關；物流協調仍大量依靠電話、郵件和封閉系統，代理自然較難接入。
+
+評估某個領域何時適合導入代理，先看關鍵動作是否已有 API，再看能省下多少人力。可視性平台能往協調功能延伸，正是因為它已經接好部分介面，代理只要接上既有整合層。其他垂直領域也一樣，介面工程往往才是主要工作量。本文屬觀點文，市場規模與滲透率數字沒有標明原始出處，本報告只採用可回溯的工具呼叫占比。
 
 <a id="tr-proptech"></a>
 ### 房地產與室內外裝潢
-營建 3D 列印的驗證重點正從「印得出來」轉向「印得完一整區」。單棟示範屋可以靠現場調校完成，上百戶則會逼出重複性、養護時間、設備稼動率與人力調度的問題，也需要配套的公用設施與計畫區行政程序。Cleora 同時與在地學院合作培訓，反映出這類技術的真實瓶頸往往不是機器而是會操作的人。要保守看待的是宣稱：規模第一與缺工改善都出自開發方，尚無第三方查證；對台灣讀者而言，法規、地震需求與工班結構也不同，直接類比意義有限 [[12. ManufacturingTomorrow]](#ref-12)。
+建築部門的淨零措施正從個案示範走向擴大，社會住宅是容易推動的場域，因為公部門同時是業主與監理者 [[15. 中央社 CNA]](#ref-15)。目前有 273 處規劃設置太陽光電，82 案取得建築能效 1 級標章，開始累積可複製的規格與流程。
+
+「節、創、儲、控」把智慧控制放在最後。這個順序其實合理：控制系統只能調整既有能耗，建築本體的隔熱與採光若沒做好，再多控制也只是在補救。任何加上 AI 最佳化的專案都可以先問同一個問題：底層流程是否仍有結構性浪費。2050 目標目前是政策宣示，公布內容沒有中期查核點達成率。
 
 <a id="tr-arts"></a>
 ### 現場表演藝術
-場館可藉夜間時段與既有展演，重新組合觀眾的參觀路徑。鐵道博物館這次同時安排夜間開放、互動式劇場，以及原有的機車運作與電樞檢修展演，讓同一座柴電工場容納導覽、戲劇與沉浸式展示。這種策展方式的優勢是直接運用場館空間與既有內容，不必把技術規格本身當成主角。活動目前只有兩天，後續若要常態化，仍需觀察導覽動線、觀眾承載量與文物安全如何協調 [[13. 中央社 CNA]](#ref-13)。
+大稻埕夏日節把 8 分鐘煙火與無人機展演接成約 20 分鐘的連續壓軸段落 [[16. 中央社 CNA]](#ref-16)。這表示製作團隊至少要先對齊節目時間軸；報導沒有說明是否使用共用時碼或其他同步方法，因此不能據此推論整體市場的技術門檻或成本。
+
+這類多套即時系統的時間同步，和分散式系統的時鐘協調很像：沒有共同時間基準，就沒有可預期的順序；現場演出更沒有重試機會。逾 14 萬人到場，反映觀眾對這種形式並不陌生。本期能查到的素材仍少，報導也沒有提供無人機數量與飛控方案。
+
+兩場收官演出的規模不同，節目結構卻相近：大稻埕是 8 分鐘煙火接無人機、全程約 20 分鐘，逾 14 萬人到場；澎湖則是 700 台無人機接 720 秒煙火，風雨中完成演出，約一萬人到場 [[16. 中央社 CNA]](#ref-16) [[21. 中央社 CNA]](#ref-21)。無人機編隊對風速與定位精度敏感，澎湖能在雨中完成表定內容，至少代表現場有相應的中止判準與備援安排。
+
+兩則報導都停在活動層面，沒有交代機隊供應商、飛控方案、備援、中止判準，也沒有說明煙火與無人機如何對時。這是本分類的主要限制：演出依賴即時系統整合，但報導焦點是文化活動，技術細節通常要向業者才能取得。
 
 <a id="tr-entertainment"></a>
 ### 影視音樂
-串流平台把爭議焦點從「AI 音樂能否存在」移到「聽眾是否知道藝人身分」。標籤針對公開身分，不以音樂製作工具判定；影響較大的措施是預設排除於編輯與演算法推薦之外，在不下架作品的前提下改變曝光條件。9 月中旬上線後，可持續觀察 Spotify 對擬真 AI 身分的判定準確度、申訴情況與實際標示覆蓋率。現階段只能確認政策設計，不能把宣布推出視為已全面生效 [[14. Spotify Newsroom]](#ref-14)。
+影音場館的競爭焦點正從單一規格轉向廳型組合。9 個影廳配置 Dolby Cinema、Ultra 4DX 與 LED Screen 光感影廳，反映不同內容不會由同一種放映規格包辦 [[17. 中央社 CNA]](#ref-17)。LED 影廳與傳統投影在成本、維護和適用內容上差異很大，把它們放在同一棟建築，也是在分散營運風險。
+
+制度設計也有一個實際安排：九廳中兩廳規劃保留給藝術片、國片或公益放映，每年另提供最多 150 場次給市府藝文活動。這等於把「商業片養藝術片」寫進 OT 合約，不必仰賴營運方臨時決定。報導沒有揭露完工時程與預算金額，目前仍是規劃資訊。
 
 <a id="tr-others"></a>
 ### 其他領域科技應用突破
-微型載具若能把馬達、齒輪與電子零件留在機外，結構就能進一步縮小。EPFL 的方法讓裝置只保留共振腔，外部聲場同時提供能量與控制訊號；代價是載具必須留在可精準調控的聲場內。研究團隊提出的下一步，是在柔性裝置中整合多個對不同頻率有反應的結構，使指定部位能移動、彎曲或振動。這仍是原型研究，後續驗證重點會是縮小尺度、載重能力，以及多個共振結構同時運作時的控制精度 [[15. EPFL]](#ref-15)。
+CrysVCD 的重點不只在材料科學，而是把領域規則放進生成階段 [[18. MIT News]](#ref-18)。原本的流程會先產生數百萬個候選，再花掉最高九成成本篩掉不穩定設計；CrysVCD 先讓語言模型產生符合化學合價的化學式，再交給擴散模型生成結構，步驟由約 1,000 降到約 5，效率提高一個數量級。
+
+軟體工程裡也有類似做法：型別系統先擋掉不合法狀態，schema 在資料進入系統前驗證，模型輸出則可在生成時受規則約束。規則越早介入，後面要丟掉的候選越少。不過團隊自陳這套方法目前最適合內部排列高度有序的固體結構，不能直接套用到所有材料；前移約束的前提，是規則本身能被形式化。
 
 <a id="references"></a>
 ## 參考資料
 
 | 編號 | 文章標題與搜尋連結 | 一句話繁體中文結論或亮點 | 發布日期 | 來源資料網址與名稱 | 分類 |
 | :--- | :--- | :--- | :--- | :--- | :--- |
-| <a id="ref-1"></a>1 | [How Claude's text watermark works](https://www.google.com/search?q=Anthropic+How+Claude%27s+text+watermark+works) | 浮水印改的是取樣時的亂數來源，可驗證但分不出「寫的」與「改的」，偵測 API 尚未推出。 | 2026-08-14 | [Anthropic](https://www.anthropic.com/news/claude-text-watermark) | AI 科技 |
-| <a id="ref-2"></a>2 | [The new GitHub Copilot experience in Slack](https://www.google.com/search?q=The+new+GitHub+Copilot+experience+in+Slack) | Copilot 可從 Slack 被指派並自行開 PR，行為歸屬應用身分且受既有權限與核准控制。 | 2026-08-21 | [GitHub Changelog](https://github.blog/changelog/2026-08-21-the-new-github-copilot-experience-in-slack/) | 軟體工程 |
-| <a id="ref-3"></a>3 | [A revisit of remote Spectre attacks on Cloudflare Workers](https://www.google.com/search?q=Cloudflare+A+revisit+of+remote+Spectre+attacks+on+Workers) | 遠端 Spectre 在生產環境可達每秒 12 位元，偵測型隔離被繞過後改以 V8 沙箱與 MPK 補強。 | 2026-08-19 | [Cloudflare](https://blog.cloudflare.com/revisiting-spectre-attacks-on-workers/) | 軟硬體資訊安全 |
-| <a id="ref-4"></a>4 | [Fortinet Patches Authentication Flaws in FortiWeb and FortiManager](https://www.google.com/search?q=Fortinet+Patches+Authentication+Flaws+in+FortiWeb+and+FortiManager) | FortiWeb 在 RADIUS wildcard 開啟時可被任意帳密登入，同批另修 FortiManager 與 FortiClient 缺陷。 | 2026-08-13 | [SecurityWeek](https://www.securityweek.com/fortinet-patches-authentication-flaws-in-fortiweb-and-fortimanager/) | 軟硬體資訊安全 |
-| <a id="ref-5"></a>5 | [AI 推升 PIC 代工狂潮，聯電挾 12 吋量產優勢決戰高塔、格羅方德](https://www.google.com/search?q=聯電+PIC+代工+矽光子+高塔+格羅方德) | 聯電取得 imec 12 吋 PIC 平台授權切入矽光子代工，營收目標與效能比較均屬公司自述。 | 2026-08-22 | [TechNews 科技新報](https://finance.technews.tw/2026/08/22/umc-joins-battle-competing-tower-globalfoundries/) | 硬體或軟硬整合 |
-| <a id="ref-6"></a>6 | [中國人型機器人迎量產！今年市場規模達 150 億人民幣，估 2027 年至少成長 60%](https://www.google.com/search?q=TrendForce+Counterpoint+人型機器人+2026+出貨) | 上半年全球出貨逾 2.2 萬台、年增近 300%，但娛樂與資料採集仍占逾六成用途。 | 2026-08-21 | [TechNews 科技新報](https://technews.tw/2026/08/21/trendforce-counterpoint-see-2026-ai-human-robot/) | 硬體或軟硬整合 |
-| <a id="ref-7"></a>7 | [BGP Role model: tracking the adoption of RFC 9234](https://www.google.com/search?q=Cloudflare+BGP+Role+model+RFC+9234+adoption) | OTC 屬性可從協定層防路由洩漏，但兩家主要 Tier-1 網路會刪除該屬性導致機制失效。 | 2026-08-18 | [Cloudflare](https://blog.cloudflare.com/rfc9234-bgp-role-model/) | 網路/伺服器等基礎 |
-| <a id="ref-8"></a>8 | [Say it once: introducing Bot Preference Sync](https://www.google.com/search?q=Cloudflare+Bot+Preference+Sync+robots.txt) | 儀表板上的爬蟲政策可自動同步寫入 robots.txt，不具透明度的爬蟲不享善意推定。 | 2026-08-21 | [Cloudflare](https://blog.cloudflare.com/bot-preference-sync/) | 網路/伺服器等基礎 |
-| <a id="ref-9"></a>9 | [Visa and Mastercard Join Rain's Agentic Commerce Coalition](https://www.google.com/search?q=Agentic+Payments+Alliance+Rain+Visa+Mastercard) | Rain 發起代理支付聯盟，Visa、Mastercard、Circle 等共同制定代理身分與授權標準。 | 2026-08-18 | [PYMNTS](https://www.pymnts.com/news/artificial-intelligence/2026/visa-and-mastercard-join-rains-agentic-commerce-coalition/) | 金融科技 |
-| <a id="ref-10"></a>10 | [國家數位健康互通性實驗室啟動　助軟硬體測試認證](https://www.google.com/search?q=國家數位健康互通性與效能認證實驗室+衛福部) | 衛福部成立認證實驗室並推 FHIR Box，規劃軟體、硬體與供應商三類認證。 | 2026-08-18 | [中央社 CNA](https://www.cna.com.tw/news/ahel/202608180253.aspx) | 醫療科技 |
-| <a id="ref-11"></a>11 | [中華電打造無人機物流商業化驗證場域　送餐服務亮相](https://www.google.com/search?q=中華電信+嘉義+無人機物流+商業化驗證場域) | 嘉義太保與朴子建立非偏鄉常態化無人機物流場域，已累積近 1,200 趟配送。 | 2026-08-10 | [中央社 CNA](https://www.cna.com.tw/news/afe/202608100309.aspx) | 運輸物流 |
-| <a id="ref-12"></a>12 | [Robotics Advances Construction at the World’s Largest Planned 3D-Printed Township](https://www.google.com/search?q=Cleora+Salida+Colorado+3D+printed+township+RIC+Robotics) | 科羅拉多 Cleora 案規劃 106 戶、已完成 7 戶，以兩套自主列印系統推進，規模宣稱未經獨立查證。 | 2026-08-13 | [ManufacturingTomorrow](https://www.manufacturingtomorrow.com/news/2026/08/13/robotics-advances-construction-at-the-worlds-largest-planned-3d-printed-township/28040/) | 房地產與室內外裝潢 |
-| <a id="ref-13"></a>13 | [鐵道博物館柴電工場首度夜間開放　互動式劇場同步登場](https://www.google.com/search?q=國家鐵道博物館+柴電工場+夜間開放+互動式劇場) | 柴電工場首度夜間開放並推出互動式劇場，既有機車運作與電樞檢修展演也同步進行。 | 2026-08-18 | [中央社 CNA](https://www.cna.com.tw/news/acul/202608180232.aspx) | 現場表演藝術 |
-| <a id="ref-14"></a>14 | [Introducing a New Label for AI-Generated Artist Identities on Spotify](https://www.google.com/search?q=Spotify+AI+Persona+label+AI-generated+artist+identities) | AI Persona 標籤 9 月中旬推出，預設不進編輯與演算法推薦，但不影響使用 AI 工具的真人。 | 2026-08-11 | [Spotify Newsroom](https://newsroom.spotify.com/2026-08-11/ai-persona-badges-transparency/) | 影視音樂 |
-| <a id="ref-15"></a>15 | [These tiny drones are powered by sound](https://www.google.com/search?q=EPFL+These+tiny+drones+are+powered+by+sound) | EPFL 以聲波驅動 3D 列印共振腔，150 微克原型可向上推進，葉片轉速最高達 13,000 RPM。 | 2026-08-14 | [EPFL](https://actus.epfl.ch/news/these-tiny-drones-are-powered-by-sound-2/) | 其他領域科技應用突破 |
-| <a id="ref-16"></a>16 | [Pacing model development in an era of cyber-critical capabilities](https://www.google.com/search?q=OpenAI+Pacing+model+development+in+an+era+of+cyber-critical+capabilities) | OpenAI 因 Astra 可能達網路安全 Critical 門檻，暫停部分 RL 訓練並加強隔離與監控。 | 2026-08-18 | [OpenAI](https://openai.com/index/pacing-model-development-cyber-capabilities/) | AI 科技 |
-| <a id="ref-17"></a>17 | [Suspected China-Nexus Actor Exploits VMware vCenter Flaw, Deploys Babuk-Derived Ransomware](https://www.google.com/search?q=Suspected+China-Nexus+Actor+Exploits+VMware+vCenter+Flaw+Babuk) | CVE-2026-59310 修補後五天即遭利用，已知 361 個受害 IP、47 國，最終在 ESXi 投放勒索軟體。 | 2026-08-17 | [The Hacker News](https://thehackernews.com/2026/08/suspected-china-nexus-actor-exploits.html) | 軟硬體資訊安全 |
+| <a id="ref-1"></a>1 | [Expanding our support for scientists](https://www.google.com/search?q=Anthropic+Expanding+our+support+for+scientists) | 一萬個 Claude 學術席次與最高五萬美元研究額度，但生物與藥物開發查詢仍被封鎖。 | 2026-08-27 | [Anthropic](https://www.anthropic.com/news/expanding-support-for-scientists) | AI 科技 |
+| <a id="ref-2"></a>2 | [Funding better evaluations of AI's impact on wellbeing](https://www.google.com/search?q=Anthropic+Funding+better+evaluations+of+AI+impact+on+wellbeing) | 五百萬美元資助獨立福祉評估，要求同時測過度順從與過度拒答。 | 2026-08-25 | [Anthropic](https://www.anthropic.com/news/wellbeing-research-grants) | AI 科技 |
+| <a id="ref-3"></a>3 | [Upcoming changes to GitHub Copilot policies and billing](https://www.google.com/search?q=Upcoming+changes+to+GitHub+Copilot+policies+and+billing) | 席次改為先付款，Chat 資料保留延長為帳號存續期間，預設啟用且退出即失去存取。 | 2026-08-28 | [GitHub Changelog](https://github.blog/changelog/2026-08-28-upcoming-changes-to-github-copilot-policies-and-billing) | 軟體工程 |
+| <a id="ref-4"></a>4 | [Copilot code review: Resolution reasons and expanded capabilities](https://www.google.com/search?q=Copilot+code+review+Resolution+reasons+and+expanded+capabilities) | 解除 300 檔／2 萬行審查上限，並開始完整審查代理開出的 pull request。 | 2026-08-27 | [GitHub Changelog](https://github.blog/changelog/2026-08-27-copilot-code-review-resolution-reasons-and-expanded-capabilities) | 軟體工程 |
+| <a id="ref-5"></a>5 | [Attackers Exploit Zimbra SNMP Flaw for Unauthenticated Remote Code Execution](https://www.google.com/search?q=Attackers+Exploit+Zimbra+SNMP+Flaw+Unauthenticated+Remote+Code+Execution) | 7 月就有修補、8 月才遭利用，CISA 期限當天仍有 267 台伺服器被入侵。 | 2026-08-20 | [The Hacker News](https://thehackernews.com/2026/08/attackers-exploit-zimbra-snmp-flaw-for.html) | 軟硬體資訊安全 |
+| <a id="ref-6"></a>6 | [Three CVSS 10.0 ServiceNow Flaws Could Let Unauthenticated Attackers Execute Code and SQL](https://www.google.com/search?q=Three+CVSS+10.0+ServiceNow+Flaws+Execute+Code+and+SQL) | 三個滿分漏洞都不需權限與互動，託管執行個體已修補，自架客戶須自行套用。 | 2026-08-28 | [The Hacker News](https://thehackernews.com/2026/08/three-cvss-100-servicenow-flaws-could.html) | 軟硬體資訊安全 |
+| <a id="ref-7"></a>7 | [How Cloudflare detects MCP traffic and helps secure it](https://www.google.com/search?q=How+Cloudflare+detects+MCP+traffic+and+helps+secure+it) | 以 MCP-Protocol-Version 等協定層標頭辨識影子 MCP 流量，建議先盤點再收攏到 Portal。 | 2026-08-14 | [Cloudflare](https://blog.cloudflare.com/mcp-security-updates/) | 軟硬體資訊安全 |
+| <a id="ref-8"></a>8 | [記憶體、晶片價格倒掛，入門智慧手機受衝擊恐最大](https://www.google.com/search?q=記憶體+晶片+價格倒掛+入門智慧手機+Counterpoint) | DRAM 已超過 SoC 成為手機最貴元件，入門機 BOM 年增 70%。 | 2026-08-28 | [TechNews 科技新報](https://technews.tw/2026/08/28/entry-level-smartphones-hit-hardest-by-memory-costs) | 硬體或軟硬整合 |
+| <a id="ref-9"></a>9 | [讓 5G 訊號自己轉彎，一片 2 美元的 3D 列印板輕鬆破解毫米波物理限制](https://www.google.com/search?q=FlowForm+UCSD+3D+列印+毫米波+反射板+SIGCOMM) | 2 美元的被動 3D 列印磚讓室內毫米波速率近乎翻倍，不需供電與協定變更。 | 2026-08-28 | [TechNews 科技新報](https://technews.tw/2026/08/28/2-dollar-reflective-brick-doubles-5g-speed) | 硬體或軟硬整合 |
+| <a id="ref-10"></a>10 | [How we saved 100 terabytes of memory by optimizing 1.1.1.1’s DNS cache](https://www.google.com/search?q=Cloudflare+saved+100+terabytes+memory+optimizing+1.1.1.1+DNS+cache) | 五項資料結構重排讓每筆快取記憶體降 56%，插入吞吐量同時增加 43%。 | 2026-08-27 | [Cloudflare](https://blog.cloudflare.com/dns-cache-memory-optimization-1111/) | 網路/伺服器等基礎 |
+| <a id="ref-11"></a>11 | [BotBase for Operators: A clearer path to joining Cloudflare's directory of bots and agents](https://www.google.com/search?q=Cloudflare+BotBase+for+Operators+directory+of+bots+and+agents) | 機器人身分改為自助申報加自動驗證，IP、反向 DNS 與 Web Bot Auth 簽章自動核對。 | 2026-08-28 | [Cloudflare](https://blog.cloudflare.com/botbase-for-operators/) | 網路/伺服器等基礎 |
+| <a id="ref-12"></a>12 | [中央社金融永續論壇登場　產官學研共同探討AI信任與安全](https://www.google.com/search?q=中央社+2026+金融永續論壇+AI+信任與安全+陳彥良) | 金管會強調信任與永續並行，但論壇未發布具體政策條文或量化目標。 | 2026-08-25 | [中央社 CNA](https://www.cna.com.tw/news/afe/202608250168.aspx) | 金融科技 |
+| <a id="ref-13"></a>13 | [衛福部攜手羅氏推AI醫療　首波瞄準慢性腎臟病照護](https://www.google.com/search?q=衛福部+羅氏+AI醫療+慢性腎臟病+FHIR+Box) | 以常規檢驗資料做腎功能惡化早期預警，FHIR Box 目前三家醫學中心即時互通。 | 2026-08-21 | [中央社 CNA](https://www.cna.com.tw/news/ahel/202608210280.aspx) | 醫療科技 |
+| <a id="ref-14"></a>14 | [AI 代理即將揮軍物流界？能處理複雜工作比只會寫程式更有商業價值](https://www.google.com/search?q=AI+代理+物流+Anthropic+經濟指數+工具呼叫+0.8%25) | 旅遊與物流僅占公開 API 工具呼叫 0.8%，代理的滲透順序取決於介面可呼叫性。 | 2026-08-17 | [TechNews 科技新報](https://technews.tw/2026/08/17/ai-reached-coding-first-logistics-may-be-the-bigger-opportunity/) | 運輸物流 |
+| <a id="ref-15"></a>15 | [AI淨零／內政部：273處社宅已規劃設太陽光電　容量3755瓩](https://www.google.com/search?q=內政部+社宅+太陽光電+273處+建築能效標章) | 273 處社宅規劃設置光電、82 案取得能效 1 級，策略順序為節、創、儲、控。 | 2026-08-27 | [中央社 CNA](https://www.cna.com.tw/news/aipl/202608270195.aspx) | 房地產與室內外裝潢 |
+| <a id="ref-16"></a>16 | [大稻埕夏日節　壓軸煙火秀、無人機展演閃耀夜空[影]](https://www.google.com/search?q=大稻埕夏日節+2026+壓軸+煙火+無人機展演) | 8 分鐘煙火與無人機編隊接成約 20 分鐘連續演出，逾 14 萬人到場。 | 2026-08-15 | [中央社 CNA](https://www.cna.com.tw/news/aloc/202608150221.aspx) | 現場表演藝術 |
+| <a id="ref-17"></a>17 | [台中流行影音中心攜手威秀規劃9影廳　培育人才、接軌產業](https://www.google.com/search?q=台中流行影音中心+威秀+9影廳+OT+威剛) | 9 廳 1,628 席混編 Dolby Cinema 與 LED 影廳，其中兩廳規劃保留給藝術片、國片與公益放映。 | 2026-08-28 | [中央社 CNA](https://www.cna.com.tw/news/aloc/202608280157.aspx) | 影視音樂 |
+| <a id="ref-18"></a>18 | [AI helps design new materials that work in the real world](https://www.google.com/search?q=MIT+CrysVCD+AI+helps+design+new+materials+that+work+in+the+real+world) | CrysVCD 把化學合價當生成期約束，步驟由約 1,000 降到約 5，機械穩定率 68%。 | 2026-08-26 | [MIT News](https://news.mit.edu/2026/ai-helps-design-new-materials-that-work-in-real-world-0826) | 其他領域科技應用突破 |
+| <a id="ref-19"></a>19 | [OpenAI大砍GPT-5.6 Sol價格逾20%！正面迎戰Anthropic與中國AI](https://www.google.com/search?q=OpenAI+GPT-5.6+Sol+降價+API+價格+Anthropic) | 未來三個月輸入價降 20%、輸出價降 33%，適用 API、訂閱額度與 Codex，訂閱月費不變。 | 2026-08-22 | [鉅亨網](https://news.cnyes.com/news/id/6584252) | AI 科技 |
+| <a id="ref-20"></a>20 | [Nvidia agrees to buy Hugging Face for $12.9 billion, reports](https://www.google.com/search?q=Nvidia+agrees+to+buy+Hugging+Face+12.9+billion) | 傳以 129 億美元收購開源模型平台，但雙方均未證實、協議尚未簽署。 | 2026-08-27 | [Fortune](https://fortune.com/2026/08/27/nvidia-hugging-face-billion-dollar-deal-open-source-ai/) | AI 科技 |
+| <a id="ref-21"></a>21 | [澎湖花火節雨中謝幕　700台無人機燈光秀吸睛](https://www.google.com/search?q=澎湖花火節+2026+閉幕+700台無人機+燈光秀) | 700 台無人機加 720 秒煙火於風雨中照常完成，會期橫跨四個月共 33 場。 | 2026-08-25 | [中央社 CNA](https://www.cna.com.tw/news/aloc/202608250359.aspx) | 現場表演藝術 |
 
 <a id="notes"></a>
 ## 報告說明
-本報告由 Claude Code、Codex 於 2026-08-22 彙整近 15 天內（2026-08-07 至 2026-08-22）的全球科技新聞與官方公告，再依程式設計師與科技讀者較常關注的主題整理成分類摘要與趨勢觀察。來源以官方公告與一手技術部落格優先，其次為權威科技媒體與台灣主流媒體；候選來源與淘汰判斷依據保留在同一任務資料夾的 `source.md`。本期共蒐集 27 筆候選來源，正式採用 17 筆，淘汰 10 筆，淘汰原因以「發布日期落在時間窗外」與「上一期已引用」為主。交付前已逐筆重新開啟原始網址，核對標題、發布日期、媒體名稱與內文主張。
+本報告由 Claude Code、Codex 彙整 2026-08-14 至 2026-08-29 的全球科技新聞與官方公告，再依程式設計師與科技讀者常關注的主題整理。來源優先採用官方公告與一手技術部落格，其次是權威科技媒體與台灣主流媒體；候選來源和淘汰原因保留在同一任務資料夾的 `source.md`。本期共蒐集 36 筆候選來源，採用 21 筆，淘汰 15 筆，主要原因是發布日期超出時間窗或上一期已引用。本期與 2026-08-22 期重疊 9 天，篩選前已逐筆比對 `tech/2026-08-22/references.md`。交付前也重新開啟原始網址，核對標題、發布日期、媒體名稱與內文主張。
 
-需特別區分的部分：ref-5 的營收目標與效能比較、ref-9 的兆元級市場預估、ref-12 的「全球規模最大」與缺工改善效果，皆為公司自述或第三方預測，非已驗證結果；ref-6 的出貨量與市場規模、ref-5 的矽光子市場規模為研究機構（Counterpoint、TrendForce、Yole）估算。ref-1 的偵測 API、ref-10 的認證制度與 FHIR Box 全面推廣、ref-14 的標籤上線，都是已宣布但尚未完成的時程。ref-2 的 Slack 整合為公開預覽，非正式上線。ref-4 的漏洞可利用條件限於非預設設定，且原廠表示尚無遭實際利用跡象。ref-16 的門檻判定與暫停時長為 OpenAI 自述，未經外部稽核；openai.com 對本次擷取回 HTTP 403，日期與數字改以第三方報導交叉核對，引用仍指向官方原文。ref-17 的 361 個受害 IP、47 國為單一事件應變廠商的觀測值，非全球普查。ref-15 已改用 EPFL 官方研究發布並附《Science Advances》出處，取代原先的二手整理。
+以下限制需要留意：ref-1 的席次擴充、ref-3 的政策與計費變更、ref-13 的合作備忘錄，以及 ref-17 的影城規劃，都是已宣布但尚未完成或生效的安排。ref-6 的三個 ServiceNow 漏洞目前沒有已知利用或公開利用程式碼，屬預防性修補；ref-7 的 Gateway 選擇器仍標示 experimental。ref-8 的 12GB + 256GB 採購報價來自中國數位爆料帳號「數碼閒聊站」，未經原廠或研究機構證實，本文只採用 Counterpoint Research 的 BOM 增幅與出貨預估。ref-5 的 267 台受害實例是掃描觀測值，不是全球普查。ref-9 為二手科技媒體報導，可回溯至 ACM SIGCOMM 2026 論文，但測試只涵蓋五種室內環境。ref-12 是論壇發言彙整，沒有具體政策條文或量化目標，且主辦方同時也是報導方。ref-14 為觀點文，4 兆美元市場規模與六成倉儲滲透率沒有標明原始出處，本文只引用可回溯至 Anthropic 經濟指數報告的 0.8% 工具呼叫占比。ref-15 的 2050 年目標是政策宣示，公布內容沒有中期查核點達成率。ref-16 未揭露無人機數量與飛控方案；ref-18 的方法依研究團隊說明，只適合內部排列高度有序的固體結構。ref-20 的收購案未經 Nvidia 或 Hugging Face 證實，協議也未簽署；消息來自 The Information 的未具名來源，Fortune 表示無法獨立查證，因此本文一律寫成「傳出」，不視為既成交易。cnbc.com 擷取時回 HTTP 403，金額與狀態改以 Fortune、Forbes 同日報導交叉核對。ref-21 與 ref-16 都是活動報導，未揭露飛控方案與備援機制。
+
+OpenAI 官方產品頁的原始發布日是 2026-07-09，更新日是 2026-08-21，原始發布日不在本期時間窗內。因此 GPT-5.6 Sol 降價仍以窗內的鉅亨網 2026-08-22 報導（ref-19）作為正式來源；官方產品頁與模型頁只用來交叉核對每百萬 token 輸入 4 美元、輸出 20 美元，以及促銷至少持續到 2026-11-21。現場表演藝術與金融科技是本期最缺乏可查證素材的分類，各只有一筆權重 6 的來源，限制已在 `source.md` 逐筆註明。
 
 <a id="disclaimer"></a>
 ## 免責聲明
