@@ -550,7 +550,7 @@ cat > "$TASK/report.md" <<'EOF'
 ### 網路/伺服器等基礎
 - Cloudflare 沒換演算法或硬體，只重排資料結構，就替 1.1.1.1 DNS 快取省下約 100 TB 記憶體。做法包括把 `Vec<T>` 與 `String` 換成 `Box<[T]>` 與 `Box<str>`，移除各占 8 位元組的容量欄位；把 answer、authority、additional 三段紀錄合成一份清單，用 2 位元組偏移量取代 8 位元組指標，每筆省 28 位元組；只在 owner 與查詢網域不同時保存完整名稱；把大型列舉變體裝箱；最後用線路格式把紀錄連續存入單一緩衝區。每筆資料從 953 位元組降到 420 位元組，2,500 億筆合計約 100 TB。效能也沒有變差，插入吞吐量增加 43%，查詢延遲降低 19%，p99 記憶體用量從每個執行個體 9.3 GB 降到 5.3 GB [[10. Cloudflare]](#ref-10)。
 
-- 爬蟲的身分從「被猜測」改成「自己申報」。Cloudflare 讓機器人營運者在儀表板送出、追蹤與維護 BotBase 登錄，填寫用途、內容使用方式與營運者。系統會自動偵測重複項目、檢查 user-agent 是否具體，再核對 IP 清單、反向 DNS 紀錄或 Web Bot Auth 簽章。網站經營者因此能查到哪些機器人在讀取內容；營運者也能直接編輯變動後的識別資訊，不必整份重送。限制同樣明顯：這份目錄由單一 CDN 業者維護，涵蓋率與中立性仍要另外驗證 [[11. Cloudflare]](#ref-11)。
+- 爬蟲的身分從「被猜測」改成「自己申報」。Cloudflare 讓機器人營運者在儀表板送出、追蹤與維護 BotBase 登錄，填寫用途、內容使用方式與營運者。系統會自動偵測重複項目、檢查 User-Agent 是否具體，再核對 IP 清單、反向 DNS 紀錄或 Web Bot Auth 簽章。網站經營者因此能查到哪些機器人在讀取內容；營運者也能直接編輯變動後的識別資訊，不必整份重送。限制同樣明顯：這份目錄由單一 CDN 業者維護，涵蓋率與中立性仍要另外驗證 [[11. Cloudflare]](#ref-11)。
 
 <a id="hl-fintech"></a>
 ### 金融科技
@@ -580,7 +580,7 @@ cat > "$TASK/report.md" <<'EOF'
 
 <a id="hl-others"></a>
 ### 其他領域科技應用突破
-- MIT 團隊提出 CrysVCD，處理生成式材料模型常見的浪費：模型一次產出數百萬個設計，但多數化學上不穩定，篩選可能占掉九成成本。CrysVCD 先讓語言模型產生符合化學合價的化學式，再交給擴散模型產生原子結構，生成步驟因此從約 1,000 步降到約 5 步。研究結果是機械穩定率 68%、亞穩定率 85%，產出穩定材料的效率比生成後再篩選高一個數量級，也找出了具備高導熱等目標性質的候選材料。這個做法的重點，是把領域規則放進生成階段；但團隊也說明，它目前最適合內部排列高度有序的固體結構，不能直接套用到所有材料類型。成果發表於《Nature Computational Science》 [[18. MIT News]](#ref-18)。
+- MIT 團隊提出 CrysVCD，處理生成式材料模型常見的浪費：模型一次產出數百萬個設計，但多數化學上不穩定，篩選可能占掉九成成本。CrysVCD 先讓語言模型產生符合化學合價的化學式，再交給擴散模型產生原子結構，生成步驟因此從約 1,000 步降到約 5 步。研究結果是機械穩定率 68%、亞穩定率 85%，產出穩定材料的效率比生成後再篩選高一個數量級，也找出了具備高導熱等目標性質的候選材料。這個做法的重點，是把領域規則放進生成階段；但團隊也說明，它目前最適合內部排列高度有序的固體結構，不能直接套用到所有材料類型。成果發表於《Nature Computational Science》[[18. MIT News]](#ref-18)。
 
 <a id="trends"></a>
 ## 趨勢分析
@@ -617,7 +617,7 @@ FlowForm 提供另一條路：用被動結構取代主動電子 [[9. TechNews �
 ### 網路/伺服器等基礎
 Cloudflare 的 DNS 快取調整值得工程團隊逐項讀過，因為五個做法都不依賴特殊硬體 [[10. Cloudflare]](#ref-10)。它移除 `Vec` 不需要的容量欄位，改用偏移量取代指標，讓選用欄位只在需要時佔空間，把過大的列舉變體裝箱，再以線路格式連續存放資料。結果是每筆資料從 953 位元組降到 420 位元組，2,500 億筆合計約 100 TB；插入吞吐量增加 43%，查詢延遲降低 19%。減少配置和改善記憶體區域性同時發揮作用，所以省空間沒有換來較慢的速度。
 
-BotBase 顯示，自動化流量的身分正從被動推測走向主動申報與自動驗證 [[11. Cloudflare]](#ref-11)。系統會核對 IP 清單、反向 DNS 與 Web Bot Auth 簽章，user-agent 字串因此退到輔助位置。限制也很直接：目錄由單一業者維護，涵蓋率與中立性都還需要持續驗證。
+BotBase 顯示，自動化流量的身分正從被動推測走向主動申報與自動驗證 [[11. Cloudflare]](#ref-11)。系統會核對 IP 清單、反向 DNS 與 Web Bot Auth 簽章，User-Agent 字串因此退到輔助位置。限制也很直接：目錄由單一業者維護，涵蓋率與中立性都還需要持續驗證。
 
 <a id="tr-fintech"></a>
 ### 金融科技
@@ -681,22 +681,22 @@ CrysVCD 的重點不只在材料科學，而是把領域規則放進生成階段
 | <a id="ref-9"></a>9 | [讓 5G 訊號自己轉彎，一片 2 美元的 3D 列印板輕鬆破解毫米波物理限制](https://www.google.com/search?q=FlowForm+UCSD+3D+列印+毫米波+反射板+SIGCOMM) | 2 美元的被動 3D 列印磚讓室內毫米波速率近乎翻倍，不需供電與協定變更。 | 2026-08-28 | [TechNews 科技新報](https://technews.tw/2026/08/28/2-dollar-reflective-brick-doubles-5g-speed) | 硬體或軟硬整合 |
 | <a id="ref-10"></a>10 | [How we saved 100 terabytes of memory by optimizing 1.1.1.1’s DNS cache](https://www.google.com/search?q=Cloudflare+saved+100+terabytes+memory+optimizing+1.1.1.1+DNS+cache) | 五項資料結構重排讓每筆快取記憶體降 56%，插入吞吐量同時增加 43%。 | 2026-08-27 | [Cloudflare](https://blog.cloudflare.com/dns-cache-memory-optimization-1111/) | 網路/伺服器等基礎 |
 | <a id="ref-11"></a>11 | [BotBase for Operators: A clearer path to joining Cloudflare's directory of bots and agents](https://www.google.com/search?q=Cloudflare+BotBase+for+Operators+directory+of+bots+and+agents) | 機器人身分改為自助申報加自動驗證，IP、反向 DNS 與 Web Bot Auth 簽章自動核對。 | 2026-08-28 | [Cloudflare](https://blog.cloudflare.com/botbase-for-operators/) | 網路/伺服器等基礎 |
-| <a id="ref-12"></a>12 | [中央社金融永續論壇登場　產官學研共同探討AI信任與安全](https://www.google.com/search?q=中央社+2026+金融永續論壇+AI+信任與安全+陳彥良) | 金管會強調信任與永續並行，但論壇未發布具體政策條文或量化目標。 | 2026-08-25 | [中央社 CNA](https://www.cna.com.tw/news/afe/202608250168.aspx) | 金融科技 |
-| <a id="ref-13"></a>13 | [衛福部攜手羅氏推AI醫療　首波瞄準慢性腎臟病照護](https://www.google.com/search?q=衛福部+羅氏+AI醫療+慢性腎臟病+FHIR+Box) | 以常規檢驗資料做腎功能惡化早期預警，FHIR Box 目前三家醫學中心即時互通。 | 2026-08-21 | [中央社 CNA](https://www.cna.com.tw/news/ahel/202608210280.aspx) | 醫療科技 |
+| <a id="ref-12"></a>12 | [中央社金融永續論壇登場　產官學研共同探討 AI 信任與安全](https://www.google.com/search?q=中央社+2026+金融永續論壇+AI+信任與安全+陳彥良) | 金管會強調信任與永續並行，但論壇未發布具體政策條文或量化目標。 | 2026-08-25 | [中央社 CNA](https://www.cna.com.tw/news/afe/202608250168.aspx) | 金融科技 |
+| <a id="ref-13"></a>13 | [衛福部攜手羅氏推 AI 醫療　首波瞄準慢性腎臟病照護](https://www.google.com/search?q=衛福部+羅氏+AI醫療+慢性腎臟病+FHIR+Box) | 以常規檢驗資料做腎功能惡化早期預警，FHIR Box 目前三家醫學中心即時互通。 | 2026-08-21 | [中央社 CNA](https://www.cna.com.tw/news/ahel/202608210280.aspx) | 醫療科技 |
 | <a id="ref-14"></a>14 | [AI 代理即將揮軍物流界？能處理複雜工作比只會寫程式更有商業價值](https://www.google.com/search?q=AI+代理+物流+Anthropic+經濟指數+工具呼叫+0.8%25) | 旅遊與物流僅占公開 API 工具呼叫 0.8%，代理的滲透順序取決於介面可呼叫性。 | 2026-08-17 | [TechNews 科技新報](https://technews.tw/2026/08/17/ai-reached-coding-first-logistics-may-be-the-bigger-opportunity/) | 運輸物流 |
-| <a id="ref-15"></a>15 | [AI淨零／內政部：273處社宅已規劃設太陽光電　容量3755瓩](https://www.google.com/search?q=內政部+社宅+太陽光電+273處+建築能效標章) | 273 處社宅規劃設置光電、82 案取得能效 1 級，策略順序為節、創、儲、控。 | 2026-08-27 | [中央社 CNA](https://www.cna.com.tw/news/aipl/202608270195.aspx) | 房地產與室內外裝潢 |
+| <a id="ref-15"></a>15 | [AI 淨零／內政部：273 處社宅已規劃設太陽光電　容量 3755 瓩](https://www.google.com/search?q=內政部+社宅+太陽光電+273處+建築能效標章) | 273 處社宅規劃設置光電、82 案取得能效 1 級，策略順序為節、創、儲、控。 | 2026-08-27 | [中央社 CNA](https://www.cna.com.tw/news/aipl/202608270195.aspx) | 房地產與室內外裝潢 |
 | <a id="ref-16"></a>16 | [大稻埕夏日節　壓軸煙火秀、無人機展演閃耀夜空[影]](https://www.google.com/search?q=大稻埕夏日節+2026+壓軸+煙火+無人機展演) | 8 分鐘煙火與無人機編隊接成約 20 分鐘連續演出，逾 14 萬人到場。 | 2026-08-15 | [中央社 CNA](https://www.cna.com.tw/news/aloc/202608150221.aspx) | 現場表演藝術 |
-| <a id="ref-17"></a>17 | [台中流行影音中心攜手威秀規劃9影廳　培育人才、接軌產業](https://www.google.com/search?q=台中流行影音中心+威秀+9影廳+OT+威剛) | 9 廳 1,628 席混編 Dolby Cinema 與 LED 影廳，其中兩廳規劃保留給藝術片、國片與公益放映。 | 2026-08-28 | [中央社 CNA](https://www.cna.com.tw/news/aloc/202608280157.aspx) | 影視音樂 |
+| <a id="ref-17"></a>17 | [台中流行影音中心攜手威秀規劃 9 影廳　培育人才、接軌產業](https://www.google.com/search?q=台中流行影音中心+威秀+9影廳+OT+威剛) | 9 廳 1,628 席混編 Dolby Cinema 與 LED 影廳，其中兩廳規劃保留給藝術片、國片與公益放映。 | 2026-08-28 | [中央社 CNA](https://www.cna.com.tw/news/aloc/202608280157.aspx) | 影視音樂 |
 | <a id="ref-18"></a>18 | [AI helps design new materials that work in the real world](https://www.google.com/search?q=MIT+CrysVCD+AI+helps+design+new+materials+that+work+in+the+real+world) | CrysVCD 把化學合價當生成期約束，步驟由約 1,000 降到約 5，機械穩定率 68%。 | 2026-08-26 | [MIT News](https://news.mit.edu/2026/ai-helps-design-new-materials-that-work-in-real-world-0826) | 其他領域科技應用突破 |
-| <a id="ref-19"></a>19 | [OpenAI大砍GPT-5.6 Sol價格逾20%！正面迎戰Anthropic與中國AI](https://www.google.com/search?q=OpenAI+GPT-5.6+Sol+降價+API+價格+Anthropic) | 未來三個月輸入價降 20%、輸出價降 33%，適用 API、訂閱額度與 Codex，訂閱月費不變。 | 2026-08-22 | [鉅亨網](https://news.cnyes.com/news/id/6584252) | AI 科技 |
+| <a id="ref-19"></a>19 | [OpenAI 大砍 GPT-5.6 Sol 價格逾 20%！正面迎戰 Anthropic 與中國 AI](https://www.google.com/search?q=OpenAI+GPT-5.6+Sol+降價+API+價格+Anthropic) | 未來三個月輸入價降 20%、輸出價降 33%，適用 API、訂閱額度與 Codex，訂閱月費不變。 | 2026-08-22 | [鉅亨網](https://news.cnyes.com/news/id/6584252) | AI 科技 |
 | <a id="ref-20"></a>20 | [Nvidia agrees to buy Hugging Face for $12.9 billion, reports](https://www.google.com/search?q=Nvidia+agrees+to+buy+Hugging+Face+12.9+billion) | 傳以 129 億美元收購開源模型平台，但雙方均未證實、協議尚未簽署。 | 2026-08-27 | [Fortune](https://fortune.com/2026/08/27/nvidia-hugging-face-billion-dollar-deal-open-source-ai/) | AI 科技 |
-| <a id="ref-21"></a>21 | [澎湖花火節雨中謝幕　700台無人機燈光秀吸睛](https://www.google.com/search?q=澎湖花火節+2026+閉幕+700台無人機+燈光秀) | 700 台無人機加 720 秒煙火於風雨中照常完成，會期橫跨四個月共 33 場。 | 2026-08-25 | [中央社 CNA](https://www.cna.com.tw/news/aloc/202608250359.aspx) | 現場表演藝術 |
+| <a id="ref-21"></a>21 | [澎湖花火節雨中謝幕　700 台無人機燈光秀吸睛](https://www.google.com/search?q=澎湖花火節+2026+閉幕+700台無人機+燈光秀) | 700 台無人機加 720 秒煙火於風雨中照常完成，會期橫跨四個月共 33 場。 | 2026-08-25 | [中央社 CNA](https://www.cna.com.tw/news/aloc/202608250359.aspx) | 現場表演藝術 |
 
 <a id="notes"></a>
 ## 報告說明
 本報告由 Claude Code、Codex 彙整 2026-08-14 至 2026-08-29 的全球科技新聞與官方公告，再依程式設計師與科技讀者常關注的主題整理。來源優先採用官方公告與一手技術部落格，其次是權威科技媒體與台灣主流媒體；候選來源和淘汰原因保留在同一任務資料夾的 `source.md`。本期共蒐集 36 筆候選來源，採用 21 筆，淘汰 15 筆，主要原因是發布日期超出時間窗或上一期已引用。本期與 2026-08-22 期重疊 9 天，篩選前已逐筆比對 `tech/2026-08-22/references.md`。交付前也重新開啟原始網址，核對標題、發布日期、媒體名稱與內文主張。
 
-以下限制需要留意：ref-1 的席次擴充、ref-3 的政策與計費變更、ref-13 的合作備忘錄，以及 ref-17 的影城規劃，都是已宣布但尚未完成或生效的安排。ref-6 的三個 ServiceNow 漏洞目前沒有已知利用或公開利用程式碼，屬預防性修補；ref-7 的 Gateway 選擇器仍標示 experimental。ref-8 的 12GB + 256GB 採購報價來自中國數位爆料帳號「數碼閒聊站」，未經原廠或研究機構證實，本文只採用 Counterpoint Research 的 BOM 增幅與出貨預估。ref-5 的 267 台受害實例是掃描觀測值，不是全球普查。ref-9 為二手科技媒體報導，可回溯至 ACM SIGCOMM 2026 論文，但測試只涵蓋五種室內環境。ref-12 是論壇發言彙整，沒有具體政策條文或量化目標，且主辦方同時也是報導方。ref-14 為觀點文，4 兆美元市場規模與六成倉儲滲透率沒有標明原始出處，本文只引用可回溯至 Anthropic 經濟指數報告的 0.8% 工具呼叫占比。ref-15 的 2050 年目標是政策宣示，公布內容沒有中期查核點達成率。ref-16 未揭露無人機數量與飛控方案；ref-18 的方法依研究團隊說明，只適合內部排列高度有序的固體結構。ref-20 的收購案未經 Nvidia 或 Hugging Face 證實，協議也未簽署；消息來自 The Information 的未具名來源，Fortune 表示無法獨立查證，因此本文一律寫成「傳出」，不視為既成交易。cnbc.com 擷取時回 HTTP 403，金額與狀態改以 Fortune、Forbes 同日報導交叉核對。ref-21 與 ref-16 都是活動報導，未揭露飛控方案與備援機制。
+以下限制需要留意：ref-1 的席次擴充、ref-3 的政策與計費變更、ref-13 的合作備忘錄，以及 ref-17 的影城規劃，都是已宣布但尚未完成或生效的安排。ref-6 的三個 ServiceNow 漏洞目前沒有已知利用或公開利用程式碼，屬預防性修補；ref-7 的 Gateway 選擇器仍標示 experimental。ref-8 的 12 GB + 256 GB 採購報價來自中國數位爆料帳號「數碼閒聊站」，未經原廠或研究機構證實，本文只採用 Counterpoint Research 的 BOM 增幅與出貨預估。ref-5 的 267 台受害實例是掃描觀測值，不是全球普查。ref-9 為二手科技媒體報導，可回溯至 ACM SIGCOMM 2026 論文，但測試只涵蓋五種室內環境。ref-12 是論壇發言彙整，沒有具體政策條文或量化目標，且主辦方同時也是報導方。ref-14 為觀點文，4 兆美元市場規模與六成倉儲滲透率沒有標明原始出處，本文只引用可回溯至 Anthropic 經濟指數報告的 0.8% 工具呼叫占比。ref-15 的 2050 年目標是政策宣示，公布內容沒有中期查核點達成率。ref-16 未揭露無人機數量與飛控方案；ref-18 的方法依研究團隊說明，只適合內部排列高度有序的固體結構。ref-20 的收購案未經 Nvidia 或 Hugging Face 證實，協議也未簽署；消息來自 The Information 的未具名來源，Fortune 表示無法獨立查證，因此本文一律寫成「傳出」，不視為既成交易。cnbc.com 擷取時回 HTTP 403，金額與狀態改以 Fortune、Forbes 同日報導交叉核對。ref-21 與 ref-16 都是活動報導，未揭露飛控方案與備援機制。
 
 OpenAI 官方產品頁的原始發布日是 2026-07-09，更新日是 2026-08-21，原始發布日不在本期時間窗內。因此 GPT-5.6 Sol 降價仍以窗內的鉅亨網 2026-08-22 報導（ref-19）作為正式來源；官方產品頁與模型頁只用來交叉核對每百萬 token 輸入 4 美元、輸出 20 美元，以及促銷至少持續到 2026-11-21。現場表演藝術與金融科技是本期最缺乏可查證素材的分類，各只有一筆權重 6 的來源，限制已在 `source.md` 逐筆註明。
 
