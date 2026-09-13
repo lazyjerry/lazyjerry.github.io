@@ -36,7 +36,26 @@
 - 解法：每一筆候選來源都要逐篇查核「實際發布日期」（WebFetch 或內文標示），而非以搜尋出現順序判斷新舊；窗外即剔除並記錄於 `source.md`。
 - 對醫療科技、運輸物流等分類尤其常見窗內專題不足，需提早補搜或明確註記缺漏。
 
+### technews.tw 文章頁 301 轉址到 cdn.technews.tw
+
+- `technews.tw/2026/...` 與 `finance.technews.tw/...` 的文章頁會 301 轉址到 `cdn.technews.tw/2026/...`，WebFetch 不跟隨跨網域轉址，需以轉址後網址重抓。
+- 參考資料表仍採用 `technews.tw` 正式網址，不要寫 `cdn.` 版本。
+- `technews.tw/2026/09/13/` 這類日期歸檔頁只回傳部分文章（實測 3 篇），首頁同日卻列出 9 篇。要盤點單日文章不能只靠歸檔頁，需搭配首頁與 WebSearch 取得完整 URL。
+
+### blog.cloudflare.com 的 slug 無法從標題推測
+
+- 依標題直譯的 slug 全回 404。實際對應：〈1.1.1.1 now supports post-quantum DNSSEC〉是 `post-quantum-dnssec-1111`、〈Automatic Key Exchange…〉是 `automatic-key-exchange-for-origins`、〈Introducing automatic remediation policies with Cloudflare CASB〉是 `casb-policies`。
+- 解法：先用 `WebSearch` 限定 `allowed_domains: ["blog.cloudflare.com"]` 取得正確網址，再 WebFetch。
+- `anthropic.com` 同類：〈Improving our alignment and security efforts〉的 slug 為 `improving-alignment-security-efforts`；該站的威脅情資報告頁本身不顯示發布日期，日期需回 `anthropic.com/news` 列表頁取得。
+
+### 活動預告類來源的發布日常落在窗外
+
+- 表演藝術與影視音樂的窗內來源特別稀疏，因為大型活動的新聞稿多在開幕前一至兩個月發出。實測落在窗外的有：兩廳院秋天藝術節（發布 07-27、活動 10-22）、高雄電影節 XR 片單（08-18、活動 10-09）、FUTUREMODE（08-13）、Spotify AI Persona 官方公告（08-11，標籤 9 月中旬才上線）。
+- **活動的實施日落在窗內，不能拿來當發布日。** 判定一律以新聞稿或報導的發布日為準。
+- 可用的補救方向：找窗內發出的「開幕前置報導」（例如大會規模與展區公布、演出前的交管公告），而非活動主新聞稿。
+
 ## 來源
 
 - 來自 weekly-tech-report-005（2026-05-30）任務的實作經驗
 - inside.com.tw、全球中央轉址、標題內文矛盾三項來自 weekly-tech-report-019（2026-09-05）任務
+- technews.tw 轉址與歸檔頁不全、blog.cloudflare.com／anthropic.com slug 不可推測、活動預告發布日落窗外三項來自 weekly-tech-report-020（2026-09-13）任務
