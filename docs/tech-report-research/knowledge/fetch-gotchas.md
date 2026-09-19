@@ -41,6 +41,20 @@
 - `technews.tw/2026/...` 與 `finance.technews.tw/...` 的文章頁會 301 轉址到 `cdn.technews.tw/2026/...`，WebFetch 不跟隨跨網域轉址，需以轉址後網址重抓。
 - 參考資料表仍採用 `technews.tw` 正式網址，不要寫 `cdn.` 版本。
 - `technews.tw/2026/09/13/` 這類日期歸檔頁只回傳部分文章（實測 3 篇），首頁同日卻列出 9 篇。要盤點單日文章不能只靠歸檔頁，需搭配首頁與 WebSearch 取得完整 URL。
+- 子站的轉址網域各不相同：`finance.technews.tw` 轉到 `cdnfinance.technews.tw`，`infosecu.technews.tw` 轉到 `cdninfosecu.technews.tw`，不是 `cdn.technews.tw`。
+
+### WebFetch 的摘要會改寫時間詞、補出原文沒有的日期
+
+- 實測：中央社原文的「今天」被寫成「昨日」；Digital Music News 原文只寫「last year」，摘要卻補成「November 2025」。
+- **發布日期與關鍵數字不能只信 WebFetch 摘要。** 改用 `curl` 取原頁 HTML，讀 JSON-LD 的 `datePublished`／`articleBody` 或 `<meta property="article:published_time">` 核對。
+- 中央社列表頁 `cna.com.tw/list/{ait|amov|acul}.aspx` 可用 curl 抽出「標題＋網址」盤點窗內新聞；MIT News 的 `news.mit.edu/rss/feed` 附 pubDate。
+- iThome 對 WebFetch 回 403，但 `curl` 帶瀏覽器 User-Agent 可拿到 200，發布日在 `class="created"`；inside.com.tw 連帶 UA 的 curl 也回 403。
+
+### 原頁沒有日期列、或日期是資料期間
+
+- `anthropic.com/institute/...` 路徑的文章沒有日期列，頁面上的「August 2026」是資料期間而非發布日；發布日要看 `anthropic.com/news` 列表。
+- OpenAI 的 `alignment.openai.com/misalignment-reports/` 只列各則通報日期，不顯示框架公告本身的發布日，需以媒體報導交叉確認。
+- 中文轉述常與原頁數字不一致（例：科技新報寫「從 3 月約 1%」，Anthropic 原頁是「2 月不到 1%」），數字一律回原頁。
 
 ### blog.cloudflare.com 的 slug 無法從標題推測
 
@@ -59,3 +73,4 @@
 - 來自 weekly-tech-report-005（2026-05-30）任務的實作經驗
 - inside.com.tw、全球中央轉址、標題內文矛盾三項來自 weekly-tech-report-019（2026-09-05）任務
 - technews.tw 轉址與歸檔頁不全、blog.cloudflare.com／anthropic.com slug 不可推測、活動預告發布日落窗外三項來自 weekly-tech-report-020（2026-09-13）任務
+- technews 子站轉址網域、WebFetch 改寫日期與 curl 核對法、原頁無日期列三項來自 weekly-tech-report-021（2026-09-19）任務
