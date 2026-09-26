@@ -68,9 +68,37 @@
 - **活動的實施日落在窗內，不能拿來當發布日。** 判定一律以新聞稿或報導的發布日為準。
 - 可用的補救方向：找窗內發出的「開幕前置報導」（例如大會規模與展區公布、演出前的交管公告），而非活動主新聞稿。
 
+### openai.com 連 curl 帶各種 UA 也回 403
+
+- `openai.com/index/...` 對 curl 的 Chrome UA、curl 預設 UA 與 Googlebot UA 一律回 403，無法在原頁確認發布日。
+- 解法：同事件改以可核對日期的台灣媒體（iThome 的 `class="created"`）或 GitHub Changelog 的同日上架公告為來源，在 `source.md` 備註官方頁無法取得；報告說明列為非一手來源。
+
+### sec.gov 對瀏覽器 UA 回 403「Request Rate Threshold Exceeded」
+
+- SEC 新聞稿頁對一般瀏覽器 UA 回 403，改用宣告式 UA（含應用名稱與聯絡 email）後回 200。
+- 頁面沒有 `datePublished` meta，日期取頁面日期列（例如「Sept. 17, 2026」）。
+- 同類：`cadence.com`、`mastercard.com` 對 curl 與 WebFetch 皆 403；`bleepingcomputer.com` 首頁與 RSS 會被 Cloudflare 的「Just a moment」擋下。無法核對原頁者淘汰。
+
+### 政府與廠商頁面的「更新日期」不是發布日
+
+- `fsc.gov.tw` 新聞稿頁尾的「更新日期」是網站更新時間，發布日以正文「今日（22 日）」與列表頁的 `dataserno`（如 `202609220001`）為準。
+- `mediatek.com` 新聞室列表頁顯示的日期與文章頁不一致，以文章頁的日期列為準。
+- `mohw.gov.tw` 與 `abri.gov.tw` 的日期欄用民國年（如 `115-09-17`），換算後記錄。
+
+### 沒有日期 meta 的一手來源
+
+- `anthropic.com` 的模型發表頁與 `/news/`、`nasa.gov/news-release/`、`waymo.com/blog/shorts/`、臺鐵官網內文頁都沒有 JSON-LD 或 `article:published_time`。
+- 分別以頁面正文日期列、`<title>` 或 H1 內的日期、官網列表頁日期為準，並在 `source.md` 備註出處。
+
+### blog.google 用 curl 抽到的是 CSS
+
+- `blog.google` 文章頁以 curl 取回的 HTML 去標籤後幾乎只剩樣式表，正文要改用 WebFetch 抽取，再用 `grep` 對原始 HTML 驗證關鍵詞與數字是否真的在原頁。
+- 實測 Project Suncatcher 頁面不含二手媒體寫的發射日期、衛星名稱與 TPU 數量，這些一律不寫入摘要。
+
 ## 來源
 
 - 來自 weekly-tech-report-005（2026-05-30）任務的實作經驗
 - inside.com.tw、全球中央轉址、標題內文矛盾三項來自 weekly-tech-report-019（2026-09-05）任務
 - technews.tw 轉址與歸檔頁不全、blog.cloudflare.com／anthropic.com slug 不可推測、活動預告發布日落窗外三項來自 weekly-tech-report-020（2026-09-13）任務
 - technews 子站轉址網域、WebFetch 改寫日期與 curl 核對法、原頁無日期列三項來自 weekly-tech-report-021（2026-09-19）任務
+- openai.com 全 UA 403、sec.gov 宣告式 UA、更新日期不是發布日、無日期 meta 的一手來源、blog.google 抽到 CSS 五項來自 weekly-tech-report-022（2026-09-26）任務
