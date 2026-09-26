@@ -95,6 +95,12 @@
 - `blog.google` 文章頁以 curl 取回的 HTML 去標籤後幾乎只剩樣式表，正文要改用 WebFetch 抽取，再用 `grep` 對原始 HTML 驗證關鍵詞與數字是否真的在原頁。
 - 實測 Project Suncatcher 頁面不含二手媒體寫的發射日期、衛星名稱與 TPU 數量，這些一律不寫入摘要。
 
+### 前端框架渲染的新聞稿頁，正文在另一個端點
+
+- `qualcomm.com/news/releases/...` 是 React app，curl 取回的 HTML 只有 JSON-LD（含 `datePublished`），正文要抓同網址加 `.model.json`，再從 JSON 的 `text` 欄位讀。
+- `apple.com/newsroom` 的 H1 常比 `og:title` 長（多了 brand-new 之類的修飾語），參考資料表採 H1；日期取 JSON-LD `datePublished`，頁面標示 UPDATE 時另有 `dateModified`，不可當發布日。
+- `corp.helpfeel.com` 公告頁有兩個日期 meta，較晚的是更新時間；發布日以正文「as of September 16, 2026」與頁面日期列為準。
+
 ## 來源
 
 - 來自 weekly-tech-report-005（2026-05-30）任務的實作經驗
@@ -102,3 +108,4 @@
 - technews.tw 轉址與歸檔頁不全、blog.cloudflare.com／anthropic.com slug 不可推測、活動預告發布日落窗外三項來自 weekly-tech-report-020（2026-09-13）任務
 - technews 子站轉址網域、WebFetch 改寫日期與 curl 核對法、原頁無日期列三項來自 weekly-tech-report-021（2026-09-19）任務
 - openai.com 全 UA 403、sec.gov 宣告式 UA、更新日期不是發布日、無日期 meta 的一手來源、blog.google 抽到 CSS 五項來自 weekly-tech-report-022（2026-09-26）任務
+- qualcomm.com 的 `.model.json`、apple.com/newsroom 的 H1 與 og:title 差異、helpfeel.com 雙日期 meta 三項來自 weekly-tech-report-022 第三輪稽核

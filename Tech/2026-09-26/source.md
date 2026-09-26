@@ -65,7 +65,7 @@
 - 備註：curl 200，日期取自 JSON-LD `datePublished` 2026-09-22T12:36:00+08:00。數據為微軟報告的自行統計，中央社轉述。與前期無重疊。
 
 ### 6. Anthropic 成立生命科學研究實驗室，Claude 發現具 CRISPR 式重複序列的新型酵素系統
-- 原始標題：Claude discovers a novel enzyme system
+- 原始標題：Claude discovers a novel enzyme system with CRISPR-like repeats
 - 標題：Anthropic 成立生命科學研究實驗室，Claude 發現具 CRISPR 式重複序列的新型酵素系統
 - URL：https://www.anthropic.com/news/claude-discovers-novel-enzyme-system
 - 摘要：Anthropic 於 9 月 23 日宣布成立生命科學研究小組與實驗室，聚焦以 Claude 進行基礎生物研究：探索 DNA 資料集以找出尚未被描述的蛋白質家族、大規模產生假設，並在自有實驗室以實驗驗證。該小組於 2026 年春季成立，目的在檢驗通用 AI 模型能否系統化並加速這類發現，並建立「代理在每個步驟與人類協作」的新研究方式。文章分享的早期成果為：在科學家僅給予高層次方向下，Claude 自主發現一個與 DNA 重複序列陣列相關的新型酵素系統，其模式令人聯想到 CRISPR。該系統以反轉錄酶（reverse transcriptase，RT）為基礎，這個 RT 來自一種巨型噬菌體，先前研究已鑑定過該酶，但 Claude 似乎是第一個注意到此系統定義特徵的。Anthropic 表示尚不清楚其功能，但其特徵組合過去只在少數幾個系統中一起出現，而那些系統都是可程式化、能執行剪切、複製與貼上 DNA 的工具。
@@ -73,7 +73,7 @@
 - 發布日期：2026-09-23
 - 分類：AI 科技
 - 是否納入正式參考資料：是
-- 備註：curl 200，日期取自頁面正文的「Sep 23, 2026」（頁面無 JSON-LD datePublished）。iThome 09-25 報導（https://www.ithome.com.tw/news/179222）標題稱「動用近千 Claude 代理、21 小時」，該數字不在本次讀取的 Anthropic 原頁節錄範圍，摘要未收。成果為 Anthropic 自述，功能尚未確認。與前期無重疊。
+- 備註：curl 200，日期取自頁面正文的「Sep 23, 2026」（頁面無 JSON-LD datePublished）。第二輪稽核時，現行 H1 與正文已明載 CRISPR-like repeats、約 950 個代理與 21 小時；摘要只保留與研究成果直接相關的內容。成果為 Anthropic 自述，功能尚未確認。與前期無重疊。
 
 ### 7. GitHub Actions 移除 Node 20，JavaScript actions 改用 Node 24
 - 原始標題：Node 20 is no longer available in GitHub Actions
@@ -128,7 +128,7 @@
 - 發布日期：2026-09-23
 - 分類：軟體工程
 - 是否納入正式參考資料：是
-- 備註：curl 200，日期取自頁面正文的「Released September 23, 2026」。iThome 09-24 報導（https://www.ithome.com.tw/news/179212）另有「約 645 個工作階段測試，首次列出時間從 1.3 秒降至 0.1 秒、重新整理從 0.6 秒降至 0.15 秒」與「遠端主機需要 Docker」等細節，這些數字不在本次讀取的官方頁節錄範圍，摘要未收（程式設計師觀點中的 Docker 一句出自 iThome）。與前期無重疊。
+- 備註：curl 200，日期取自頁面正文的「Released September 23, 2026」。iThome 09-24 報導（https://www.ithome.com.tw/news/179212）另有「約 645 個工作階段測試，首次列出時間從 1.3 秒降至 0.1 秒、重新整理從 0.6 秒降至 0.15 秒」與「遠端主機需要 Docker」等細節，稽核複查官方頁正文亦載有同一組量測表（約 645 個工作階段）與「Docker must be available on the remote host」，摘要未展開。與前期無重疊。
 
 ### 12. Docker Cloud Sandboxes 上線，AI 代理環境可在本機與雲端雙向搬移
 - 原始標題：Docker Cloud Sandboxes上線，AI代理環境可在本機與雲端雙向搬移
@@ -174,11 +174,11 @@
 - 是否納入正式參考資料：是
 - 備註：curl 帶瀏覽器 UA 取得 HTTP 200，日期出自 `<span class="created">2026-09-22`。原頁未點名機關名稱與防火牆廠牌型號。資安署月報原文在 moda.gov.tw，本篇為 iThome 整理報導；台灣政府資安政策類來源。
 
-### 16. Acronis 揭露中國駭客 Red Heron 利用 Gitea 漏洞跨國攻擊，台灣為重點目標
+### 16. Acronis 揭露中文使用者駭客組織 Red Heron 利用 Gitea 漏洞跨國攻擊，台灣為重點目標
 - 原始標題：Red Heron exploits Gitea n-day flaw in multinational campaign, exposing new Linux rootkit
-- 標題：Acronis 揭露中國駭客 Red Heron 利用 Gitea 漏洞跨國攻擊，台灣為重點目標
+- 標題：Acronis 揭露中文使用者駭客組織 Red Heron 利用 Gitea 漏洞跨國攻擊，台灣為重點目標
 - URL：https://www.acronis.com/en/tru/posts/red-heron-exploits-gitea-n-day-flaw-in-multinational-campaign-exposing-new-linux-rootkit/
-- 摘要：Acronis 威脅研究單位（TRU）揭露駭客組織 Red Heron 利用 Gitea 遠端程式碼執行漏洞 CVE-2026-60004（CVSS 9.8，1.27.1 版於 7 月 27 日修補）發動跨國攻擊，在公開 PoC 出現後數日內即武器化為自動化框架，能註冊帳號、利用漏洞、竊取儲存庫並清除部分痕跡。攻擊者以 FOFA 掃描七國共 1,386 個 Gitea 實例，另維護一份含 477 個台灣系統的獨立清單，並於 8 月 3 日對其中 50 個台灣目標批次發動攻擊；確認遭入侵的組織分布於加拿大、阿根廷、台灣、美國與斯里蘭卡，至少 11 個目標留有攻擊紀錄。在一個台灣環境中，攻擊者從執行 Gitea 的 Synology NAS 一路取得三節點 Proxmox 叢集的 root 權限並啟動虛擬機備份。報告同時揭露 C++ 植入程式 JITTERLY 與此前未被記錄的 LD_PRELOAD rootkit SIXZUT。Acronis 以中等信心評估 Red Heron 在中國相關背景下運作。
+- 摘要：Acronis 威脅研究單位（TRU）揭露駭客組織 Red Heron 利用 Gitea 遠端程式碼執行漏洞 CVE-2026-60004（CVSS 9.8，1.27.1 版於 7 月 27 日修補）發動跨國攻擊，在公開 PoC 出現後數日內即武器化為自動化框架，能註冊帳號、利用漏洞、竊取儲存庫並清除部分痕跡。攻擊者以 FOFA 掃描七國共 1,386 個 Gitea 實例，另維護一份含 477 個台灣系統的獨立清單，並於 8 月 3 日對其中 50 個台灣目標批次發動攻擊；確認遭入侵的組織分布於加拿大、阿根廷、台灣、美國與斯里蘭卡，共 11 個目標留有攻擊紀錄。在一個台灣環境中，攻擊者從執行 Gitea 的 Synology NAS 一路取得三節點 Proxmox 叢集的 root 權限並啟動虛擬機備份。報告同時揭露 C++ 植入程式 JITTERLY 與此前未被記錄的 LD_PRELOAD rootkit SIXZUT。Acronis 以中等信心評估 Red Heron 在中國相關背景下運作。
 - 權重：8/10
 - 發布日期：2026-09-13
 - 分類：軟硬體資訊安全
@@ -200,7 +200,7 @@
 - 原始標題：Compromised GitHub Actions Came Back Online and Resumed Executing Mini Shai-Hulud Malware
 - 標題：遭入侵的 GitHub Actions 重新上線，Mini Shai-Hulud 惡意程式再度執行
 - URL：https://thehackernews.com/2026/09/compromised-github-actions-came-back.html
-- 摘要：兩個 actions-cool 組織的 GitHub Actions（issues-helper、maintain-one-comment）在 2026 年 5 月 18 日 Mini Shai-Hulud 供應鏈攻擊中遭植入竊取 CI/CD 憑證的惡意程式碼，當時已被停用。Socket 研究人員 Karlo Zanki 指出，兩個儲存庫於 9 月 16 日再度變成可存取狀態，但發行標籤未先清理，仍指向 5 月 18 日植入的惡意內容，因此任何以版本標籤引用這兩個 action 的工作流程，會在下一次執行時重新下載並執行惡意酬載。目前兩個儲存庫已被 GitHub 第二次停用，原因不明。釘選到 5 月 18 日之前完整 commit SHA 的工作流程不受影響。建議做法包括：找出所有引用並將 `actions-cool/issues-helper@v2.2.1` 視為受影響、改釘選到已知乾淨的 SHA、輪替所有曝露的密鑰、檢查執行紀錄中長期「Set up job」失敗後突然成功的執行、稽核 9 月 16 日之後的異常 commit。
+- 摘要：兩個 actions-cool 組織的 GitHub Actions（issues-helper、maintain-one-comment）在 2026 年 5 月 18 日 Mini Shai-Hulud 供應鏈攻擊中遭植入竊取 CI/CD 憑證的惡意程式碼，當時已被停用。Socket 研究人員 Karlo Zanki 指出，兩個儲存庫於 9 月 16 日再度變成可存取狀態，但發行標籤未先清理，仍指向 5 月 18 日植入的惡意內容，因此任何以版本標籤引用這兩個 action 的工作流程，會在下一次執行時重新下載並執行惡意酬載。重新可存取的原因不明；目前兩個儲存庫已被 GitHub 以違反服務條款為由第二次停用。釘選到 5 月 18 日之前完整 commit SHA 的工作流程不受影響。建議做法包括：找出所有引用並將 `actions-cool/issues-helper@v2.2.1` 視為受影響、改釘選到已知乾淨的 SHA、輪替所有曝露的密鑰、檢查執行紀錄中長期「Set up job」失敗後突然成功的執行、稽核 9 月 16 日之後的異常 commit。
 - 權重：7/10
 - 發布日期：2026-09-25
 - 分類：軟硬體資訊安全
@@ -277,7 +277,7 @@
 - 原始標題：We just shipped support for the ugliest part of HTTP: Vary
 - 標題：Cloudflare 在 Cache Rules 加入 Vary 標頭支援
 - URL：https://blog.cloudflare.com/vary-support/
-- 摘要：Cloudflare 宣布在 Cache Rules 中支援 HTTP `Vary` 回應標頭，讓管理者決定每個由來源伺服器宣告會影響回應的請求標頭該如何處理。設定分兩階段：來源伺服器透過 `Vary` 宣告哪些請求標頭會影響回應，管理者再於 Cache Rules 為每個標頭選擇三種動作之一——Normalize（正規化：小寫化、依品質值排序、過濾為已設定的格式或語言，讓等價請求共用同一份快取；`Accept`、`Accept-Language`、`Accept-Encoding` 會自動套用）、Passthrough（保留大小寫、空白與順序等精確值作為快取鍵）、Bypass（變化不可預測或個人化時直接不快取）。文中分析指出有將近 3,000 個網站在四個以上欄位上 Vary，部分甚至 Vary 於 10、23 乃至 47 個欄位。功能對 Free、Pro、Business、Enterprise 所有方案開放，可從儀表板 Caching > Cache Rules 設定，也支援 Rulesets API 與 Terraform。
+- 摘要：Cloudflare 宣布在 Cache Rules 中支援 HTTP `Vary` 回應標頭，讓管理者決定每個由來源伺服器宣告會影響回應的請求標頭該如何處理。設定分兩階段：來源伺服器透過 `Vary` 宣告哪些請求標頭會影響回應，管理者再於 Cache Rules 為每個標頭選擇三種動作之一——Normalize（正規化：小寫化、依品質值排序、過濾為已設定的格式或語言，讓等價請求共用同一份快取；`Accept`、`Accept-Language`、`Accept-Encoding` 會自動套用）、Passthrough（保留大小寫、空白與順序等精確值作為快取鍵）、Bypass（變化不可預測或個人化時直接不快取）。文中引用的外部分析指出有將近 3,000 個網站在四個以上欄位上 Vary，部分甚至 Vary 於 10、23 乃至 47 個欄位。功能對 Free、Pro、Business、Enterprise 所有方案開放，可從儀表板 Caching > Cache Rules 設定，也支援 Rulesets API 與 Terraform。
 - 權重：8/10
 - 發布日期：2026-09-22
 - 分類：網路/伺服器等基礎
@@ -370,7 +370,7 @@
 - 發布日期：2026-09-17
 - 分類：金融科技
 - 是否納入正式參考資料：是
-- 備註：sec.gov 對一般瀏覽器 UA 回 403「Request Rate Threshold Exceeded」，改用宣告式 UA（含聯絡資訊）後回 200。頁面無 `datePublished` meta，日期取自頁面日期列「Sept. 17, 2026」（出現兩次）。技術媒體報導的「為期 5 年」、「Coinbase、Robinhood 股價大漲」等細節不在 SEC 原頁，摘要未寫入；TechNews 09-21 轉載 MoneyDJ 的同事件報導列在淘汰候選 E。
+- 備註：sec.gov 對一般瀏覽器 UA 回 403「Request Rate Threshold Exceeded」，改用宣告式 UA（含聯絡資訊）後回 200。頁面無 `datePublished` meta，日期取自頁面日期列「Sept. 17, 2026」（出現兩次）。技術媒體報導的「Coinbase、Robinhood 股價大漲」等細節不在 SEC 原頁（「豁免自刊登起 5 年後到期」原頁有載），摘要未寫入；TechNews 09-21 轉載 MoneyDJ 的同事件報導列在淘汰候選 E。
 
 ### 34. 金管會督導證交所及櫃買中心建置「臺股儀表板」上線 揭示三大面向資訊
 - 原始標題：金管會督導證交所及櫃買中心建置「臺股儀表板」上線 揭示三大面向資訊
@@ -416,16 +416,16 @@
 - 是否納入正式參考資料：是
 - 備註：curl 200，頁面 `<time datetime="2026-09-24T21:00:00Z">`，MIT News RSS pubDate 亦為 09-24。與 09-19 期引用的 MIT xvr 手術 X 光對齊（09-16）、09-13 期的 MIT 奈米裝置為不同研究。研究階段，尚未臨床部署。
 
-### 38. FDA 正式駁回放射科 AI 偵測與分診軟體免 510(k) 的請願
+### 38. FDA 正式駁回放射科 AI 偵測與分診軟體部分豁免 510(k) 的請願
 - 原始標題：Medical Devices; Exemption From Premarket Notification: Radiology Computer-Aided Detection and/or Diagnosis Devices and Computer-Aided Triage and Notification Devices
-- 標題：FDA 正式駁回放射科 AI 偵測與分診軟體免 510(k) 的請願
+- 標題：FDA 正式駁回放射科 AI 偵測與分診軟體部分豁免 510(k) 的請願
 - URL：https://www.federalregister.gov/documents/2026/09/17/2026-19074/medical-devices-exemption-from-premarket-notification-radiology-computer-aided-detection-andor-diagnosis-devices-and-computer-aided-triage-and-notification-devices
 - 摘要：美國 FDA 在聯邦公報刊登最終命令，就放射科電腦輔助偵測／診斷（CAD）與電腦輔助分診通知（CADt）器材的部分上市前通知豁免作出最終決定。該案源於 2025 年 12 月 29 日公告收到的請願，請願要求在符合特定條件時，豁免四類通用器材的 510(k) 上市前通知：疑似癌症病灶的放射科電腦輔助診斷軟體、醫學影像分析器、放射科電腦輔助分診通知軟體，以及放射科電腦輔助偵測與診斷軟體。FDA 已於 2026 年 4 月 1 日回覆請願人駁回請願，並依《聯邦食品、藥品及化妝品法》程序刊登此命令；文件類型為 Final order，發布與生效日均為 2026 年 9 月 17 日。
 - 權重：7/10
 - 發布日期：2026-09-17
 - 分類：醫療科技
 - 是否納入正式參考資料：是
-- 備註：curl 200，`article:published_time` 2026-09-17；另以 federalregister.gov API（documents/2026-19074.json）取得 abstract 與 action 欄位。摘要只用 abstract 與 API 欄位；「收到 45 則以上意見」「請願人為 Harrison.ai」「FDA 認為持有 510(k) 不代表製造商熟悉開發流程」等細節出自 AuntMinnie、BioWorld 等媒體，不在原頁，摘要未寫入。駁回決定本身是 4 月 1 日，本期新事件是 9 月 17 日的正式刊登命令。
+- 備註：curl 200，`article:published_time` 2026-09-17；另以 federalregister.gov API（documents/2026-19074.json）取得 abstract 與 action 欄位。摘要只用 abstract 與 API 欄位；「收到 45 則以上意見」「FDA 認為持有 510(k) 不代表製造商熟悉開發流程」等細節出自 AuntMinnie、BioWorld 等媒體，不在原頁，摘要未寫入；請願人 Harrison.ai 原頁第 III 節有載（on behalf of Harrison.ai）。駁回決定本身是 4 月 1 日，本期新事件是 9 月 17 日的正式刊登命令。
 
 ### 39. MIT 開發可被腸胃道吸收的電池，可驅動 RFID 標籤與胃部電刺激膠囊
 - 原始標題：Batteries that safely break down in the GI tract could improve ingestible devices
@@ -447,7 +447,7 @@
 - 發布日期：2026-09-23
 - 分類：運輸物流
 - 是否納入正式參考資料：是
-- 備註：curl 200。發布日出自臺鐵官網新聞列表頁日期「2026/09/23」，內文頁本身無日期 meta。蕃新聞 09-24 為同一新聞稿全文轉載，可互相印證。與第 12 筆為同一展會但不同主體（臺鐵技術成果 vs 交通部政策專訪），與淘汰候選 O（德鐵合作備忘錄）亦為同展會的不同事件；建議至多收其中兩筆。
+- 備註：curl 200。發布日出自臺鐵官網新聞列表頁日期「2026/09/23」，內文頁本身無日期 meta，標題下方有「發佈日期：2026/9/23 下午 5:00」。蕃新聞 09-24 為同一新聞稿全文轉載，可互相印證。與第 12 筆為同一展會但不同主體（臺鐵技術成果 vs 交通部政策專訪），與淘汰候選 O（德鐵合作備忘錄）亦為同展會的不同事件；建議至多收其中兩筆。
 
 ### 41. 柏林軌道展台灣產業拚國際　陳世凱：AI、資通訊是競爭優勢
 - 原始標題：柏林軌道展台灣產業拚國際　陳世凱：AI、資通訊是競爭優勢
@@ -469,7 +469,7 @@
 - 發布日期：2026-09-17
 - 分類：運輸物流
 - 是否納入正式參考資料：是
-- 備註：curl 200，`article:published_time` 2026-09-17T15:16:31+08:00。其他媒體（NOWnews 09-17）另列出該 Level 3 電巴的合作廠商名單與「符合 UN R157」等細節，不在自由財經原頁，摘要未寫入。「橫向主動安全系統」的細節原頁抽取時未取得，摘要只寫視線追蹤部分。TIE 展期 9 月 17 至 19 日為活動日，發布日以文章為準。
+- 備註：curl 200，`article:published_time` 2026-09-17T15:16:31+08:00。其他媒體（NOWnews 09-17）另列出該 Level 3 電巴的合作廠商名單與「符合 UN R157」等細節，不在自由財經原頁，摘要未寫入。「橫向主動安全系統」原頁另有 ESF 緊急避障、主動車道變換與 MRM 最小風險管理等段落，摘要只寫視線追蹤部分。TIE 展期 9 月 17 至 19 日為活動日，發布日以文章為準。
 
 ### 43. Waymo 公布 2.7 億英里自駕安全數據：受傷事故減少 82%
 - 原始標題：From the road — September 24, 2026
@@ -537,16 +537,16 @@
 - 是否納入正式參考資料：是
 - 備註：JSON-LD `datePublished` 2026-09-23T17:22:00+08:00，curl 回 HTTP 200。內容基於中華文化總會新聞稿，屬主辦方發稿的媒體版本。文中提到的「白晝之夜」是 2018 年的首演背景，不是 2026 年活動，與 2026-09-05 期引用的活動系列無關。
 
-### 49. 衛武營 8 週年 Open House 戲劇院推「探戈：擁抱之間」結合 AI 科技與探戈舞步
-- 原始標題：衛武營8週年慶Open House　邀全民免費入席
-- 標題：衛武營 8 週年 Open House 戲劇院推「探戈：擁抱之間」結合 AI 科技與探戈舞步
-- URL：https://www.cna.com.tw/news/acul/202609180037.aspx
-- 摘要：衛武營國家藝術文化中心歡慶 8 週年，延續傳統舉行 Open House，開放各廳院邀民眾免費入席。依衛武營新聞資料，戲劇院推出「探戈：擁抱之間」，結合 AI 科技與探戈舞步，重塑身體的無限邊界；表演廳由八角塔男聲合唱團演出「聲動衛武營」；音樂廳由小號音樂家侯傳安與徐佳郁帶來「榮耀之聲：小號與管風琴」，與亞洲最大管風琴對話；歌劇院則有興傳奇青年劇場的「馬上封侯」。公共空間推出法國藝術家李維（Alexandre LÉVY）的「Miedka：野性面容」互動裝置展，以雕塑觸覺與聲音片段引領觀眾進行沉浸式的感官互動；「武營來唱歌」邀素人歌手站上公共鋼琴舞台。
-- 權重：5/10
-- 發布日期：2026-09-18
+### 49. Apple Music Hall 啟用，把現場演出、Spatial Audio 錄製與多機位播送整合在同一場館
+- 原始標題：Apple opens Apple Music Hall, a brand-new state-of-the-art live music venue in London
+- 標題：Apple Music Hall 啟用，把現場演出、Spatial Audio 錄製與多機位播送整合在同一場館
+- URL：https://www.apple.com/newsroom/2026/09/apple-opens-apple-music-hall-a-state-of-the-art-live-music-venue-in-london/
+- 摘要：Apple 於 9 月 21 日宣布倫敦 Apple Music Hall 啟用。場館容納 600 人，配置可調整形式的 38 英尺舞台與 48 支揚聲器的空間音效系統。後台設有兩間專業錄音與混音室，可將每場演出錄成多軌音訊，並在現場或事後製作 Spatial Audio。場館也預埋 16 個以上機位連接播送控制室，支援 iPhone 與傳統廣播攝影機並行拍攝。藝人可從同一場演出產出 Spatial Audio 成品、廣播級混音與多機位影片，演出也可全球直播。
+- 權重：9/10
+- 發布日期：2026-09-21
 - 分類：現場表演藝術
 - 是否納入正式參考資料：是
-- 備註：JSON-LD `datePublished` 2026-09-18T09:44:00+08:00，curl 回 HTTP 200。原頁對 AI 的描述只有「結合 AI 科技與探戈舞步」一句，未說明技術細節，摘要未擴寫；權重因此壓在 5。內容基於衛武營新聞資料。中央社 09-23 另有衛武營當代歌劇「Miedka：野性面容」10 月演出的報導，屬同館不同事件，已列淘汰以免重疊。
+- 備註：Apple Newsroom 官方新聞稿，頁面日期為 2026-09-21。稽核補搜時回原頁核對 H1、容量、揚聲器、機位與製作流程；場館規格與效益為 Apple 自行揭露。
 
 ### 50. 資策會打造 AI 音樂理解與智慧協奏技術 AI 化身「虛擬樂手」跟上真人臨場變速
 - 原始標題：經濟部科技專案讓AI聽懂音樂…資策會打造智慧協奏技術 實現一人成團
@@ -581,9 +581,9 @@
 - 是否納入正式參考資料：是
 - 備註：JSON-LD `datePublished` 2026-09-23T13:00:41Z，頁面日期列「Sept. 23, 2026, 9:00 AM EDT」，curl 回 HTTP 200。Netflix 與 ElevenLabs 合作的原始宣布在 2026-06-30（窗外），本則為窗內開播當日的報導；原頁未寫首播日期的具體日曆日（僅寫「Wednesday」），依發布日推算為 9 月 23 日，摘要以「週三」呈現。
 
-### 53. ESA FLEX 與 Copernicus Sentinel-3C 由 Vega-C 一箭雙星升空 首顆專測植物光合作用螢光的衛星
+### 53. ESA FLEX 與 Copernicus Sentinel-3C 由 Vega-C 一箭雙星升空 ESA 首顆專測植物光合作用螢光的衛星
 - 原始標題：FLEX and Sentinel-3C launched
-- 標題：ESA FLEX 與 Copernicus Sentinel-3C 由 Vega-C 一箭雙星升空 首顆專測植物光合作用螢光的衛星
+- 標題：ESA FLEX 與 Copernicus Sentinel-3C 由 Vega-C 一箭雙星升空 ESA 首顆專測植物光合作用螢光的衛星
 - URL：https://www.esa.int/Applications/Observing_the_Earth/FLEX_and_Sentinel-3C_launched
 - 摘要：ESA 的 FLEX 地球探索者衛星與 Copernicus Sentinel-3C 衛星搭乘 Vega-C 火箭自法屬圭亞那歐洲太空港一同升空，VV30 班次於 9 月 15 日 03:21（當地時間 14 日 22:21）發射。名為 Vespa 的酬載轉接器讓兩顆衛星堆疊在整流罩內，位於上方的 Sentinel-3C 先入軌，FLEX 約一小時後跟進；ESA 位於德國的歐洲太空操作中心隨後收到兩顆衛星的首個訊號，任務控制人員將在接下來數天進行「發射與早期軌道階段」檢查。FLEX 在 ESA FutureEO 計畫下研發，是 ESA 第一顆專門從太空量測光合作用活動的衛星，其螢光成像光譜儀將偵測植物吸收陽光時發出的極微弱螢光，直接反映植被把陽光與二氧化碳轉換成能量的效率，協助評估植物健康、生態系生產力與環境壓力、氣候變遷的影響。Sentinel-3C 是 Sentinel-3 系列第三顆衛星，系統性量測地球海洋、陸地、冰層與大氣，支援歐洲 Copernicus 服務。ESA 地球觀測計畫主任 Simonetta Cheli 表示，同時準備並發射兩顆衛星並非易事。
 - 權重：9/10
@@ -624,6 +624,94 @@
 - 分類：其他領域科技應用突破
 - 是否納入正式參考資料：是
 - 備註：JSON-LD `datePublished` 2026-09-19T19:31:00+08:00，curl 回 HTTP 200。內容基於國科會新聞稿。原頁未列出個別得獎技術名稱，摘要未補；TechNews 09-01 的「未來科技館災防黑科技」報導為同展覽的開展前報導，落在窗外且為不同切角。
+
+### 57. Apple 釋出新一代 Apple Intelligence 與 Siri AI，英文 beta 先行、五種語言下月跟進
+- 原始標題：Siri AI, a profoundly more capable and personal assistant powered by the next generation of Apple Intelligence, is here
+- 標題：Apple 釋出新一代 Apple Intelligence 與 Siri AI，英文 beta 先行、五種語言下月跟進
+- URL：https://www.apple.com/newsroom/2026/09/siri-ai-a-profoundly-more-capable-and-personal-assistant-is-here/
+- 摘要：Apple 9 月 14 日宣布新一代 Apple Intelligence 隨 2027 年度軟體（iOS 27、iPadOS 27、macOS 27、watchOS 27、visionOS 27）釋出，驅動全新的 Siri AI。Siri AI 當日起以 beta 形式在英文環境推出，法、日、韓、葡、西語下月跟進，需 Apple Intelligence 裝置並設為支援語言；iOS、iPadOS 與 watchOS 在歐盟初期不提供。Siri AI 具備個人脈絡理解、螢幕內容感知與更多 app 動作，可在 WhatsApp 傳訊、在 Audible 播放有聲書，稍後可在 Outlook 草擬郵件、在 Notability 搜尋作業、在 Tripsy 加入餐廳。Image Playground 改由在 Private Cloud Compute 執行的新生成模型驅動，可生成寫實影像並以描述修改，並將支援 SynthID 標準辨識 AI 生成或編輯的影像；Siri Recap 與 Live Rewind 今年稍晚推出 beta。
+- 權重：9/10
+- 發布日期：2026-09-14
+- 分類：AI 科技
+- 是否納入正式參考資料：是
+- 備註：Apple Newsroom，JSON-LD datePublished 2026-09-14，頁面標示 UPDATE、dateModified 2026-09-24；H1 比 og:title 長，參考資料表採 H1。功能描述皆為 Apple 自述。前期（09-13）引用的是 iPhone 硬體發表，本頁為窗內另一事件。第三輪稽核補搜時加入。
+
+### 58. xAI 推出 Grok 4.7，價格與速度不變，改用更大基礎模型與更長強化學習
+- 原始標題：Introducing Grok 4.7
+- 標題：xAI 推出 Grok 4.7，價格與速度不變，改用更大基礎模型與更長強化學習
+- URL：https://x.ai/news/grok-4-7
+- 摘要：xAI 9 月 21 日發表 Grok 4.7，稱是該公司在程式撰寫與知識工作上最強的模型：在困難任務上工作更久、更仔細檢查自己的產出，並搭配至今校準最佳的安全防護；以與 Grok 4.6 相同的價格與速度提供。模型使用比 4.6 更大的新基礎模型，並以更長的強化學習訓練、加重需要數小時完成的任務，改善自我驗證與長上下文管理，也原生理解 Grok Bot harness。原頁以 CursorBench 4.0（依每任務平均成本繪製的散布圖）、DeepSWE、GDPval、AA Briefcase 與 EEBench 等基準與 Fable 5.1、Opus 5、GPT-6 Astra 比較，稱在專業知識工作上與其他前沿模型相當。
+- 權重：8/10
+- 發布日期：2026-09-21
+- 分類：AI 科技
+- 是否納入正式參考資料：是
+- 備註：x.ai 官方頁，JSON-LD datePublished 2026-09-21，頁面日期列「Sep 21, 2026」；`<title>` 站名為 SpaceXAI。基準成績皆為廠商自評，具體分數只在圖表 aria-label 內，摘要不逐項抄錄。第三輪稽核補搜時加入。
+
+### 59. 數位部啟動主權 AI 語料庫民間語料徵集，政府語料規模已達約 22 億 tokens
+- 原始標題：數發部啟動主權AI語料庫民間語料徵集 號召作家與出版業共襄盛舉
+- 標題：數位部啟動主權 AI 語料庫民間語料徵集，政府語料規模已達約 22 億 tokens
+- URL：https://moda.gov.tw/press/press-releases/20640
+- 摘要：數位發展部 9 月 15 日宣布啟動「臺灣主權 AI 訓練語料庫」民間語料徵集，部長林宜敬以作家身分捐出《幸福的鬼島》與《流寇與創新者》，秀威資訊、印刻文學、Readmoo 讀墨、食力、巨思文化等出版與電子書平臺業者及多位作家現場簽署授權同意書。語料庫自 2025 年底上線，初期以中央及地方政府語料為主，至今年 8 月底規模約 22 億 tokens。現階段以出版業與電子書平臺為合作對象，採無償授權；徵集四大類內容：經同意授權的出版品、出版品簡介、試閱內容、已逾著作權保護期間的典籍與創作。數位部強調「自願參與、明確授權、可退出」三原則並設退出下架管道。林宜敬指出國際大型語言模型的中文訓練資料仍多以簡體中文為主，要讓 AI 理解臺灣，就要讓臺灣的語言、文化與價值進入訓練資料。
+- 權重：8/10
+- 發布日期：2026-09-15
+- 分類：AI 科技
+- 是否納入正式參考資料：是
+- 備註：數位部官網新聞發布，JSON-LD datePublished 2026-09-15T06:36:51+08:00，頁面「建立日期：2026-09-15」，正文「今（15）日」；H1 為站名，標題取 `<title>`／og:title。「去（114）年底」換算為 2025 年底。第三輪稽核補搜時加入。
+
+### 60. Gyazo 上傳伺服器漏洞遭利用，約 2,362 萬筆使用者資料與 4.9 億筆影像 metadata 外洩
+- 原始標題：Notice and Apology Regarding a Data Breach Resulting from Unauthorized Access to Gyazo
+- 標題：Gyazo 上傳伺服器漏洞遭利用，約 2,362 萬筆使用者資料與 4.9 億筆影像 metadata 外洩
+- URL：https://corp.helpfeel.com/en/news/news-20260916
+- 摘要：Gyazo 營運商 Helpfeel 9 月 16 日公告，9 月 11 日有第三方利用 Gyazo 影像上傳伺服器的漏洞取得系統存取權並執行任意指令；當晚偵測到可疑活動並展開調查，9 月 12 日封鎖攻擊路徑，後續確認資料庫遭存取，並向日本個人資訊保護委員會通報。截至 9 月 16 日確認約 2,362 萬筆使用者相關資料外洩，欄位含姓名或暱稱、email、密碼雜湊、使用者 ID、裝置 ID、登入 session ID、X 整合 token、Google SSO 對應 email 等；另有約 4.9 億筆主要為 2019 年 1 月以前登錄影像的 metadata（約占全部影像資料 14.4%）外洩。公司要求所有使用者更改密碼，並提醒共用密碼者同步更改其他服務。9 月 24 日更新：服務暫停進行安全維護，密碼重設待恢復後進行。
+- 權重：8/10
+- 發布日期：2026-09-16
+- 分類：軟硬體資訊安全
+- 是否納入正式參考資料：是
+- 備註：官方公告頁，頁面日期列「2026/9/16」與 meta 2026-09-16T10:00，正文「as of September 16, 2026」；另一個 meta 日期 2026-09-26 為更新時間，非發布日。時間以日本標準時間為準。第三輪稽核補搜時加入。
+
+### 61. 高通發表 Snapdragon 8 Elite Extreme Gen 6 與 8 Elite Gen 6，同採 2 奈米製程、九家品牌首發
+- 原始標題：Snapdragon Leads the Agentic AI Age with Two of the World's Fastest Mobile SoCs Powering the Next Generation of Smartphones
+- 標題：高通發表 Snapdragon 8 Elite Extreme Gen 6 與 8 Elite Gen 6，同採 2 奈米製程、九家品牌首發
+- URL：https://www.qualcomm.com/news/releases/2026/09/snapdragon-leads-the-agentic-ai-age-with-two-of-the-world-s-fast
+- 摘要：Qualcomm Technologies 9 月 22 日在 Snapdragon Summit 發表 Snapdragon 8 Elite Extreme Gen 6 與 Snapdragon 8 Elite Gen 6 兩款旗艦手機平台，稱這是「多旗艦策略」。Extreme Gen 6 為該公司最強手機平台，新功能包括讓日常代理更快、更個人化與更可靠，新的 Adreno Neural Fusion 以 AI 提供遊戲圖形，以及支援 Advanced Professional Video（APV）與 Intelligent Pixel Control 的 AI 相機能力。8 Elite Gen 6 建立在同一個先進 2 奈米製程節點，搭載客製 Oryon CPU、重新架構的 Adreno GPU 與 Hexagon NPU，把多數相同功能帶到更多高階機種。首發品牌為 HONOR、iQOO、Motorola、OnePlus、OPPO、REDMI、RedMagic、vivo 與 Xiaomi。新聞稿正文未載效能百分比、時脈或裝置端模型參數量。
+- 權重：8/10
+- 發布日期：2026-09-22
+- 分類：硬體或軟硬整合
+- 是否納入正式參考資料：是
+- 備註：官方新聞稿頁為 React app，curl 只取得 JSON-LD（datePublished 2026-09-22T00:00:00-10:00，夏威夷時區），正文以同網址加 `.model.json` 取得。與第 20 筆天璣 9600 Pro 同為窗內 2 奈米旗艦。第三輪稽核補搜時加入。
+
+### 62. Salesforce 全球中斷數小時，內部登入服務卡住耗盡伺服器資源，撞上 Dreamforce 第二天
+- 原始標題：Salesforce staggers back to feet after global outage
+- 標題：Salesforce 全球中斷數小時，內部登入服務卡住耗盡伺服器資源，撞上 Dreamforce 第二天
+- URL：https://www.theregister.com/saas/2026/09/16/salesforce-staggers-back-to-feet-after-global-outage/5296800
+- 摘要：The Register 報導 9 月 16 日 Salesforce 發生全球性中斷，狀態頁描述為嚴重延遲、間歇錯誤與部分服務無法存取，影響美、日、印、英、法、德等地數百個 instance。中斷約 08:30 UTC 首次通報；09:10 UTC 的更新指出「請求在等待內部登入服務回應時卡住，耗盡可用伺服器資源」；之後宣布修正已推送、服務逐步恢復，但到 14:00 UTC 公司表示修正尚未完全恢復所有 instance，正手動重啟自動修正未解決的 instance，並收到部分客戶排程工作未如期執行的回報，同時稱影響範圍「比最初理解的窄」。中斷發生在 Dreamforce 開幕隔天，該會預計逾 4 萬人親臨、逾 20 萬人線上報名。
+- 權重：7/10
+- 發布日期：2026-09-16
+- 分類：網路/伺服器等基礎
+- 是否納入正式參考資料：是
+- 備註：JSON-LD datePublished 2026-09-16T10:06Z，頁面「Wed 16 Sep 2026 // 11:06 UTC」，dateModified 09-18。二手媒體，Salesforce 狀態頁的原始更新未另行查核；時間依原頁的 BST／UTC 標示。第三輪稽核補搜時加入。
+
+### 63. Bitget 熱錢包與溫錢包遭竊 3.516 億美元，稱手法與北韓組織一致並暫停提領
+- 原始標題：Bitget Says Suspected North Korean Hackers Stole $351.6M After Backend Compromise
+- 標題：Bitget 熱錢包與溫錢包遭竊 3.516 億美元，稱手法與北韓組織一致並暫停提領
+- URL：https://thehackernews.com/2026/09/bitget-says-suspected-north-korean.html
+- 摘要：The Hacker News 9 月 25 日報導，加密貨幣交易所 Bitget 表示 2026 年 9 月 24 日 18:31 UTC 其安全系統偵測到少數熱錢包出現未授權轉帳，熱錢包與溫錢包合計損失 3.516 億美元；公司稱客戶帳戶餘額正確、存款與交易照常，但暫停提領進行全面安全檢視，並委託 Google 旗下 Mandiant 與 SlowMist 進行第三方調查。執行長 Gracy Chen 稱受影響資產含 ETH、XRP、BNB、AVAX、USDT 與 USDC，涉及 Ethereum、XRP Ledger、Arbitrum、Avalanche、Optimism、BSC 與 Base 等鏈，已聯繫各鏈基金會。Bitget 未揭露入侵方式；自託管的 Bitget Wallet 架構獨立、未受影響。
+- 權重：7/10
+- 發布日期：2026-09-25
+- 分類：金融科技
+- 是否納入正式參考資料：是
+- 備註：頁面作者列「Ravie Lakshmanan Sep 25, 2026」，無 JSON-LD 日期。二手媒體轉述 Bitget 在 X 的公告；「與北韓組織一致」為 Bitget 自述的初步研判。第三輪稽核補搜時加入。
+
+### 64. 環球與索尼二度控告 Suno，指 v6 以侵權模型的產出訓練、理論求償上限逾 90 億美元
+- 原始標題：Universal and Sony sue Suno for a second time, claiming platform's v6 models are 'the fruit of the same poisoned tree'
+- 標題：環球與索尼二度控告 Suno，指 v6 以侵權模型的產出訓練、理論求償上限逾 90 億美元
+- URL：https://www.musicbusinessworldwide.com/universal-and-sony-sue-suno-for-a-second-time-claiming-platforms-v6-models-are-the-fruit-of-the-same-poisoned-tree/
+- 摘要：Music Business Worldwide 報導，UMG 與 Sony Music 9 月 18 日在波士頓聯邦法院聯名提告，指 Suno 未經授權複製 60,202 首錄音用於建構其音樂生成模型。依美國著作權法故意侵權每件最高 15 萬美元計算，理論上限略高於 90 億美元；另就每次規避 YouTube 反下載技術求償最高 2,500 美元。新指控針對 Suno 的 v6 模型：Suno 產品長 Jack Brody 曾向 MBW 表示 v6「完全從零訓練」且資料不含環球與索尼內容，兩家唱片公司則主張這不能消除責任，因為 v6 是「同一棵毒樹的果實」。
+- 權重：7/10
+- 發布日期：2026-09-18
+- 分類：影視音樂
+- 是否納入正式參考資料：是
+- 備註：JSON-LD datePublished 2026-09-18T17:12:42+00:00，頁面「September 18, 2026 By Tim Ingham」。音樂產業專業媒體；Suno v6 於 9 月 9 日發布落在窗外，本筆為窗內的訴訟事件。第三輪稽核補搜時加入。
 
 ## 淘汰來源
 
@@ -1158,3 +1246,10 @@
 - 分類：現場表演藝術
 - 是否納入正式參考資料：否
 - 淘汰原因：2026-09-19 期已引用同事件（cna postwrite 09-17），跨期去重。
+
+### BY. 衛武營 8 週年慶 Open House 邀全民免費入席
+- URL：https://www.cna.com.tw/news/acul/202609180037.aspx
+- 發布日期：2026-09-18
+- 分類：現場表演藝術
+- 是否納入正式參考資料：否
+- 淘汰原因：原頁對 AI 只有「結合 AI 科技與探戈舞步」一句，沒有技術細節；稽核補搜找到時間窗內的 Apple Music Hall 官方新聞稿，來源權重與技術含量皆明顯較高，因此替換。

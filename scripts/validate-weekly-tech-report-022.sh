@@ -49,11 +49,11 @@ cmp -s "$TASK/notes.md" "$DELIVERY/note.md" || fail "notes.md 與交付副本不
 # 正式來源筆數
 formal_block=$(sed -n '/^## 正式納入來源/,/^## 淘汰來源/p' "$SOURCE")
 formal_sources=$(printf '%s\n' "$formal_block" | grep -c '是否納入正式參考資料：是')
-assert_count 56 "$formal_sources" "正式來源數"
+assert_count 64 "$formal_sources" "正式來源數"
 
 reject_block=$(sed -n '/^## 淘汰來源/,$p' "$SOURCE")
 reject_sources=$(printf '%s\n' "$reject_block" | grep -c '是否納入正式參考資料：否')
-assert_count 76 "$reject_sources" "淘汰來源數"
+assert_count 77 "$reject_sources" "淘汰來源數"
 
 # 正式來源摘要長度需落在 100 至 500 字
 formal_summaries=$(printf '%s\n' "$formal_block" | sed -n 's/^- 摘要：//p')
@@ -93,7 +93,7 @@ assert_count 12 "$tr_count" "趨勢分類數"
 
 # 參考資料錨點數需等於正式來源數
 ref_count=$(grep -c '<a id="ref-' "$REPORT")
-assert_count 56 "$ref_count" "參考資料筆數"
+assert_count 64 "$ref_count" "參考資料筆數"
 
 # 內文引用編號需與參考資料錨點一一對應
 cited=$(grep -o '(#ref-[0-9]\{1,2\})' "$REPORT" | sed 's/(#ref-\([0-9]*\))/\1/' | sort -n -u)
@@ -102,7 +102,7 @@ defined=$(grep -o '<a id="ref-[0-9]\{1,2\}">' "$REPORT" | sed 's/<a id="ref-\([0
 
 # 每個參考資料編號都要被內文引用至少一次
 n=1
-while [ "$n" -le 56 ]; do
+while [ "$n" -le 64 ]; do
   printf '%s\n' "$cited" | grep -qx "$n" || fail "ref-$n 未被內文引用"
   n=$((n + 1))
 done
@@ -119,4 +119,4 @@ python3 "$ROOT/.ai-global/skills/audit-tech-weekly-report/scripts/validate_repor
   --start-date 2026-09-11 \
   --end-date 2026-09-26
 
-echo "✅ weekly-tech-report-022 驗證通過（正式來源 56、淘汰 76、分類 12、引用 ref-1..56 一致）"
+echo "✅ weekly-tech-report-022 驗證通過（正式來源 64、淘汰 77、分類 12、引用 ref-1..64 一致）"
