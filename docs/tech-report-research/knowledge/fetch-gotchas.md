@@ -101,6 +101,20 @@
 - `apple.com/newsroom` 的 H1 常比 `og:title` 長（多了 brand-new 之類的修飾語），參考資料表採 H1；日期取 JSON-LD `datePublished`，頁面標示 UPDATE 時另有 `dateModified`，不可當發布日。
 - `corp.helpfeel.com` 公告頁有兩個日期 meta，較晚的是更新時間；發布日以正文「as of September 16, 2026」與頁面日期列為準。
 
+### 政府站的 WAF 與間歇封鎖
+
+- `fda.gov` 對瀏覽器 UA 間歇回 401「resembles an automated request」，連續請求才會觸發；改用宣告式 UA 並間隔請求。
+- `moi.gov.tw` 連續請求會被 WAF 擋，回 307 或錯誤頁；帶 cookie（`curl -c/-b`）、間隔約 20 秒重試可取得 200。日期欄用民國年，頁尾「更新日期」不是發布日。
+- `abri.gov.tw`（建研所）可能整站逾時，當期無法盤點時改從內政部新聞列表找建研所新聞稿。
+- `investor.nvidia.com` 回 403，同一篇新聞稿改用 `nvidianews.nvidia.com`。
+
+### 編碼與動態頁
+
+- `built.itmedia.co.jp` 為 Shift_JIS，需以 cp932 解碼；報導常晚原始發表一至兩週，要另查企業原始發表日是否也在窗內。
+- `sec.cloudapps.cisco.com` 資安公告頁含非 UTF-8 位元組，解碼時忽略錯誤；日期取「First Published」。
+- `azure.status.microsoft/.../status/history/` 是動態列表，條目會下沉或改為正式 PIR；引用時在備註記下 Tracking ID 與條目日期。
+- CISA 警示頁有時只顯示「Last Revised」，發布日取網址路徑，再以同日 KEV 公告頁的 Release Date 交叉確認。
+
 ## 來源
 
 - 來自 weekly-tech-report-005（2026-05-30）任務的實作經驗
@@ -109,3 +123,4 @@
 - technews 子站轉址網域、WebFetch 改寫日期與 curl 核對法、原頁無日期列三項來自 weekly-tech-report-021（2026-09-19）任務
 - openai.com 全 UA 403、sec.gov 宣告式 UA、更新日期不是發布日、無日期 meta 的一手來源、blog.google 抽到 CSS 五項來自 weekly-tech-report-022（2026-09-26）任務
 - qualcomm.com 的 `.model.json`、apple.com/newsroom 的 H1 與 og:title 差異、helpfeel.com 雙日期 meta 三項來自 weekly-tech-report-022 第三輪稽核
+- 政府站的 WAF 與間歇封鎖、編碼與動態頁兩節來自 weekly-tech-report-023（2026-10-03）任務
