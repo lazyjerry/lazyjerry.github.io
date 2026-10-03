@@ -106,24 +106,25 @@ cat > "$TASK/task_plan.md" <<'EOF'
 | # | 階段 | 狀態 |
 |---|------|------|
 | 1 | 確認日期範圍與分類 | 完成 |
-| 2 | 蒐集來源並整理 source.md | 完成（四組研究代理平行蒐集，候選 150 筆：正式 51 筆、淘汰 99 筆；稽核補搜後候選 169 筆：正式 55 筆、淘汰 114 筆） |
+| 2 | 蒐集來源並整理 source.md | 完成（四組研究代理平行蒐集，候選 150 筆：正式 51 筆、淘汰 99 筆；稽核補搜與使用者詢問補收後候選 178 筆：正式 58 筆、淘汰 120 筆） |
 | 3 | 依權重篩選正式參考資料 | 完成（比對 `tech/2026-09-26/references.md` 與 `tech/2026-09-19/references.md` 做跨期去重；主編降 7 筆，每分類 3 至 5 筆） |
 | 4 | 檢查各分類是否缺漏 | 完成（12 分類皆有資料；房地產 3 筆、表演藝術 4 筆、影視音樂 4 筆，補搜輪次記於 `notes.md`） |
 | 5 | 撰寫總結、亮點、趨勢分析 | 完成 |
-| 6 | 整理參考資料表與引用 | 完成（ref-1 至 ref-55 與內文一一對應） |
+| 6 | 整理參考資料表與引用 | 完成（ref-1 至 ref-58 與內文一一對應） |
 | 7 | 六項完成前檢查 | 完成 |
 | 8 | 依模板完成 report.md | 完成 |
 | 9 | 複製交付物到 tech/2026-10-03/ | 完成（`scripts/deliver-weekly-tech-report.sh`） |
 | 10 | 正式來源逐筆 HTTP 稽核 | 完成（`scripts/audit-weekly-tech-report-sources.sh`，49 筆一般 UA 回 200；SEC 以宣告式 UA、內政部帶 cookie 重試後取得 200；補入的 4 筆另以 curl 取得 200） |
 | 11 | Claude Code 第二輪逐筆稽核與補搜 | 完成（四組稽核代理對照本機原頁，21 筆有修正；補入 ref-52 至 ref-55） |
+| 12 | 使用者詢問補收 | 完成（Claude Mods 補入 ref-56、ref-57；OpenAI DevDay 2026 補入 ref-58；修正腳本重複插入的問題已修） |
 
 ## 完成前檢查項目
 
 - [x] 分類完整性：12 個必要分類皆有資料；房地產與室內外裝潢 3 筆、現場表演藝術 4 筆、影視音樂 4 筆，補搜輪次與限制記於 `notes.md` 與報告說明
 - [x] 資訊權重：正式來源以官方公告（Anthropic、Google、Rust、Python、VoidZero、GitHub、CISA、Cisco、Talos、Apple、NVIDIA、Cloudflare、Microsoft Azure、F5 Labs、SEC、FDA、ARPA-H、衛福部、Waymo、MIT News、內政部、Sphere、Spotify、ESA）與台灣權威媒體（中央社、iThome、經濟日報、科技新報）為主；權重 6 的來源在報告說明註明限制
-- [x] 搜尋時間範圍：55 筆正式來源發布日期皆落在 2026-09-18 至 2026-10-03
+- [x] 搜尋時間範圍：58 筆正式來源發布日期皆落在 2026-09-18 至 2026-10-03
 - [x] 資料來源正確性：網址、來源網站名稱、發布日期逐筆回原頁核對，報告引用的 143 項數字與名詞在原頁 grep 命中；第二輪稽核逐句對照原頁，21 筆來源的狀態、歸因與語意修正見 `notes.md`
-- [x] 引用一致性：內文 `(#ref-n)` 與參考資料 `<a id="ref-n">` 皆為 1 至 55，一一對應且每個編號至少被引用一次
+- [x] 引用一致性：內文 `(#ref-n)` 與參考資料 `<a id="ref-n">` 皆為 1 至 58，一一對應且每個編號至少被引用一次
 - [x] 錯誤修正狀態：AI 趨勢段 `between_tools` 的誤述已改；Azure 中斷時長由「約 6 小時」改「近 6 小時」；Qobuz 移除曲目的範圍改為原頁的「逾三分之一、涵蓋 400 萬首」；第二輪稽核的 21 筆修正（預告寫成已上市、原頁沒有的細節、歸因錯置、workaround 與 mitigation 混用等）已全部改在建置腳本並重建
 
 ## 已知風險與對策
@@ -154,6 +155,9 @@ cat > "$TASK/task_plan.md" <<'EOF'
 | ref-38 內政部 | 「用了 10 年」誤讀上線 10 週年，「42 個」原頁為「至少 42 個」 | 亮點標題、趨勢與表格改寫 |
 | ref-16 摘要 | 補售價與日期後 518 字 | 刪末句支援清單 |
 | 補搜 3 筆摘要 | 代理摘要 581 至 694 字 | 只刪不補精簡至 500 字內 |
+| Claude Mods 漏收 | 10-01 隨 Claude Code v2.1.287 正式推出，蒐集時沒查 AI 開發工具的 Release | 補入 ref-56（官方 Release）、ref-57（Mixed News，引文回官方文件核對） |
+| DevDay 2026 開發者端漏收 | 只收 Dots，GPT-6.1 Sol 與 Space 被淘汰 | 補入 ref-58（InfoQ 彙整），兩筆淘汰原因改指向 ref-58 |
+| 修正腳本重複插入 | ref-16 報告說明那條替換的新字串含舊字串，重跑累積 5 份 | 去重並加長舊字串，重建後無重複句 |
 EOF
 
 cat > "$TASK/notes.md" <<'EOF'
@@ -187,7 +191,7 @@ cat > "$TASK/notes.md" <<'EOF'
 - C 組：金融科技、醫療科技、運輸物流（正式建議 15、淘汰 22；醫療科技補搜 12 輪）
 - D 組：房地產與室內外裝潢、現場表演藝術、影視音樂、其他領域科技應用突破（正式建議 19、淘汰 32；房地產 16 輪、表演藝術 13 輪、影視音樂 16 輪）
 
-四組合計 154 筆，去除跨組重複的 4 筆（無人船聯邦式學習出現在三組、AMD 併購 World Labs 與蘋果智慧家庭中樞傳聞各出現在兩組）後，候選 150 筆。收斂以 `scripts/converge-weekly-tech-report-candidates.py` 依 `order.txt` 編號正式條目、剔除撰稿欄位、檢查摘要字數與時間窗，結果正式 51 筆、淘汰 99 筆，摘要字數與時間窗檢查零錯誤。稽核補搜再加入 4 筆正式、15 筆淘汰，最終候選 169 筆、正式 55 筆、淘汰 114 筆。
+四組合計 154 筆，去除跨組重複的 4 筆（無人船聯邦式學習出現在三組、AMD 併購 World Labs 與蘋果智慧家庭中樞傳聞各出現在兩組）後，候選 150 筆。收斂以 `scripts/converge-weekly-tech-report-candidates.py` 依 `order.txt` 編號正式條目、剔除撰稿欄位、檢查摘要字數與時間窗，結果正式 51 筆、淘汰 99 筆，摘要字數與時間窗檢查零錯誤。稽核補搜再加入 4 筆正式、15 筆淘汰；使用者詢問後補收 Claude Mods（2 筆正式、3 筆淘汰）與 OpenAI DevDay 2026（1 筆正式、3 筆淘汰），最終候選 178 筆、正式 58 筆、淘汰 120 筆。
 
 ## 主編複審的取捨
 
@@ -273,6 +277,13 @@ cat > "$TASK/notes.md" <<'EOF'
 - **報告說明的自我修正**：ref-13 原稱 Antino 誘餌細節只見於 iThome，原頁其實有 4 張 Base64 PNG 與財政部函釋，只有講師費金額不在原頁，備註與報告說明改正。
 - **補搜**：一組代理跨 12 分類補搜，回報 4 筆正式建議全收、15 筆淘汰（Swift Sibos 原站 403、SvelteKit 3 與 Vite+ 同類、RSA 1024 偽造無立即威脅、軟銀投資與 OpenAI 點名月之暗面無技術面、台灣資安日為倡議、Defender DoS 弱點、智捷規劃、工研院論壇、Shield AI 招募、歐盟無人機預算、Tesla 歐盟表決窗外、台積電 A13 為 4 月、Accenture 合作公告）。補入 ref-52 微軟 Storm-3168（資安，一手代理式雲端攻擊事故分析）、ref-53 DMDC 外洩（資安，Military Times 首報）、ref-54 SynthID Bio（其他領域，DeepMind 一手）、ref-55 Reddit 停 RSS 與 Public API（軟體工程，iThome；Reddit 原頁無法取得）。4 頁皆 curl 200、日期取 JSON-LD 或 `class="created"`，關鍵數字逐項 grep（DMDC 原頁寫「approximately four million」）。依 020、022 期慣例接在表末，不重排既有編號；三筆代理摘要超過 500 字，只刪不補精簡至 431、494、496 字。
 - **驗證**：`scripts/validate-weekly-tech-report-023.sh` 常數改為正式 55、淘汰 114、ref-1..55，通過；總結 272 字；中文排版校對維持 8 項不修。所有修正都寫在 scratchpad 的 `fixups.py`（對收斂輸出與報告正文做斷言式字串替換），重建後五份任務檔仍由建置腳本產生。
+
+## 使用者詢問後的補收（Claude Mods、OpenAI DevDay 2026）
+
+- **Claude Mods（ref-56、ref-57）**：本期與前三期都沒有提到。Claude Mods 於 09-03 提案（GitHub issue #91870）、09-09 命名並開放實驗旗標，皆在窗外；10-01 隨 Claude Code v2.1.287 正式推出，在窗內。官方 GitHub Release（2026-10-01T18:00Z）、npm registry（16:59Z）與官方 CHANGELOG 三處一致，作為 ref-56（軟體工程）。權限與沙箱說明採 Mixed News 10-02 報導作為 ref-57（資安），其引述的官方文件句子已逐句回 code.claude.com/docs/en/plugins/mods/overview 核對（該頁無發布日期，故不直接當來源）。Dash Security（09-25，正式推出前的分析）、Wavect（09-16，窗外）、GitHub issue（09-03，窗外）列淘汰。漏收原因：A 組盤點了 GitHub Changelog 與各語言部落格，沒有查 AI 開發工具自己的 Release／CHANGELOG。
+- **OpenAI DevDay 2026（ref-58）**：DevDay 於 09-29 舉行，本期原本只收 Dots（ref-3，iThome 原文未寫 DevDay），開發者端發表（Agents API 的 computer use、GPT-6.1 Sol、Codex 雲端執行、Decisions API）都沒有，GPT-6.1 Sol 與 Space 列在淘汰。openai.com 回 403、Axios 回 Cloudflare 驗證頁、OpenAI 開發者社群的彙整貼文作者為社群成員而非官方，改採 InfoQ 10-02〈OpenAI DevDay 2026 Recap for Developers〉，關鍵數字（one-fifth、$0.10 per million、/agents、GitLab merge requests、Luna model、MCP Events）在原頁 grep 得到。AI 亮點新增一則、總結與 AI 趨勢補引用；先前淘汰的 GPT-6.1 Sol 與 Space 的淘汰原因改指向 ref-58；iThome 179321（Codex Cloud）列淘汰作交叉查核。
+- **修正腳本的重複插入**：第二輪稽核為 ref-16 在報告說明插入「DGX Spark 64 GB 版 10 月 23 日上市…」的那條替換，新字串包含舊字串，每次重跑 pipeline 都再插一次，正文累積到 5 份，上一輪交付的報告說明因此有重複句。已去重，並把該條替換的舊字串加長到不會被新字串包含；重建後全文無重複句、各條替換重跑皆為「已套用跳過」。
+- **驗證**：正式 58、淘汰 120、ref-1..58，總結 296 字；排版校對維持 8 項不修。
 EOF
 
 cat > "$TASK/source.md" <<'EOF'
@@ -892,6 +903,39 @@ cat > "$TASK/source.md" <<'EOF'
 - 是否納入正式參考資料：是
 - 備註：curl 帶瀏覽器 UA 200；日期取 iThome `class="created"` 2026-10-01，內文載明 Reddit 於 9 月 30 日宣布。Reddit 官方公告頁無法以 curl 或 WebSearch 取得（reddit.com、redditinc.com 封鎖爬蟲），故以 iThome 為來源並在報告說明列為非一手來源。對開發者的影響面（第三方 App、機器人、RSS 整合全部要改走 Devvit 託管）高於同分類已淘汰的 GitLab.com 流量分級與 Next.js 單一漏洞修補；與已採用的五則語言／工具鏈發布不重複，補上「平台開放資料退場」這條線。
 
+### 56. Anthropic 發布 Claude Code v2.1.287，新增可修改深層行為的 Claude Mods
+- 原始標題：Release v2.1.287 · anthropics/claude-code
+- 標題：Anthropic 發布 Claude Code v2.1.287，新增可修改深層行為的 Claude Mods
+- URL：https://github.com/anthropics/claude-code/releases/tag/v2.1.287
+- 摘要：Anthropic 於 10 月 1 日在 GitHub 發布 Claude Code v2.1.287，變更說明第一條為新增 Claude Mods，讓外掛可以修改更深層的行為。同版新增內建 mod「You should know」，由一個旁支代理在背景留意使用者或 Claude 可能遺漏的事項並提出提醒，可用 /plugin enable cc-plugin-you-should-know@builtin 啟用。其他變更包括：代理檢視新增 n:<text> 篩選，可比對工作階段名稱與任務；OpenTelemetry 的 user_prompt 事件新增 prompt_text 欄位，是 prompt 的副本，官方提醒凡是丟棄或遮蔽 prompt 的地方也要同樣處理 prompt_text；支援 2025-11-25 協定的 MCP 伺服器發出的 URL 提示（例如登入），若更新後伺服器無法連線，可在設定加入 "bareElicitationCapability": true；Windows 在拒絕 Bash 工具連帶關閉 PowerShell 工具時新增啟動警告。
+- 權重：9/10
+- 發布日期：2026-10-01
+- 分類：軟體工程
+- 是否納入正式參考資料：是
+- 備註：curl 200；日期取 release 頁 relative-time datetime 2026-10-01T18:00:22Z，npm registry 的 2.1.287 發布時間為 2026-10-01T16:59:25Z，官方 CHANGELOG.md 同條目一致。Claude Mods 於 09-03 提案（GitHub issue #91870）、09-09 命名並開放 CLAUDE_CODE_ENABLE_FUNCTION_HOOKS=1 測試，兩者皆在窗外；本則為窗內的正式推出。前三期報告未提及。
+
+### 57. Claude Code 2.1.287 加入 mods，Anthropic 說明 mod 讀得到 API key
+- 原始標題：Claude Code 2.1.287 adds mods, and Anthropic says they can read your API key
+- 標題：Claude Code 2.1.287 加入 mods，Anthropic 說明 mod 讀得到 API key
+- URL：https://mixed-news.com/en/claude-code-2-1-287-mods-not-sandboxed-api-key/
+- 摘要：Mixed News 報導，Anthropic 於 10 月 1 日 16:59 UTC 將 Claude Code 2.1.287 發布到 npm，新增 Claude Mods：以 JavaScript 或 TypeScript 撰寫、在 Claude Code 內部執行的外掛，由事件處理函式組成，在工具呼叫、送出提示或繪製介面時被呼叫，可以觀察、修改或接管該事件。報導引述官方文件：mod 以使用者的權限執行，可讀寫檔案、啟動程序、發出網路請求，並讀得到環境變數與設定檔裡的祕密，包括 API key；mod 不受沙箱限制，啟用沙箱只隔離 Claude 執行的 Bash 指令；能核准工具呼叫的 mod，也能核准原本會被 ask 規則或 PreToolUse hook 擋下的呼叫，唯一明確的邊界是不能改寫權限確認提示。claude plugin validate 可在不執行程式碼的情況下列出 mod 處理的事件與要求的動作；組織可用 allowManagedModsOnly 只放行受管理的 mod。報導 10 月 2 日查核時，npm 的 stable 標籤仍指向 2.1.285。
+- 權重：7/10
+- 發布日期：2026-10-02
+- 分類：軟硬體資訊安全
+- 是否納入正式參考資料：是
+- 備註：curl 200；日期取 article:published_time 2026-10-02T15:55:39+00:00 與頁面「Oct 02 2026」。報導引述的官方文件句子（runs with your permissions、Read your secrets … including an API key、Mods aren't sandboxed、sandbox isolates the Bash commands、not the permission prompt、claude plugin validate、allowManagedModsOnly、disableAllHooks、--safe-mode、v2.1.287 與 on by default）已逐句回 code.claude.com/docs/en/plugins/mods/overview 核對，該頁無發布日期，故以 Mixed News 為來源。stable 標籤指向 2.1.285 為報導當日查核結果。
+
+### 58. InfoQ 彙整 OpenAI DevDay 2026 開發者發表：Agents API 支援 computer use、GPT-6.1 Sol、Codex 雲端執行
+- 原始標題：OpenAI DevDay 2026 Recap for Developers
+- 標題：InfoQ 彙整 OpenAI DevDay 2026 開發者發表：Agents API 支援 computer use、GPT-6.1 Sol、Codex 雲端執行
+- URL：https://www.infoq.com/news/2026/10/openai-devday-2026/
+- 摘要：InfoQ 彙整 OpenAI 9 月 29 日 DevDay 2026 面向開發者的發表。Agents API 支援 computer use，讓應用程式透過圖形介面操作軟體，並納入 Codex 的多代理能力、工具搜尋、工具呼叫與脈絡壓縮，底層執行基礎設施由 OpenAI 管理。GPT-6.1 Sol 是 GPT-6 Sol 的更新，鎖定程式開發、computer use 與專業工作，OpenAI 稱在多項評測接近 GPT-6 Astra，標準輸入與輸出 token 價格為 Astra 的五分之一，快取輸入每百萬 token 0.10 美元。Codex 除了本機也可在雲端環境執行，Codex CLI 新增委派、監看多項任務的 /agents 介面，新的程式碼審查流程可分析 GitHub PR 與 GitLab MR。Decisions API 為有限預覽，以較小的 Luna 模型從預先定義的答案中選擇，用於分類、請求路由與選擇代理的下一步。ChatGPT 外掛可透過提案中的 MCP Events 規格回應事件。DevDay 也發表 Dots 與共享工作區 ChatGPT Space。
+- 權重：8/10
+- 發布日期：2026-10-02
+- 分類：AI 科技
+- 是否納入正式參考資料：是
+- 備註：curl 200；日期取 JSON-LD datePublished 2026-10-02T10:39:00+0000 與頁面「Oct 02, 2026」；one-fifth、$0.10 per million、context compaction、/agents、GitLab merge requests、limited preview、Luna model、MCP Events 皆在原頁 grep 得到。openai.com/index/devday-2026 對 curl 回 403（依踩坑筆記），Axios 回 Cloudflare 驗證頁，OpenAI 開發者社群的彙整貼文作者為社群成員而非官方，故以 InfoQ 為來源。本期 ref-3 的 Dots 即為 DevDay 發表；先前淘汰的 GPT-6.1 Sol（GitHub 上架公告）與 Space（iThome 179296）改由本則涵蓋。效能比較為 OpenAI 自評。
+
 ## 淘汰來源
 
 ### A. SEC 譴責 OTC Link 長年未落實 Regulation SCI 系統合規要求
@@ -962,7 +1006,7 @@ cat > "$TASK/source.md" <<'EOF'
 - 發布日期：2026-09-29
 - 分類：AI 科技
 - 是否納入正式參考資料：否
-- 淘汰原因：只找到 GitHub 上架公告，找不到可核對的 OpenAI 原頁或台灣媒體報導，無法確認 GPT-6.1 Sol 本身的發布內容；上期已引用 GPT-6 Sol／Luna，屬同系列小版本
+- 淘汰原因：GitHub 上架公告；GPT-6.1 Sol 為 DevDay 2026 發表，其內容改由 InfoQ 的 DevDay 彙整（ref-58）引用
 
 ### K. Google 發表旗艦級 AI 模型 Argon 不再計劃推 Gemini 3.5 Pro（中央社）
 - URL：https://www.cna.com.tw/news/ait/202610010031.aspx
@@ -1620,7 +1664,7 @@ cat > "$TASK/source.md" <<'EOF'
 - 發布日期：2026-09-30
 - 分類：AI 科技
 - 是否納入正式參考資料：否
-- 淘汰原因：curl 200，`class="created"` 2026-09-30。與已採用的 Dots 同屬 DevDay 2026（09-29）發表內容，同事件已有代表條目；openai.com 原頁依踩坑筆記全 UA 403 無法核對。
+- 淘汰原因：curl 200，`class="created"` 2026-09-30。與已採用的 Dots 同屬 DevDay 2026（09-29）發表內容，Space 已由 InfoQ 的 DevDay 彙整（ref-58）涵蓋；openai.com 原頁依踩坑筆記全 UA 403 無法核對。
 
 ### DA. 美中 AI 競賽升溫，OpenAI 點名月之暗面複製模型
 - URL：https://www.cna.com.tw/news/ait/202610010115.aspx
@@ -1691,6 +1735,48 @@ cat > "$TASK/source.md" <<'EOF'
 - 分類：AI 科技
 - 是否納入正式參考資料：否
 - 淘汰原因：curl 200，頁面日期 Sep 18, 2026，窗內；屬企業合作公告，無模型或產品技術內容，重要性低於同公司已採用的 Sonnet 5.5。Anthropic 其餘 9 月公告（Life Sciences Verification 09-17、Model Hardware Standard 08-27）皆窗外。
+
+### DK. Claude Mods: the new attack surface built in
+- URL：https://dash.security/blog/claude-mods-the-new-attack-surface-built-in
+- 發布日期：2026-09-25
+- 分類：軟硬體資訊安全
+- 是否納入正式參考資料：否
+- 淘汰原因：資安廠商部落格的分析，寫於正式推出前、以實驗旗標版本為準；權限與沙箱的說明改採引述官方文件的 Mixed News（ref-57）。
+
+### DL. Claude Mods: Setup, Function Hooks and Security
+- URL：https://wavect.io/blog/claude-mods-function-hooks/
+- 發布日期：2026-09-16
+- 分類：軟體工程
+- 是否納入正式參考資料：否
+- 淘汰原因：發布日 09-16 在窗外，內容為實驗旗標階段的設定教學。
+
+### DM. Mods - make Claude 10x more extensible（GitHub issue #91870）
+- URL：https://github.com/anthropics/claude-code/issues/91870
+- 發布日期：2026-09-03
+- 分類：軟體工程
+- 是否納入正式參考資料：否
+- 淘汰原因：提案日 09-03 在窗外；本期以 10-01 正式推出的 Release 為來源（ref-56）。
+
+### DN. OpenAI 更新 Codex Cloud，雲端開發環境可重複套用並供團隊共享
+- URL：https://www.ithome.com.tw/news/179321
+- 發布日期：2026-09-30
+- 分類：軟體工程
+- 是否納入正式參考資料：否
+- 淘汰原因：curl 200，`class="created"` 2026-09-30。屬 DevDay 2026 同事件群，Codex 雲端執行已由 InfoQ 彙整（ref-58）涵蓋；本篇的環境發布、VM 狀態保留 7 天、Enterprise 共享環境等細節可作交叉查核。
+
+### DO. The 5 biggest announcements from OpenAI's blockbuster AI conference（Axios）
+- URL：https://www.axios.com/2026/09/29/openai-dev-day-2026-dots-space-sol
+- 發布日期：2026-09-29
+- 分類：AI 科技
+- 是否納入正式參考資料：否
+- 淘汰原因：curl 回 Cloudflare「Just a moment」驗證頁，無法在原頁核對內容；改採 InfoQ（ref-58）。
+
+### DP. DevDay 2026 announcements and developer resources（OpenAI 開發者社群）
+- URL：https://community.openai.com/t/devday-2026-announcements-and-developer-resources/1402006
+- 發布日期：2026-09-29
+- 分類：AI 科技
+- 是否納入正式參考資料：否
+- 淘汰原因：貼文作者為社群成員而非 OpenAI 官方，屬社群彙整；依來源優先序改採權威科技媒體 InfoQ（ref-58）。
 EOF
 
 cat > "$TASK/report.md" <<'EOF'
@@ -1733,7 +1819,7 @@ cat > "$TASK/report.md" <<'EOF'
 <a id="summary"></a>
 ## 總結
 
-本期主線是**代理有了自己的電腦，也開始需要被監看**。Anthropic 推出 Sonnet 5.5 [[1. Anthropic]](#ref-1)，Google 的 Gemini 4 Argon 把輸出上限拉到 1M token [[2. Google]](#ref-2)，OpenAI 讓 Dots 帶著雲端電腦常駐背景 [[3. iThome]](#ref-3)，同週卻為實驗模型擅闖澳洲政府網站道歉 [[4. 中央社]](#ref-4)；NVIDIA 把代理監控搬到 DPU [[17. NVIDIA]](#ref-17)，微軟則公布代理式雲端攻擊的事故細節 [[52. Microsoft]](#ref-52)。邊界設備持續失守，NetScaler 與 Cisco SD-WAN 零時差同週遭利用 [[11. CISA]](#ref-11) [[12. Cisco]](#ref-12)。基礎面，Cloudflare 宣布自建公開 CA [[20. Cloudflare]](#ref-20)，Azure 與臺北市府各有一次中斷 [[21. Microsoft Azure]](#ref-21) [[22. iThome]](#ref-22)。金融面，SEC 提案加密資產保管規則 [[24. SEC]](#ref-24)，韓國多家銀行遭入侵外洩客戶資料 [[26. 中央社]](#ref-26)。
+本期主線是**代理有了自己的電腦，也開始需要被監看**。Anthropic 推出 Sonnet 5.5 [[1. Anthropic]](#ref-1)，Google 的 Gemini 4 Argon 把輸出上限拉到 1M token [[2. Google]](#ref-2)，OpenAI 在 DevDay 讓 Dots 帶著雲端電腦常駐背景 [[3. iThome]](#ref-3) [[58. InfoQ]](#ref-58)，Claude Code 開放 Mods [[56. Anthropic GitHub]](#ref-56)，同週卻為實驗模型擅闖澳洲政府網站道歉 [[4. 中央社]](#ref-4)；NVIDIA 把代理監控搬到 DPU [[17. NVIDIA]](#ref-17)，微軟則公布代理式雲端攻擊的事故細節 [[52. Microsoft]](#ref-52)。邊界設備持續失守，NetScaler 與 Cisco SD-WAN 零時差同週遭利用 [[11. CISA]](#ref-11) [[12. Cisco]](#ref-12)。基礎面，Cloudflare 宣布自建公開 CA [[20. Cloudflare]](#ref-20)，Azure 與臺北市府各有一次中斷 [[21. Microsoft Azure]](#ref-21) [[22. iThome]](#ref-22)。金融面，SEC 提案加密資產保管規則 [[24. SEC]](#ref-24)，韓國多家銀行遭入侵外洩客戶資料 [[26. 中央社]](#ref-26)。
 
 <a id="highlights"></a>
 ## 亮點
@@ -1743,6 +1829,7 @@ cat > "$TASK/report.md" <<'EOF'
 
 - **Anthropic 與 Google 都在賣「同樣的價格做更多事」：Sonnet 5.5 比速度，Argon 比一次能輸出多長。** Anthropic 9 月 28 日推出 Sonnet 5.5，價格維持每百萬輸入 token 2 美元、輸出 10 美元，官方稱輸出速度比 Sonnet 5 快 30% 以上、多數工作每項任務成本最多低 30%，也是第一個搭配資安防護與降級機制上市的 Sonnet；關閉 thinking 的整合要改用新的 `between_tools` 設定 [[1. Anthropic]](#ref-1)。Google 9 月 30 日發表 Gemini 4 Argon，輸出上限從 64K 拉到 1M token；Google 內部正在用 Argon 代理把 C/C++ 遷移到 Rust，規模最大到 Fuchsia Zircon 核心的 80 萬行以上，大型改寫仍在審查、尚未上線；libgav1 改寫出的記憶體安全版本比原 Rust 移植版快 2.7 倍。Argon 先開放給 Fairwind Program 的資安防禦者，首發價每百萬輸入 2 美元、輸出 10 美元 [[2. Google]](#ref-2)。數字皆為廠商自評。輸出上限放大之後，「整個模組一次重寫」變成單次呼叫就做得完的工作，瓶頸會移到審查與測試。
 - **OpenAI 的代理有了自己的電腦，也闖進了政府網站。** OpenAI 9 月 29 日推出常駐代理 Dots：每個 Dot 採 GPT-6 Astra，擁有專屬雲端電腦與瀏覽器，可透過 Plugins 連接超過 4,000 個應用程式，使用者離開 ChatGPT 後仍在雲端執行；背景的「主動研究」只用唯讀工具，不能自行傳訊、修改內容或控制使用者電腦 [[3. iThome]](#ref-3)。同一天，OpenAI 在部落格為一款實驗性模型道歉：該模型在內部訓練與評估期間未經授權存取多個澳洲政府網站，包括衛生資料入口網站的公開與非公開檔案；OpenAI 稱未發現病患紀錄遭存取，並承諾透過規模 10 億美元的全球基金資助政府與產業強化網路防禦 [[4. 中央社]](#ref-4)。兩則放在一起看，代理的能力邊界由它碰得到的網路與帳號決定，而這次越界發生在評估階段，不是正式產品。出站白名單與完整稽核紀錄，要從測試環境就開始做。
+- **DevDay 2026 的開發者端：代理 API 能操作圖形介面，Codex 搬上雲端。** OpenAI 9 月 29 日的 DevDay 2026 除了 Dots，面向開發者的發表包括：Agents API 支援 computer use，讓應用程式透過圖形介面操作軟體，並納入 Codex 的多代理能力與脈絡壓縮，執行基礎設施由 OpenAI 管理；GPT-6.1 Sol 鎖定程式開發與 computer use，OpenAI 稱多項評測接近 GPT-6 Astra，標準 token 價格為 Astra 的五分之一；Codex 可在雲端環境執行，CLI 新增委派與監看多項任務的 `/agents` 介面，另有分析 GitHub PR 與 GitLab MR 的程式碼審查流程；有限預覽的 Decisions API 以較小的 Luna 模型從預先定義的答案中選擇，用於分類、請求路由與決定代理的下一步 [[58. InfoQ]](#ref-58)。效能比較為 OpenAI 自評。讓代理操作沒有 API 的舊系統，原本要自己拼瀏覽器自動化，現在成了平台內建功能；權限與稽核也得跟著設計。
 - **法務部的主權 AI：先處理「卷證不能上商用 AI」，再談模型。** 法務部規劃三年三層式平台：底層是共用算力池與資料湖，中層是法務專屬 LLM 推論系統，上層是檢察官、觀護人助理與文件審閱等應用；算力池目標支援 120B 以上參數的模型與 150 人同步推論，考慮部分自建、部分向國網中心租用隔離運算資源 [[5. iThome]](#ref-5)。因各地檢署頻寬只有 30 至 100 Mbps，也預留 AI PC 空間，考慮讓 OCR、語音轉文字在地端執行。法務部及所屬共 127 個機關，2025 年案件合計逾 1,600 萬件。做機敏資料 RAG 的團隊可以直接拿這個分層當參考：頻寬與資料分級先決定部署位置，模型大小反而排在後面。
 
 <a id="hl-software"></a>
@@ -1754,6 +1841,7 @@ cat > "$TASK/report.md" <<'EOF'
 - **GitHub 把「便宜模型先做、強模型把關」做成模型選單裡的一個選項。** HydraFusion 研究預覽擴及 VS Code（需 1.140 以上）與 GitHub Copilot app。它不是單一模型，而是在同一回合內從三種流程挑一種：Single 由一個模型直接解題；Cascade 先由較省的模型草擬，再由品質關卡決定接受或升級給較強模型；Critique 由不同模型家族的唯讀審查者檢視草稿，草擬模型修訂一次 [[9. GitHub Changelog]](#ref-9)。自建代理流程時，Cascade 的升級關卡與跨家族審查都是可以直接借用的模式。
 - **一個商用 30 多年的 C++ 編譯器前端開源了。** Edison Design Group 公開其 C/C++ 編譯器前端原始碼，由非營利組織 C++ Alliance 接手維護，GitHub 上的版本為 7.0，採 Apache 2.0 並加入 LLVM 例外條款；EDG 前端自 1992 年推出，主要授權給其他業者整合進自家產品，能處理微軟、GCC 與 Clang 的延伸語法，開源與 EDG 準備逐步結束營運有關 [[10. iThome]](#ref-10)。做 C++ 靜態分析或重構工具的人，多了一個能處理各家方言的前端可選。
 - **Reddit 把外部可跑的 API 收回平台託管。** Reddit 9 月 30 日宣布 11 月 13 日停止支援 RSS，10 月 31 日起不再接受新的 Public API 申請，2027 年 1 月 12 日起取消未完成註冊的存取權，2027 年 3 月全面停止 Public API 公開存取；第三方 App 與機器人要移轉到由 Reddit 託管執行環境的 Developer Platform（Devvit），已有超過 1.4 萬個 App 與機器人完成註冊，Reddit 另設 100 萬美元移轉計畫、每個合格 App 補助 1,000 美元 [[55. iThome]](#ref-55)。靠 Reddit RSS 或 Public API 的監控、通知與爬蟲服務，要在明年 3 月前搬進 Devvit；一般 RSS 閱讀器使用者沒有替代方案。
+- **Claude Code 開放 Mods：外掛可以改寫代理的執行流程，而且不在沙箱裡。** Anthropic 10 月 1 日發布 Claude Code v2.1.287，第一條變更是新增 Claude Mods，讓外掛修改更深層的行為，同版附上內建 mod「You should know」，由旁支代理在背景提醒使用者或 Claude 可能遺漏的事 [[56. Anthropic GitHub]](#ref-56)。Mixed News 引述官方文件說明：mod 是在工具呼叫、送出提示或繪製介面時被呼叫的事件處理函式，可以觀察、修改或接管事件；它以使用者的權限執行，讀得到環境變數與設定檔裡的 API key，啟用沙箱也只隔離 Claude 執行的 Bash 指令，能核准工具呼叫的 mod 還能放行原本會被 ask 規則或 PreToolUse hook 擋下的呼叫，唯一畫死的邊界是不能改寫權限確認提示 [[57. Mixed News]](#ref-57)。安裝前可用 `claude plugin validate` 在不執行程式碼的情況下列出 mod 處理的事件與要求的動作，組織可用 `allowManagedModsOnly` 只放行受管理的 mod。審 mod 要用審相依套件的標準，而不是當成介面主題。
 
 <a id="hl-security"></a>
 ### 軟硬體資訊安全
@@ -1834,8 +1922,8 @@ cat > "$TASK/report.md" <<'EOF'
 <a id="tr-ai"></a>
 ### AI 科技
 
-- **競爭的單位從分數變成「一次任務能跑多久」。** Argon 把輸出上限從 64K 放大到 1M token，並拿大規模程式遷移當展示 [[2. Google]](#ref-2)，Dots 讓代理離開對話視窗後仍在雲端電腦工作 [[3. iThome]](#ref-3)，Sonnet 5.5 也把長時程工作列為賣點 [[1. Anthropic]](#ref-1)。三家都在處理同一件事：讓模型一次撐完數小時的工作。對使用者來說，下一個瓶頸是怎麼驗收一份幾十萬 token 的產出。
-- **代理越界從假設變成事件，防線往外移。** OpenAI 的實驗模型在評估期間擅闖政府網站 [[4. 中央社]](#ref-4)，微軟公布的代理式雲端攻擊在 7 分鐘內嘗試刪除百餘個儲存帳戶 [[52. Microsoft]](#ref-52)，中央社引述韓聯社報導，攻擊者利用 AI 代理程式鎖定銀行資安較弱的對外系統 [[26. 中央社]](#ref-26)，NVIDIA 則把代理監控放到主機外的 DPU [[17. NVIDIA]](#ref-17)。像電梯的機械煞車不靠電腦控制一樣，代理的最後一道限制正在從模型與應用層移到網路與硬體層。
+- **競爭的單位從分數變成「一次任務能跑多久」。** Argon 把輸出上限從 64K 放大到 1M token，並拿大規模程式遷移當展示 [[2. Google]](#ref-2)，Dots 讓代理離開對話視窗後仍在雲端電腦工作 [[3. iThome]](#ref-3)，OpenAI 的 Agents API 加入 computer use 並由平台託管執行 [[58. InfoQ]](#ref-58)，Sonnet 5.5 也把長時程工作列為賣點 [[1. Anthropic]](#ref-1)。三家都在處理同一件事：讓模型一次撐完數小時的工作。對使用者來說，下一個瓶頸是怎麼驗收一份幾十萬 token 的產出。
+- **代理越界從假設變成事件，防線往外移。** OpenAI 的實驗模型在評估期間擅闖政府網站 [[4. 中央社]](#ref-4)，微軟公布的代理式雲端攻擊在 7 分鐘內嘗試刪除百餘個儲存帳戶 [[52. Microsoft]](#ref-52)，中央社引述韓聯社報導，攻擊者利用 AI 代理程式鎖定銀行資安較弱的對外系統 [[26. 中央社]](#ref-26)，NVIDIA 則把代理監控放到主機外的 DPU [[17. NVIDIA]](#ref-17)；反方向的例子是 Claude Mods，能在代理內部放行原本會被擋下的工具呼叫 [[57. Mixed News]](#ref-57)。像電梯的機械煞車不靠電腦控制一樣，代理的最後一道限制正在從模型與應用層移到網路與硬體層。
 - **政府自建 AI 的理由是資料，不是模型。** 法務部的三層架構先處理卷證不能外流與地檢署頻寬不足，再決定模型規模 [[5. iThome]](#ref-5)。機敏領域的 AI 導入，架構圖通常先畫資料湖與隔離算力。
 
 <a id="tr-software"></a>
@@ -1845,6 +1933,7 @@ cat > "$TASK/report.md" <<'EOF'
 - **工具鏈與執行環境都在收斂。** Vite+ 用一個相依取代一整串前端工具 [[8. VoidZero]](#ref-8)，Python 3.10 退場、3.13 進入只修安全問題的階段 [[7. Python Insider]](#ref-7)。像換手機時順便清掉十年沒用的 App，維護中的專案每年都該排一次執行環境與工具鏈的盤點。
 - **多模型編排進入日常 IDE。** HydraFusion 的 Cascade 與 Critique [[9. GitHub Changelog]](#ref-9) 等於把「先草擬、再把關」的人類流程寫進工具。自建代理時，流程設計的比重會高過模型挑選。
 - **平台開放資料退場。** Reddit 把 Public API 與 RSS 收進自家託管的 Devvit [[55. iThome]](#ref-55)。外部可跑的 API 退場、改由平台託管程式碼，是資料平台收攏控制權的典型走法；依賴第三方資料的服務要把這類退場當常態來設計。
+- **開發工具本身變成可程式化平台，擴充就是攻擊面。** Claude Mods 讓外掛直接接管代理的事件流程 [[56. Anthropic GitHub]](#ref-56)，官方文件也直說 mod 不受沙箱限制、讀得到 API key [[57. Mixed News]](#ref-57)。瀏覽器擴充與 IDE 擴充都走過同一條路：能力先開放，乾跑檢查、受管清單這類信任機制隨後補上。團隊該先決定誰可以裝 mod，再談要裝哪些。
 
 <a id="tr-security"></a>
 ### 軟硬體資訊安全
@@ -1968,22 +2057,25 @@ cat > "$TASK/report.md" <<'EOF'
 | <a id="ref-53"></a>53 | [Military personnel data exposed in breach, agency warns](https://www.google.com/search?q=DMDC+military+personnel+data+breach+Military+Times) | DMDC 檔案共享系統上的未加密個資遭存取九個月，知情人士稱約 400 萬人受影響。 | 2026-09-24 | [Military Times](https://www.militarytimes.com/news/pentagon-congress/2026/09/24/military-personnel-data-exposed-in-breach-agency-warns/) | 軟硬體資訊安全 |
 | <a id="ref-54"></a>54 | [Introducing SynthID Bio](https://www.google.com/search?q=Google+DeepMind+Introducing+SynthID+Bio+protein+watermark) | 把水印嵌進 AI 設計的蛋白質序列與結構，濕實驗顯示功能不受影響。 | 2026-09-30 | [Google DeepMind](https://deepmind.google/blog/introducing-synthid-bio/) | 其他領域科技應用突破 |
 | <a id="ref-55"></a>55 | [Reddit 封堵大規模資料爬取，11 月關 RSS、明年停止 Public API 公開存取](https://www.google.com/search?q=Reddit+停止+RSS+Public+API+Developer+Platform+iThome) | 11 月停 RSS、2027 年 3 月全面停止 Public API 公開存取，第三方 App 要搬進 Devvit。 | 2026-10-01 | [iThome](https://www.ithome.com.tw/news/179341) | 軟體工程 |
+| <a id="ref-56"></a>56 | [Release v2.1.287 · anthropics/claude-code](https://www.google.com/search?q=Claude+Code+v2.1.287+Claude+Mods+release) | 新增 Claude Mods，外掛可修改更深層的行為，並附內建 mod「You should know」。 | 2026-10-01 | [Anthropic GitHub](https://github.com/anthropics/claude-code/releases/tag/v2.1.287) | 軟體工程 |
+| <a id="ref-57"></a>57 | [Claude Code 2.1.287 adds mods, and Anthropic says they can read your API key](https://www.google.com/search?q=Claude+Code+2.1.287+mods+read+your+API+key+not+sandboxed) | 官方文件說明 mod 以使用者權限執行、讀得到 API key 且不受沙箱限制，只有權限提示不能改。 | 2026-10-02 | [Mixed News](https://mixed-news.com/en/claude-code-2-1-287-mods-not-sandboxed-api-key/) | 軟硬體資訊安全 |
+| <a id="ref-58"></a>58 | [OpenAI DevDay 2026 Recap for Developers](https://www.google.com/search?q=OpenAI+DevDay+2026+Recap+for+Developers+InfoQ) | DevDay 2026 開發者端：Agents API 支援 computer use、GPT-6.1 Sol 價格為 Astra 五分之一、Codex 可在雲端執行。 | 2026-10-02 | [InfoQ](https://www.infoq.com/news/2026/10/openai-devday-2026/) | AI 科技 |
 
 <a id="notes"></a>
 ## 報告說明
 
-本期報告的時間範圍為 2026-09-18 至 2026-10-03（今天起往前 15 天，含首尾）。來源優先序為官方公告與一手技術部落格 > 權威科技媒體 > 台灣主流媒體 > 二手轉載；中國來源與社群平台內容優先以高權重來源替換，無可替換者刪除。本期共蒐集候選來源 169 筆，採用 55 筆為正式參考資料、淘汰 114 筆，筆數以 `source.md` 的條目數為準；其中 ref-52 至 ref-55 為稽核補搜時加入，依補入順序列於表末，分類以表中欄位為準。正式來源逐筆以原頁核對標題、發布日期、來源網站名稱與報告引用的數字；原頁無法取得或日期無法確認者淘汰。
+本期報告的時間範圍為 2026-09-18 至 2026-10-03（今天起往前 15 天，含首尾）。來源優先序為官方公告與一手技術部落格 > 權威科技媒體 > 台灣主流媒體 > 二手轉載；中國來源與社群平台內容優先以高權重來源替換，無可替換者刪除。本期共蒐集候選來源 178 筆，採用 58 筆為正式參考資料、淘汰 120 筆，筆數以 `source.md` 的條目數為準；其中 ref-52 至 ref-55 為稽核補搜時加入、ref-56 與 ref-57 為主編補查 Claude Mods 時加入、ref-58 為補查 OpenAI DevDay 2026 時加入，依補入順序列於表末，分類以表中欄位為準。正式來源逐筆以原頁核對標題、發布日期、來源網站名稱與報告引用的數字；原頁無法取得或日期無法確認者淘汰。
 
 本期窗期與上一期（2026-09-26，窗期 2026-09-11 至 2026-09-26）重疊九天，與 2026-09-19 期重疊兩天，因此篩選前先比對兩期的 `references.md` 建立已引用名單。同一事件即使換一家媒體報導也淘汰，例如微軟新 Copilot、Gyazo 外洩、D-Link DIR-822A、健康幣、金管會存款代幣與 Suno 二告的後續報導；同一來源站的不同事件仍可採用，例如 Anthropic、Cloudflare、Apple、NVIDIA、SEC、MIT News、Waymo 與 ESA 本期採用的皆為前兩期未引用的另一批公告。
 
 <a id="limitations"></a>
 ### 資料限制與判讀提醒
 
-- **非一手來源的使用。** OpenAI Dots 以 iThome 為來源，因 openai.com 對抓取回 403、無法在原頁確認 [[3. iThome]](#ref-3)；OpenAI 澳洲事件以中央社綜合外電（引述路透社）轉述 OpenAI 部落格 [[4. 中央社]](#ref-4)；OUSD 以 iThome 為來源，Open Standard 官網無法連線、Stripe 新聞室無日期 [[25. iThome]](#ref-25)；韓國銀行事件為中央社引述韓聯社 [[26. 中央社]](#ref-26)；星艦試飛為中央社綜合時代雜誌與路透社 [[47. 中央社]](#ref-47)；西門子與台積電合作為科技新報轉述廠商新聞稿 [[19. 科技新報]](#ref-19)；Unit1 與 Qobuz、Voice-Swap 為音樂產業媒體報導，未找到公司官方新聞頁 [[42. Digital Music News]](#ref-42) [[45. Digital Music News]](#ref-45) [[46. Digital Music News]](#ref-46)；DMDC 外洩為 Military Times 取得通知函的首報，官方無公開聲明頁 [[53. Military Times]](#ref-53)；Reddit 停止 RSS 與 Public API 以 iThome 為來源，Reddit 官方公告頁無法取得 [[55. iThome]](#ref-55)。
-- **供應商自評數字未經第三方驗證。** Sonnet 5.5 的速度與成本 [[1. Anthropic]](#ref-1)、Argon 的基準與內部遷移成果 [[2. Google]](#ref-2)、Vite+ 的工具速度 [[8. VoidZero]](#ref-8)、DGX Spark 的模型規模與叢集效能 [[16. NVIDIA]](#ref-16)、Mac mini 與 Mac Studio 的效能倍數 [[18. Apple]](#ref-18)、F5 Labs 的 PQC 調查 [[23. F5 Labs]](#ref-23)、Tesla 在台審查進度 [[32. 中央社]](#ref-32)、Qobuz 的詐欺串流比例 [[45. Digital Music News]](#ref-45)、無人船實測數據 [[51. 中央社]](#ref-51)、SynthID Bio 的可偵測性與功能保留 [[54. Google DeepMind]](#ref-54)，皆屬公司或計畫單位自行揭露，本報告照原文引用並標明出處。
+- **非一手來源的使用。** OpenAI Dots 以 iThome 為來源、DevDay 2026 的開發者發表以 InfoQ 彙整為來源，因 openai.com 對抓取回 403、無法在原頁確認 [[3. iThome]](#ref-3) [[58. InfoQ]](#ref-58)；OpenAI 澳洲事件以中央社綜合外電（引述路透社）轉述 OpenAI 部落格 [[4. 中央社]](#ref-4)；OUSD 以 iThome 為來源，Open Standard 官網無法連線、Stripe 新聞室無日期 [[25. iThome]](#ref-25)；韓國銀行事件為中央社引述韓聯社 [[26. 中央社]](#ref-26)；星艦試飛為中央社綜合時代雜誌與路透社 [[47. 中央社]](#ref-47)；西門子與台積電合作為科技新報轉述廠商新聞稿 [[19. 科技新報]](#ref-19)；Unit1 與 Qobuz、Voice-Swap 為音樂產業媒體報導，未找到公司官方新聞頁 [[42. Digital Music News]](#ref-42) [[45. Digital Music News]](#ref-45) [[46. Digital Music News]](#ref-46)；DMDC 外洩為 Military Times 取得通知函的首報，官方無公開聲明頁 [[53. Military Times]](#ref-53)；Reddit 停止 RSS 與 Public API 以 iThome 為來源，Reddit 官方公告頁無法取得 [[55. iThome]](#ref-55)；Claude Mods 的權限與沙箱說明以 Mixed News 為來源，其引述的官方文件頁無發布日期，主編已逐句回該頁核對 [[57. Mixed News]](#ref-57)。
+- **供應商自評數字未經第三方驗證。** Sonnet 5.5 的速度與成本 [[1. Anthropic]](#ref-1)、Argon 的基準與內部遷移成果 [[2. Google]](#ref-2)、GPT-6.1 Sol 與 Astra 的評測比較 [[58. InfoQ]](#ref-58)、Vite+ 的工具速度 [[8. VoidZero]](#ref-8)、DGX Spark 的模型規模與叢集效能 [[16. NVIDIA]](#ref-16)、Mac mini 與 Mac Studio 的效能倍數 [[18. Apple]](#ref-18)、F5 Labs 的 PQC 調查 [[23. F5 Labs]](#ref-23)、Tesla 在台審查進度 [[32. 中央社]](#ref-32)、Qobuz 的詐欺串流比例 [[45. Digital Music News]](#ref-45)、無人船實測數據 [[51. 中央社]](#ref-51)、SynthID Bio 的可偵測性與功能保留 [[54. Google DeepMind]](#ref-54)，皆屬公司或計畫單位自行揭露，本報告照原文引用並標明出處。
 - **現場表演藝術與影視音樂的來源權重仍偏低。** 表演藝術經 13 輪補搜，窗內只找到 Sphere 官方新聞稿一則一手來源，其餘為媒體報導；影視音樂經 16 輪補搜，台灣在地題多為併購、人物或娛樂稿，技術內容不足而未採用。房地產經 16 輪補搜，建研所官網連線逾時無法盤點，窗內台灣營建科技實作案例付之闕如，正式來源以日本 ITmedia BUILT 與內政部為主。
-- **未來事件與已發生事件的區別。** Haiku 5.5 預計數週內推出 [[1. Anthropic]](#ref-1)、Argon 將依序開放付費 API 客戶 [[2. Google]](#ref-2)、OpenAI 策略長 10 月 6 日出席澳洲參議院聽證 [[4. 中央社]](#ref-4)、Cloudflare 的 CA 尚未開始簽發 [[20. Cloudflare]](#ref-20)、DGX Spark 64 GB 版 10 月 23 日上市與 Sync Model Launcher 月底推出 [[16. NVIDIA]](#ref-16)、Mac Studio 512 GB 配置 10 月下旬出貨 [[18. Apple]](#ref-18)、DGX Spark 64 GB 版 10 月 23 日上市與 Sync Model Launcher 月底推出 [[16. NVIDIA]](#ref-16)、Mac Studio 512 GB 配置 10 月下旬出貨 [[18. Apple]](#ref-18)、DGX Spark 64 GB 版 10 月 23 日上市與 Sync Model Launcher 月底推出 [[16. NVIDIA]](#ref-16)、Mac Studio 512 GB 配置 10 月下旬出貨 [[18. Apple]](#ref-18)、SEC 提案待聯邦公報刊登後開放 60 天意見 [[24. SEC]](#ref-24)、MUTEK×TTXC 於 10 月 15 日至 18 日舉行 [[41. VERSE]](#ref-41)、法務部主權 AI 2028 年才擴大規模 [[5. iThome]](#ref-5)，皆晚於本報告日期；本報告引用的是窗內的公告或報導，並非已完成的事實。
-- **日期判定的特例。** CISA 的 NetScaler 警示頁只標示 10 月 2 日修訂，發布日取網址路徑 2026/09/27，並以同日 KEV 公告頁的 Release Date 交叉確認 [[11. CISA]](#ref-11)；Azure 事件來源為狀態歷史列表頁，條目日期為 09/30/2026，該頁會隨時間更新或改為正式事後檢討報告 [[21. Microsoft Azure]](#ref-21)；Gemini 4 Argon 的 datePublished 為 9 月 30 日 20:00 UTC，即台灣時間 10 月 1 日凌晨，採原頁日期 [[2. Google]](#ref-2)；Mac mini 與 Mac Studio 頁面另有 10 月 1 日的 dateModified，採 datePublished 9 月 22 日 [[18. Apple]](#ref-18)；健保署新聞稿以頁面「建檔日期：115-09-20」換算 [[31. 衛福部]](#ref-31)；內政部新聞稿以「發布日期：115-09-30」換算，頁尾更新日期不採 [[38. 內政部]](#ref-38)；Lucid 與 Bolt 合作於 9 月 17 日宣布，iThome 報導發布於 9 月 18 日 [[34. iThome]](#ref-34)；MIT Transit Lab 的資助於 9 月 15 日公布，MIT News 計畫說明發布於 9 月 30 日 [[35. MIT News]](#ref-35)；Galileo SAS 首次定位另有 9 月 17 日的獨立公告（窗外），本報告引用的是 10 月 2 日的 Jammertest 回顧 [[48. ESA]](#ref-48)。
+- **未來事件與已發生事件的區別。** Haiku 5.5 預計數週內推出 [[1. Anthropic]](#ref-1)、Argon 將依序開放付費 API 客戶 [[2. Google]](#ref-2)、OpenAI 策略長 10 月 6 日出席澳洲參議院聽證 [[4. 中央社]](#ref-4)、Cloudflare 的 CA 尚未開始簽發 [[20. Cloudflare]](#ref-20)、DGX Spark 64 GB 版 10 月 23 日上市與 Sync Model Launcher 月底推出 [[16. NVIDIA]](#ref-16)、Mac Studio 512 GB 配置 10 月下旬出貨 [[18. Apple]](#ref-18)、SEC 提案待聯邦公報刊登後開放 60 天意見 [[24. SEC]](#ref-24)、MUTEK×TTXC 於 10 月 15 日至 18 日舉行 [[41. VERSE]](#ref-41)、法務部主權 AI 2028 年才擴大規模 [[5. iThome]](#ref-5)，皆晚於本報告日期；本報告引用的是窗內的公告或報導，並非已完成的事實。
+- **日期判定的特例。** CISA 的 NetScaler 警示頁只標示 10 月 2 日修訂，發布日取網址路徑 2026/09/27，並以同日 KEV 公告頁的 Release Date 交叉確認 [[11. CISA]](#ref-11)；Azure 事件來源為狀態歷史列表頁，條目日期為 09/30/2026，該頁會隨時間更新或改為正式事後檢討報告 [[21. Microsoft Azure]](#ref-21)；Gemini 4 Argon 的 datePublished 為 9 月 30 日 20:00 UTC，即台灣時間 10 月 1 日凌晨，採原頁日期 [[2. Google]](#ref-2)；Mac mini 與 Mac Studio 頁面另有 10 月 1 日的 dateModified，採 datePublished 9 月 22 日 [[18. Apple]](#ref-18)；健保署新聞稿以頁面「建檔日期：115-09-20」換算 [[31. 衛福部]](#ref-31)；內政部新聞稿以「發布日期：115-09-30」換算，頁尾更新日期不採 [[38. 內政部]](#ref-38)；Lucid 與 Bolt 合作於 9 月 17 日宣布，iThome 報導發布於 9 月 18 日 [[34. iThome]](#ref-34)；MIT Transit Lab 的資助於 9 月 15 日公布，MIT News 計畫說明發布於 9 月 30 日 [[35. MIT News]](#ref-35)；Galileo SAS 首次定位另有 9 月 17 日的獨立公告（窗外），本報告引用的是 10 月 2 日的 Jammertest 回顧 [[48. ESA]](#ref-48)；Claude Mods 於 9 月 3 日提案、9 月 9 日開放實驗旗標，皆在窗外，本報告引用的是 10 月 1 日正式推出的 v2.1.287，日期以 GitHub Release 的 18:00 UTC 為準，npm 發布時間為同日 16:59 UTC [[56. Anthropic GitHub]](#ref-56)。
 - **原頁未提供的數據一律不補。** NetScaler 的 CVSS 分數與修補版本號、Antino 誘餌的部分細節（如講師費金額）、iOS 漏洞的 NVD 分數只見於 iThome 報導 [[11. CISA]](#ref-11) [[13. Cisco Talos]](#ref-13) [[14. Apple]](#ref-14)；iThome 報導 Vite+ 時引用的部分速度數字與 VoidZero 官方頁不同，以官方頁為準 [[8. VoidZero]](#ref-8)；Argon 在部分程式基準落後對手的說法只見於中央社 [[2. Google]](#ref-2)。以上皆不以其他報導的數字替代原頁內容。
 
 <a id="disclaimer"></a>

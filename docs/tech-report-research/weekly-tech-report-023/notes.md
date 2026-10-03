@@ -28,7 +28,7 @@
 - C 組：金融科技、醫療科技、運輸物流（正式建議 15、淘汰 22；醫療科技補搜 12 輪）
 - D 組：房地產與室內外裝潢、現場表演藝術、影視音樂、其他領域科技應用突破（正式建議 19、淘汰 32；房地產 16 輪、表演藝術 13 輪、影視音樂 16 輪）
 
-四組合計 154 筆，去除跨組重複的 4 筆（無人船聯邦式學習出現在三組、AMD 併購 World Labs 與蘋果智慧家庭中樞傳聞各出現在兩組）後，候選 150 筆。收斂以 `scripts/converge-weekly-tech-report-candidates.py` 依 `order.txt` 編號正式條目、剔除撰稿欄位、檢查摘要字數與時間窗，結果正式 51 筆、淘汰 99 筆，摘要字數與時間窗檢查零錯誤。稽核補搜再加入 4 筆正式、15 筆淘汰，最終候選 169 筆、正式 55 筆、淘汰 114 筆。
+四組合計 154 筆，去除跨組重複的 4 筆（無人船聯邦式學習出現在三組、AMD 併購 World Labs 與蘋果智慧家庭中樞傳聞各出現在兩組）後，候選 150 筆。收斂以 `scripts/converge-weekly-tech-report-candidates.py` 依 `order.txt` 編號正式條目、剔除撰稿欄位、檢查摘要字數與時間窗，結果正式 51 筆、淘汰 99 筆，摘要字數與時間窗檢查零錯誤。稽核補搜再加入 4 筆正式、15 筆淘汰；使用者詢問後補收 Claude Mods（2 筆正式、3 筆淘汰）與 OpenAI DevDay 2026（1 筆正式、3 筆淘汰），最終候選 178 筆、正式 58 筆、淘汰 120 筆。
 
 ## 主編複審的取捨
 
@@ -114,3 +114,10 @@
 - **報告說明的自我修正**：ref-13 原稱 Antino 誘餌細節只見於 iThome，原頁其實有 4 張 Base64 PNG 與財政部函釋，只有講師費金額不在原頁，備註與報告說明改正。
 - **補搜**：一組代理跨 12 分類補搜，回報 4 筆正式建議全收、15 筆淘汰（Swift Sibos 原站 403、SvelteKit 3 與 Vite+ 同類、RSA 1024 偽造無立即威脅、軟銀投資與 OpenAI 點名月之暗面無技術面、台灣資安日為倡議、Defender DoS 弱點、智捷規劃、工研院論壇、Shield AI 招募、歐盟無人機預算、Tesla 歐盟表決窗外、台積電 A13 為 4 月、Accenture 合作公告）。補入 ref-52 微軟 Storm-3168（資安，一手代理式雲端攻擊事故分析）、ref-53 DMDC 外洩（資安，Military Times 首報）、ref-54 SynthID Bio（其他領域，DeepMind 一手）、ref-55 Reddit 停 RSS 與 Public API（軟體工程，iThome；Reddit 原頁無法取得）。4 頁皆 curl 200、日期取 JSON-LD 或 `class="created"`，關鍵數字逐項 grep（DMDC 原頁寫「approximately four million」）。依 020、022 期慣例接在表末，不重排既有編號；三筆代理摘要超過 500 字，只刪不補精簡至 431、494、496 字。
 - **驗證**：`scripts/validate-weekly-tech-report-023.sh` 常數改為正式 55、淘汰 114、ref-1..55，通過；總結 272 字；中文排版校對維持 8 項不修。所有修正都寫在 scratchpad 的 `fixups.py`（對收斂輸出與報告正文做斷言式字串替換），重建後五份任務檔仍由建置腳本產生。
+
+## 使用者詢問後的補收（Claude Mods、OpenAI DevDay 2026）
+
+- **Claude Mods（ref-56、ref-57）**：本期與前三期都沒有提到。Claude Mods 於 09-03 提案（GitHub issue #91870）、09-09 命名並開放實驗旗標，皆在窗外；10-01 隨 Claude Code v2.1.287 正式推出，在窗內。官方 GitHub Release（2026-10-01T18:00Z）、npm registry（16:59Z）與官方 CHANGELOG 三處一致，作為 ref-56（軟體工程）。權限與沙箱說明採 Mixed News 10-02 報導作為 ref-57（資安），其引述的官方文件句子已逐句回 code.claude.com/docs/en/plugins/mods/overview 核對（該頁無發布日期，故不直接當來源）。Dash Security（09-25，正式推出前的分析）、Wavect（09-16，窗外）、GitHub issue（09-03，窗外）列淘汰。漏收原因：A 組盤點了 GitHub Changelog 與各語言部落格，沒有查 AI 開發工具自己的 Release／CHANGELOG。
+- **OpenAI DevDay 2026（ref-58）**：DevDay 於 09-29 舉行，本期原本只收 Dots（ref-3，iThome 原文未寫 DevDay），開發者端發表（Agents API 的 computer use、GPT-6.1 Sol、Codex 雲端執行、Decisions API）都沒有，GPT-6.1 Sol 與 Space 列在淘汰。openai.com 回 403、Axios 回 Cloudflare 驗證頁、OpenAI 開發者社群的彙整貼文作者為社群成員而非官方，改採 InfoQ 10-02〈OpenAI DevDay 2026 Recap for Developers〉，關鍵數字（one-fifth、$0.10 per million、/agents、GitLab merge requests、Luna model、MCP Events）在原頁 grep 得到。AI 亮點新增一則、總結與 AI 趨勢補引用；先前淘汰的 GPT-6.1 Sol 與 Space 的淘汰原因改指向 ref-58；iThome 179321（Codex Cloud）列淘汰作交叉查核。
+- **修正腳本的重複插入**：第二輪稽核為 ref-16 在報告說明插入「DGX Spark 64 GB 版 10 月 23 日上市…」的那條替換，新字串包含舊字串，每次重跑 pipeline 都再插一次，正文累積到 5 份，上一輪交付的報告說明因此有重複句。已去重，並把該條替換的舊字串加長到不會被新字串包含；重建後全文無重複句、各條替換重跑皆為「已套用跳過」。
+- **驗證**：正式 58、淘汰 120、ref-1..58，總結 296 字；排版校對維持 8 項不修。

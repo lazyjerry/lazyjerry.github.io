@@ -614,6 +614,39 @@
 - 是否納入正式參考資料：是
 - 備註：curl 帶瀏覽器 UA 200；日期取 iThome `class="created"` 2026-10-01，內文載明 Reddit 於 9 月 30 日宣布。Reddit 官方公告頁無法以 curl 或 WebSearch 取得（reddit.com、redditinc.com 封鎖爬蟲），故以 iThome 為來源並在報告說明列為非一手來源。對開發者的影響面（第三方 App、機器人、RSS 整合全部要改走 Devvit 託管）高於同分類已淘汰的 GitLab.com 流量分級與 Next.js 單一漏洞修補；與已採用的五則語言／工具鏈發布不重複，補上「平台開放資料退場」這條線。
 
+### 56. Anthropic 發布 Claude Code v2.1.287，新增可修改深層行為的 Claude Mods
+- 原始標題：Release v2.1.287 · anthropics/claude-code
+- 標題：Anthropic 發布 Claude Code v2.1.287，新增可修改深層行為的 Claude Mods
+- URL：https://github.com/anthropics/claude-code/releases/tag/v2.1.287
+- 摘要：Anthropic 於 10 月 1 日在 GitHub 發布 Claude Code v2.1.287，變更說明第一條為新增 Claude Mods，讓外掛可以修改更深層的行為。同版新增內建 mod「You should know」，由一個旁支代理在背景留意使用者或 Claude 可能遺漏的事項並提出提醒，可用 /plugin enable cc-plugin-you-should-know@builtin 啟用。其他變更包括：代理檢視新增 n:<text> 篩選，可比對工作階段名稱與任務；OpenTelemetry 的 user_prompt 事件新增 prompt_text 欄位，是 prompt 的副本，官方提醒凡是丟棄或遮蔽 prompt 的地方也要同樣處理 prompt_text；支援 2025-11-25 協定的 MCP 伺服器發出的 URL 提示（例如登入），若更新後伺服器無法連線，可在設定加入 "bareElicitationCapability": true；Windows 在拒絕 Bash 工具連帶關閉 PowerShell 工具時新增啟動警告。
+- 權重：9/10
+- 發布日期：2026-10-01
+- 分類：軟體工程
+- 是否納入正式參考資料：是
+- 備註：curl 200；日期取 release 頁 relative-time datetime 2026-10-01T18:00:22Z，npm registry 的 2.1.287 發布時間為 2026-10-01T16:59:25Z，官方 CHANGELOG.md 同條目一致。Claude Mods 於 09-03 提案（GitHub issue #91870）、09-09 命名並開放 CLAUDE_CODE_ENABLE_FUNCTION_HOOKS=1 測試，兩者皆在窗外；本則為窗內的正式推出。前三期報告未提及。
+
+### 57. Claude Code 2.1.287 加入 mods，Anthropic 說明 mod 讀得到 API key
+- 原始標題：Claude Code 2.1.287 adds mods, and Anthropic says they can read your API key
+- 標題：Claude Code 2.1.287 加入 mods，Anthropic 說明 mod 讀得到 API key
+- URL：https://mixed-news.com/en/claude-code-2-1-287-mods-not-sandboxed-api-key/
+- 摘要：Mixed News 報導，Anthropic 於 10 月 1 日 16:59 UTC 將 Claude Code 2.1.287 發布到 npm，新增 Claude Mods：以 JavaScript 或 TypeScript 撰寫、在 Claude Code 內部執行的外掛，由事件處理函式組成，在工具呼叫、送出提示或繪製介面時被呼叫，可以觀察、修改或接管該事件。報導引述官方文件：mod 以使用者的權限執行，可讀寫檔案、啟動程序、發出網路請求，並讀得到環境變數與設定檔裡的祕密，包括 API key；mod 不受沙箱限制，啟用沙箱只隔離 Claude 執行的 Bash 指令；能核准工具呼叫的 mod，也能核准原本會被 ask 規則或 PreToolUse hook 擋下的呼叫，唯一明確的邊界是不能改寫權限確認提示。claude plugin validate 可在不執行程式碼的情況下列出 mod 處理的事件與要求的動作；組織可用 allowManagedModsOnly 只放行受管理的 mod。報導 10 月 2 日查核時，npm 的 stable 標籤仍指向 2.1.285。
+- 權重：7/10
+- 發布日期：2026-10-02
+- 分類：軟硬體資訊安全
+- 是否納入正式參考資料：是
+- 備註：curl 200；日期取 article:published_time 2026-10-02T15:55:39+00:00 與頁面「Oct 02 2026」。報導引述的官方文件句子（runs with your permissions、Read your secrets … including an API key、Mods aren't sandboxed、sandbox isolates the Bash commands、not the permission prompt、claude plugin validate、allowManagedModsOnly、disableAllHooks、--safe-mode、v2.1.287 與 on by default）已逐句回 code.claude.com/docs/en/plugins/mods/overview 核對，該頁無發布日期，故以 Mixed News 為來源。stable 標籤指向 2.1.285 為報導當日查核結果。
+
+### 58. InfoQ 彙整 OpenAI DevDay 2026 開發者發表：Agents API 支援 computer use、GPT-6.1 Sol、Codex 雲端執行
+- 原始標題：OpenAI DevDay 2026 Recap for Developers
+- 標題：InfoQ 彙整 OpenAI DevDay 2026 開發者發表：Agents API 支援 computer use、GPT-6.1 Sol、Codex 雲端執行
+- URL：https://www.infoq.com/news/2026/10/openai-devday-2026/
+- 摘要：InfoQ 彙整 OpenAI 9 月 29 日 DevDay 2026 面向開發者的發表。Agents API 支援 computer use，讓應用程式透過圖形介面操作軟體，並納入 Codex 的多代理能力、工具搜尋、工具呼叫與脈絡壓縮，底層執行基礎設施由 OpenAI 管理。GPT-6.1 Sol 是 GPT-6 Sol 的更新，鎖定程式開發、computer use 與專業工作，OpenAI 稱在多項評測接近 GPT-6 Astra，標準輸入與輸出 token 價格為 Astra 的五分之一，快取輸入每百萬 token 0.10 美元。Codex 除了本機也可在雲端環境執行，Codex CLI 新增委派、監看多項任務的 /agents 介面，新的程式碼審查流程可分析 GitHub PR 與 GitLab MR。Decisions API 為有限預覽，以較小的 Luna 模型從預先定義的答案中選擇，用於分類、請求路由與選擇代理的下一步。ChatGPT 外掛可透過提案中的 MCP Events 規格回應事件。DevDay 也發表 Dots 與共享工作區 ChatGPT Space。
+- 權重：8/10
+- 發布日期：2026-10-02
+- 分類：AI 科技
+- 是否納入正式參考資料：是
+- 備註：curl 200；日期取 JSON-LD datePublished 2026-10-02T10:39:00+0000 與頁面「Oct 02, 2026」；one-fifth、$0.10 per million、context compaction、/agents、GitLab merge requests、limited preview、Luna model、MCP Events 皆在原頁 grep 得到。openai.com/index/devday-2026 對 curl 回 403（依踩坑筆記），Axios 回 Cloudflare 驗證頁，OpenAI 開發者社群的彙整貼文作者為社群成員而非官方，故以 InfoQ 為來源。本期 ref-3 的 Dots 即為 DevDay 發表；先前淘汰的 GPT-6.1 Sol（GitHub 上架公告）與 Space（iThome 179296）改由本則涵蓋。效能比較為 OpenAI 自評。
+
 ## 淘汰來源
 
 ### A. SEC 譴責 OTC Link 長年未落實 Regulation SCI 系統合規要求
@@ -684,7 +717,7 @@
 - 發布日期：2026-09-29
 - 分類：AI 科技
 - 是否納入正式參考資料：否
-- 淘汰原因：只找到 GitHub 上架公告，找不到可核對的 OpenAI 原頁或台灣媒體報導，無法確認 GPT-6.1 Sol 本身的發布內容；上期已引用 GPT-6 Sol／Luna，屬同系列小版本
+- 淘汰原因：GitHub 上架公告；GPT-6.1 Sol 為 DevDay 2026 發表，其內容改由 InfoQ 的 DevDay 彙整（ref-58）引用
 
 ### K. Google 發表旗艦級 AI 模型 Argon 不再計劃推 Gemini 3.5 Pro（中央社）
 - URL：https://www.cna.com.tw/news/ait/202610010031.aspx
@@ -1342,7 +1375,7 @@
 - 發布日期：2026-09-30
 - 分類：AI 科技
 - 是否納入正式參考資料：否
-- 淘汰原因：curl 200，`class="created"` 2026-09-30。與已採用的 Dots 同屬 DevDay 2026（09-29）發表內容，同事件已有代表條目；openai.com 原頁依踩坑筆記全 UA 403 無法核對。
+- 淘汰原因：curl 200，`class="created"` 2026-09-30。與已採用的 Dots 同屬 DevDay 2026（09-29）發表內容，Space 已由 InfoQ 的 DevDay 彙整（ref-58）涵蓋；openai.com 原頁依踩坑筆記全 UA 403 無法核對。
 
 ### DA. 美中 AI 競賽升溫，OpenAI 點名月之暗面複製模型
 - URL：https://www.cna.com.tw/news/ait/202610010115.aspx
@@ -1413,3 +1446,45 @@
 - 分類：AI 科技
 - 是否納入正式參考資料：否
 - 淘汰原因：curl 200，頁面日期 Sep 18, 2026，窗內；屬企業合作公告，無模型或產品技術內容，重要性低於同公司已採用的 Sonnet 5.5。Anthropic 其餘 9 月公告（Life Sciences Verification 09-17、Model Hardware Standard 08-27）皆窗外。
+
+### DK. Claude Mods: the new attack surface built in
+- URL：https://dash.security/blog/claude-mods-the-new-attack-surface-built-in
+- 發布日期：2026-09-25
+- 分類：軟硬體資訊安全
+- 是否納入正式參考資料：否
+- 淘汰原因：資安廠商部落格的分析，寫於正式推出前、以實驗旗標版本為準；權限與沙箱的說明改採引述官方文件的 Mixed News（ref-57）。
+
+### DL. Claude Mods: Setup, Function Hooks and Security
+- URL：https://wavect.io/blog/claude-mods-function-hooks/
+- 發布日期：2026-09-16
+- 分類：軟體工程
+- 是否納入正式參考資料：否
+- 淘汰原因：發布日 09-16 在窗外，內容為實驗旗標階段的設定教學。
+
+### DM. Mods - make Claude 10x more extensible（GitHub issue #91870）
+- URL：https://github.com/anthropics/claude-code/issues/91870
+- 發布日期：2026-09-03
+- 分類：軟體工程
+- 是否納入正式參考資料：否
+- 淘汰原因：提案日 09-03 在窗外；本期以 10-01 正式推出的 Release 為來源（ref-56）。
+
+### DN. OpenAI 更新 Codex Cloud，雲端開發環境可重複套用並供團隊共享
+- URL：https://www.ithome.com.tw/news/179321
+- 發布日期：2026-09-30
+- 分類：軟體工程
+- 是否納入正式參考資料：否
+- 淘汰原因：curl 200，`class="created"` 2026-09-30。屬 DevDay 2026 同事件群，Codex 雲端執行已由 InfoQ 彙整（ref-58）涵蓋；本篇的環境發布、VM 狀態保留 7 天、Enterprise 共享環境等細節可作交叉查核。
+
+### DO. The 5 biggest announcements from OpenAI's blockbuster AI conference（Axios）
+- URL：https://www.axios.com/2026/09/29/openai-dev-day-2026-dots-space-sol
+- 發布日期：2026-09-29
+- 分類：AI 科技
+- 是否納入正式參考資料：否
+- 淘汰原因：curl 回 Cloudflare「Just a moment」驗證頁，無法在原頁核對內容；改採 InfoQ（ref-58）。
+
+### DP. DevDay 2026 announcements and developer resources（OpenAI 開發者社群）
+- URL：https://community.openai.com/t/devday-2026-announcements-and-developer-resources/1402006
+- 發布日期：2026-09-29
+- 分類：AI 科技
+- 是否納入正式參考資料：否
+- 淘汰原因：貼文作者為社群成員而非 OpenAI 官方，屬社群彙整；依來源優先序改採權威科技媒體 InfoQ（ref-58）。
