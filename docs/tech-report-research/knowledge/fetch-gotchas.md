@@ -89,6 +89,7 @@
 
 - `anthropic.com` 的模型發表頁與 `/news/`、`nasa.gov/news-release/`、`waymo.com/blog/shorts/`、臺鐵官網內文頁都沒有 JSON-LD 或 `article:published_time`。
 - 分別以頁面正文日期列、`<title>` 或 H1 內的日期、官網列表頁日期為準，並在 `source.md` 備註出處。
+- 例外：`anthropic.com/research/...` 有 JSON-LD `datePublished`；頁尾的「Corrected／Updated on」是更正或更新日，不是發布日。二手媒體寫的「週一公布」這類日期，可能對應的是更正日。
 
 ### blog.google 用 curl 抽到的是 CSS
 
@@ -115,6 +116,16 @@
 - `azure.status.microsoft/.../status/history/` 是動態列表，條目會下沉或改為正式 PIR；引用時在備註記下 Tracking ID 與條目日期。
 - CISA 警示頁有時只顯示「Last Revised」，發布日取網址路徑，再以同日 KEV 公告頁的 Release Date 交叉確認。
 
+### 依站別換 UA，以及轉址後的正式網址
+
+- `intel.com` 對瀏覽器 UA 回 403，curl 預設 UA 反而回 200；發布日取 `<meta name="newsroom_date">`，`lastModifieddate` 是更新時間。
+- `ftc.gov` 對瀏覽器 UA 回 404（不是 403），改用宣告式 UA 回 200。
+- `pr.tsmc.com` 與 `investor.tsmc.com` 對瀏覽器 UA 都回 403；法說會改用中央社報導，財報數字可用 SEC 6-K（宣告式 UA）交叉核對。
+- `cert.ssi.gouv.fr` 轉址到 `cert.cyber.gouv.fr`，參考表寫轉址後網址；日期取「Date de la première version」，「dernière version」是更新日，版本紀錄只寫「新增其他設備」時不要自行補上設備名稱。
+- `nhi.gov.tw`（健保署）兩種 UA 都回 403；MSRC 更新指南是前端渲染，curl 只拿到空殼。
+- 中央社列表頁只回最新 20 則，往前翻用站內 API `cna2018api/api/WNewsList`；正文讀 JSON-LD 的 `articleBody`。
+- `inside.com.tw` 文章頁 2026-10 起 curl 帶 UA 可拿到 200，tag 頁仍回 403。
+
 ## 來源
 
 - 來自 weekly-tech-report-005（2026-05-30）任務的實作經驗
@@ -124,3 +135,4 @@
 - openai.com 全 UA 403、sec.gov 宣告式 UA、更新日期不是發布日、無日期 meta 的一手來源、blog.google 抽到 CSS 五項來自 weekly-tech-report-022（2026-09-26）任務
 - qualcomm.com 的 `.model.json`、apple.com/newsroom 的 H1 與 og:title 差異、helpfeel.com 雙日期 meta 三項來自 weekly-tech-report-022 第三輪稽核
 - 政府站的 WAF 與間歇封鎖、編碼與動態頁兩節來自 weekly-tech-report-023（2026-10-03）任務
+- anthropic.com/research 的 datePublished 例外、依站別換 UA 一節來自 weekly-tech-report-025（2026-10-17）任務
