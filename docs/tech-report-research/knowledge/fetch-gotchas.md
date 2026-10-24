@@ -126,6 +126,12 @@
 - 中央社列表頁只回最新 20 則，往前翻用站內 API `cna2018api/api/WNewsList`；正文讀 JSON-LD 的 `articleBody`。
 - `inside.com.tw` 文章頁 2026-10 起 curl 帶 UA 可拿到 200，tag 頁仍回 403。
 
+### 滾動頁與事故頁的固定網址
+
+- `nginx.org` 首頁是滾動新聞，參考表改用年度歸檔頁 `nginx.org/YYYY.html`，內容相同、網址固定。
+- `status.cloud.google.com` 事故頁是前端渲染，資料改抓 `status.cloud.google.com/incidents.json`：`created` 為首則時間，`updates` 內含初步事故報告；事故頁首的 `affected_products` 數與報告內文列的服務數可能不同，兩者都要寫明出處。媒體報的事故時長常是告警到結案公告的區間，以初步事故報告的事故期間為準。
+- `kernelnewbies.org` 版本頁沒有發布日期，只有頁尾 `Last updated`（可能早於釋出日），發布日取 kernel.org 的 mainline 釋出日。
+
 ## 來源
 
 - 來自 weekly-tech-report-005（2026-05-30）任務的實作經驗
@@ -136,3 +142,4 @@
 - qualcomm.com 的 `.model.json`、apple.com/newsroom 的 H1 與 og:title 差異、helpfeel.com 雙日期 meta 三項來自 weekly-tech-report-022 第三輪稽核
 - 政府站的 WAF 與間歇封鎖、編碼與動態頁兩節來自 weekly-tech-report-023（2026-10-03）任務
 - anthropic.com/research 的 datePublished 例外、依站別換 UA 一節來自 weekly-tech-report-025（2026-10-17）任務
+- 滾動頁與事故頁的固定網址一節來自 weekly-tech-report-026（2026-10-24）任務

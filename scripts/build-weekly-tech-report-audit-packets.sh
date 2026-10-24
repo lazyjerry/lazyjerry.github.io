@@ -29,9 +29,15 @@ report_path, source_path, output_dir = map(Path, sys.argv[1:])
 report = report_path.read_text(encoding="utf-8")
 source = source_path.read_text(encoding="utf-8")
 
+body = report.split('<a id="references"></a>', 1)[0]
+# 資料限制段在參考資料表之後，仍是逐筆引用的正文，一併納入
+limitations = report.split('<a id="limitations"></a>', 1)
+if len(limitations) == 2:
+    body += "\n\n" + limitations[1].split('<a id="disclaimer"></a>', 1)[0]
+
 source_entries = {}
 for match in re.finditer(
-    r"(?ms)^### (\d+)\. .*?(?=^### (?:\d+|[A-Z]+)\.|\Z)", source
+    r"(?ms)^### (\d+)\. .*?(?=^## \u6dd8\u6c70\u4f86\u6e90|^### (?:\d+|[A-Z]+)\.|\Z)", source
 ):
     source_entries[int(match.group(1))] = match.group(0).rstrip()
 
@@ -41,7 +47,11 @@ for line in report.splitlines():
     if match:
         reference_rows[int(match.group(1))] = line
 
-paragraphs = [part.strip() for part in re.split(r"\n\s*\n", report) if part.strip()]
+paragraphs = [
+    part.strip()
+    for part in re.split(r"\n(?=- \*\*)|\n\s*\n", body)
+    if part.strip()
+]
 references = sorted(reference_rows)
 if references != list(range(1, len(references) + 1)):
     raise SystemExit(f"Reference sequence is not contiguous: {references}")
