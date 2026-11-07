@@ -125,6 +125,7 @@
 - `nhi.gov.tw`（健保署）兩種 UA 都回 403；MSRC 更新指南是前端渲染，curl 只拿到空殼。
 - 中央社列表頁只回最新 20 則，往前翻用站內 API `cna2018api/api/WNewsList`；正文讀 JSON-LD 的 `articleBody`。
 - `inside.com.tw` 文章頁 2026-10 起 curl 帶 UA 可拿到 200，tag 頁仍回 403。
+- `deepmind.google/blog/...` 的文章會轉址到 `blog.google` 的同一頁（canonical），參考表寫 blog.google 網址、來源名寫 Google Blog；作者是 DeepMind 員工不影響來源名。
 
 ### 滾動頁與事故頁的固定網址
 
@@ -143,3 +144,4 @@
 - 政府站的 WAF 與間歇封鎖、編碼與動態頁兩節來自 weekly-tech-report-023（2026-10-03）任務
 - anthropic.com/research 的 datePublished 例外、依站別換 UA 一節來自 weekly-tech-report-025（2026-10-17）任務
 - 滾動頁與事故頁的固定網址一節來自 weekly-tech-report-026（2026-10-24）任務
+- deepmind.google 轉址到 blog.google 一條來自 weekly-tech-report-028（2026-11-07）任務
